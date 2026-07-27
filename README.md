@@ -1,26 +1,61 @@
 # TÜBİTAK Bilgisayar · 1. Aşama Takip
 
 35. Bilim Olimpiyatları Birinci Aşama (Bilgisayar) hazırlık planının çalışan hâli.
-**57 konu · 108 puan · 9 faz · 42 hafta · 6 blok.**
+**57 konu · 108 puan · 9 faz · 42 hafta · 6 blok · 27 üretken hafta.**
 
-Plan sürümü **3.1** (26 Tem 2026). Sınav: ~15 Mayıs 2027.
+Plan sürümü **3.3** (27 Tem 2026). Sınav: ~15 Mayıs 2027.
+🔗 **https://e7lektronxf.github.io/Plan/**
 
 ---
 
 ## Ne yapar
 
-| Bölüm | İçerik |
+Altı sekme. Ana sayfada büyük ve kalın: **şu anki faz** ve **sıradaki faz.**
+
+| Sekme | İçerik |
 |---|---|
-| **Panel** | Ana sayfada büyük ve kalın: **şu anki faz** ve **sıradaki faz**. Altında takvimdeki yer, tamamlanan puan, ölçülen hız, sınava kalan gün, hat ilerlemeleri, 42 haftalık şerit, karışabilecek isimler, haftalık iskelet. |
-| **Konular** | 57 konu, hat ve duruma göre filtreli. **Kapsam gizlidir** — konuya tıklayınca açılır: ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar tıklanabilir rozet. Üç durumlu işaret: başlamadı / çalışılıyor / tamamlandı. |
-| **Fazlar** | 9 fazın bağımlılık zinciri. Tamamlananlar dolu, ön koşulu bitmemişler soluk. |
-| **Takvim** | 42 hafta şeridi (bloklar renkli, tamponlar taralı, denemeler ve blok kapanışları işaretli), blok kartları + devir butonu, hafta hafta tablo, bütçe aritmetiği, blok kapanış ritüeli. |
-| **Denemeler** | Deneme girişi, kayıt tablosu, üç hattın net grafiği, deneme protokolü ve takvimi. |
-| **Karar kaydı** | Künye, başlangıç durumu, sınav kompozisyonu, K1–K10 kararları gerekçeleriyle, reddedilen seçenekler, açık sorular, perspektif, sürüm geçmişi. |
-| **Kapsam modu** | Kesme sırası ve geri ekleme listesi. **Çekirdek konular ve başkasının ön koşulu olanlar kesilemez** — uygulama gerekçesiyle reddeder. İlerlemeyi JSON olarak dışa/içe aktarma. |
-| **Promptlar** | Plandaki Prompt 2–6, bulunduğun haftaya ve ilerlemene göre **otomatik doldurulmuş** hâlde. Tek tıkla kopyala, AI oturumuna yapıştır. (Prompt 1 zaten bu uygulamanın kendisi.) |
+| **Panel** | Şu anki ve sıradaki aşama (büyük, kalın, konu zinciriyle). Tek şeritte dört ölçü: tamamlanan puan, takvimdeki yer, ölçülen hız, sınava kalan gün. Bu haftanın konuları, üç hattın ilerlemesi, 42 haftalık şerit. |
+| **Konular** | 57 konu. İki görünüm: **Liste** (hat/durum/MEB filtreli, aramalı) ve **Faz zinciri** (9 fazın bağımlılık zinciri, oklarla). **Kapsam gizlidir** — konuya tıkla: ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar ve bağımlılar tıklanabilir rozet, üç durumlu işaret. |
+| **Takvim** | 42 hafta şeridi, blok kartları + devir butonu, hafta hafta tablo, hafta tipleri (üretken/tampon/tekrar/sınav — hangisi hız hesabına girer), bütçe, tampon kuralı ve **B2/B5 istisnaları**, haftalık iskelet, blok kapanış ritüeli. |
+| **Denemeler** | Deneme girişi, kayıt tablosu, üç hattın net grafiği, protokol ve deneme takvimi. |
+| **Karar kaydı** | Künye, başlangıç durumu + sınav kompozisyonu, **M hattı × MEB müfredat eşleştirmesi**, K1–K12 kararları gerekçeleriyle, reddedilen seçenekler, açık sorular, perspektif, sürüm geçmişi. |
+| **Araçlar** | **Dışa Aktar / İçeri Aktar**, kapsam modu (kesme/ekleme), AI prompt kütüphanesi (Prompt 2–6, bulunduğun haftaya göre otomatik dolu, tek tıkla kopyala). |
 
 İlerleme göstergesi takvim değil **puandır** (K4). Takvim gecikmesi uyarısı yoktur.
+
+---
+
+## Verini kaybetmemek için — Dışa Aktar / İçeri Aktar
+
+İlerlemen (konu durumları, denemeler, kesme/ekleme kararları) bu tarayıcının
+`localStorage`'ında durur. Tarayıcı verisi silinirse ya da başka bir cihaza geçersen kaybolur.
+
+İki tuş, sağ üstte ve Araçlar sekmesinde:
+
+- **⭳ Dışa Aktar** → `tubitak-durum-YYYY-AA-GG.json` dosyasını indirir. İçinde plan sürümü,
+  kayıt tarihi, özet (kaç puan / kaç konu / kaç deneme) ve ilerlemenin tamamı vardır.
+- **⭱ İçeri Aktar** → dosyayı seç. Yüklemeden **önce** bir onay ekranı çıkar: dosyanın tarihi,
+  plan sürümü, gelen ilerleme ve üzerine yazılacak mevcut ilerleme yan yana gösterilir.
+  Onaylayınca o duruma dönersin.
+
+Geçersiz ya da alakasız bir dosya seçilirse hiçbir şey değişmez.
+**Her blok kapanışında (W6, W14, W22, W30, W38) dışa aktarma alışkanlığı edin.**
+
+---
+
+## MEB eşleştirmesi ve "Ne eksik?" tuşu (K11)
+
+M hattındaki 20 konunun her birinde Maarif Modeli karşılığı var. Konu satırında küçük bir renk noktası:
+
+- 🟢 **tam** (5 konu, 8 p) — okulda da göreceksin, ders tekrar işlevi görür
+- 🟡 **kısmi** (7 konu, 11 p) — konuyu duyacaksın ama olimpiyat için gereken kısım eksik kalacak
+- ⚪ **yok** (8 konu, 16 p) — tamamen kendi başına, okuldan destek yok
+
+Kısmi olanlarda konu panelinde ayrı bir **"Ne eksik?"** tuşu var. Basmadan `ortusmeyen`
+listesi görünmez. Basınca iki sütun açılır: *Okulda göreceksin* (yeşil) / *Okulda
+GÖRMEYECEKSİN* (kırmızı). Bu tuş, "okulda gördüm, biliyorum" yanılgısını kırmak için var.
+
+Filtre: **MEB'de yok** → okuldan hiç destek gelmeyecek konuları listeler.
 
 ---
 
@@ -29,30 +64,24 @@ Plan sürümü **3.1** (26 Tem 2026). Sınav: ~15 Mayıs 2027.
 ```
 index.html          arayüz iskeleti
 assets/style.css    palet, tipografi, karanlık mod
-assets/app.js       tüm mantık (bağımlılık yok)
+assets/app.js       tüm mantık (harici bağımlılık yok)
 data/plan.json      TÜM PLAN VERİSİ — tek kaynak
 ```
 
-- **`data/plan.json` planın tek doğruluk kaynağıdır.** Konular, kapsamlar, ön koşullar,
-  fazlar, bloklar, 42 hafta, kararlar, promptlar hep orada. Plan değişirse sadece bu dosya değişir.
-- **İlerlemen** (konu durumları, denemeler, kesme/ekleme kararları) tarayıcıda `localStorage`'da durur,
-  JSON dosyasına yazılmaz. Kapsam modundan dışa aktarıp yedekleyebilirsin.
+`data/plan.json` planın tek doğruluk kaynağıdır: konular, kapsamlar, `onkosul` zinciri,
+`kesilebilir` bayrakları, `mebKarsiligi` alanları, fazlar, bloklar, 42 hafta, K1–K12
+kararları, prompt kütüphanesi. Plan değişirse **sadece bu dosya** değişir.
 
 ---
 
 ## Nasıl açılır
 
-Veri ayrı bir dosyada olduğu için tarayıcı `index.html`'i doğrudan çift tıklayarak açtığında
-(`file://`) JSON'u okumaya izin vermez. Üç yol var:
+Veri ayrı dosyada olduğu için `index.html`'i çift tıklayarak açtığında (`file://`)
+tarayıcı JSON'u okumaya izin vermez. Üç yol:
 
-1. **GitHub Pages** (önerilen) — repo ayarlarından: `Settings → Pages → Source: Deploy from a branch → main / (root) → Save`.
-   Bir iki dakika sonra `https://e7lektronxf.github.io/Plan/` adresinde açılır.
-2. **Yerel sunucu** — klasörün içinde:
-   ```
-   python -m http.server 8000
-   ```
-   sonra `http://localhost:8000`.
-3. **Elle yükle** — `file://` ile açtığında çıkan ekrandan `data/plan.json` dosyasını seç.
+1. **GitHub Pages** — https://e7lektronxf.github.io/Plan/ (kurulu, `main` dalına her push'ta güncellenir)
+2. **Yerel sunucu** — klasörün içinde `python -m http.server 8000`, sonra `http://localhost:8000`
+3. **Elle yükle** — `file://` ekranındaki dosya seçiciden `data/plan.json`'ı seç
 
 ---
 
@@ -60,10 +89,11 @@ Veri ayrı bir dosyada olduğu için tarayıcı `index.html`'i doğrudan çift t
 
 Blok kapanışında (W6, W14, W22, W30, W38):
 
-1. Promptlar sekmesinden **Prompt 2**'yi kopyala, AI'ya ver.
-2. Dönen yeni hafta dağılımına göre `data/plan.json` içindeki `haftalar` ve `durum` alanlarını güncelle.
-3. Yeni kararı `kararlar` dizisine `K11`, `K12`… olarak ekle.
-4. `surumGecmisi`'ne satır at, `meta.surum`'u yükselt.
+1. **Dışa Aktar** ile ilerlemeyi yedekle.
+2. Araçlar sekmesinden **Prompt 2**'yi kopyala, AI'ya ver.
+3. Dönen yeni hafta dağılımına göre `data/plan.json` içindeki `haftalar` ve `durum` alanlarını güncelle.
+4. Yeni kararı `kararlar` dizisine `K13`, `K14`… olarak ekle; `surumGecmisi`'ne satır at, `meta.surum`'u yükselt.
 
-⚠️ Konu düşerken `onkosul` alanına bak: o konu başkasının ön koşuluysa düşürülemez.
-Çekirdek işaretli 27 konu dokunulmazdır.
+⚠️ Konu düşerken iki koşul birden gerekir: **çekirdek olmayacak** ve **hiçbir konunun ön koşulu
+olmayacak** (K12/D2). Uygulama bunu makine düzeyinde denetler ve gerekçesiyle reddeder.
+Çekirdek işaretli **34 konu** dokunulmazdır. Kesme sırası: **A15 → A22 → A6 → M13 → C20** (11 puan).

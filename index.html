@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TÜBİTAK Bilgisayar · 1. Aşama Takip</title>
-<meta name="description" content="TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama (Bilgisayar) hazırlık takip uygulaması — 57 konu, 108 puan, 9 faz, 42 hafta.">
+<meta name="description" content="TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama (Bilgisayar) hazırlık takip uygulaması — 57 konu, 108 puan, 9 faz, 42 hafta, MEB müfredat eşleştirmeli.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +18,12 @@
   <div class="kabuk ust-ic">
     <div>
       <span class="marka-ad">TÜBİTAK Bilgisayar · 1. Aşama</span>
-      <span class="marka-alt">35. Bilim Olimpiyatları · 57 konu · 108 puan · 42 hafta</span>
+      <span class="marka-alt">57 konu · 108 puan · 9 faz · 42 hafta · plan v3.3</span>
     </div>
     <div class="ust-sag">
-      <div class="gerisayim">
-        <b id="gerisayim-gun">—</b>
-        <span>gün kaldı</span>
-      </div>
+      <div class="gerisayim"><b id="gerisayim-gun">—</b><span>gün kaldı</span></div>
+      <button class="dugme" data-disa-aktar="1" title="İlerlemeyi JSON olarak indir">⭳ <span class="etiket">Dışa Aktar</span></button>
+      <button class="dugme" data-ice-aktar="1" title="JSON yedeğinden ilerlemeyi geri yükle">⭱ <span class="etiket">İçeri Aktar</span></button>
       <button class="dugme" id="tema-btn" title="Açık / karanlık mod" aria-label="Tema değiştir">☾</button>
     </div>
   </div>
@@ -34,33 +33,31 @@
   <div class="kabuk sekme-ic" id="sekme-ic" role="tablist">
     <button class="sekme" role="tab" data-sekme="panel"     aria-selected="true">Panel</button>
     <button class="sekme" role="tab" data-sekme="konular"   aria-selected="false">Konular</button>
-    <button class="sekme" role="tab" data-sekme="fazlar"    aria-selected="false">Fazlar</button>
     <button class="sekme" role="tab" data-sekme="takvim"    aria-selected="false">Takvim</button>
     <button class="sekme" role="tab" data-sekme="denemeler" aria-selected="false">Denemeler</button>
     <button class="sekme" role="tab" data-sekme="kararlar"  aria-selected="false">Karar kaydı</button>
-    <button class="sekme" role="tab" data-sekme="kapsam"    aria-selected="false">Kapsam modu</button>
-    <button class="sekme" role="tab" data-sekme="promptlar" aria-selected="false">Promptlar</button>
+    <button class="sekme" role="tab" data-sekme="araclar"   aria-selected="false">Araçlar</button>
   </div>
 </nav>
 
 <main class="kabuk" id="icerik">
   <section class="bolum acik" id="panel"     role="tabpanel"></section>
   <section class="bolum"      id="konular"   role="tabpanel"></section>
-  <section class="bolum"      id="fazlar"    role="tabpanel"></section>
   <section class="bolum"      id="takvim"    role="tabpanel"></section>
   <section class="bolum"      id="denemeler" role="tabpanel"></section>
   <section class="bolum"      id="kararlar"  role="tabpanel"></section>
-  <section class="bolum"      id="kapsam"    role="tabpanel"></section>
-  <section class="bolum"      id="promptlar" role="tabpanel"></section>
+  <section class="bolum"      id="araclar"   role="tabpanel"></section>
 </main>
 
 <footer>
   <div class="kabuk">
-    Plan sürüm 3.1 · Veri: <span class="mono">data/plan.json</span> · İlerleme tarayıcıda (localStorage) saklanır.
+    Plan sürüm 3.3 · Veri: <span class="mono">data/plan.json</span> · İlerleme tarayıcıda saklanır — düzenli <b>Dışa Aktar</b>.
     <br>İlerleme göstergesi takvim değil <b>puandır</b> (K4). Geri kalmak sorun değil; bırakmak sorundur.
   </div>
 </footer>
 
+<input type="file" id="dosya-gir" accept="application/json" hidden>
+<div class="katman" id="katman" hidden><div class="katman-ic" id="katman-ic"></div></div>
 <div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>
 
 <script src="assets/app.js"></script>
