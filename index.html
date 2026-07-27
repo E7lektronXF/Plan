@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr" data-tema="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TÜBİTAK Bilgisayar · 1. Aşama Takip</title>
+<meta name="description" content="TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama (Bilgisayar) hazırlık takip uygulaması — 57 konu, 108 puan, 9 faz, 42 hafta.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="ust">
+  <div class="kabuk ust-ic">
+    <div>
+      <span class="marka-ad">TÜBİTAK Bilgisayar · 1. Aşama</span>
+      <span class="marka-alt">35. Bilim Olimpiyatları · 57 konu · 108 puan · 42 hafta</span>
+    </div>
+    <div class="ust-sag">
+      <div class="gerisayim">
+        <b id="gerisayim-gun">—</b>
+        <span>gün kaldı</span>
+      </div>
+      <button class="dugme" id="tema-btn" title="Açık / karanlık mod" aria-label="Tema değiştir">☾</button>
+    </div>
+  </div>
+</header>
+
+<nav class="sekmeler">
+  <div class="kabuk sekme-ic" id="sekme-ic" role="tablist">
+    <button class="sekme" role="tab" data-sekme="panel"     aria-selected="true">Panel</button>
+    <button class="sekme" role="tab" data-sekme="konular"   aria-selected="false">Konular</button>
+    <button class="sekme" role="tab" data-sekme="fazlar"    aria-selected="false">Fazlar</button>
+    <button class="sekme" role="tab" data-sekme="takvim"    aria-selected="false">Takvim</button>
+    <button class="sekme" role="tab" data-sekme="denemeler" aria-selected="false">Denemeler</button>
+    <button class="sekme" role="tab" data-sekme="kararlar"  aria-selected="false">Karar kaydı</button>
+    <button class="sekme" role="tab" data-sekme="kapsam"    aria-selected="false">Kapsam modu</button>
+    <button class="sekme" role="tab" data-sekme="promptlar" aria-selected="false">Promptlar</button>
+  </div>
+</nav>
+
+<main class="kabuk" id="icerik">
+  <section class="bolum acik" id="panel"     role="tabpanel"></section>
+  <section class="bolum"      id="konular"   role="tabpanel"></section>
+  <section class="bolum"      id="fazlar"    role="tabpanel"></section>
+  <section class="bolum"      id="takvim"    role="tabpanel"></section>
+  <section class="bolum"      id="denemeler" role="tabpanel"></section>
+  <section class="bolum"      id="kararlar"  role="tabpanel"></section>
+  <section class="bolum"      id="kapsam"    role="tabpanel"></section>
+  <section class="bolum"      id="promptlar" role="tabpanel"></section>
+</main>
+
+<footer>
+  <div class="kabuk">
+    Plan sürüm 3.1 · Veri: <span class="mono">data/plan.json</span> · İlerleme tarayıcıda (localStorage) saklanır.
+    <br>İlerleme göstergesi takvim değil <b>puandır</b> (K4). Geri kalmak sorun değil; bırakmak sorundur.
+  </div>
+</footer>
+
+<div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
