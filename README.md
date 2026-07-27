@@ -14,8 +14,8 @@ Altı sekme. Ana sayfada büyük ve kalın: **şu anki faz** ve **sıradaki faz.
 
 | Sekme | İçerik |
 |---|---|
-| **Panel** | Şu anki ve sıradaki aşama (büyük, kalın, konu zinciriyle). Tek şeritte dört ölçü: tamamlanan puan, takvimdeki yer, ölçülen hız, sınava kalan gün. Bu haftanın konuları, üç hattın ilerlemesi, 42 haftalık şerit. |
-| **Konular** | 57 konu. İki görünüm: **Liste** (hat/durum/MEB filtreli, aramalı) ve **Faz zinciri** (9 fazın bağımlılık zinciri, oklarla). **Kapsam gizlidir** — konuya tıkla: ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar ve bağımlılar tıklanabilir rozet, üç durumlu işaret. |
+| **Bugün** | Şu anki ve sıradaki aşama (büyük, kalın, konu zinciriyle). Tek şeritte dört ölçü: tamamlanan puan, takvimdeki yer, ölçülen hız, sınava kalan gün. Bu haftanın konuları, üç hattın ilerlemesi. |
+| **Müfredat** | 57 konu. İki görünüm: **Dizin** (hat/durum/MEB filtreli, aramalı) ve **Faz zinciri** (9 fazın bağımlılık zinciri, oklarla). **Kapsam gizlidir** — konuya tıkla: ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar ve bağımlılar tıklanabilir rozet, üç durumlu işaret. |
 | **Takvim** | 42 hafta şeridi, blok kartları + devir butonu, hafta hafta tablo, hafta tipleri (üretken/tampon/tekrar/sınav — hangisi hız hesabına girer), bütçe, tampon kuralı ve **B2/B5 istisnaları**, haftalık iskelet, blok kapanış ritüeli. |
 | **Denemeler** | Deneme girişi, kayıt tablosu, üç hattın net grafiği, protokol ve deneme takvimi. |
 | **Karar kaydı** | Künye, başlangıç durumu + sınav kompozisyonu, **M hattı × MEB müfredat eşleştirmesi**, K1–K12 kararları gerekçeleriyle, reddedilen seçenekler, açık sorular, perspektif, sürüm geçmişi. |
@@ -62,11 +62,16 @@ Filtre: **MEB'de yok** → okuldan hiç destek gelmeyecek konuları listeler.
 ## Dosya düzeni
 
 ```
-index.html          arayüz iskeleti
-assets/style.css    palet, tipografi, karanlık mod
-assets/app.js       tüm mantık (harici bağımlılık yok)
-data/plan.json      TÜM PLAN VERİSİ — tek kaynak
+index.html                                     arayüz + tüm mantık (Design Component formatı)
+support.js                                      bileşeni ayağa kaldıran çalışma zamanı (CDN'den React/ReactDOM yükler)
+_ds/classical-.../styles.css                    tasarım sistemi tokenleri (yazı tipi, renk, buton/form/tablo stilleri)
+data/plan.json                                  TÜM PLAN VERİSİ — tek kaynak
 ```
+
+`index.html` bir **Design Component** (`.dc.html`) belgesidir: `<x-dc>` şablonu ve
+`<script data-dc-script>` içindeki mantığı `support.js` tarayıcıda çalışırken ayrıştırıp
+React ile render eder. `support.js` React, ReactDOM ve (gerekirse) Babel'i unpkg CDN'den
+kendisi yükler — internet bağlantısı ister, ekstra bir build adımı gerektirmez.
 
 `data/plan.json` planın tek doğruluk kaynağıdır: konular, kapsamlar, `onkosul` zinciri,
 `kesilebilir` bayrakları, `mebKarsiligi` alanları, fazlar, bloklar, 42 hafta, K1–K12
@@ -77,11 +82,13 @@ kararları, prompt kütüphanesi. Plan değişirse **sadece bu dosya** değişir
 ## Nasıl açılır
 
 Veri ayrı dosyada olduğu için `index.html`'i çift tıklayarak açtığında (`file://`)
-tarayıcı JSON'u okumaya izin vermez. Üç yol:
+tarayıcı JSON'u okumaya izin vermez. İki yol:
 
 1. **GitHub Pages** — https://e7lektronxf.github.io/Plan/ (kurulu, `main` dalına her push'ta güncellenir)
 2. **Yerel sunucu** — klasörün içinde `python -m http.server 8000`, sonra `http://localhost:8000`
-3. **Elle yükle** — `file://` ekranındaki dosya seçiciden `data/plan.json`'ı seç
+
+Her iki durumda da internet bağlantısı gerekir: sayfa React/ReactDOM'u ve iki yazı
+tipini (Cormorant Garamond, Lora) CDN'den yükler.
 
 ---
 
