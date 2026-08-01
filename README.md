@@ -1,9 +1,9 @@
 # TÜBİTAK Bilgisayar · 1. Aşama Takip
 
 35. Bilim Olimpiyatları Birinci Aşama (Bilgisayar) hazırlık planının çalışan hâli.
-**57 konu · 108 puan · 9 faz · 42 hafta · 6 blok · 27 üretken hafta.**
+**63 konu · 108 puan · 10 faz · 5 hat (M, C, A, P, L) · 42 hafta · 6 blok · 27 üretken hafta.**
 
-Plan sürümü **3.3** (27 Tem 2026). Sınav: ~15 Mayıs 2027.
+Plan sürümü **4.1** (1 Ağu 2026). Sınav: ~15 Mayıs 2027.
 🔗 **https://e7lektronxf.github.io/Plan/**
 
 ---
@@ -14,12 +14,12 @@ Altı sekme. Ana sayfada büyük ve kalın: **şu anki faz** ve **sıradaki faz.
 
 | Sekme | İçerik |
 |---|---|
-| **Bugün** | Şu anki ve sıradaki aşama (büyük, kalın, konu zinciriyle). Tek şeritte dört ölçü: tamamlanan puan, takvimdeki yer, ölçülen hız, sınava kalan gün. Bu haftanın konuları, üç hattın ilerlemesi. |
-| **Müfredat** | 57 konu. İki görünüm: **Dizin** (hat/durum/MEB filtreli, aramalı) ve **Faz zinciri** (9 fazın bağımlılık zinciri, oklarla). **Kapsam gizlidir** — konuya tıkla: ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar ve bağımlılar tıklanabilir rozet, üç durumlu işaret. |
+| **Bugün** | Şu anki ve sıradaki aşama (büyük, kalın, konu zinciriyle). Tek şeritte dört ölçü: tamamlanan puan, takvimdeki yer, ölçülen hız, sınava kalan gün. Bu haftanın konuları, beş hattın (M/C/A/P/L) ilerlemesi. |
+| **Müfredat** | 63 konu. İki görünüm: **Dizin** (hat/durum/MEB filtreli, aramalı) ve **Faz zinciri** (10 fazın bağımlılık zinciri, oklarla). **Kapsam gizlidir** — konuya tıkla: kaynaklar (omurga/destek/drill), ne öğrenilecek, `DUR:` nerede durulacak, `TUZAK:` ve `KLASİK SORU:` vurgulu, ön koşullar ve bağımlılar tıklanabilir rozet, üç durumlu işaret. |
 | **Takvim** | 42 hafta şeridi, blok kartları + devir butonu, hafta hafta tablo, hafta tipleri (üretken/tampon/tekrar/sınav — hangisi hız hesabına girer), bütçe, tampon kuralı ve **B2/B5 istisnaları**, haftalık iskelet, blok kapanış ritüeli. |
-| **Denemeler** | Deneme girişi, kayıt tablosu, üç hattın net grafiği, protokol ve deneme takvimi. |
-| **Karar kaydı** | Künye, başlangıç durumu + sınav kompozisyonu, **M hattı × MEB müfredat eşleştirmesi**, K1–K12 kararları gerekçeleriyle, reddedilen seçenekler, açık sorular, perspektif, sürüm geçmişi. |
-| **Araçlar** | **Dışa Aktar / İçeri Aktar**, kapsam modu (kesme/ekleme), AI prompt kütüphanesi (Prompt 2–6, bulunduğun haftaya göre otomatik dolu, tek tıkla kopyala). |
+| **Denemeler** | Deneme girişi (beş hat ayrı net: M/12, C/16, A/16, P/4, L/1), kayıt tablosu, beş hattın net grafiği, protokol, deneme rezervi (hangi yılların "yakıldığı") ve deneme takvimi. |
+| **Karar kaydı** | Künye, başlangıç durumu + sınav kompozisyonu (ölçülmüş dağılım, K13), **M hattı × MEB müfredat eşleştirmesi**, K1–K15 kararları gerekçeleriyle, reddedilen seçenekler, açık sorular (S1–S7), perspektif, sürüm geçmişi. |
+| **Araçlar** | **Dışa Aktar / İçeri Aktar**, kapsam modu (kesme/ekleme), AI prompt kütüphanesi (Prompt 2–7, bulunduğun haftaya göre otomatik dolu, tek tıkla kopyala). |
 
 İlerleme göstergesi takvim değil **puandır** (K4). Takvim gecikmesi uyarısı yoktur.
 
@@ -45,11 +45,11 @@ Geçersiz ya da alakasız bir dosya seçilirse hiçbir şey değişmez.
 
 ## MEB eşleştirmesi ve "Ne eksik?" tuşu (K11)
 
-M hattındaki 20 konunun her birinde Maarif Modeli karşılığı var. Konu satırında küçük bir renk noktası:
+M hattındaki 17 konunun her birinde Maarif Modeli karşılığı var. Konu satırında küçük bir renk noktası:
 
-- 🟢 **tam** (5 konu, 8 p) — okulda da göreceksin, ders tekrar işlevi görür
-- 🟡 **kısmi** (7 konu, 11 p) — konuyu duyacaksın ama olimpiyat için gereken kısım eksik kalacak
-- ⚪ **yok** (8 konu, 16 p) — tamamen kendi başına, okuldan destek yok
+- 🟢 **tam** (5 konu, 6 p) — okulda da göreceksin, ders tekrar işlevi görür
+- 🟡 **kısmi** (7 konu, 12 p) — konuyu duyacaksın ama olimpiyat için gereken kısım eksik kalacak
+- ⚪ **yok** (5 konu, 6 p) — tamamen kendi başına, okuldan destek yok
 
 Kısmi olanlarda konu panelinde ayrı bir **"Ne eksik?"** tuşu var. Basmadan `ortusmeyen`
 listesi görünmez. Basınca iki sütun açılır: *Okulda göreceksin* (yeşil) / *Okulda
@@ -74,8 +74,9 @@ React ile render eder. `support.js` React, ReactDOM ve (gerekirse) Babel'i unpkg
 kendisi yükler — internet bağlantısı ister, ekstra bir build adımı gerektirmez.
 
 `data/plan.json` planın tek doğruluk kaynağıdır: konular, kapsamlar, `onkosul` zinciri,
-`kesilebilir` bayrakları, `mebKarsiligi` alanları, fazlar, bloklar, 42 hafta, K1–K12
-kararları, prompt kütüphanesi. Plan değişirse **sadece bu dosya** değişir.
+`kesilebilir` bayrakları, `mebKarsiligi` alanları, `kaynaklar` (konu bazlı) ve `kaynakKatalogu`
+(Bölüm 7B'nin tam kataloğu), fazlar, bloklar, 42 hafta, K1–K15 kararları, prompt kütüphanesi.
+Plan değişirse **sadece bu dosya** değişir.
 
 ---
 
@@ -99,8 +100,12 @@ Blok kapanışında (W6, W14, W22, W30, W38):
 1. **Dışa Aktar** ile ilerlemeyi yedekle.
 2. Araçlar sekmesinden **Prompt 2**'yi kopyala, AI'ya ver.
 3. Dönen yeni hafta dağılımına göre `data/plan.json` içindeki `haftalar` ve `durum` alanlarını güncelle.
-4. Yeni kararı `kararlar` dizisine `K13`, `K14`… olarak ekle; `surumGecmisi`'ne satır at, `meta.surum`'u yükselt.
+4. Yeni kararı `kararlar` dizisine `K16`, `K17`… olarak ekle; `surumGecmisi`'ne satır at, `meta.surum`'u yükselt.
 
-⚠️ Konu düşerken iki koşul birden gerekir: **çekirdek olmayacak** ve **hiçbir konunun ön koşulu
-olmayacak** (K12/D2). Uygulama bunu makine düzeyinde denetler ve gerekçesiyle reddeder.
-Çekirdek işaretli **34 konu** dokunulmazdır. Kesme sırası: **A15 → A22 → A6 → M13 → C20** (11 puan).
+⚠️ Konu düşerken üç koşul birden gerekir: **çekirdek olmayacak**, **hiçbir konunun ön koşulu
+olmayacak** (K12/D2) ve **150 soruluk ampirik tabanda frekansı 2'den az olacak** (v4.0). Uygulama
+ilk ikisini makine düzeyinde denetler ve gerekçesiyle reddeder. Çekirdek işaretli **41 konu**
+dokunulmazdır. Kesme sırası: **L2 → P4 → P3 → A4 → A11 → A22 → A6 → A15** (10 puan).
+
+Yeni bir 1. aşama sınavı yayımlandığında **Prompt 7**'yi kullan — K13'ün 150 soruluk ampirik
+tabanını genişletir ve gerekirse müfredatı yeniden ölçer.

@@ -29,7 +29,7 @@ button{font-family:inherit}
       <div>
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">TÜBİTAK Bilim Olimpiyatları · Bilgisayar</div>
         <h1 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);line-height:1.02;letter-spacing:-.02em;margin:8px 0 0">Birinci Aşama Hazırlık Defteri</h1>
-        <div style="font-size:12px;color:var(--ink-2);margin-top:7px;font-variant-numeric:tabular-nums">57 konu · 108 puan · 9 faz · 42 hafta · plan sürüm {{ surum }}</div>
+        <div style="font-size:12px;color:var(--ink-2);margin-top:7px;font-variant-numeric:tabular-nums">63 konu · 108 puan · 10 faz · 42 hafta · plan sürüm {{ surum }}</div>
       </div>
       <div style="display:flex;align-items:flex-end;gap:22px">
         <div style="text-align:right;padding-right:22px;border-right:1px solid var(--rule)">
@@ -143,9 +143,9 @@ button{font-family:inherit}
           </sc-for>
         </div>
 
-        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;margin:40px 0 0;letter-spacing:-.01em">Üç hat</h3>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;margin:40px 0 0;letter-spacing:-.01em">Beş hat</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:16px">
-          <sc-for list="{{ hatlar }}" as="h" hint-placeholder-count="3">
+          <sc-for list="{{ hatlar }}" as="h" hint-placeholder-count="5">
             <div>
               <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
                 <span style="font-size:14px"><b style="{{ h.harfStil }}">{{ h.id }}</b> {{ h.ad }}</span>
@@ -245,6 +245,16 @@ button{font-family:inherit}
                             </sc-if>
                           </div>
                         </sc-if>
+                        <sc-if value="{{ row.kaynaklarVar }}">
+                          <div style="font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:14px">Kaynaklar</div>
+                          <sc-for list="{{ row.kaynaklar }}" as="r" hint-placeholder-count="2">
+                            <div style="display:flex;align-items:baseline;gap:8px;margin-top:7px;flex-wrap:wrap">
+                              <span style="{{ r.stil }}">{{ r.rol }}</span>
+                              <span style="font-size:13px">{{ r.kaynakId }}</span>
+                              <span style="font-size:12px;color:var(--ink-3)">— {{ r.yer }}</span>
+                            </div>
+                          </sc-for>
+                        </sc-if>
                         <div style="font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:14px">Kapsam</div>
                         <ul style="margin:9px 0 0;padding-left:17px">
                           <sc-for list="{{ row.kapsam }}" as="m" hint-placeholder-count="4">
@@ -281,7 +291,7 @@ button{font-family:inherit}
         <sc-if value="{{ zincirMi }}">
           <div>
             <p style="font-size:13px;color:var(--ink-3);font-style:italic;margin:18px 0 0;max-width:74ch">Faz sırası ve faz içi sıra bağlayıcıdır. Tamamlananlar dolu, ön koşulu bitmemişler soluk. Rozete tıkla — dizinde açılır.</p>
-            <sc-for list="{{ fazlar }}" as="f" hint-placeholder-count="9">
+            <sc-for list="{{ fazlar }}" as="f" hint-placeholder-count="10">
               <div style="{{ f.sarmal }}">
                 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
                   <div style="display:flex;align-items:baseline;gap:14px">
@@ -471,9 +481,13 @@ button{font-family:inherit}
               </div>
               <div class="field"><label>Kaynak / yıl</label><input class="input" type="text" name="kaynak" placeholder="2023 1. aşama"></div>
               <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <div class="field" style="width:84px"><label>M / 20</label><input class="input" type="number" name="m" min="0" max="20" value="0"></div>
-                <div class="field" style="width:84px"><label>C / 15</label><input class="input" type="number" name="c" min="0" max="15" value="0"></div>
-                <div class="field" style="width:84px"><label>A / 15</label><input class="input" type="number" name="a" min="0" max="15" value="0"></div>
+                <div class="field" style="width:72px"><label>M / 12</label><input class="input" type="number" name="m" min="0" max="12" value="0"></div>
+                <div class="field" style="width:72px"><label>C / 16</label><input class="input" type="number" name="c" min="0" max="16" value="0"></div>
+                <div class="field" style="width:72px"><label>A / 16</label><input class="input" type="number" name="a" min="0" max="16" value="0"></div>
+                <div class="field" style="width:64px"><label>P / 4</label><input class="input" type="number" name="p" min="0" max="4" value="0"></div>
+                <div class="field" style="width:64px"><label>L / 1</label><input class="input" type="number" name="l" min="0" max="1" value="0"></div>
+              </div>
+              <div style="display:flex;gap:12px;flex-wrap:wrap">
                 <div class="field" style="flex:1;min-width:130px"><label>Süre yetti mi</label><select class="input" name="sure"><option>evet</option><option>hayır</option></select></div>
               </div>
               <div class="field"><label>En büyük hata deseni</label><input class="input" type="text" name="desen" placeholder="ör. C4 tip dönüşümü"></div>
@@ -507,23 +521,25 @@ button{font-family:inherit}
                   <text x="{{ e.x }}" y="{{ e.y }}" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="Lora, serif">{{ e.ad }}</text>
                 </sc-for>
               </svg>
-              <div style="display:flex;gap:18px;font-size:11.5px;color:var(--ink-2);margin-top:10px;flex-wrap:wrap">
-                <span>— M / 20</span><span>– – C / 15</span><span>· · A / 15</span>
+              <div style="display:flex;gap:14px;font-size:11.5px;color:var(--ink-2);margin-top:10px;flex-wrap:wrap">
+                <span>— M/12</span><span>– – C/16</span><span>· · A/16</span><span>╌╌ P/4</span><span>-- L/1</span>
               </div>
             </sc-if>
             <sc-if value="{{ denemeVar }}">
-              <div style="display:grid;grid-template-columns:34px 76px 1fr 38px 38px 38px 52px 60px;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule);margin-top:26px">
-                <div>#</div><div>Tarih</div><div>Kaynak</div><div style="text-align:right">M</div><div style="text-align:right">C</div><div style="text-align:right">A</div><div style="text-align:right">/50</div><div></div>
+              <div style="display:grid;grid-template-columns:30px 70px 1fr 30px 30px 30px 26px 26px 44px 56px;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule);margin-top:26px">
+                <div>#</div><div>Tarih</div><div>Kaynak</div><div style="text-align:right">M</div><div style="text-align:right">C</div><div style="text-align:right">A</div><div style="text-align:right">P</div><div style="text-align:right">L</div><div style="text-align:right">/50</div><div></div>
               </div>
               <sc-for list="{{ denemeler }}" as="d" hint-placeholder-count="2">
                 <div style="border-bottom:1px solid var(--rule);padding:9px 0">
-                  <div style="display:grid;grid-template-columns:34px 76px 1fr 38px 38px 38px 52px 60px;gap:0;font-size:12.5px;align-items:baseline;font-variant-numeric:tabular-nums">
+                  <div style="display:grid;grid-template-columns:30px 70px 1fr 30px 30px 30px 26px 26px 44px 56px;gap:0;font-size:12.5px;align-items:baseline;font-variant-numeric:tabular-nums">
                     <div style="font-weight:600">{{ d.no }}</div>
                     <div style="color:var(--ink-3)">{{ d.tarih }}</div>
                     <div style="color:var(--ink-2)">{{ d.kaynak }}</div>
                     <div style="text-align:right">{{ d.m }}</div>
                     <div style="text-align:right">{{ d.c }}</div>
                     <div style="text-align:right">{{ d.a }}</div>
+                    <div style="text-align:right">{{ d.p }}</div>
+                    <div style="text-align:right">{{ d.l }}</div>
                     <div style="text-align:right;font-weight:600">{{ d.top }}</div>
                     <div style="text-align:right"><button class="btn btn-ghost" style="font-size:11px;padding:0 4px" onClick="{{ d.sil }}">sil</button></div>
                   </div>
@@ -549,6 +565,22 @@ button{font-family:inherit}
             <div>{{ x.no }}</div><div>{{ x.hafta }}</div><div style="color:var(--ink-3)">{{ x.tarih }}</div>
           </div>
         </sc-for>
+
+        <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:44px 0 0">Deneme rezervi</div>
+        <p style="font-size:13px;line-height:1.75;color:var(--ink-2);margin:10px 0 0;max-width:76ch">{{ rezervUyarisi }}</p>
+        <div style="margin-top:12px;overflow-x:auto"><div style="min-width:560px;border-top:1px solid var(--rule-2)">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 60px 1.6fr;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule)">
+            <div>Kullanım</div><div>Yıllar</div><div style="text-align:right">Adet</div><div>Kural</div>
+          </div>
+          <sc-for list="{{ rezerv }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 60px 1.6fr;gap:0;font-size:12.5px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline">
+              <div style="{{ r.kullanimStil }}">{{ r.kullanim }}</div>
+              <div style="font-variant-numeric:tabular-nums;color:var(--ink-2)">{{ r.yillar }}</div>
+              <div style="text-align:right;font-variant-numeric:tabular-nums">{{ r.adet }}</div>
+              <div style="color:var(--ink-3);font-size:11.5px">{{ r.kural }}</div>
+            </div>
+          </sc-for>
+        </div></div>
       </section>
     </sc-if>
 
@@ -561,7 +593,7 @@ button{font-family:inherit}
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:40px 0 0">Künye</div>
         <div style="margin-top:10px;max-width:820px;border-top:1px solid var(--rule-2)">
-          <sc-for list="{{ kunye }}" as="k" hint-placeholder-count="10">
+          <sc-for list="{{ kunye }}" as="k" hint-placeholder-count="17">
             <div style="display:grid;grid-template-columns:minmax(170px,32%) 1fr;gap:0;font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div style="color:var(--ink-3)">{{ k.a }}</div><div>{{ k.b }}</div>
             </div>
@@ -573,7 +605,7 @@ button{font-family:inherit}
           <div style="display:grid;grid-template-columns:1fr 90px 60px 70px 1.2fr;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule)">
             <div>Hat</div><div>Tahmini net</div><div style="text-align:right">Soru</div><div style="text-align:right">Ağırlık</div><div>Not</div>
           </div>
-          <sc-for list="{{ baslangic }}" as="b" hint-placeholder-count="3">
+          <sc-for list="{{ baslangic }}" as="b" hint-placeholder-count="5">
             <div style="display:grid;grid-template-columns:1fr 90px 60px 70px 1.2fr;gap:0;font-size:12.5px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline;font-variant-numeric:tabular-nums">
               <div>{{ b.hat }}</div><div>{{ b.net }}</div><div style="text-align:right">{{ b.soru }}</div><div style="text-align:right">{{ b.agirlik }}</div><div style="color:var(--ink-3);font-size:11.5px">{{ b.not }}</div>
             </div>
@@ -602,7 +634,7 @@ button{font-family:inherit}
           <div style="display:grid;grid-template-columns:64px 120px 56px 1fr;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule)">
             <div>ID</div><div>Durum</div><div>Sınıf</div><div>Tema / kazanım</div>
           </div>
-          <sc-for list="{{ meb.tablo }}" as="x" hint-placeholder-count="8">
+          <sc-for list="{{ meb.tablo }}" as="x" hint-placeholder-count="17">
             <div style="display:grid;grid-template-columns:64px 120px 56px 1fr;gap:0;font-size:12.5px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div><button onClick="{{ x.ac }}" style="background:none;border:0;padding:0;cursor:pointer;font:600 12px/1 ui-monospace,Consolas,monospace;color:var(--gold-deep)">{{ x.id }}</button></div>
               <div>{{ x.durum }}</div><div style="font-variant-numeric:tabular-nums">{{ x.sinif }}</div>
@@ -618,7 +650,7 @@ button{font-family:inherit}
         <p style="font-size:13.5px;line-height:1.75;margin:14px 0 0;max-width:76ch;font-weight:600">{{ meb.sonuc }}</p>
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:52px 0 0">Kararlar</div>
-        <sc-for list="{{ kararlar }}" as="k" hint-placeholder-count="12">
+        <sc-for list="{{ kararlar }}" as="k" hint-placeholder-count="15">
           <div style="border-left:2px solid var(--gold);padding:2px 0 2px 22px;margin-top:30px;max-width:82ch">
             <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
               <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;color:var(--gold);letter-spacing:.06em">{{ k.id }}</span>
@@ -636,7 +668,7 @@ button{font-family:inherit}
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:52px 0 0">Reddedilen seçenekler — tekrar önerilmesin</div>
         <div style="margin-top:10px;border-top:1px solid var(--rule-2);max-width:900px">
-          <sc-for list="{{ reddedilenler }}" as="r" hint-placeholder-count="6">
+          <sc-for list="{{ reddedilenler }}" as="r" hint-placeholder-count="9">
             <div style="display:grid;grid-template-columns:minmax(200px,34%) 1fr;gap:0;font-size:13px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div>{{ r.a }}</div><div style="color:var(--ink-2);line-height:1.7">{{ r.b }}</div>
             </div>
@@ -645,7 +677,7 @@ button{font-family:inherit}
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:44px 0 0">Açık sorular</div>
         <div style="margin-top:10px;border-top:1px solid var(--rule-2);max-width:900px">
-          <sc-for list="{{ acikSorular }}" as="s" hint-placeholder-count="5">
+          <sc-for list="{{ acikSorular }}" as="s" hint-placeholder-count="6">
             <div style="display:grid;grid-template-columns:44px 1fr minmax(180px,32%);gap:0;font-size:13px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div style="font-weight:600;color:var(--gold-deep)">{{ s.id }}</div><div>{{ s.soru }}</div><div style="color:var(--ink-3);font-size:12px">{{ s.nezaman }}</div>
             </div>
@@ -653,13 +685,13 @@ button{font-family:inherit}
         </div>
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:44px 0 0">Perspektif</div>
-        <sc-for list="{{ perspektif }}" as="p" hint-placeholder-count="3">
+        <sc-for list="{{ perspektif }}" as="p" hint-placeholder-count="6">
           <p style="font-size:14.5px;line-height:1.85;margin:14px 0 0;max-width:74ch;text-align:justify;hyphens:auto;text-wrap:pretty">{{ p }}</p>
         </sc-for>
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:44px 0 0">Sürüm geçmişi</div>
         <div style="margin-top:10px;border-top:1px solid var(--rule-2);max-width:900px">
-          <sc-for list="{{ surumGecmisi }}" as="s" hint-placeholder-count="6">
+          <sc-for list="{{ surumGecmisi }}" as="s" hint-placeholder-count="8">
             <div style="display:grid;grid-template-columns:60px 110px 1fr;gap:0;font-size:12.5px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div style="font-weight:600;font-variant-numeric:tabular-nums">{{ s.surum }}</div>
               <div style="color:var(--ink-3)">{{ s.tarih }}</div>
@@ -705,7 +737,7 @@ button{font-family:inherit}
           <div style="display:grid;grid-template-columns:56px 1fr 40px 1.1fr 78px;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule)">
             <div>ID</div><div>Konu</div><div style="text-align:right;padding-right:16px">P</div><div>Durum</div><div></div>
           </div>
-          <sc-for list="{{ kesmeSirasi }}" as="k" hint-placeholder-count="5">
+          <sc-for list="{{ kesmeSirasi }}" as="k" hint-placeholder-count="8">
             <div style="display:grid;grid-template-columns:56px 1fr 40px 1.1fr 78px;gap:0;font-size:12.5px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div style="font-weight:600;font-family:ui-monospace,Consolas,monospace">{{ k.id }}</div>
               <div>{{ k.ad }}</div>
@@ -724,7 +756,7 @@ button{font-family:inherit}
           <div style="display:grid;grid-template-columns:56px 1fr 40px 1.1fr 78px;gap:0;font:600 9px/1.4 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0;border-bottom:1px solid var(--rule)">
             <div>ID</div><div>Konu</div><div style="text-align:right;padding-right:16px">P</div><div>Geri ekleme</div><div></div>
           </div>
-          <sc-for list="{{ cikarilanlar }}" as="c" hint-placeholder-count="7">
+          <sc-for list="{{ cikarilanlar }}" as="c" hint-placeholder-count="12">
             <div style="display:grid;grid-template-columns:56px 1fr 40px 1.1fr 78px;gap:0;font-size:12.5px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:baseline">
               <div style="font-weight:600;font-family:ui-monospace,Consolas,monospace">{{ c.id }}</div>
               <div>{{ c.ad }}</div>
@@ -737,14 +769,14 @@ button{font-family:inherit}
 
         <div style="font-size:12px;color:var(--ink-3);margin-top:36px;letter-spacing:.04em">{{ cekirdekBaslik }}</div>
         <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:12px">
-          <sc-for list="{{ cekirdekRozetler }}" as="r" hint-placeholder-count="12">
+          <sc-for list="{{ cekirdekRozetler }}" as="r" hint-placeholder-count="41">
             <button onClick="{{ r.ac }}" style="{{ r.stil }}" title="{{ r.baslik }}">{{ r.id }}</button>
           </sc-for>
         </div>
 
         <div style="font:600 10px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:52px 0 0">AI prompt kütüphanesi</div>
         <p style="font-size:13px;color:var(--ink-2);margin:10px 0 0;max-width:74ch">Prompt 1 — HTML tracker'a çevir: uygulandı, bu defterin kendisi. Aşağıdakiler bulunduğun haftaya, ilerlemene ve son denemene göre otomatik doldurulur.</p>
-        <sc-for list="{{ promptlar }}" as="p" hint-placeholder-count="5">
+        <sc-for list="{{ promptlar }}" as="p" hint-placeholder-count="6">
           <div style="margin-top:28px;border-top:1px solid var(--rule)">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:14px">
               <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;margin:0">{{ p.ad }}</h3>
@@ -845,7 +877,8 @@ class Component extends DCLogic {
 
   hatRenk(h) {
     if (this.props.hatRenkleri === false) return "var(--ink-2)";
-    return h === "M" ? "var(--gold-deep)" : h === "C" ? "var(--ink)" : "var(--ink-2)";
+    const renkler = { M: "var(--gold-deep)", C: "var(--ink)", A: "var(--ink-2)", P: "var(--gold)", L: "var(--ink-3)" };
+    return renkler[h] || "var(--ink-2)";
   }
   durumu(id) { return this.state.S.konuDurum[id] || "baslamadi"; }
   kesikMi(id) { return this.state.S.kesilen.indexOf(id) >= 0; }
@@ -974,7 +1007,7 @@ class Component extends DCLogic {
     e.preventDefault();
     const f = new FormData(e.target);
     const kayit = { no: +f.get("no"), tarih: f.get("tarih"), kaynak: f.get("kaynak") || "",
-      m: +f.get("m"), c: +f.get("c"), a: +f.get("a"), sure: f.get("sure"),
+      m: +f.get("m"), c: +f.get("c"), a: +f.get("a"), p: +f.get("p"), l: +f.get("l"), sure: f.get("sure"),
       desen: f.get("desen") || "", aksiyon: f.get("aksiyon") || "" };
     const d = this.state.S.denemeler.filter(x => x.no !== kayit.no).concat([kayit]);
     this.kaydet(Object.assign({}, this.state.S, { denemeler: d }));
@@ -1053,10 +1086,11 @@ class Component extends DCLogic {
       "{{URETKEN_HAFTA}}": String(hp.gecen),
       "{{TAMAMLANAN}}": bitmis.join(", ") || "yok",
       "{{TAMAMLANMAYAN}}": bitmemis.join(", ") || "yok",
-      "{{DENEMELER}}": S.denemeler.length ? S.denemeler.map(d => "#" + d.no + " " + d.m + "/20 " + d.c + "/15 " + d.a + "/15 = " + (d.m + d.c + d.a) + "/50").join("; ") : "yok",
+      "{{DENEMELER}}": S.denemeler.length ? S.denemeler.map(d => "#" + d.no + " " + d.m + "/12 " + d.c + "/16 " + d.a + "/16 " + d.p + "/4 " + d.l + "/1 = " + (d.m + d.c + d.a + d.p + d.l) + "/50").join("; ") : "yok",
       "{{KAYNAK}}": son ? (son.kaynak || "[...]") : "[...]",
       "{{M}}": son ? String(son.m) : "[..]", "{{C}}": son ? String(son.c) : "[..]",
-      "{{A}}": son ? String(son.a) : "[..]", "{{SURE}}": son ? son.sure : "[evet/hayır]"
+      "{{A}}": son ? String(son.a) : "[..]", "{{P}}": son ? String(son.p) : "[..]",
+      "{{L}}": son ? String(son.l) : "[..]", "{{SURE}}": son ? son.sure : "[evet/hayır]"
     };
     let m = p.metin.join("\n");
     Object.keys(s).forEach(k => { m = m.split(k).join(s[k]); });
@@ -1071,8 +1105,13 @@ class Component extends DCLogic {
       : mb.durum === "tam"
         ? "\nMEB durumu: TAM — " + mb.sinif + ". sınıf " + mb.tema + " (" + mb.kazanim + "). Okulda da göreceğim, ama MEB formül akıcılığı vermiyor; sınav hızı için formülleri ayrıca çalıştır.\n"
         : "\nMEB durumu: YOK — bu konu 9–12 programında hiç geçmiyor, tamamen sıfırdan öğreneceğim.\n";
+    const rolAd = { omurga: "OMURGA", destek: "destek", drill: "drill", dogrulama: "doğrulama", referans: "referans" };
+    const kaynaklarMetin = (k.kaynaklar || []).length
+      ? k.kaynaklar.map(r => "[" + (rolAd[r.rol] || r.rol) + "] " + r.kaynakId + " — " + r.yer).join("\n")
+      : "yok";
     return this.promptDoldur(p)
       .split("{{KONU_ID}}").join(k.id).split("{{KONU_AD}}").join(k.ad)
+      .split("{{KAYNAKLAR}}").join(kaynaklarMetin)
       .split("{{ONKOSUL}}").join((k.onkosul || []).length ? k.onkosul.map(o => o + " (" + this.konu(o).ad + ")").join(", ") : "yok")
       .split("{{KAPSAM}}").join((k.kapsam || []).map(x => "  - " + x).join("\n"))
       .split("{{MEB}}").join(mebMetin);
@@ -1226,7 +1265,7 @@ class Component extends DCLogic {
       }) });
       v.filtreGruplari = [grup("Görünüm", "gorunum", [["dizin", "Dizin"], ["zincir", "Faz zinciri"]])];
       if (v.dizinMi) {
-        v.filtreGruplari.push(grup("Hat", "hat", [["hepsi", "Tümü"], ["M", "M"], ["C", "C"], ["A", "A"]]));
+        v.filtreGruplari.push(grup("Hat", "hat", [["hepsi", "Tümü"], ["M", "M"], ["C", "C"], ["A", "A"], ["P", "P"], ["L", "L"]]));
         v.filtreGruplari.push(grup("Süzgeç", "dur", [["hepsi", "Hepsi"], ["kalan", "Kalanlar"], ["cekirdek", "Çekirdek"], ["mebyok", "MEB'de yok"]]));
       }
 
@@ -1367,23 +1406,28 @@ class Component extends DCLogic {
       v.denemeVar = d.length > 0;
       v.denemeYok = d.length === 0;
       v.denemeler = d.map(x => ({ no: x.no, tarih: this.tarihKisa(x.tarih), kaynak: x.kaynak,
-        m: x.m, c: x.c, a: x.a, top: x.m + x.c + x.a, sure: x.sure, desen: x.desen, aksiyon: x.aksiyon,
+        m: x.m, c: x.c, a: x.a, p: x.p, l: x.l, top: x.m + x.c + x.a + x.p + x.l, sure: x.sure, desen: x.desen, aksiyon: x.aksiyon,
         sil: () => this.denemeSil(x.no) }));
       const W = 470, H = 220, L = 32, R = 12, T = 14, B = 26, n = d.length;
       const X = i => L + (n === 1 ? (W - L - R) / 2 : i * (W - L - R) / Math.max(1, n - 1));
-      const Y = val => T + (20 - val) * (H - T - B) / 20;
+      const Y = val => T + (16 - val) * (H - T - B) / 16;
       const seri = (alan, renk, dash) => ({
         d: d.map((o, i) => (i ? "L" : "M") + X(i).toFixed(1) + "," + Y(o[alan]).toFixed(1)).join(" "),
         renk: renk, dash: dash });
       v.grafik = {
-        kilavuz: [0, 5, 10, 15, 20].map(val => ({ y: Y(val), x2: W - R, x1: L, v: String(val), ty: Y(val) + 3.5 })),
+        kilavuz: [0, 4, 8, 12, 16].map(val => ({ y: Y(val), x2: W - R, x1: L, v: String(val), ty: Y(val) + 3.5 })),
         etiketler: d.map((o, i) => ({ x: X(i), y: H - 8, ad: "#" + o.no })),
-        seriler: n ? [seri("m", "var(--gold-deep)", "none"), seri("c", "var(--ink)", "4 3"), seri("a", "var(--ink-3)", "1 3")] : [],
+        seriler: n ? [seri("m", "var(--gold-deep)", "none"), seri("c", "var(--ink)", "4 3"), seri("a", "var(--ink-2)", "1 3"),
+          seri("p", "var(--gold)", "2 2"), seri("l", "var(--ink-3)", "6 2")] : [],
         noktalar: n ? d.reduce((acc, o, i) => acc.concat([
-          { cx: X(i), cy: Y(o.m), f: "var(--gold-deep)" }, { cx: X(i), cy: Y(o.c), f: "var(--ink)" }, { cx: X(i), cy: Y(o.a), f: "var(--ink-3)" }]), []) : []
+          { cx: X(i), cy: Y(o.m), f: "var(--gold-deep)" }, { cx: X(i), cy: Y(o.c), f: "var(--ink)" },
+          { cx: X(i), cy: Y(o.a), f: "var(--ink-2)" }, { cx: X(i), cy: Y(o.p), f: "var(--gold)" }, { cx: X(i), cy: Y(o.l), f: "var(--ink-3)" }]), []) : []
       };
       v.protokol = { kural: P.denemeProtokolu.kural, kurallar: P.denemeProtokolu.kurallar,
         takvim: P.denemeProtokolu.takvim.map(x => ({ no: x.no, hafta: x.hafta, tarih: x.tarih })) };
+      v.rezervUyarisi = P.denemeProtokolu.rezervUyarisi;
+      v.rezerv = (P.denemeProtokolu.rezerv || []).map(r => ({ kullanim: r.kullanim, yillar: r.yillar, adet: r.adet, kural: r.kural,
+        kullanimStil: { fontWeight: 600, color: r.kullanim === "YAKILDI" ? "var(--gold-deep)" : "var(--ink)" } }));
     }
 
     if (v.kayitMu) {
@@ -1441,8 +1485,11 @@ class Component extends DCLogic {
       v.kesmeDisi = P.kesmeDisiTutulan.map(x => x.id + " (" + x.puan + " p) listede yok — " + x.sebep);
       v.cikarilanlar = P.cikarilanKonular.map(c => {
         const ekli = st.S.eklenen.indexOf(c.id) >= 0;
-        return { id: c.id, ad: c.ad, puan: c.puan, sira: c.geriEklemeSirasi + ". sıra · Faz " + c.eklenecekFaz,
-          btnAd: ekli ? "çıkar" : "ekle", tikla: ekli ? () => this.cikar(c.id) : () => this.ekle(c.id) };
+        const kalici = c.geriEklemeSirasi == null;
+        return { id: c.id, ad: c.ad, puan: c.puan,
+          sira: kalici ? ("kalıcı olarak birleşti — " + c.gerekce) : (c.geriEklemeSirasi + ". sıra · Faz " + c.eklenecekFaz),
+          btnAd: kalici ? "—" : (ekli ? "çıkar" : "ekle"),
+          tikla: kalici ? () => {} : (ekli ? () => this.cikar(c.id) : () => this.ekle(c.id)) };
       });
       v.cekirdekBaslik = "Çekirdek konular — asla kesilmez (" + cekirdek.length + ")";
       v.cekirdekRozetler = cekirdek.map(k => this.rozet(k.id)).filter(Boolean);
@@ -1499,6 +1546,14 @@ class Component extends DCLogic {
         textDecorationThickness: tuzak ? "2px" : "0",
         textUnderlineOffset: "3px" } };
     });
+    const rolRenk = { omurga: "var(--gold-deep)", destek: "var(--ink)", drill: "var(--ink-2)", dogrulama: "var(--ink-2)", referans: "var(--ink-3)" };
+    const rolAd = { omurga: "omurga", destek: "destek", drill: "drill", dogrulama: "doğrulama", referans: "referans" };
+    row.kaynaklar = (k.kaynaklar || []).map(r => ({
+      rol: rolAd[r.rol] || r.rol, yer: r.yer, kaynakId: r.kaynakId,
+      stil: { fontSize: "10.5px", fontWeight: 600, letterSpacing: ".04em", textTransform: "uppercase",
+        color: rolRenk[r.rol] || "var(--ink-3)" }
+    }));
+    row.kaynaklarVar = row.kaynaklar.length > 0;
     row.onkosul = (k.onkosul || []).map(o => this.rozet(o)).filter(Boolean);
     row.onkosulYok = !(k.onkosul || []).length;
     const bag = P.konular.filter(x => (x.onkosul || []).indexOf(k.id) >= 0);
