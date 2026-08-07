@@ -3,7 +3,7 @@
 35. Bilim Olimpiyatları Birinci Aşama (Bilgisayar) hazırlık planının çalışan hâli.
 **63 konu · 108 puan · 10 faz · 5 hat (M, C, A, P, L) · 42 hafta · 6 blok · 27 üretken hafta.**
 
-Plan sürümü **4.3** (1 Ağu 2026). Sınav: ~15 Mayıs 2027.
+Plan sürümü **4.4** (7 Ağu 2026). Sınav: ~15 Mayıs 2027.
 🔗 **https://e7lektronxf.github.io/Plan/**
 
 ---
@@ -31,7 +31,7 @@ index.html        arayüz + tüm mantık (Design Component formatı)
 support.js         bileşeni ayağa kaldıran çalışma zamanı (CDN'den React/ReactDOM yükler)
 plan.json          YAPISAL VERİ — konular, hatlar, fazlar, bloklar, 42 hafta, kaynak kataloğu
 metin.json         DÜZYAZI VERİ — K1–K15 karar kaydı ve planın tamamı (Bölüm 0–12), markdown
-source/theplan.md  planın okunabilir tam metni (v4.3) — insan tarafından düzenlenen kaynak
+source/theplan.md  planın okunabilir tam metni (v4.4) — insan tarafından düzenlenen kaynak
 ```
 
 `index.html` bir **Design Component** (`.dc.html`) belgesidir: `<x-dc>` şablonu ve

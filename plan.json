@@ -1,7 +1,7 @@
 {
   "meta": {
-    "surum": "4.3",
-    "guncelleme": "2026-07-31",
+    "surum": "4.4",
+    "guncelleme": "2026-08-07",
     "mebProgrami": "Türkiye Yüzyılı Maarif Modeli (2026-27'de 10. sınıf bu programla okutuluyor)",
     "hedef": "TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama — Bilgisayar",
     "sinavTarihi": "2027-05-15",
@@ -51,6 +51,29 @@
     "rekabet2026": {
       "basvuru": 20828,
       "gecen": 517
+    },
+    "devredilenHaftalar": [
+      1,
+      2
+    ],
+    "devredilenPuan": 14,
+    "gercekPuan": 0,
+    "ilkTamDeneme": 18,
+    "cHattiErteleme": {
+      "karar": "K16",
+      "ertelenenKonular": [
+        "C1",
+        "C2",
+        "C3",
+        "C7",
+        "C4",
+        "C6",
+        "C5"
+      ],
+      "ertelenenPuan": 14,
+      "bosalanPuan": 12,
+      "yerlestirmeHaftasi": 6,
+      "pazartesiSlotuC": true
     }
   },
   "durum": {
@@ -333,7 +356,7 @@
       "hafta": 6,
       "uretkenHafta": 4,
       "haftalikSaat": 25,
-      "puan": 25,
+      "puan": 23,
       "kapasiteSaat": 100,
       "kesin": true
     },
@@ -431,23 +454,20 @@
       "blokIci": 1,
       "bas": "2026-07-27",
       "bit": "2026-08-02",
-      "tip": "uretken",
+      "tip": "devredildi",
       "saat": 25,
-      "faz": [
-        1,
-        2
+      "faz": [],
+      "konular": [],
+      "puan": 0,
+      "notlar": [
+        "Tamamlanmadı (K16)"
       ],
-      "konular": [
+      "devredilenKonular": [
         "M20",
         "M22",
         "M19",
         "C1",
         "C2"
-      ],
-      "puan": 7,
-      "notlar": [
-        "45 dk kalibrasyon okuması",
-        "Nominal 28sa ama Faz 1 konuları hafif, gerçekte ~20sa"
       ]
     },
     {
@@ -456,19 +476,19 @@
       "blokIci": 2,
       "bas": "2026-08-03",
       "bit": "2026-08-09",
-      "tip": "uretken",
+      "tip": "devredildi",
       "saat": 25,
-      "faz": [
-        2,
-        3
+      "faz": [],
+      "konular": [],
+      "puan": 0,
+      "notlar": [
+        "Tamamlanmadı (K16)"
       ],
-      "konular": [
+      "devredilenKonular": [
         "C3",
         "C7",
         "M1"
-      ],
-      "puan": 7,
-      "notlar": []
+      ]
     },
     {
       "w": 3,
@@ -480,14 +500,14 @@
       "saat": 25,
       "faz": [
         1,
-        2,
         3
       ],
       "konular": [
-        "M18",
-        "C4",
-        "C6",
-        "M2"
+        "M19",
+        "M20",
+        "M22",
+        "M1",
+        "M18"
       ],
       "puan": 6,
       "notlar": []
@@ -498,13 +518,19 @@
       "blokIci": 4,
       "bas": "2026-08-17",
       "bit": "2026-08-23",
-      "tip": "tampon",
+      "tip": "uretken",
       "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 1,
-      "notlar": []
+      "faz": [
+        3
+      ],
+      "konular": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "puan": 6,
+      "notlar": [],
+      "madencilikSeti": 1
     },
     {
       "w": 5,
@@ -515,14 +541,15 @@
       "tip": "uretken",
       "saat": 25,
       "faz": [
-        2,
         3
       ],
       "konular": [
-        "C5",
-        "M3"
+        "M5",
+        "M6",
+        "M7",
+        "M8"
       ],
-      "puan": 5,
+      "puan": 6,
       "notlar": []
     },
     {
@@ -531,14 +558,26 @@
       "blokIci": 6,
       "bas": "2026-08-31",
       "bit": "2026-09-06",
-      "tip": "tampon",
+      "tip": "uretken",
       "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 2,
+      "faz": [
+        5,
+        9,
+        10
+      ],
+      "konular": [
+        "M9",
+        "M10",
+        "M12",
+        "P2"
+      ],
+      "puan": 5,
       "kapanis": "B0",
-      "notlar": []
+      "notlar": [
+        "Cuma–Pazar kapanış + telafi payı — B0'ın tek tamponu",
+        "Geride kalınırsa önce M12 ve P2 devreder"
+      ],
+      "madencilikSeti": 2
     },
     {
       "w": 7,
@@ -551,11 +590,8 @@
       "faz": [
         3
       ],
-      "konular": [
-        "M4",
-        "M5"
-      ],
-      "puan": 4,
+      "konular": [],
+      "puan": 0,
       "notlar": [
         "TFO temsilcilik görüşmesi"
       ]
@@ -573,11 +609,9 @@
         4
       ],
       "konular": [
-        "M6",
-        "M7",
         "A1"
       ],
-      "puan": 4,
+      "puan": 2,
       "notlar": [
         "A hattı başlar"
       ]
@@ -595,10 +629,9 @@
         4
       ],
       "konular": [
-        "M8",
         "C8"
       ],
-      "puan": 3,
+      "puan": 2,
       "notlar": []
     },
     {
@@ -612,8 +645,8 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 3,
-      "notlar": []
+      "notlar": [],
+      "madencilikSeti": 3
     },
     {
       "w": 11,
@@ -648,10 +681,9 @@
         5
       ],
       "konular": [
-        "C9",
-        "M9"
+        "C9"
       ],
-      "puan": 4,
+      "puan": 3,
       "notlar": []
     },
     {
@@ -667,10 +699,9 @@
         10
       ],
       "konular": [
-        "C10",
-        "P2"
+        "C10"
       ],
-      "puan": 4,
+      "puan": 2,
       "notlar": []
     },
     {
@@ -684,9 +715,9 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 4,
       "kapanis": "B1",
-      "notlar": []
+      "notlar": [],
+      "madencilikSeti": 4
     },
     {
       "w": 15,
@@ -701,11 +732,10 @@
         10
       ],
       "konular": [
-        "M10",
         "A21",
         "L1"
       ],
-      "puan": 3,
+      "puan": 2,
       "notlar": [
         "AP kayıt kararı"
       ]
@@ -759,7 +789,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 5,
+      "deneme": 1,
       "notlar": []
     },
     {
@@ -826,7 +856,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 6,
+      "deneme": 2,
       "kapanis": "B2",
       "notlar": [
         "S3: kesilen konular geri eklenecek mi"
@@ -895,7 +925,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 7,
+      "deneme": 3,
       "notlar": []
     },
     {
@@ -912,10 +942,9 @@
       ],
       "konular": [
         "A24",
-        "A15",
-        "M12"
+        "A15"
       ],
-      "puan": 6,
+      "puan": 5,
       "notlar": [
         "Yarıyıl tatili — yaz temposu",
         "M13 3 puanlık"
@@ -968,7 +997,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 8,
+      "deneme": 4,
       "kapanis": "B3",
       "notlar": []
     },
@@ -1042,7 +1071,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 9,
+      "deneme": 5,
       "notlar": []
     },
     {
@@ -1116,7 +1145,7 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 10,
+      "deneme": 6,
       "kapanis": "B4",
       "notlar": []
     },
@@ -1161,10 +1190,10 @@
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 11,
+      "deneme": 7,
       "notlar": [
         "A hattı tam tekrar — 18 konu, 37 puan",
-        "Deneme 11 ve 12"
+        "Deneme 7 ve 8"
       ]
     },
     {
@@ -1181,7 +1210,8 @@
       "notlar": [
         "Gün aşırı tam deneme",
         "Yeni konu yok"
-      ]
+      ],
+      "deneme": 9
     }
   ],
   "konular": [
@@ -1192,7 +1222,7 @@
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1252,7 +1282,7 @@
       "puan": 2,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -1314,7 +1344,7 @@
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1356,7 +1386,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 2,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1455,7 +1485,7 @@
       "puan": 3,
       "faz": 3,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1515,7 +1545,7 @@
       "puan": 2,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1560,8 +1590,8 @@
       "ad": "Binom teoremi ve kombinatoryel kimlikler",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 7,
+      "blok": "B0",
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1618,8 +1648,8 @@
       "ad": "Yıldızlar ve çubuklar (tekrarlı seçim)",
       "puan": 3,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 7,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1679,8 +1709,8 @@
       "ad": "Güvercin yuvası ilkesi",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 8,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -1724,8 +1754,8 @@
       "ad": "Dahil-hariç ilkesi",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 8,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1767,8 +1797,8 @@
       "ad": "Düzensizlikler (derangement), sabit noktalar",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 9,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1808,8 +1838,8 @@
       "ad": "Olasılık temelleri: örnek uzay, koşullu olasılık",
       "puan": 1,
       "faz": 5,
-      "blok": "B1",
-      "hafta": 12,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1854,8 +1884,8 @@
       "ad": "Bayes teoremi, bağımsızlık",
       "puan": 1,
       "faz": 5,
-      "blok": "B2",
-      "hafta": 15,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -1900,8 +1930,8 @@
       "ad": "Yineleme bağıntısı (recurrence) kurma — matematik",
       "puan": 1,
       "faz": 9,
-      "blok": "B3",
-      "hafta": 27,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2039,8 +2069,8 @@
       "ad": "Veri tipleri, boyutlar, taşma davranışı",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 1,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -2067,7 +2097,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C2",
@@ -2075,8 +2107,8 @@
       "ad": "Operatör önceliği ve birleşme yönü",
       "puan": 2,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 1,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2106,7 +2138,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~8 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C3",
@@ -2114,8 +2148,8 @@
       "ad": "a++ vs ++a, yan etkiler",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 2,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2147,7 +2181,9 @@
         },
         "soru": "2025 Q39 (çoklu yan etki)",
         "sure": "~12 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C7",
@@ -2155,8 +2191,8 @@
       "ad": "Döngü takibi: for/while/do-while, break/continue",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 2,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2189,7 +2225,9 @@
         },
         "soru": "2026 Q36 · 2025 Q40 · 2024 Q44",
         "sure": "~12 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C4",
@@ -2197,8 +2235,8 @@
       "ad": "Tip dönüşümleri, integer promotion",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 3,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2228,7 +2266,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C6",
@@ -2236,8 +2276,8 @@
       "ad": "Koşullar ve kısa devre değerlendirme",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 3,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2268,7 +2308,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C5",
@@ -2276,8 +2318,8 @@
       "ad": "Bit operatörleri",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 5,
+      "blok": null,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2312,7 +2354,9 @@
         },
         "soru": "2026 Q35, Q44, Q50 · 2024 Q46",
         "sure": "~12 saat"
-      }
+      },
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
     },
     {
       "id": "C8",
@@ -3639,8 +3683,8 @@
         ]
       },
       "faz": 10,
-      "blok": "B1",
-      "hafta": 13,
+      "blok": "B0",
+      "hafta": 6,
       "calisma": {
         "video": {
           "kanal": "Tunç Kurt Matematik",

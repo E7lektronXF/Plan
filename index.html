@@ -35,46 +35,53 @@
 
   <sc-if value="{{ ekranAna }}" hint-placeholder-val="{{ true }}">
     <div>
-      <div style="padding:56px 0 44px;border-bottom:1px solid #DCD7CE">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Şu anki konumum</div>
-        <div style="display:flex;align-items:baseline;gap:22px;flex-wrap:wrap">
-          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:92px;line-height:0.86;color:#0F2540">{{ suAn.w }}</div>
-          <div>
-            <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:#101418">{{ suAn.blok }}</div>
-            <div style="font-size:18px;color:#6E6A63">{{ suAn.tarih }} · {{ suAn.tip }}</div>
-          </div>
+      <div style="padding:40px 0 30px;border-bottom:1px solid #DCD7CE;display:flex;gap:40px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6E6A63">Takvim konumu <span style="font-style:italic;color:#a39d90">(salt okunur)</span></div>
+          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#6E6A63;margin-top:4px">{{ takvimKonum.w }} · {{ takvimKonum.puan }}</div>
         </div>
-        <div style="margin-top:26px;display:flex;flex-direction:column;gap:8px">
-          <sc-for list="{{ suAn.konular }}" as="k" hint-placeholder-count="3">
-            <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;opacity:{{ k.op }}">
-              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
-              <span style="font-size:19px;text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
-              <span style="font-size:15px;color:#6E6A63">{{ k.puan }}p</span>
-            </button>
-          </sc-for>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#7A2E20">Gerçek konum</div>
+          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#0F2540;margin-top:4px">{{ gercekKonum.puan }}</div>
         </div>
-        <div style="margin-top:20px;font-size:17px;color:#7A2E20;font-style:italic">{{ suAn.not }}</div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6E6A63">Borç</div>
+          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#0F2540;margin-top:4px">{{ borc.metin }}</div>
+        </div>
+      </div>
+
+      <div style="padding:36px 0 44px;border-bottom:1px solid #DCD7CE">
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:44px;line-height:0.9;color:#0F2540">{{ gercekKonum.puan }}</div>
+        <div style="margin-top:16px;height:10px;background:#EFECE6;position:relative">
+          <div style="position:absolute;left:0;top:0;bottom:0;background:#0F2540;width:{{ durum.yuzde }}"></div>
+        </div>
+        <div style="margin-top:14px;font-size:18px;color:#6E6A63">{{ gercekKonum.ozet }}</div>
       </div>
 
       <div style="padding:44px 0;border-bottom:1px solid #DCD7CE">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Gelecek konumum</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;color:{{ sirada.renk }};letter-spacing:0.06em">{{ sirada.id }}</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:38px;line-height:1.18;color:#0F2540;margin:6px 0 14px;max-width:22em">{{ sirada.ad }}</div>
-        <div style="font-size:18px;color:#6E6A63">{{ sirada.meta }}</div>
-        <button onClick="{{ sirada.ac }}" style="margin-top:24px;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#7A2E20;border-bottom:1px solid #7A2E20;padding-bottom:3px">Çalışma kartını aç</button>
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Sıradaki konular</div>
+        <sc-if value="{{ kuyrukBos }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:18px;color:#6E6A63">Bütün konular tamamlandı. Kalan iş tekrar ve deneme.</div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ kuyrukListe }}" as="k" hint-placeholder-count="8">
+            <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;padding:8px 0;{{ k.stil }}" title="{{ k.kilitNot }}">
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
+              <span style="flex:1;font-size:19px">{{ k.ad }}</span>
+              <span style="font-size:14px;color:#7A2E20">{{ k.kilitNot }}</span>
+              <span style="font-size:14px;color:#a39d90">{{ k.haftaEtiket }}</span>
+              <span style="font-size:15px;color:#6E6A63;width:32px;text-align:right">{{ k.puan }}p</span>
+            </button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ kuyrukDahaVar }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ kuyrukDahaGoster }}" style="margin-top:18px;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#7A2E20;border-bottom:1px solid #7A2E20;padding-bottom:3px">Daha fazla</button>
+        </sc-if>
       </div>
 
       <div style="padding:44px 0 0">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Genel durumum</div>
-        <div style="display:flex;align-items:baseline;gap:14px">
-          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:92px;line-height:0.86;color:#0F2540">{{ durum.puan }}</div>
-          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:34px;color:#6E6A63">/ 108 puan</div>
-        </div>
-        <div style="margin-top:22px;height:10px;background:#EFECE6;position:relative">
-          <div style="position:absolute;left:0;top:0;bottom:0;background:#0F2540;width:{{ durum.yuzde }}"></div>
-        </div>
-        <div style="margin-top:14px;font-size:18px;color:#6E6A63">{{ durum.ozet }}</div>
-        <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px">
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Beş hattın ilerlemesi</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px">
           <sc-for list="{{ durum.hatlar }}" as="h" hint-placeholder-count="5">
             <div>
               <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:16px">
@@ -104,14 +111,15 @@
 
       <div style="margin-top:26px">
         <sc-for list="{{ konular }}" as="k" hint-placeholder-count="8">
-          <div style="border-bottom:1px solid #EFECE6;padding:14px 0">
+          <div style="border-bottom:1px solid #EFECE6;padding:14px 0;{{ k.satirStil }}">
             <div style="display:flex;gap:16px;align-items:baseline">
               <button onClick="{{ k.isaretle }}" style="font-family:'Libre Baskerville',Georgia,serif;font-size:17px;color:{{ k.tikRenk }};width:22px">{{ k.tik }}</button>
               <button onClick="{{ k.tikla }}" style="flex:1;display:flex;gap:16px;align-items:baseline;opacity:{{ k.op }}">
                 <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
                 <span style="flex:1;text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
+                <span style="font-size:14px;color:#7A2E20">{{ k.kilitNotu }}</span>
                 <span style="font-size:15px;color:#6E6A63;width:38px;text-align:right">{{ k.puan }}p</span>
-                <span style="font-size:15px;color:#6E6A63;width:46px;text-align:right">W{{ k.hafta }}</span>
+                <span style="font-size:14px;color:#a39d90;width:76px;text-align:right">{{ k.hafta }}</span>
               </button>
             </div>
 
@@ -184,6 +192,9 @@
             <div style="font-size:17px;color:#7A2E20;font-style:italic">{{ n }}</div>
           </sc-for>
         </div>
+        <sc-for list="{{ haftaDetay.devredilenKonular }}" as="d" hint-placeholder-count="0">
+          <div style="font-size:16px;color:#6E6A63;margin-top:4px">⛔ {{ d }}</div>
+        </sc-for>
       </div>
     </div>
   </sc-if>
@@ -191,6 +202,19 @@
   <sc-if value="{{ ekranDenemeler }}" hint-placeholder-val="{{ false }}">
     <div style="padding-top:40px">
       <div style="font-size:15px;color:#6E6A63;max-width:40em">4 haftada bir, tampon haftasında, baştan itibaren. 50 soru · 150 dakika tek oturum · hesap makinesi ve karalama kâğıdı yok. İlk denemelerde puan önemsiz; süre ölçümü puandan önemlidir.</div>
+
+      <div style="margin-top:34px;padding-top:18px;border-top:1px solid #EFECE6">
+        <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#a39d90;margin-bottom:12px">Madencilik setleri <span style="font-style:italic">(deneme değil — rezerv tüketmez)</span></div>
+        <sc-for list="{{ madencilikListe }}" as="m" hint-placeholder-count="4">
+          <div style="display:flex;gap:16px;align-items:baseline;padding:8px 0;flex-wrap:wrap">
+            <span style="font-size:15px;color:#a39d90;width:110px">Set #{{ m.no }} · W{{ m.w }}</span>
+            <span style="font-size:15px;color:#6E6A63;flex:1;min-width:160px">{{ m.tarih }} · {{ m.soru }} soru / {{ m.dk }} dk</span>
+            <input value="{{ m.net }}" onInput="{{ m.netSet }}" placeholder="net" style="width:70px" />
+          </div>
+          <div style="font-size:13px;color:#a39d90;margin:-4px 0 6px">Kapsam: {{ m.kapsam }}</div>
+        </sc-for>
+      </div>
+
       <div style="margin-top:30px">{{ grafik }}</div>
       <div style="margin-top:30px">
         <sc-for list="{{ denemeler }}" as="d" hint-placeholder-count="12">
@@ -315,13 +339,14 @@
 const HAT_RENK = { M: '#1F4B8E', C: '#7A2E20', A: '#14563F', P: '#56276B', L: '#7C5310' };
 const AY = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
 const DEPO = 'tubitak.tracker.v1';
-const TIP_AD = { uretken: 'üretken hafta', tampon: 'tampon hafta', tekrar: 'tekrar haftası', sinav: 'sınav haftası' };
+const TIP_AD = { uretken: 'üretken hafta', tampon: 'tampon hafta', tekrar: 'tekrar haftası', sinav: 'sınav haftası', devredildi: 'devredildi — tamamlanmadı' };
 
 class Component extends DCLogic {
   state = {
     plan: null, metin: null, ekran: 'ana', hat: '*', ara: '',
     acikKonu: null, acikKat: {}, secilenHafta: null, acikDeneme: null,
-    acikKarar: {}, acikBolum: {}, tamam: [], skor: {}, aktarNot: ''
+    acikKarar: {}, acikBolum: {}, tamam: [], skor: {}, madSkor: {}, aktarNot: '',
+    kuyrukSinir: 8
   };
 
   componentDidMount() {
@@ -329,7 +354,7 @@ class Component extends DCLogic {
     if (ilk && ilk !== 'ana') this.setState({ ekran: ilk });
     try {
       const kayit = JSON.parse(localStorage.getItem(DEPO) || '{}');
-      if (kayit.tamam || kayit.skor) this.setState({ tamam: kayit.tamam || [], skor: kayit.skor || {} });
+      if (kayit.tamam || kayit.skor || kayit.madSkor) this.setState({ tamam: kayit.tamam || [], skor: kayit.skor || {}, madSkor: kayit.madSkor || {} });
     } catch (e) {}
     Promise.all([
       fetch('plan.json').then(r => r.json()),
@@ -339,7 +364,11 @@ class Component extends DCLogic {
   }
 
   kaydet(y) {
-    const d = { tamam: y.tamam !== undefined ? y.tamam : this.state.tamam, skor: y.skor !== undefined ? y.skor : this.state.skor };
+    const d = {
+      tamam: y.tamam !== undefined ? y.tamam : this.state.tamam,
+      skor: y.skor !== undefined ? y.skor : this.state.skor,
+      madSkor: y.madSkor !== undefined ? y.madSkor : this.state.madSkor
+    };
     try { localStorage.setItem(DEPO, JSON.stringify(d)); } catch (e) {}
     this.setState(y);
   }
@@ -352,13 +381,6 @@ class Component extends DCLogic {
     const h = this.state.plan.haftalar, b = this.bugun();
     for (const w of h) if (b >= w.bas && b <= w.bit) return w;
     return b < h[0].bas ? h[0] : h[h.length - 1];
-  }
-
-  sira() {
-    const p = this.state.plan, out = [];
-    p.haftalar.forEach(w => (w.konular || []).forEach(id => { if (out.indexOf(id) < 0) out.push(id); }));
-    p.konular.forEach(k => { if (out.indexOf(k.id) < 0) out.push(k.id); });
-    return out;
   }
 
   konuAc(id) {
@@ -459,6 +481,56 @@ class Component extends DCLogic {
     };
   }
 
+  /* --------------------------------------------------------- K18: puan-öncelikli */
+  durumu(k) {
+    if (this.state.tamam.indexOf(k.id) >= 0) return 'bitti';
+    if (k.hafta == null) return 'bekliyor';
+    const w = this.state.plan.haftalar.find(w => w.w === k.hafta);
+    if (w && this.bugun() > w.bit) return 'devredilen';
+    return 'bekliyor';
+  }
+
+  hazirMi(k) {
+    return (k.onkosul || []).every(o => this.state.tamam.indexOf(o) >= 0);
+  }
+
+  eksikOnkosul(k) {
+    const p = this.state.plan, konuMap = {}; p.konular.forEach(x => { konuMap[x.id] = x; });
+    return (k.onkosul || []).filter(o => this.state.tamam.indexOf(o) < 0)
+      .map(o => (konuMap[o] ? konuMap[o].ad : o));
+  }
+
+  kuyruk() {
+    const p = this.state.plan, tamam = this.state.tamam;
+    const idx = {}; p.konular.forEach((k, i) => { idx[k.id] = i; });
+    const kalan = p.konular.filter(k => tamam.indexOf(k.id) < 0);
+    kalan.sort((a, b) => {
+      const da = this.durumu(a) === 'devredilen' ? 0 : 1;
+      const db = this.durumu(b) === 'devredilen' ? 0 : 1;
+      if (da !== db) return da - db;
+      if (a.faz !== b.faz) return a.faz - b.faz;
+      const ha = a.hafta == null ? Infinity : a.hafta;
+      const hb = b.hafta == null ? Infinity : b.hafta;
+      if (ha !== hb) return ha - hb;
+      return idx[a.id] - idx[b.id];
+    });
+    return kalan;
+  }
+
+  takvimPuani(aktifW) {
+    const p = this.state.plan, konuMap = {}; p.konular.forEach(k => { konuMap[k.id] = k; });
+    let puan = 0;
+    p.haftalar.forEach(w => {
+      if (w.w > aktifW) return;
+      if (w.tip === 'devredildi') {
+        (w.devredilenKonular || []).forEach(id => { if (konuMap[id]) puan += konuMap[id].puan; });
+      } else {
+        puan += w.puan || 0;
+      }
+    });
+    return puan;
+  }
+
   renderVals() {
     const p = this.state.plan;
     const nav = [
@@ -486,43 +558,54 @@ class Component extends DCLogic {
     const aktif = (zorla > 0 && p.haftalar[zorla - 1]) ? p.haftalar[zorla - 1] : this.aktifHafta();
     const blok = p.bloklar.find(b => b.id === aktif.blok) || {};
 
-    // ŞU AN
-    const suAnKonular = (aktif.konular || []).map(id => konuMap[id]).filter(Boolean)
-      .map(k => this.konuSatiri(k, tamam.indexOf(k.id) >= 0));
-    let suAnNot = (aktif.notlar || []).join(' · ');
-    if (aktif.deneme) suAnNot = ('Deneme #' + aktif.deneme + (suAnNot ? ' · ' + suAnNot : ''));
-    if (aktif.tip === 'tampon' && !aktif.deneme) suAnNot = suAnNot || 'Tampon: yeni konu yok, geri kalanı topla.';
-    const suAn = {
-      w: 'W' + aktif.w,
-      blok: aktif.blok + ' · ' + (blok.ad || ''),
-      tarih: this.tarih(aktif.bas) + ' – ' + this.tarih(aktif.bit),
-      tip: (TIP_AD[aktif.tip] || aktif.tip) + ' · ' + aktif.saat + ' saat · blok içi ' + aktif.blokIci + '/' + (blok.hafta || ''),
-      konular: suAnKonular, not: suAnNot
-    };
-
-    // SIRADAKİ
-    const zincir = this.sira();
-    const siradaId = zincir.find(id => tamam.indexOf(id) < 0);
-    const sk = siradaId ? konuMap[siradaId] : null;
+    // K18 — üç ayrı gösterge (takvim konumu salt okunur, gerçek konum işaretlerden, borç farktan)
     const hatAd = {}; p.hatlar.forEach(h => { hatAd[h.id] = h.ad; });
-    const sirada = sk ? {
-      id: sk.id, ad: sk.ad, renk: HAT_RENK[sk.hat],
-      meta: sk.puan + ' puan · ' + hatAd[sk.hat] + ' · Faz ' + sk.faz + ' · W' + sk.hafta + ' · ' + (sk.calisma && sk.calisma.sure ? sk.calisma.sure : ''),
-      ac: () => this.konuAc(sk.id)
-    } : { id: '—', ad: 'Bütün konular tamamlandı.', renk: '#0F2540', meta: 'Kalan iş tekrar ve deneme.', ac: () => this.setState({ ekran: 'denemeler' }) };
-
-    // DURUM
-    const puan = p.konular.filter(k => tamam.indexOf(k.id) >= 0).reduce((a, k) => a + k.puan, 0);
+    const gercekPuan = p.konular.filter(k => tamam.indexOf(k.id) >= 0).reduce((a, k) => a + k.puan, 0);
     const bugun = this.bugun();
     const gecenUretken = p.haftalar.filter(w => w.tip === 'uretken' && w.bit < bugun).length;
-    const hiz = gecenUretken > 0 ? (puan / gecenUretken) : null;
+    const hiz = gecenUretken > 0 ? (gercekPuan / gecenUretken) : null;
     const kalanGun = Math.max(0, Math.round((new Date(p.meta.sinavTarihi) - new Date(bugun)) / 86400000));
-    const geride = p.konular.filter(k => k.hafta < aktif.w && tamam.indexOf(k.id) < 0).length;
+    const takvimP = this.takvimPuani(aktif.w);
+    const borcPuan = Math.max(0, takvimP - gercekPuan);
+    const borcHafta = (borcPuan > 0 && hiz) ? (borcPuan / hiz) : null;
+
+    const takvimKonum = { w: 'W' + aktif.w, puan: takvimP + ' / ' + p.meta.toplamPuan };
+    const gercekKonum = {
+      puan: gercekPuan + ' / ' + p.meta.toplamPuan,
+      ozet: tamam.length + '/' + p.meta.toplamKonu + ' konu · sınava ' + kalanGun + ' gün' +
+        (hiz === null ? ' · ölçülen hız henüz yok' : ' · ölçülen hız ' + hiz.toFixed(1).replace('.', ',') + ' puan/üretken hafta')
+    };
+    const borc = {
+      metin: borcPuan === 0 ? 'Borç yok' :
+        (borcHafta === null ? borcPuan + ' puan ≈ —' : borcPuan + ' puan ≈ ' + borcHafta.toFixed(1).replace('.', ',') + ' hafta')
+    };
+
+    // K18 — "sıradaki konular" kuyruğu (puan-öncelikli, tarih navigasyon değil)
+    const tumKuyruk = this.kuyruk();
+    const sinir = this.state.kuyrukSinir;
+    const kuyrukListe = tumKuyruk.slice(0, sinir).map(k => {
+      const d = this.durumu(k), hazir = this.hazirMi(k);
+      return {
+        id: k.id, ad: k.ad, puan: k.puan, renk: HAT_RENK[k.hat] || '#0F2540',
+        haftaEtiket: k.hafta == null ? 'yerleştirilmedi' : ('W' + k.hafta),
+        devredilenMi: d === 'devredilen',
+        hazir: hazir,
+        kilitNot: hazir ? '' : ('Önce ' + this.eksikOnkosul(k).join(', ') + ' gerekiyor.'),
+        stil: {
+          opacity: hazir ? '1' : '0.5',
+          borderLeft: d === 'devredilen' ? '3px solid #7A2E20' : '3px solid transparent',
+          paddingLeft: '10px'
+        },
+        tikla: () => this.konuAc(k.id)
+      };
+    });
+    const kuyrukDahaVar = tumKuyruk.length > sinir;
+    const kuyrukDahaGoster = () => this.setState({ kuyrukSinir: this.state.kuyrukSinir + 8 });
+    const kuyrukBos = tumKuyruk.length === 0;
+
+    // DURUM (beş hat ilerlemesi)
     const durum = {
-      puan: puan, yuzde: Math.round(puan / p.meta.toplamPuan * 100) + '%',
-      ozet: tamam.length + '/' + p.meta.toplamKonu + ' konu · ölçülen hız ' +
-        (hiz === null ? '—' : hiz.toFixed(1).replace('.', ',') + ' puan/üretken hafta (referans ' +
-          (aktif.saat >= 25 ? '6,0' : '3,6') + ')') + ' · geride kalan ' + geride + ' konu · sınava ' + kalanGun + ' gün',
+      yuzde: Math.round(gercekPuan / p.meta.toplamPuan * 100) + '%',
       hatlar: p.hatlar.map(h => {
         const tot = p.konular.filter(k => k.hat === h.id).reduce((a, k) => a + k.puan, 0);
         const don = p.konular.filter(k => k.hat === h.id && tamam.indexOf(k.id) >= 0).reduce((a, k) => a + k.puan, 0);
@@ -537,6 +620,8 @@ class Component extends DCLogic {
     const acikVar = this.props.kapsamVarsayilanAcik === true;
     const konular = liste.map(k => {
       const bitti = tamam.indexOf(k.id) >= 0;
+      const hazir = this.hazirMi(k);
+      const durumK = this.durumu(k);
       const acik = this.state.acikKonu === k.id;
       const c = k.calisma || {}, video = c.video || {}, kaynak = c.kaynak || {};
       const katlar = [];
@@ -566,18 +651,26 @@ class Component extends DCLogic {
         (k.kesilebilir ? 'Kesilebilir (geri kalınırsa düşürülebilir)' : 'Kesilemez'),
         'Faz ' + k.faz + ' · Blok ' + k.blok + ' · W' + k.hafta + ' · ' + hatAd[k.hat]
       ]);
+      const eksik = hazir ? [] : this.eksikOnkosul(k);
       return {
-        id: k.id, ad: k.ad, puan: k.puan, hafta: k.hafta, renk: HAT_RENK[k.hat],
-        op: bitti ? '0.45' : '1', cizgi: bitti ? 'line-through' : 'none',
-        tik: bitti ? '✓' : '○', tikRenk: bitti ? HAT_RENK[k.hat] : '#DCD7CE',
+        id: k.id, ad: k.ad, puan: k.puan,
+        hafta: k.hafta == null ? 'yerleştirilmedi' : ('W' + k.hafta),
+        renk: HAT_RENK[k.hat],
+        op: bitti ? '0.45' : (hazir ? '1' : '0.5'),
+        cizgi: bitti ? 'line-through' : 'none',
+        tik: bitti ? '✓' : (hazir ? '○' : '🔒'), tikRenk: bitti ? HAT_RENK[k.hat] : '#DCD7CE',
+        devredilenMi: durumK === 'devredilen',
+        satirStil: { borderLeft: durumK === 'devredilen' ? '3px solid #7A2E20' : '3px solid transparent', paddingLeft: '10px' },
         acik: acik, uyarilar: acik ? this.uyarilar(k) : [],
+        hazirDegil: !hazir, kilitNotu: hazir ? '' : ('Önce ' + eksik.join(', ') + ' gerekiyor.'),
         videoUrl: video.url || '#', videoAra: video.ara || 'kaynak yok', videoKanal: video.kanal || '—',
         kaynakAd: kaynak.ad || '—', kaynakYer: kaynak.yer || '',
         soru: c.soru || '—', sure: c.sure || '—',
-        katlar: katlar, btnAd: bitti ? 'Tamamlandı ✓ — geri al' : 'Tamamlandı olarak işaretle',
-        btnRenk: bitti ? '#6E6A63' : '#14563F',
+        katlar: katlar,
+        btnAd: bitti ? 'Tamamlandı ✓ — geri al' : (hazir ? 'Tamamlandı olarak işaretle' : 'Hazır değil — önce ön koşulu bitir'),
+        btnRenk: bitti ? '#6E6A63' : (hazir ? '#14563F' : '#a39d90'),
         tikla: () => this.setState({ acikKonu: acik ? null : k.id }),
-        isaretle: () => this.isaretle(k.id)
+        isaretle: () => { if (bitti || hazir) this.isaretle(k.id); }
       };
     });
     const hatFiltre = [{ id: '*', ad: 'Tümü' }].concat(p.hatlar.map(h => ({ id: h.id, ad: h.id }))).map(f => ({
@@ -593,11 +686,12 @@ class Component extends DCLogic {
     const takvim = p.haftalar.map(w => {
       const bu = w.w === sec, simdi = w.w === aktif.w;
       const tampon = w.tip === 'tampon';
+      const devredildi = w.tip === 'devredildi';
       return {
-        no: 'W' + w.w, isaret: (w.deneme ? '•' : '') + (w.tip === 'sinav' ? '★' : '') + (w.tip === 'tekrar' ? '↺' : ''),
-        arka: bu ? '#0F2540' : (tampon ? 'repeating-linear-gradient(45deg,#F7F5F0,#F7F5F0 4px,#ffffff 4px,#ffffff 8px)' : '#ffffff'),
-        yazi: bu ? '#ffffff' : (simdi ? '#7A2E20' : '#101418'),
-        kenar: bu ? '#0F2540' : (simdi ? '#7A2E20' : '#DCD7CE'),
+        no: 'W' + w.w, isaret: (w.deneme ? '•' : '') + (w.madencilikSeti ? '·' : '') + (w.tip === 'sinav' ? '★' : '') + (w.tip === 'tekrar' ? '↺' : '') + (devredildi ? '⛔' : ''),
+        arka: bu ? '#0F2540' : devredildi ? 'repeating-linear-gradient(45deg,#F7ECEA,#F7ECEA 4px,#ffffff 4px,#ffffff 8px)' : (tampon ? 'repeating-linear-gradient(45deg,#F7F5F0,#F7F5F0 4px,#ffffff 4px,#ffffff 8px)' : '#ffffff'),
+        yazi: bu ? '#ffffff' : devredildi ? '#7A2E20' : (simdi ? '#7A2E20' : '#101418'),
+        kenar: bu ? '#0F2540' : devredildi ? '#7A2E20' : (simdi ? '#7A2E20' : '#DCD7CE'),
         tikla: () => this.setState({ secilenHafta: w.w })
       };
     });
@@ -607,14 +701,18 @@ class Component extends DCLogic {
       baslik: 'W' + hw.w + ' · ' + this.tarih(hw.bas) + ' – ' + this.tarih(hw.bit),
       meta: hw.blok + ' · ' + (hblok.ad || '') + ' · ' + (TIP_AD[hw.tip] || hw.tip) + ' · ' + hw.saat + ' saat · ' + hw.puan + ' puan' + (hw.faz && hw.faz.length ? ' · Faz ' + hw.faz.join(', ') : ''),
       konular: (hw.konular || []).map(id => konuMap[id]).filter(Boolean).map(k => this.konuSatiri(k, tamam.indexOf(k.id) >= 0)),
-      notlar: (hw.deneme ? ['Deneme #' + hw.deneme + ' — tam süre, tam koşul.'] : []).concat(hw.kapanis ? [hw.kapanis + ' kapanış ritüeli: say, hızı hesapla, karşılaştır, sonraki bloğu boyutlandır, devret.'] : []).concat(hw.notlar || [])
+      devredilenKonular: (hw.devredilenKonular || []).map(id => konuMap[id]).filter(Boolean).map(k => k.id + ' — ' + k.ad),
+      notlar: (hw.deneme ? ['Deneme #' + hw.deneme + ' — tam süre, tam koşul.'] : [])
+        .concat(hw.madencilikSeti ? ['Madencilik seti #' + hw.madencilikSeti + ' — bitirilmiş konulardan, rezerv tüketmez.'] : [])
+        .concat(hw.kapanis ? [hw.kapanis + ' kapanış ritüeli: say, hızı hesapla, karşılaştır, sonraki bloğu boyutlandır, devret.'] : [])
+        .concat(hw.notlar || [])
     };
 
     // DENEMELER
     const denemeHafta = p.haftalar.filter(w => w.deneme);
     const sablon = [];
     denemeHafta.forEach(w => { sablon.push({ no: w.deneme, w: w.w, bas: w.bas, bit: w.bit }); });
-    sablon.push({ no: 12, w: 41, bas: p.haftalar[40].bas, bit: p.haftalar[40].bit });
+    sablon.push({ no: 8, w: 41, bas: p.haftalar[40].bas, bit: p.haftalar[40].bit });
     const alanTanim = [
       { k: 'm', ad: 'M / 12', ip: '0–12' }, { k: 'c', ad: 'C / 16', ip: '0–16' }, { k: 'a', ad: 'A / 16', ip: '0–16' },
       { k: 'p', ad: 'P / 4', ip: '0–4' }, { k: 'l', ad: 'L / 1', ip: '0–1' },
@@ -648,6 +746,25 @@ class Component extends DCLogic {
         }))
       };
     });
+    // K17 — madencilik setleri: deneme değil, ayrı ve daha hafif
+    const MAD_TANIM = { 1: { soru: 15, dk: 45 }, 2: { soru: 15, dk: 45 }, 3: { soru: 20, dk: 60 }, 4: { soru: 20, dk: 60 } };
+    const madencilikListe = p.haftalar.filter(w => w.madencilikSeti).map(w => {
+      const kapsam = [];
+      p.haftalar.forEach(x => { if (x.w < w.w) (x.konular || []).forEach(id => { if (kapsam.indexOf(id) < 0) kapsam.push(id); }); });
+      const tanim = MAD_TANIM[w.madencilikSeti] || { soru: '—', dk: '—' };
+      const s = this.state.madSkor[w.madencilikSeti] || {};
+      return {
+        no: w.madencilikSeti, w: w.w, tarih: this.tarih(w.bas) + ' – ' + this.tarih(w.bit),
+        soru: tanim.soru, dk: tanim.dk, kapsam: kapsam.join(', ') || '—',
+        net: s.net === undefined ? '' : s.net,
+        netSet: e => {
+          const v = e.target.value;
+          const yeni = Object.assign({}, this.state.madSkor, { [w.madencilikSeti]: Object.assign({}, this.state.madSkor[w.madencilikSeti], { net: v }) });
+          this.kaydet({ madSkor: yeni });
+        }
+      };
+    });
+
     const noktalar = denemeler.map((d, i) => ({ i: i, v: d.net === '—' ? null : parseFloat(d.net.replace(',', '.')) })).filter(x => x.v !== null);
     const grafik = noktalar.length >= 2 ? React.createElement('svg', {
       viewBox: '0 0 600 160', style: { width: '100%', height: '160px', display: 'block' }
@@ -693,7 +810,8 @@ class Component extends DCLogic {
     }));
 
     return Object.assign(temel, {
-      suAn, sirada, durum, konular, hatFiltre, konuOzet, takvim, haftaDetay, denemeler, grafik,
+      takvimKonum, gercekKonum, borc, kuyrukListe, kuyrukDahaVar, kuyrukDahaGoster, kuyrukBos,
+      durum, konular, hatFiltre, konuOzet, takvim, haftaDetay, denemeler, madencilikListe, grafik,
       kararlar, bolumler, kaynaklar, kanallar,
       disaAktar: () => {
         const veri = JSON.stringify({ tamam: this.state.tamam, skor: this.state.skor }, null, 2);

@@ -1,7 +1,9 @@
 # TÜBİTAK Bilim Olimpiyatları — Bilgisayar, 1. Aşama Hazırlık Planı
 
-> **Sürüm 4.0** · Son güncelleme: 31 Temmuz 2026
+> **Sürüm 4.4** · Son güncelleme: 7 Ağustos 2026
 > Bu dosya kendi kendine yeterlidir. Bir sonraki oturumda bunu tek başına verdiğinde, aramızda geçen tüm kararlar ve gerekçeleri Bölüm 2'de kayıtlıdır.
+>
+> **v4.4 — B0 yeniden kuruldu, deneme protokolü değişti.** 8 Ağu – 5 Eyl arası bilgisayar erişimi olmayacağı için **C hattı B0'dan tamamen çıkarıldı** ve boşalan 100 saat **M hattıyla dolduruldu** (K16). W1 ve W2 tamamlanmadı, 14 puan devrediyor. **Deneme #1–#4 iptal**, yerine rezerv tüketmeyen madencilik setleri; ilk tam koşullu deneme **W18** (K17). Tracker takvim-öncelikliden **puan-öncelikli** görünüme geçti (K18). Müfredat, puan ve konu sayısı **değişmedi** — yalnızca sıra değişti.
 >
 > **v4.0'ta ne değişti — planın tarihindeki en büyük revizyon.** Müfredat artık varsayımla değil, **ölçümle** boyutlandırılıyor. 2024, 2025 ve 2026 birinci aşama sınavlarının **150 sorusu tek tek konu ID'siyle etiketlendi** (K13). Sonuç: M hattı %40 değil **%24**, ve M'nin yaklaşık yarısı TYT/AYT seviyesinde. İki yeni hat açıldı (**P** mantık kurgu, **L** lise cebiri), dinamik programlama geri eklendi, graf bloğu bir blok öne çekildi, altı konu kesildi. Konu 57 → **63**, puan 108 (sabit), faz 9 → **10**.
 >
@@ -39,6 +41,8 @@
 | **Zorunlu bütçe** | **~₺500 · 2 kitap** (Gürlü + PKO soru bankası) |
 | **Öğrenci** | 10. sınıf (2026–27), TED Konya Koleji |
 | **Uzun vadeli bağlam** | MIT Brain & Cognitive Sciences başvurusu, Kasım 2028 |
+| **Devredilen** | W1, W2 tamamlanmadı — 14 puan devrediyor (K16) |
+| **B0 durumu** | W3–W6 yeniden kuruldu: M hattı öne çekildi, C ertelendi (K16) |
 
 ### Rekabet — doğrulanmış (K13)
 
@@ -85,6 +89,10 @@ TAMAMLANAN KONU ID'LERİ:
   P: ____________________________________
   L: ____________________________________
 
+DEVREDİLEN HAFTALAR   : ______________________________
+TAKVİM PUANI          : ___ / 108   (takvime göre olman gereken)
+GERÇEK PUAN           : ___ / 108   (gerçekte bitirdiğin)
+BORÇ                  : ___ puan  ≈  ___ hafta
 DEVREDİLEN (yarım kalan) KONULAR:
   ______________________________________
 
@@ -93,6 +101,8 @@ SON DENEME            : #__ , ___/50
 AÇIK SORUN / TAKILDIĞIM YER:
   ______________________________________
 ```
+
+**7 Ağu 2026 itibarıyla:** Devredilen haftalar W1, W2. Gerçek puan 0/108. Takvim puanı 14/108. Borç 14 puan ≈ 2,3 hafta.
 
 ### Referans hızlar
 
@@ -351,6 +361,40 @@ Bunlar "zeka sorusu" değil, **teknikleri olan** bir tür: kısıt sembolleştir
 **Neden ayrı hat, M'nin içine gömmek yerine:** İkisi de farklı bir çalışma yöntemi istiyor. P bulmaca çözerek, L hız drilli yaparak öğrenilir — ikisi de Rosen okuyarak öğrenilmez. Ayrı hat olmaları tracker'da ayrı ilerleme çubuğu ve denemede ayrı net takibi demek.
 
 **Not — M6 kasıtlı olarak korundu.** Güvercin yuvası 150 soruda **sıfır** kez çıktı. Yine de kesilmedi: 1 puanlık, klasik bir olimpiyat aracı ve üç yıl gelmemiş olması dördüncüde gelmeyeceğini göstermez. Aynı mantığın tersi M8 için işledi: düzensizlik "kesilebilir" işaretliydi ama 2/150 çıktı, **çekirdek yapıldı.**
+
+### K16 · C hattı B0'dan çıkarıldı, M hattı öne çekildi — 7 Ağu 2026
+
+**Karar:** W3–W6 aralığındaki tüm C konuları ertelendi. Boşalan 100 saatlik kapasite M hattıyla dolduruldu.
+
+**Gerekçe:** 8 Ağu – 5 Eyl arası kişisel bilgisayar erişimi yok. K8'in çalışma döngüsü "kâğıda tahmin → doğrula" biçiminde; doğrulama katmanı olmadan yapılan C çalışması **doğrulanmamış zihinsel model** üretir — ki K8 tam olarak bunu önlemek için kurulmuştu. Telefon tarayıcısında pythontutor teorik olarak çalışır, pratikte 4 hafta boyunca sürdürülebilir değil.
+
+**Ertelenen C konuları (14 puan):** C1, C2, C3, C7, C4, C6, C5
+
+**Öne çekilen konular (13 puan):** M19, M20, M22, M1 *(W1–W2 devri)* · M4, M5 *(W7'den)* · M6, M7 *(W8'den)* · M8 *(W9'dan)* · M9 *(W12'den)* · M10 *(W15'ten)* · M12 *(W27'den)* · P2 *(W13'ten)*
+
+**Reddedilen alternatif — "C'yi ertele, B0'ı küçült."** W3–W6'da geriye 6 puan kalırdı; 100 saatlik kapasitenin dörtte üçü boşa giderdi. B0 planın **tek 25 sa/hafta bloğu**; W7'den sonra her şey 15 sa. Boş geçirmek, ertelemekten pahalıdır.
+
+**Geri ödeme mekanizması — bu madde bağlayıcıdır.** M hattı öne çekildiği için dönem iskeletindeki **Pazartesi (M, 2 sa)** slotu W7'den itibaren boşalır. Bu slot **C'ye devredilir** → C haftada 4 değil **6 saat** olur. Bu yazılmazsa C hattı, sınavın %33'ü olmasına rağmen eksik kapanır.
+
+**Retansiyon riski ve karşılığı.** Yıldız-çubuk (M5) ve düzensizlik (M8) Ağustos'ta öğrenilip Mayıs'a kadar dokunulmazsa uçar. W7'den itibaren Cumartesi bloğuna **haftada 30 dk karışık M seti** eklendi (bkz. Bölüm 5).
+
+### K17 · Deneme protokolü yeniden kurgulandı — 7 Ağu 2026
+
+**Karar:** Deneme #1–#4 (W4, W6, W10, W14) tam koşullu deneme olmaktan çıkarıldı. İlk tam koşullu deneme **W18**'e alındı. Yerlerine **madencilik seti** kondu.
+
+**Gerekçe 1 — israf.** Müfredatın %20'si bitmeden 50 soruluk tam deneme çözmek, rezerv kâğıdı ~8 net karşılığında yakmaktır. Ölçüm değeri düşük, maliyet geri alınamaz.
+
+**Gerekçe 2 — aritmetik.** Protokol 13 oturum istiyordu, elde 10 kâğıt var (2019–23 rezerv + 2014–18 yarı rezerv; 2024–26 K13'te yakıldı). **Açık zaten vardı.** Dört oturumun düşmesi bu açığı kapatıyor: 10 oturum / 10 kâğıt.
+
+**Reddedilen alternatif — "tüm denemeleri son haftalara al."** Denemenin erken işlevi puan değil **süre bütçesidir**: Bölüm 3'e göre sınav 174 dakikalık iş, bütçe 150. Bu kriz konu bazlı setlerde görünmez. Nisan'da keşfedilirse geç olur. W18 (~%50 müfredat) alt sınırdır.
+
+**Madencilik seti tanımı:** 2000–2013 havuzundan **yalnızca işlenmiş konu ID'lerine** ait sorular · 15 soru / 45 dk · kronometreli · hesap makinesi ve karalama kâğıdı yok · netler beş hatta ayrı yazılır. Rezerv tüketmez.
+
+### K18 · Tracker puan-öncelikli görünüme geçti — 7 Ağu 2026
+
+**Karar:** Tracker'da takvim haftası artık navigasyon birimi değil. Ana görünüm **"sıradaki konular" kuyruğudur**; takvim konumu ile gerçek konum ayrı ayrı gösterilir ve aradaki fark açıkça hesaplanır.
+
+**Gerekçe:** Mevcut tracker bugünün tarihine bakıp W2'yi açıyordu — W1 bitmemiş olmasına rağmen. Bu, planın kendi ilkesiyle çelişiyor: *ilerleme puanla takip edilir, haftayla değil.* Takvimi otorite saymak, bitmemiş işi görünmez kılar ve "kaçırılmış hafta" diye telafi edilemeyen sahte bir kategori üretir. Gerçekte kaçırılmış hafta yoktur; **bitmemiş konu** vardır.
 
 ### Reddedilen seçenekler (tekrar önerilmesin)
 
@@ -630,11 +674,25 @@ YENİ HAT (K15). Diğer fazlardan bağımsız, araya serpiştirilir. 17/150 soru
 | Cumartesi | Karma tekrar + problem seti | 5 |
 | Pazar | — | 0 |
 
+#### W3–W6 istisnası — C hattı yok (K16)
+
+| Gün | Hat | Saat |
+|---|---|---|
+| Pazartesi | Matematik | 4 |
+| Salı | Matematik | 4 |
+| Çarşamba | Matematik | 4 |
+| Perşembe | Matematik | 4 |
+| Cuma | Matematik | 4 |
+| Cumartesi | Karma tekrar + P bulmaca + madencilik seti | 5 |
+| Pazar | — | 0 |
+
+**Monotonluk uyarısı:** Beş gün üst üste kombinatorik yorucudur. Cumartesi bloğunu koruma; hat değiştirmenin yerini o tutuyor. Pazar tam boş kalacak.
+
 ### Dönem iskeleti — 15 sa (W7–W42)
 
 | Gün | Hat | Saat |
 |---|---|---|
-| Pazartesi | Matematik | 2 |
+| Pazartesi | **C dili** *(v4.4: M'den alındı — K16 geri ödemesi)* | 2 |
 | Salı | C dili | 2 |
 | Çarşamba | Algoritma | 2 |
 | Perşembe | **C dili** *(v4.0: M'den alındı — C %33)* | 2 |
@@ -642,7 +700,7 @@ YENİ HAT (K15). Diğer fazlardan bağımsız, araya serpiştirilir. 17/150 soru
 | Cumartesi | Tekrar + problem / deneme | 5 |
 | Pazar | — | 0 |
 
-**v4.0 değişikliği:** Perşembe ve Cuma M/C'den C/A'ya çevrildi. Haftalık dağılım artık M 2 sa, C 4 sa, A 4 sa — ölçülen ağırlıklarla (%24 / %33 / %32) hizalı.
+**v4.4 değişikliği:** Pazartesi M'den C'ye çevrildi. M hattının büyük kısmı B0'da bitirildiği için (K16) bu slot boşaldı. Haftalık dağılım artık **M 0 sa (bakım hariç), C 6 sa, A 4 sa.** M hattı için Cumartesi bloğunda **30 dk karışık bakım seti** ayrılmıştır — yeni konu değil, unutma önleyici.
 
 ### P ve L hatları nereye giriyor
 
@@ -653,6 +711,7 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 | **P** — mantık kurgu | Cumartesi karma bloğunun ilk 45 dakikası | Haftada 1 bulmaca kümesi (3 soru), süreli |
 | **L** — lise cebiri | Ayrılmış saat yok | Okul dersinin üstüne, atandığı haftada 4 saat |
 | **M-temel hızlandırma** | Akşam boşlukları, telefon | Günde 10–15 soru, 90 saniye hedefi |
+| **M bakım** | Cumartesi bloğunun ilk 30 dakikası | Bitirilmiş M konularından karışık 10 soru, kronometreli |
 
 **Neden karışık:** Sınav beş bloğu da aynı gün sorar. Ayrıca kombinatorik ile kod takibi farklı zihinsel modlardır — gün içinde değiştirmek yorgunluğu azaltır.
 
@@ -665,41 +724,47 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 | W | Blok | Blok içi | Tarih | Tip | Sa | Faz | Konular | P |
 |---|---|---|---|---|---|---|---|---|
 
-| 1 | B0 | 1/6 | 27 Tem – 2 Ağu | üretken | 25 | 1,2 | M20, M22, M19, C1, C2 · *+45 dk kalibrasyon (K5)* | 7 |
+| 1 | B0 | 1/6 | 27 Tem – 2 Ağu | **DEVREDİLDİ** | 25 | — | ⛔ *Tamamlanmadı — M20, M22, M19, C1, C2 devretti* | 0 |
 
-| 2 | B0 | 2/6 | 3 – 9 Ağu | üretken | 25 | 2,3 | C3, C7, M1 | 7 |
+| 2 | B0 | 2/6 | 3 – 9 Ağu | **DEVREDİLDİ** | 25 | — | ⛔ *Tamamlanmadı — C3, C7, M1 devretti* | 0 |
 
-| 3 | B0 | 3/6 | 10 – 16 Ağu | üretken | 25 | 1,2,3 | M18, C4, C6, M2 | 6 |
+| 3 | B0 | 3/6 | 10 – 16 Ağu | üretken | 25 | 1,3 | M19, M20, M22, M1, M18 | 6 |
 
-| 4 | B0 | 4/6 | 17 – 23 Ağu | **TAMPON** | 25 | — | Tekrar · **Deneme #1** | 0 |
+| 4 | B0 | 4/6 | 17 – 23 Ağu | üretken | 25 | 3 | M2, M3, M4 · **Madencilik seti #1** | 6 |
 
-| 5 | B0 | 5/6 | 24 – 30 Ağu | üretken | 25 | 2,3 | C5, M3 | 5 |
+| 5 | B0 | 5/6 | 24 – 30 Ağu | üretken | 25 | 3 | M5, M6, M7, M8 | 6 |
 
-| 6 | B0 | 6/6 | 31 Ağu – 6 Eyl | **TAMPON** | 25 | — | **Deneme #2** · **B0 KAPANIŞI** | 0 |
+| 6 | B0 | 6/6 | 31 Ağu – 6 Eyl | üretken | 25 | 5,9,10 | M9, M10, M12, P2 · **Madencilik seti #2** · **B0 KAPANIŞI** | 5 |
 
-| 7 | B1 | 1/8 | 7 – 13 Eyl | üretken | 15 | 3 | M4, M5 · ⚠️ *TFO temsilcilik görüşmesi* | 4 |
+**W6 notu:** Konular Pazartesi–Perşembe'ye sığdırılır. **Cuma–Pazar B0 kapanış ritüeli + telafi payıdır.** B0'ın tek tamponu budur; W4 ve W6 artık üretken hafta.
 
-| 8 | B1 | 2/8 | 14 – 20 Eyl | üretken | 15 | 3,4 | M6, M7, A1 | 4 |
+**Esneme payı:** Toplam 23 puan / 100 saat = 4,3 sa/puan. Referans yaz hızı 6,0 puan/hafta, plan 5,75. Hedefin altında kalırsan **M12 ve P2 W7'ye devreder** — kesme sırası budur, M5 ve M8'e dokunma.
 
-| 9 | B1 | 3/8 | 21 – 27 Eyl | üretken | 15 | 3,4 | M8, C8 | 3 |
+**İsteğe bağlı uzatma:** Program erken biterse L1 ve L2 (2 puan) eklenebilir. Kaynakları video + 30 soru, kâğıtla yapılabilir.
 
-| 10 | B1 | 4/8 | 28 Eyl – 4 Eki | **TAMPON** | 15 | — | Tekrar · **Deneme #3** | 0 |
+| 7 | B1 | 1/8 | 7 – 13 Eyl | üretken | 15 | 3 | ⚠️ *TFO temsilcilik görüşmesi* · *(boş — W6 kapanışında yeniden doldurulacak, K16)* | 0 |
+
+| 8 | B1 | 2/8 | 14 – 20 Eyl | üretken | 15 | 3,4 | A1 | 2 |
+
+| 9 | B1 | 3/8 | 21 – 27 Eyl | üretken | 15 | 3,4 | C8 | 2 |
+
+| 10 | B1 | 4/8 | 28 Eyl – 4 Eki | **TAMPON** | 15 | — | Tekrar · **Madencilik seti #3** | 0 |
 
 | 11 | B1 | 5/8 | 5 – 11 Eki | üretken | 15 | 4 | A2, A3 | 3 |
 
-| 12 | B1 | 6/8 | 12 – 18 Eki | üretken | 15 | 4,5 | C9, M9 | 4 |
+| 12 | B1 | 6/8 | 12 – 18 Eki | üretken | 15 | 4,5 | C9 | 3 |
 
-| 13 | B1 | 7/8 | 19 – 25 Eki | üretken | 15 | 4,10 | C10, P2 | 4 |
+| 13 | B1 | 7/8 | 19 – 25 Eki | üretken | 15 | 4,10 | C10 | 2 |
 
-| 14 | B1 | 8/8 | 26 Eki – 1 Kas | **TAMPON** | 15 | — | **Deneme #4** · **B1 KAPANIŞI** | 0 |
+| 14 | B1 | 8/8 | 26 Eki – 1 Kas | **TAMPON** | 15 | — | **Madencilik seti #4** · **B1 KAPANIŞI** | 0 |
 
-| 15 | B2 | 1/8 | 2 – 8 Kas | üretken | 15 | 5,10 | M10, A21, L1 · ⚠️ *AP kayıt kararı* | 3 |
+| 15 | B2 | 1/8 | 2 – 8 Kas | üretken | 15 | 5,10 | A21, L1 · ⚠️ *AP kayıt kararı* | 2 |
 
 | 16 | B2 | 2/8 | 9 – 15 Kas | üretken | 15 | 5 | A4, A5, A6 | 3 |
 
 | 17 | B2 | 3/8 | 16 – 22 Kas | üretken | 15 | 6 | C11, C12, C13 | 4 |
 
-| 18 | B2 | 4/8 | 23 – 29 Kas | **TAMPON** | 15 | — | Tekrar · **Deneme #5** | 0 |
+| 18 | B2 | 4/8 | 23 – 29 Kas | **TAMPON** | 15 | — | Tekrar · **İlk tam koşullu deneme (#1)** | 0 |
 
 | 19 | B2 | 5/8 | 30 Kas – 6 Ara | **TFO HAFTASI** | 7 | — | ⚠️ *TFO ~6 Aralık.* TÜBİTAK durur | 0 |
 
@@ -707,7 +772,7 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 
 | 21 | B2 | 7/8 | 14 – 20 Ara | üretken | 15 | 6,10 | C21, L2 | 3 |
 
-| 22 | B2 | 8/8 | 21 – 27 Ara | **TAMPON** | 15 | — | **Deneme #6** · **B2 KAPANIŞI** · *S7 kararı* | 0 |
+| 22 | B2 | 8/8 | 21 – 27 Ara | **TAMPON** | 15 | — | **Deneme #2** · **B2 KAPANIŞI** · *S7 kararı* | 0 |
 
 | 23 | B3 | 1/8 | 28 Ara – 3 Oca | üretken | 15 | 6 | C15 | 3 |
 
@@ -715,15 +780,15 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 
 | 25 | B3 | 3/8 | 11 – 17 Oca | üretken | 15 | 7 | A13, A14 | 4 |
 
-| 26 | B3 | 4/8 | 18 – 24 Oca | **TAMPON** | 15 | — | Tekrar · **Deneme #7** | 0 |
+| 26 | B3 | 4/8 | 18 – 24 Oca | **TAMPON** | 15 | — | Tekrar · **Deneme #3** | 0 |
 
-| 27 | B3 | 5/8 | 25 – 31 Oca | üretken | 25 | 7,9 | A24, A15, M12 · 💡 *Yarıyıl tatili, yaz temposu* | 6 |
+| 27 | B3 | 5/8 | 25 – 31 Oca | üretken | 25 | 7,9 | A24, A15 · 💡 *Yarıyıl tatili, yaz temposu* | 5 |
 
 | 28 | B3 | 6/8 | 1 – 7 Şub | üretken | 15 | 9 | C16, A8, A9 | 4 |
 
 | 29 | B3 | 7/8 | 8 – 14 Şub | üretken | 15 | 8 | A19 | 3 |
 
-| 30 | B3 | 8/8 | 15 – 21 Şub | **TAMPON** | 15 | — | **Deneme #8** · **B3 KAPANIŞI** | 0 |
+| 30 | B3 | 8/8 | 15 – 21 Şub | **TAMPON** | 15 | — | **Deneme #4** · **B3 KAPANIŞI** | 0 |
 
 | 31 | B4 | 1/8 | 22 – 28 Şub | üretken | 15 | 8,10 | A25, P1 · ⚠️ **TYBS BAŞVURUSU** | 4 |
 
@@ -731,7 +796,7 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 
 | 33 | B4 | 3/8 | 8 – 14 Mar | üretken | 15 | 8 | A23 | 3 |
 
-| 34 | B4 | 4/8 | 15 – 21 Mar | **TAMPON** | 15 | — | Tekrar · **Deneme #9** | 0 |
+| 34 | B4 | 4/8 | 15 – 21 Mar | **TAMPON** | 15 | — | Tekrar · **Deneme #5** | 0 |
 
 | 35 | B4 | 5/8 | 22 – 28 Mar | üretken | 15 | 9 | A10, A11, C20, A22 | 4 |
 
@@ -739,13 +804,13 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 
 | 37 | B4 | 7/8 | 5 – 11 Nis | üretken | 15 | 10 | P4, P3 · **SON YENİ KONU** | 4 |
 
-| 38 | B4 | 8/8 | 12 – 18 Nis | **TAMPON** | 15 | — | **Deneme #10** · **B4 KAPANIŞI** | 0 |
+| 38 | B4 | 8/8 | 12 – 18 Nis | **TAMPON** | 15 | — | **Deneme #6** · **B4 KAPANIŞI** | 0 |
 
 | 39 | B5 | 1/4 | 19 – 25 Nis | tekrar | 15 | — | **M + P + L tam tekrar** | 0 |
 
 | 40 | B5 | 2/4 | 26 Nis – 2 May | tekrar | 15 | — | **C hattı tam tekrar** | 0 |
 
-| 41 | B5 | 3/4 | 3 – 9 May | tekrar | 15 | — | **A hattı tam tekrar** · **Deneme #11, #12** | 0 |
+| 41 | B5 | 3/4 | 3 – 9 May | tekrar | 15 | — | **A hattı tam tekrar** · **Deneme #7, #8** | 0 |
 
 | 42 | B5 | 4/4 | 10 – 16 May | **SINAV** | 15 | — | Gün aşırı tam deneme + hata analizi | 0 |
 
@@ -757,7 +822,7 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 
 |---|---|---|---|---|---|---|
 
-| B0 · Yaz Yoğunlaştırma | W1–6 | 4 | 100 sa | 25 p / 100 sa | %100 | Faz 1, 2, 3 (kısmen) |
+| B0 · Yaz Yoğunlaştırma | W1–6 | 4 | 100 sa | 23 p / 100 sa | %92 | Faz 1, 3, 5 (kısmen), 9–10 (kısmen) |
 
 | B1 · Dönem Başlangıcı | W7–14 | 6 | 90 sa | 22 p / 88 sa | %98 | Faz 3 sonu, 4, 10 (P başlar) |
 
@@ -773,6 +838,14 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 **Uyarı — W1 nominal olarak şişkin görünür.** 8 puan × 4 saat = 32 saat, bütçenin (25 sa) üstünde. Ama Faz 1'in dört konusu gerçekte 1–2 saatlik işlerdir. **W1 gerçekte ~22 saat sürer.** Aksi çıkarsa W4 tamponu devralır.
 
 **v4.0'ta blok dengesi düzeldi.** v3.3'te B1 %98 doluluktaydı; şimdi hiçbir blok %96'yı geçmiyor. Sebep: M hattının küçülmesiyle açılan bütçenin geç bloklara değil, orta bloklara dağıtılması.
+
+### ⚠️ W7–W15 yeniden planlama borcu (K16)
+
+**14 puanlık C borcu** W6 kapanışında Prompt 2 ile yerleştirilecek. Yerleştirmede bağlayıcı olan üç kural:
+
+1. **C hat içi sırası değiştirilemez:** C1 → C2 → C3 → C7 → C4 → C6 → C5 → C8 → …
+2. **Pazartesi slotu C'ye aittir** (K16 geri ödemesi) → dönem haftalarında C kapasitesi 6 sa/hafta.
+3. **Boşalan slotlar:** W7 (4p), W8 (2p), W9 (1p), W12 (1p), W13 (2p), W15 (1p), W27 (1p) = 12 puan. Kalan 2 puan tampon haftalarından karşılanır — **yeni konu W37'den sonraya taşmaz.**
 
 ---
 
@@ -1099,7 +1172,7 @@ Elinde çözümüyle birlikte **~23 lise Bilgisayar sınavı** var (2000–2026,
 |---|---|---|---|
 | **Rezerv — tam koşullu deneme** | 2019–2023 | 5 | Dokunma. Sırayla aç. |
 | **Yarı rezerv** | 2014–2018 | 5 | W30 sonrası denemeler |
-| **Madencilik — konu bazlı** | 2000–2013 | ~14 | Serbest. Bir konu bitince o konunun sorularını tara. |
+| **Madencilik — konu bazlı** | 2000–2013 | ~14 | Serbest. **Madencilik setlerinin kaynağı budur** (K17). Bir konu bitince o konunun sorularını tara. |
 | **Kalibrasyon (W1)** | 2013 | 1 | Cevap anahtarı açık, çözmeden, 45 dk (K5) |
 | **⛔ YAKILDI** | 2024, 2025, 2026 | 3 | K13 etiketlemesinde kullanıldı — deneme olarak kullanılamaz |
 
@@ -1107,26 +1180,28 @@ Elinde çözümüyle birlikte **~23 lise Bilgisayar sınavı** var (2000–2026,
 
 ### Takvim
 
-| # | Hafta | Tarih |
-|---|---|---|
-| — | W1 | Kalibrasyon okuması (45 dk, cevap anahtarı açık, çözmeden) |
-| 1 | W4 | 17–23 Ağu 2026 |
-| 2 | W6 | 31 Ağu – 6 Eyl |
-| 3 | W10 | 28 Eyl – 4 Eki |
-| 4 | W14 | 26 Eki – 1 Kas |
-| 5 | W18 | 23–29 Kas |
-| 6 | W22 | 21–27 Ara |
-| 7 | W26 | 18–24 Oca 2027 |
-| 8 | W30 | 15–21 Şub |
-| 9 | W34 | 15–21 Mar |
-| 10 | W38 | 12–18 Nis |
-| 11–12 | W41 | 3–9 May |
-| 13+ | W42 | Gün aşırı |
+| # | Hafta | Tarih | Tip |
+|---|---|---|---|
+| — | W4 | 17–23 Ağu 2026 | **Madencilik seti #1** — 15 soru / 45 dk |
+| — | W6 | 31 Ağu – 6 Eyl | **Madencilik seti #2** — 15 soru / 45 dk |
+| — | W10 | 28 Eyl – 4 Eki | **Madencilik seti #3** — 20 soru / 60 dk |
+| — | W14 | 26 Eki – 1 Kas | **Madencilik seti #4** — 20 soru / 60 dk |
+| 1 | W18 | 23–29 Kas | **İlk tam koşullu deneme** |
+| 2 | W22 | 21–27 Ara | tam |
+| 3 | W26 | 18–24 Oca 2027 | tam |
+| 4 | W30 | 15–21 Şub | tam |
+| 5 | W34 | 15–21 Mar | tam |
+| 6 | W38 | 12–18 Nis | tam |
+| 7–8 | W41 | 3–9 May | tam |
+| 9+ | W42 | 10–16 May | Gün aşırı tam |
 
-W19'da deneme yok — TFO haftası.
+W19'da hiçbir şey yok — TFO haftası.
+
+**Rezerv aritmetiği artık tutuyor:** 9–10 oturum / 10 kâğıt (2019–23 rezerv + 2014–18 yarı rezerv).
 
 ### Kurallar
 
+0. **Madencilik seti ≠ deneme.** Yalnızca **bitirilmiş konu ID'lerinden** soru seçilir, süre orantılı kısaltılır (15 soru / 45 dk), rezerv tüketmez. Amacı puan ölçmek değil **süre disiplinini erken kurmaktır** — hesap makinesi ve karalama kâğıdı yasağı burada da geçerlidir.
 1. **Tam süre, tam koşul.** 50 soru, **150 dakika tek oturum**, telefon kapalı, kağıt üzerinde, **hesap makinesi yok, karalama kâğıdı yok.** Son iki madde v4.0'ta eklendi — gerçek sınav koşulu bu.
 2. **İlk denemelerde puan önemsiz.** Deneme #1'de 50'de 8 yaparsın. Normal ve beklenen.
 3. **Netleri beş hatta ayrı yaz:** M __/12, C __/16, A __/16, P __/4, L __/1.
@@ -1189,8 +1264,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
 
 {
   "meta": {
-    "surum": "4.0",
-    "guncelleme": "2026-07-31",
+    "surum": "4.4",
+    "guncelleme": "2026-08-07",
     "mebProgrami": "Türkiye Yüzyılı Maarif Modeli (2026-27'de 10. sınıf bu programla okutuluyor)",
     "hedef": "TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama — Bilgisayar",
     "sinavTarihi": "2027-05-15",
@@ -1240,6 +1315,18 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
     "rekabet2026": {
       "basvuru": 20828,
       "gecen": 517
+    },
+    "devredilenHaftalar": [1, 2],
+    "devredilenPuan": 14,
+    "gercekPuan": 0,
+    "ilkTamDeneme": 18,
+    "cHattiErteleme": {
+      "karar": "K16",
+      "ertelenenKonular": ["C1", "C2", "C3", "C7", "C4", "C6", "C5"],
+      "ertelenenPuan": 14,
+      "bosalanPuan": 12,
+      "yerlestirmeHaftasi": 6,
+      "pazartesiSlotuC": true
     }
   },
   "durum": {
@@ -1620,24 +1707,13 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "blokIci": 1,
       "bas": "2026-07-27",
       "bit": "2026-08-02",
-      "tip": "uretken",
+      "tip": "devredildi",
       "saat": 25,
-      "faz": [
-        1,
-        2
-      ],
-      "konular": [
-        "M20",
-        "M22",
-        "M19",
-        "C1",
-        "C2"
-      ],
-      "puan": 7,
-      "notlar": [
-        "45 dk kalibrasyon okuması",
-        "Nominal 28sa ama Faz 1 konuları hafif, gerçekte ~20sa"
-      ]
+      "faz": [],
+      "konular": [],
+      "puan": 0,
+      "devredilenKonular": ["M20", "M22", "M19", "C1", "C2"],
+      "notlar": ["Tamamlanmadı (K16)"]
     },
     {
       "w": 2,
@@ -1645,19 +1721,13 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "blokIci": 2,
       "bas": "2026-08-03",
       "bit": "2026-08-09",
-      "tip": "uretken",
+      "tip": "devredildi",
       "saat": 25,
-      "faz": [
-        2,
-        3
-      ],
-      "konular": [
-        "C3",
-        "C7",
-        "M1"
-      ],
-      "puan": 7,
-      "notlar": []
+      "faz": [],
+      "konular": [],
+      "puan": 0,
+      "devredilenKonular": ["C3", "C7", "M1"],
+      "notlar": ["Tamamlanmadı (K16)"]
     },
     {
       "w": 3,
@@ -1669,14 +1739,14 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "saat": 25,
       "faz": [
         1,
-        2,
         3
       ],
       "konular": [
-        "M18",
-        "C4",
-        "C6",
-        "M2"
+        "M19",
+        "M20",
+        "M22",
+        "M1",
+        "M18"
       ],
       "puan": 6,
       "notlar": []
@@ -1687,12 +1757,18 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "blokIci": 4,
       "bas": "2026-08-17",
       "bit": "2026-08-23",
-      "tip": "tampon",
+      "tip": "uretken",
       "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 1,
+      "faz": [
+        3
+      ],
+      "konular": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "puan": 6,
+      "madencilikSeti": 1,
       "notlar": []
     },
     {
@@ -1704,14 +1780,15 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "tip": "uretken",
       "saat": 25,
       "faz": [
-        2,
         3
       ],
       "konular": [
-        "C5",
-        "M3"
+        "M5",
+        "M6",
+        "M7",
+        "M8"
       ],
-      "puan": 5,
+      "puan": 6,
       "notlar": []
     },
     {
@@ -1720,14 +1797,26 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "blokIci": 6,
       "bas": "2026-08-31",
       "bit": "2026-09-06",
-      "tip": "tampon",
+      "tip": "uretken",
       "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 2,
+      "faz": [
+        5,
+        9,
+        10
+      ],
+      "konular": [
+        "M9",
+        "M10",
+        "M12",
+        "P2"
+      ],
+      "puan": 5,
+      "madencilikSeti": 2,
       "kapanis": "B0",
-      "notlar": []
+      "notlar": [
+        "Cuma–Pazar kapanış + telafi payı — B0'ın tek tamponu",
+        "Geride kalınırsa önce M12 ve P2 devreder"
+      ]
     },
     {
       "w": 7,
@@ -1740,13 +1829,11 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [
         3
       ],
-      "konular": [
-        "M4",
-        "M5"
-      ],
-      "puan": 4,
+      "konular": [],
+      "puan": 0,
       "notlar": [
-        "TFO temsilcilik görüşmesi"
+        "TFO temsilcilik görüşmesi",
+        "Boş — W6 kapanışında yeniden doldurulacak (K16)"
       ]
     },
     {
@@ -1762,11 +1849,9 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         4
       ],
       "konular": [
-        "M6",
-        "M7",
         "A1"
       ],
-      "puan": 4,
+      "puan": 2,
       "notlar": [
         "A hattı başlar"
       ]
@@ -1784,10 +1869,9 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         4
       ],
       "konular": [
-        "M8",
         "C8"
       ],
-      "puan": 3,
+      "puan": 2,
       "notlar": []
     },
     {
@@ -1801,7 +1885,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 3,
+      "madencilikSeti": 3,
       "notlar": []
     },
     {
@@ -1837,10 +1921,9 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         5
       ],
       "konular": [
-        "C9",
-        "M9"
+        "C9"
       ],
-      "puan": 4,
+      "puan": 3,
       "notlar": []
     },
     {
@@ -1856,10 +1939,9 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         10
       ],
       "konular": [
-        "C10",
-        "P2"
+        "C10"
       ],
-      "puan": 4,
+      "puan": 2,
       "notlar": []
     },
     {
@@ -1873,7 +1955,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 4,
+      "madencilikSeti": 4,
       "kapanis": "B1",
       "notlar": []
     },
@@ -1890,11 +1972,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         10
       ],
       "konular": [
-        "M10",
         "A21",
         "L1"
       ],
-      "puan": 3,
+      "puan": 2,
       "notlar": [
         "AP kayıt kararı"
       ]
@@ -1948,7 +2029,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 5,
+      "deneme": 1,
       "notlar": []
     },
     {
@@ -2015,7 +2096,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 6,
+      "deneme": 2,
       "kapanis": "B2",
       "notlar": [
         "S3: kesilen konular geri eklenecek mi"
@@ -2084,7 +2165,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 7,
+      "deneme": 3,
       "notlar": []
     },
     {
@@ -2101,10 +2182,9 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       ],
       "konular": [
         "A24",
-        "A15",
-        "M12"
+        "A15"
       ],
-      "puan": 6,
+      "puan": 5,
       "notlar": [
         "Yarıyıl tatili — yaz temposu",
         "M13 3 puanlık"
@@ -2157,7 +2237,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 8,
+      "deneme": 4,
       "kapanis": "B3",
       "notlar": []
     },
@@ -2231,7 +2311,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 9,
+      "deneme": 5,
       "notlar": []
     },
     {
@@ -2305,7 +2385,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 10,
+      "deneme": 6,
       "kapanis": "B4",
       "notlar": []
     },
@@ -2350,10 +2430,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
-      "deneme": 11,
+      "deneme": 7,
       "notlar": [
         "A hattı tam tekrar — 18 konu, 37 puan",
-        "Deneme 11 ve 12"
+        "Deneme 7 ve 8"
       ]
     },
     {
@@ -2367,6 +2447,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "faz": [],
       "konular": [],
       "puan": 0,
+      "deneme": 9,
       "notlar": [
         "Gün aşırı tam deneme",
         "Yeni konu yok"
@@ -2381,7 +2462,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2441,7 +2522,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 2,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -2503,7 +2584,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 1,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2545,7 +2626,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 2,
+      "hafta": 3,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2644,7 +2725,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 3,
       "faz": 3,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2704,7 +2785,7 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "puan": 2,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2749,8 +2830,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Binom teoremi ve kombinatoryel kimlikler",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 7,
+      "blok": "B0",
+      "hafta": 4,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2807,8 +2888,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Yıldızlar ve çubuklar (tekrarlı seçim)",
       "puan": 3,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 7,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2868,8 +2949,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Güvercin yuvası ilkesi",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 8,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2913,8 +2994,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Dahil-hariç ilkesi",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 8,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2956,8 +3037,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Düzensizlikler (derangement), sabit noktalar",
       "puan": 1,
       "faz": 3,
-      "blok": "B1",
-      "hafta": 9,
+      "blok": "B0",
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2997,8 +3078,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Olasılık temelleri: örnek uzay, koşullu olasılık",
       "puan": 1,
       "faz": 5,
-      "blok": "B1",
-      "hafta": 12,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3043,8 +3124,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Bayes teoremi, bağımsızlık",
       "puan": 1,
       "faz": 5,
-      "blok": "B2",
-      "hafta": 15,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3089,8 +3170,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Yineleme bağıntısı (recurrence) kurma — matematik",
       "puan": 1,
       "faz": 9,
-      "blok": "B3",
-      "hafta": 27,
+      "blok": "B0",
+      "hafta": 6,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3228,8 +3309,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Veri tipleri, boyutlar, taşma davranışı",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 1,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -3264,8 +3347,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Operatör önceliği ve birleşme yönü",
       "puan": 2,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 1,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3303,8 +3388,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "a++ vs ++a, yan etkiler",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 2,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3344,8 +3431,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Döngü takibi: for/while/do-while, break/continue",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 2,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3386,8 +3475,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Tip dönüşümleri, integer promotion",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 3,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3425,8 +3516,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Koşullar ve kısa devre değerlendirme",
       "puan": 1,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 3,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3465,8 +3558,10 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
       "ad": "Bit operatörleri",
       "puan": 3,
       "faz": 2,
-      "blok": "B0",
-      "hafta": 5,
+      "blok": null,
+      "hafta": null,
+      "beklemede": true,
+      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -4828,8 +4923,8 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
         ]
       },
       "faz": 10,
-      "blok": "B1",
-      "hafta": 13,
+      "blok": "B0",
+      "hafta": 6,
       "calisma": {
         "video": {
           "kanal": "Tunç Kurt Matematik",
@@ -5646,6 +5741,7 @@ Son bir şey. v4.0'ın varlık sebebi senin bir gözlemin: *"bu soruların çoğ
 | 3.1 | 26 Tem 2026 | Karışabilecek isimler ayrıştırıldı, 57 konuya kapsam tanımı eklendi (K10). |
 | 3.2 | 27 Tem 2026 | M hattına MEB müfredat eşleştirmesi eklendi (K11). |
 | 3.3 | 27 Tem 2026 | Tam tutarlılık denetimi (K12). Üretken hafta 30 → 27. Kesme listesi düzeltildi. |
+| **4.4** | **7 Ağu 2026** | W1–W2 devredildi (0 puan). C hattı B0'dan çıkarıldı, 13 M/P konusu öne çekildi (K16). Deneme #1–#4 iptal, ilk tam deneme W18'e alındı, madencilik seti tanımlandı (K17). Tracker puan-öncelikli görünüme geçti (K18). Puan (108), konu (63) ve faz (10) sayıları değişmedi. |
 | **4.3** | **1 Ağu 2026** | **Tam denetim + denge düzeltmesi.** ❶ **Kitap değişimi hatası:** M19 ve P2'nin kaynağı "Gürlü Böl. 6 — İspat Yöntemleri" yazıyordu; Gürlü'de öyle bir bölüm yok (Özdemir'den taşınmış). M19 → PKO bankası TYT mantık bölümü, P2 → çıkmış sorular + LSAT. ❷ **Kesme listesi kuralını çiğniyordu:** A8, A5, C12'nin bağımlıları vardı. Liste artık programatik doğrulanıyor. ❸ **Bayrak tutarsızlığı:** M10, M16, C11, C16, A21, A10 ne çekirdek ne kesilebilirdi → kesilebilir. Artık 41+22=63. ❹ **W1 %128 → %112:** M18 W3'e taşındı. ❺ **Ağırlık dengesi:** A hattı %39 (sınav %32), P hattı %5 (sınav %9) idi. **A2 2→1, A6 2→1, A10 2→1**; açılan 3 puan **P1 2→3, P2 1→2, P4 1→2**. Yeni sapmalar: A +4, P −2. P1 ve P2 çekirdek yapıldı. |
 | **4.2** | **1 Ağu 2026** | **Sunuş sadeleştirildi, içerik korundu.** Değişken uzunluktaki `kaynaklar` listesi, her konuda aynı olan **4 slotluk `calisma` kartına** çevrildi (video/kaynak/soru/süre). `kapsam` ikiye ayrıldı: `ogren` ve `dikkat` (TUZAK, KLASİK SORU, DUR). **59/63 konuya Türkçe YouTube anlatımı** atandı, her biri doğrudan arama bağlantısıyla: Tunç Kurt (matematik, lise cebiri), Şadi Evren Şeker (C, algoritma), yedek kanallar. **Özdemir 2 → Gürlü · Olimpik Sonlu Matematik** değişimi: Gürlü M6, M7, M8, M12 ve P3'ü de kapsıyor. Zorunlu kitap 3 → **2**, bütçe ₺670–1.070 → **~₺500**. Tracker promptu "ana ekranda 7'den fazla tıklanabilir öğe olmasın" kuralıyla yeniden yazıldı. |
 | **4.1** | **1 Ağu 2026** | **Kaynak listesi plana dahil edildi (Bölüm 7B).** Model: hat başına bir omurga; katalog 28 → **14**, zorunlu satın alma 5 → **3 kalem** (₺670–1.070). **Özdemir 2 M-üstünün tek kitabı** oldu (stok hatası düzeltildi), **Rosen koşullu listeye indi**, Türkçe YouTube omurgaları eklendi. **TYT/AYT düzeltmesi:** M-temel için "TYT+AYT branşal PKO fasikülü" (saf AYT değil — sorular çoğunlukla TYT bandında). **L hattının okul kaynağı kaldırıldı** — logaritma ve polinom 10. sınıfta işlenmiyor; YouTube + Prompt 4 ile kapatıldı. Okul dersi desteği M-temele taşındı. |
