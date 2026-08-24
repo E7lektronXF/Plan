@@ -26,7 +26,7 @@
 
   <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;border-bottom:1px solid #DCD7CE;padding-bottom:14px">
     <div style="font-size:12px;letter-spacing:0.17em;text-transform:uppercase;color:#6E6A63">TÜBİTAK · Bilgisayar · 1. Aşama</div>
-    <div style="display:flex;gap:22px;align-items:baseline">
+    <div style="display:flex;gap:22px 20px;align-items:baseline;flex-wrap:wrap">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
         <button onClick="{{ n.tikla }}" style="font-size:13px;letter-spacing:0.11em;text-transform:uppercase;padding-bottom:3px;color:{{ n.renk }};border-bottom:2px solid {{ n.alt }}">{{ n.ad }}</button>
       </sc-for>
@@ -35,6 +35,24 @@
 
   <sc-if value="{{ ekranAna }}" hint-placeholder-val="{{ true }}">
     <div>
+      <div style="padding:34px 0 40px;border-bottom:1px solid #DCD7CE">
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20">Sıradaki konu</div>
+        <div style="margin-top:14px;display:flex;gap:20px;align-items:baseline;flex-wrap:wrap">
+          <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:{{ siradaki.renk }}">{{ siradaki.id }}</span>
+          <button onClick="{{ siradaki.tikla }}" style="flex:1;min-width:0;font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(30px,5.2vw,56px);line-height:1.04;color:#0F2540;text-align:left">{{ siradaki.ad }}</button>
+        </div>
+        <div style="margin-top:14px;font-size:21px;color:#2B2F36">{{ siradaki.alt }}</div>
+        <div style="margin-top:6px;font-size:17px;color:#6E6A63">{{ siradaki.meta }}</div>
+        <div style="margin-top:10px;font-size:17px;color:#7A2E20">{{ siradaki.gecikNot }}</div>
+        <div style="margin-top:4px;font-size:16px;color:#7A2E20">{{ siradaki.uyari }}</div>
+        <sc-if value="{{ siradaki.var }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;display:flex;gap:26px;align-items:baseline;flex-wrap:wrap">
+            <button onClick="{{ siradaki.isaretle }}" style="font-size:16px;letter-spacing:0.1em;text-transform:uppercase;color:#14563F;border-bottom:1px solid #14563F;padding-bottom:3px">{{ siradaki.btnAd }}</button>
+            <button onClick="{{ siradaki.tikla }}" style="font-size:16px;letter-spacing:0.1em;text-transform:uppercase;color:#7A2E20;border-bottom:1px solid #7A2E20;padding-bottom:3px">Çalışma kartını aç</button>
+          </div>
+        </sc-if>
+      </div>
+
       <div style="padding:40px 0 30px;border-bottom:1px solid #DCD7CE;display:flex;gap:40px;flex-wrap:wrap">
         <div>
           <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6E6A63">Takvim konumu <span style="font-style:italic;color:#a39d90">(salt okunur)</span></div>
@@ -75,16 +93,16 @@
         </sc-if>
       </div>
 
-      <div style="padding:36px 0 44px;border-bottom:1px solid #DCD7CE">
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:44px;line-height:0.9;color:#0F2540">{{ gercekKonum.puan }}</div>
-        <div style="margin-top:16px;height:10px;background:#EFECE6;position:relative">
+      <div style="padding:30px 0 40px;border-bottom:1px solid #DCD7CE">
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;line-height:0.9;color:#0F2540">{{ gercekKonum.puan }}</div>
+        <div style="margin-top:14px;height:10px;background:#EFECE6;position:relative">
           <div style="position:absolute;left:0;top:0;bottom:0;background:#0F2540;width:{{ durum.yuzde }}"></div>
         </div>
         <div style="margin-top:14px;font-size:18px;color:#6E6A63">{{ gercekKonum.ozet }}</div>
       </div>
 
       <div style="padding:44px 0;border-bottom:1px solid #DCD7CE">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Sıradaki konular</div>
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Bundan sonrası <span style="text-transform:none;letter-spacing:0;font-style:italic;color:#a39d90">— takvim sırası</span></div>
         <sc-if value="{{ kuyrukBos }}" hint-placeholder-val="{{ false }}">
           <div style="font-size:18px;color:#6E6A63">Bütün konular tamamlandı. Kalan iş tekrar ve deneme.</div>
         </sc-if>
@@ -692,6 +710,57 @@ class Component extends DCLogic {
     return (k.onkosul || []).filter(o => !this.bittiId(o) && this.kapsamIci(k, o));
   }
 
+  /* ------------------------------------------------------- SIRADAKİ İŞ (tek satır)
+     Takvim sırasında yürür: hafta hafta, hafta içinde önce birincil sonra ikincil slot,
+     konu içinde o haftaya yazılmış parçalar. İlk bitmemiş parça sıradaki iştir. Bir hafta
+     tamamen bitince kendiliğinden sonraki haftaya geçer; yarım kalan varsa önce o gelir.
+     Çekirdek bittiğinde kuyruk tier'ı geri çağırma sırasına göre devralır. */
+  siradakiIs() {
+    const p = this.state.plan;
+    if (!p) return null;
+    const km = {}; p.konular.forEach(k => { km[k.id] = k; });
+
+    const parcaAra = (k, nolar, w, slot) => {
+      for (const no of nolar) {
+        if (this.state.tamam.indexOf(this.parcaAnahtar(k.id, no)) < 0) {
+          const pr = k.parcalar.find(x => x.no === no) || {};
+          return { k: k, w: w, slot: slot, parcaNo: no, parcaAd: pr.ad, parcaSayi: k.parcalar.length };
+        }
+      }
+      return null;
+    };
+
+    for (const w of p.haftalar) {
+      if (w.tip !== 'uretken') continue;
+      for (const slot of ['birincil', 'ikincil']) {
+        for (const o of (w[slot] || [])) {
+          const k = km[o.id];
+          if (!k || this.konuBitti(k)) continue;
+          if (this.parcali(k)) {
+            const bul = parcaAra(k, o.parcalar || k.parcalar.map(x => x.no), w, slot);
+            if (bul) return bul;
+          } else {
+            return { k: k, w: w, slot: slot };
+          }
+        }
+      }
+    }
+
+    // Çekirdek bitti — kuyruk penceresi (W35–W37), geri çağırma sırasına göre
+    const kuyrukK = p.konular.filter(k => k.tier === 'kuyruk' && !this.konuBitti(k))
+      .sort((a, b) => (a.geriCagirmaSirasi || 9) - (b.geriCagirmaSirasi || 9));
+    for (const k of kuyrukK) {
+      const w = p.haftalar.find(x => x.w === (k.hafta || 35));
+      if (this.parcali(k)) {
+        const bul = parcaAra(k, k.parcalar.map(x => x.no), w, 'kuyruk');
+        if (bul) return bul;
+      } else {
+        return { k: k, w: w, slot: 'kuyruk' };
+      }
+    }
+    return null;
+  }
+
   kuyruk() {
     const p = this.state.plan;
     const idx = {}; p.konular.forEach((k, i) => { idx[k.id] = i; });
@@ -804,8 +873,46 @@ class Component extends DCLogic {
       renk: !kapiGecti ? '#6E6A63' : (cekirdekPuanKazanilan >= kapiH.olcut ? '#14563F' : '#7A2E20')
     };
 
+    // SIRADAKİ İŞ — ana ekranın tek kahramanı: aynı anda tek bir şey görünür
+    const si = this.siradakiIs();
+    const SLOT_AD = { birincil: 'birincil slot', ikincil: 'ikincil slot', kuyruk: 'kuyruk — geri çağırma' };
+    let siradaki;
+    if (!si) {
+      siradaki = {
+        var: false, bitti: true,
+        ad: 'Kapsam tamam.', alt: 'Kalan iş tekrar ve deneme.',
+        id: '', meta: '', renk: '#14563F', uyari: '', btnAd: '', tikla: () => {}, isaretle: () => {}
+      };
+    } else {
+      const k = si.k, gecikti = this.bugun() > si.w.bit;
+      const parcaVar = si.parcaNo !== undefined;
+      const eksik = this.eksikOnkosulId(k);
+      const disi = this.kapsamDisiOnkosul(k);
+      siradaki = {
+        var: true, bitti: false,
+        id: k.id,
+        ad: parcaVar ? si.parcaAd : k.ad,
+        alt: parcaVar ? (k.ad + ' · parça ' + si.parcaNo + '/' + si.parcaSayi) : hatAd[k.hat],
+        meta: 'W' + si.w.w + ' · ' + SLOT_AD[si.slot] + ' · 4 saat · 1 puan',
+        renk: HAT_RENK[k.hat] || '#0F2540',
+        gecikti: gecikti,
+        gecikNot: gecikti ? ('W' + si.w.w + ' geçti — bu iş devretti, önce bunu kapat.') : '',
+        uyari: (eksik.length ? 'Ön koşul eksik: ' + eksik.join(', ') + '. ' : '') +
+               (disi.length ? '⚠ Kapsam dışı ön koşul: ' + disi.join(', ') + '.' : ''),
+        btnAd: parcaVar ? 'Bu parçayı bitirdim' : 'Bu konuyu bitirdim',
+        tikla: () => this.konuAc(k.id),
+        isaretle: () => { if (parcaVar) this.parcaIsaretle(k, si.parcaNo); else this.isaretle(k.id); }
+      };
+    }
+
     // K18 — "sıradaki konular" kuyruğu (puan-öncelikli, tarih navigasyon değil)
-    const tumKuyruk = this.kuyruk();
+    let tumKuyruk = this.kuyruk();
+    if (si) {
+      const kalanParca = this.parcali(si.k)
+        ? si.k.parcalar.filter(pr => this.state.tamam.indexOf(this.parcaAnahtar(si.k.id, pr.no)) < 0).length
+        : 1;
+      if (kalanParca <= 1) tumKuyruk = tumKuyruk.filter(k => k.id !== si.k.id);
+    }
     const sinir = this.state.kuyrukSinir;
     const kuyrukListe = tumKuyruk.slice(0, sinir).map(k => {
       const d = this.durumu(k), hazir = this.hazirMi(k);
@@ -1119,7 +1226,7 @@ class Component extends DCLogic {
     }));
 
     return Object.assign(temel, {
-      takvimKonum, gercekKonum, borc, kapsam, kapi, kuyrukListe, kuyrukDahaVar, kuyrukDahaGoster, kuyrukBos,
+      takvimKonum, gercekKonum, borc, kapsam, kapi, siradaki, kuyrukListe, kuyrukDahaVar, kuyrukDahaGoster, kuyrukBos,
       durum, konular, hatFiltre, tierFiltre, konuOzet, takvim, haftaDetay,
       denemeler, denemeOzet, madencilikListe, grafik, takvimOzet,
       kararlar, bolumler, kaynaklar, kanallar,
