@@ -1,28 +1,19 @@
 # TÜBİTAK Bilim Olimpiyatları — Bilgisayar, 1. Aşama Hazırlık Planı
 
-> **Sürüm 4.4** · Son güncelleme: 7 Ağustos 2026
+> **Sürüm 4.6** · Son güncelleme: 24 Ağustos 2026
 > Bu dosya kendi kendine yeterlidir. Bir sonraki oturumda bunu tek başına verdiğinde, aramızda geçen tüm kararlar ve gerekçeleri Bölüm 2'de kayıtlıdır.
 >
-> **v4.4 — B0 yeniden kuruldu, deneme protokolü değişti.** 8 Ağu – 5 Eyl arası bilgisayar erişimi olmayacağı için **C hattı B0'dan tamamen çıkarıldı** ve boşalan 100 saat **M hattıyla dolduruldu** (K16). W1 ve W2 tamamlanmadı, 14 puan devrediyor. **Deneme #1–#4 iptal**, yerine rezerv tüketmeyen madencilik setleri; ilk tam koşullu deneme **W18** (K17). Tracker takvim-öncelikliden **puan-öncelikli** görünüme geçti (K18). Müfredat, puan ve konu sayısı **değişmedi** — yalnızca sıra değişti.
+> **v4.6 — takvim yeniden yazıldı, müfredata dokunulmadı.** M20 ≈ 8 saat sürdü: `puanBasinaSaat = 4` katsayısı **doğrulandı** (K22 kapandı). Bozuk olan tek şey haftalık saat varsayımıydı — plan 25/15 diyordu, gerçek 11–12. Bu bir ölçek değil **kalibrasyon** hatasıdır; konular olduğu yerde durur, sadece kaç haftaya yayıldıkları değişir. Yerine hafta tipine bağlı **sabit saat modeli** geçti (K23: yaz 21 · yoğun 16 · standart 11 · okul sınavı 12 · TFO 6). Hatlar artık paralel değil **kademeli** yürüyor (K25): 64 saatlik seri C zinciri W7'de kesintisiz başlar, A hattı onun ucunda asılıdır. 2+ puanlık her konu **4 saatlik parçalara** bölündü (K24) — tracker artık konu değil parça sayıyor. Ve en önemlisi: **"geçmek" hedefi daha az kapsam gerektiriyor** (K26). 4 yanlış 1 doğruyu götürdüğü için yarım bilinen konu bilinmeyenden kötüdür; taahhüt **Tier B = 41 çekirdek konu / 79 puan.** Kesilen 29 puan silinmedi, kuyruğa alındı ve W35–W37'de geri çağırma penceresi var. Konu (63), puan (108) ve faz (10) sayıları değişmedi.
 >
-> **v4.0'ta ne değişti — planın tarihindeki en büyük revizyon.** Müfredat artık varsayımla değil, **ölçümle** boyutlandırılıyor. 2024, 2025 ve 2026 birinci aşama sınavlarının **150 sorusu tek tek konu ID'siyle etiketlendi** (K13). Sonuç: M hattı %40 değil **%24**, ve M'nin yaklaşık yarısı TYT/AYT seviyesinde. İki yeni hat açıldı (**P** mantık kurgu, **L** lise cebiri), dinamik programlama geri eklendi, graf bloğu bir blok öne çekildi, altı konu kesildi. Konu 57 → **63**, puan 108 (sabit), faz 9 → **10**.
+> **v4.5 kullanılmadan yerini bu belgeye bıraktı** (saat modeli yanlış temelliydi). K16, K17, K18 yürürlükte; K19–K21 buraya taşındı; K22 kapandı, yerine K23–K26 geldi.
 >
-> **v4.3 — denetim ve denge düzeltmesi.** Beş sorun bulundu: (1) kitap değişiminde M19 ve P2'ye Gürlü'de **var olmayan** bir bölüm atanmıştı; (2) kesme listesi kendi kuralını çiğniyordu (A8, A5, C12'nin bağımlıları vardı); (3) altı konu ne çekirdek ne kesilebilir işaretliydi; (4) W1 %128 doluluktaydı; (5) A hattı ölçülen ağırlığın 7 puan üstünde, P hattı 4 puan altındaydı. Hepsi düzeltildi — **A2, A6, A10'dan alınan 3 puan P hattına aktarıldı**; sapmalar artık en fazla ±4.
+> **v4.4 — B0 yeniden kuruldu.** W1–W2 tamamlanmadı, C hattı B0'dan çıkarıldı ve M hattı öne çekildi (K16). Deneme protokolü değişti: ilk tam koşullu deneme W18'e alındı, madencilik seti tanımlandı (K17). Tracker puan-öncelikli görünüme geçti (K18).
 >
-> **v4.2 — sunuş sadeleştirildi.** İçerik aynı; **her konu artık sabit dört satırla açılıyor** (📺 video · 📖 kaynak · ✏️ soru · ⏱ süre), kapsam ve ön koşullar kapalı geliyor. **59 konuya Türkçe YouTube anlatımı** atandı — matematik için Tunç Kurt, C ve algoritma için Şadi Evren Şeker. **Özdemir 2 yerine Gürlü** (güvercin yuvası, indirgemeli diziler, oyun stratejileri, içerme-dışarma — dördü de "kaynak yok" işaretliydi). Kitap sayısı 3 → **2**, bütçe ~₺500.
->
-> **v4.1 — kaynak listesi plana dahil edildi.** Ayrı dosyada duran kaynak listesi **Bölüm 7B** olarak plana taşındı: model (hat başına bir omurga), satın alma listesi, ücretsiz omurgalar, koşullu ve reddedilenler, tam katalog, ters indeks, blok ve hat bazlı kullanım kuralları. Plan artık kaynak tarafında da kendi kendine yeterli.
->
-> **v3.3'te ne değişti:** Tam tutarlılık denetimi yapıldı, dört hata düzeltildi (K12). Her konuya `kesilebilir` bayrağı eklendi.
->
-> **v3.2'de ne değişti:** M hattındaki konulara MEB müfredat eşleştirmesi eklendi (K11).
->
-> **v3.1'de ne değişti:** Karışabilecek konu adları ayrıştırıldı, her konuya kapsam tanımı eklendi (K10).
+> **v4.0 — planın tarihindeki en büyük revizyon.** Müfredat artık varsayımla değil, **ölçümle** boyutlandırılıyor. 2024, 2025 ve 2026 birinci aşama sınavlarının **150 sorusu tek tek konu ID'siyle etiketlendi** (K13). Sonuç: M hattı %40 değil **%24**. İki yeni hat açıldı (**P** mantık kurgu, **L** lise cebiri), dinamik programlama geri eklendi, graf bloğu bir blok öne çekildi. Konu 57 → **63**, faz 9 → **10**.
 
 ---
 
 ## 0. Künye
-
 | | |
 |---|---|
 | **Hedef sınav** | 35. Bilim Olimpiyatları Birinci Aşama, Bilgisayar dalı |
@@ -33,16 +24,20 @@
 | **Hedef sonuç** | Yaz Okulu + 2. Aşama daveti (Bilgisayar dalında ~55 kişi) |
 | **Plan başlangıcı** | 27 Temmuz 2026 (Hafta 1) |
 | **Plan bitişi** | 16 Mayıs 2027 (Hafta 42) |
-| **Toplam süre** | 42 hafta / 6 blok / 27 üretken hafta |
+| **Toplam süre** | 42 hafta / 6 blok / 26 üretken hafta / 4 devredilen hafta |
 | **Müfredat** | **63 konu / 108 puan / 10 faz** |
+| **Taahhüt kapsamı** | **Tier B — 41 çekirdek konu / 79 puan** (K26). Kuyruk 9 konu / 12 puan · kesildi 13 konu / 17 puan |
+| **Saat modeli** | Hafta tipine bağlı (K23): yaz 21 · yoğun 16 · standart 11 · okul sınavı 12 · TFO 6 · dönem ort. **13,5 sa/hafta** |
+| **Kapasite** | W5–W37: **375 üretken + 82 tampon = 457 sa** · W39–W42 tekrar+sınav 60 sa |
+| **Konu granülerliği** | 2+ puanlık konular 4 saatlik parçalara bölünmüştür (K24) — 33 konu, 4 sa = 1 puan |
 | **Ampirik taban** | 2024 + 2025 + 2026 sınavlarının 150 sorusu etiketlendi (K13) |
 | **Kaynaklar** | Her konunun **çalışma kartı** JSON'un `calisma` alanında: 📺 video · 📖 kaynak · ✏️ soru · ⏱ süre |
 | **Video** | 📺 Tunç Kurt Matematik (matematik) · Şadi Evren Şeker (C, algoritma) — bkz. 7B |
 | **Zorunlu bütçe** | **~₺500 · 2 kitap** (Gürlü + PKO soru bankası) |
 | **Öğrenci** | 10. sınıf (2026–27), TED Konya Koleji |
 | **Uzun vadeli bağlam** | MIT Brain & Cognitive Sciences başvurusu, Kasım 2028 |
-| **Devredilen** | W1, W2 tamamlanmadı — 14 puan devrediyor (K16) |
-| **B0 durumu** | W3–W6 yeniden kuruldu: M hattı öne çekildi, C ertelendi (K16) |
+| **Devredilen** | W1–W4 tamamlanmadı — yalnızca M20 (2 puan) bitti, 21 puan devretti |
+| **B0 durumu** | W5–W6 yeniden kuruldu; C hattı W7'de kesintisiz başlar (K25) |
 
 ### Rekabet — doğrulanmış (K13)
 
@@ -68,19 +63,21 @@
 ---
 
 ## 1. Durum paneli — HER OTURUMDA ÖNCE BUNU GÜNCELLE
-
 ```
 BUGÜNÜN TARİHİ        : ____________
 BULUNDUĞUM HAFTA      : W__  (Bölüm 6'daki tablodan bak)
-BULUNDUĞUM BLOK       : B__
-BLOK İÇİ HAFTA        : __ / __
+HAFTA TİPİ            : yaz 21 / yoğun 16 / standart 11 / okul sınavı 12 / TFO 6 / tampon
+BULUNDUĞUM BLOK       : B__      BLOK İÇİ HAFTA : __ / __
 BULUNDUĞUM FAZ        : Faz __ (Bölüm 4)
-BU HAFTA TAMPON MU?   : evet / hayır
 
-TAMAMLANAN PUAN       : ___ / 108   (%__)
-TAMAMLANAN KONU       : ___ / 63
+TAMAMLANAN PUAN       : ___ / 79   (%__)   ← payda ÇEKİRDEK, 108 değil
+TAMAMLANAN KONU       : ___ / 41 çekirdek
+TAMAMLANAN PARÇA      : ___ / ___ (bu haftanın konularında)
 GEÇEN ÜRETKEN HAFTA   : ___
-ÖLÇÜLEN HIZ           : ___ puan/hafta
+ÖLÇÜLEN HIZ           : ___ puan/üretken hafta
+
+BİRİNCİL SLOT (C→A)   : ______________________________
+İKİNCİL SLOT (M/P→A)  : ______________________________
 
 TAMAMLANAN KONU ID'LERİ:
   M: ____________________________________
@@ -89,9 +86,8 @@ TAMAMLANAN KONU ID'LERİ:
   P: ____________________________________
   L: ____________________________________
 
-DEVREDİLEN HAFTALAR   : ______________________________
-TAKVİM PUANI          : ___ / 108   (takvime göre olman gereken)
-GERÇEK PUAN           : ___ / 108   (gerçekte bitirdiğin)
+TAKVİM PUANI (Σ)      : ___ / 79   (takvime göre olman gereken)
+GERÇEK PUAN           : ___ / 79   (gerçekte bitirdiğin — yarım konular parça parça sayılır)
 BORÇ                  : ___ puan  ≈  ___ hafta
 DEVREDİLEN (yarım kalan) KONULAR:
   ______________________________________
@@ -102,16 +98,20 @@ AÇIK SORUN / TAKILDIĞIM YER:
   ______________________________________
 ```
 
-**7 Ağu 2026 itibarıyla:** Devredilen haftalar W1, W2. Gerçek puan 0/108. Takvim puanı 14/108. Borç 14 puan ≈ 2,3 hafta.
+**24 Ağu 2026 itibarıyla (v4.6 açılışı):** Devredilen haftalar W1–W4. Tamamlanan tek konu **M20** — gerçek puan 2/79. Takvim puanı W5 sonunda 7/79. Devreden konular: M5, M7, M8, M9, P2 (yeni takvimde W7–W13 arasına yerleştirildi). Ölçülen hız 2,0 puan/üretken hafta.
 
-### Referans hızlar
+### Referans hızlar (K23)
 
-| Dönem | Beklenen hız |
-|---|---|
-| Yaz (25 sa/hafta) | ~6.0 puan/üretken hafta |
-| Dönem (15 sa/hafta) | ~3.6 puan/üretken hafta |
+| Hafta tipi | Saat | Beklenen hız |
+|---|---|---|
+| Yaz / yarıyıl (21 sa) | 21 | ~5,0 puan |
+| Yoğun (16 sa) | 16 | ~4,0 puan |
+| Okul sınavı (12 sa) | 12 | ~3,0 puan |
+| Standart (11 sa) | 11 | ~2,75 puan |
+| TFO (6 sa) | 6 | ~1,5 puan |
+| **Dönem ortalaması** | **13,5** | **~3,4 puan** |
 
-Ölçtüğün hız beklenenin %70'inin altındaysa sorun konu zorluğunda değil, **iskelettedir**. Önce oturma saatlerini denetle, sonra kapsam kıs.
+Ölçtüğün hız beklenenin %70'inin altındaysa sorun konu zorluğunda değil, **iskelettedir**. Önce oturma saatlerini denetle, sonra kapsam kıs — ama kapsam kısma kararı artık serbest değil: **tek kapı W26'dır** (K26).
 
 ---
 
@@ -396,6 +396,159 @@ Bunlar "zeka sorusu" değil, **teknikleri olan** bir tür: kısıt sembolleştir
 
 **Gerekçe:** Mevcut tracker bugünün tarihine bakıp W2'yi açıyordu — W1 bitmemiş olmasına rağmen. Bu, planın kendi ilkesiyle çelişiyor: *ilerleme puanla takip edilir, haftayla değil.* Takvimi otorite saymak, bitmemiş işi görünmez kılar ve "kaçırılmış hafta" diye telafi edilemeyen sahte bir kategori üretir. Gerçekte kaçırılmış hafta yoktur; **bitmemiş konu** vardır.
 
+### K19 · Deneme bir oturumdur, bir hafta değil — 24 Ağu 2026
+
+**Karar:** "Deneme haftası" diye bir hafta tipi yok. W18, W22, W26, W30, W34 ve W38 **saf telafi haftalarıdır**; içlerinde bir Cumartesi oturumu vardır, o kadar.
+
+| Tür | Sınav | Analiz | Toplam |
+|---|---|---|---|
+| Madencilik seti (K17) | 45 dk | 45 dk | **1,5 sa** |
+| Tam koşullu deneme | 150 dk | 90 dk | **4 sa** |
+
+**Yeni saat modelinde bir ayar:** 4 saatlik deneme, 11 saatlik haftanın %36'sı — çok pahalı. Bu yüzden tam denemeler **yoğun (16 sa) veya tampon haftalarına** yerleştirildi; madencilik setleri standart haftalarda kalabilir.
+
+**Gerekçe:** Bir haftanın tamamını tek bir oturuma ad olarak vermek, o haftanın kalan 7–12 saatini görünmez kılıyordu. Görünmeyen saat plansız saattir.
+
+**Veri tarafı:** `haftalar[].deneme` alanı kaldırıldı; yerine `denemeler[]` dizisi geldi — `{no, tip, hafta, tarih, sinavDk, analizDk, hedefKonular}`.
+
+### K20 · v4.5 taslağından devreden numara — içeriği aktarılmadı — 24 Ağu 2026
+
+v4.5 kullanılmadan yerini v4.6'ya bıraktı (saat modeli yanlış temelliydi). K19 ve K21 o taslaktan buraya taşındı; **K20'nin metni revizyon belgesinde yer almıyor.**
+
+Numara, karar kaydının sürekliliği bozulmasın diye boş bırakıldı. v4.5 taslağı bulunursa buraya yazılacak; bulunmazsa bu kayıt olduğu gibi kalır. **Yürürlükte bir hükmü yoktur** — plana etkisi olan hiçbir şey K20'ye dayanmıyor.
+
+### K21 · K16 geri ödemesinin tetikleyicisi tarih değil, borç — 24 Ağu 2026
+
+**Karar:** K16 aynen geçerli; değişen tek şey tetikleyicisi.
+
+- **v4.4:** "W7'den itibaren Pazartesi M slotu C'ye geçer."
+- **v4.6:** M slotu, **devreden M/P borcu kapanana kadar M'de kalır.** (Takvimde bu W13'tür.)
+
+**Gerekçe:** Sabit tarihli geri ödeme, borcu ödemeden faizini ödemeye benziyordu. Slot takvime değil, borcun kapanmasına bağlanır.
+
+**Veri tarafı:** `meta.cHattiErteleme.pazartesiSlotuC` artık `true` değil `"borcKapaninca"`.
+
+### K22 · Hız kapısı amacına ulaştı ve kapatıldı — 24 Ağu 2026
+
+**Karar:** K22 (hız kapısı) **kapatıldı.** Yerine K23'ün sabit saat modeli geçti.
+
+**Ölçüm:** M20 ≈ 8 saat sürdü — tahmin neyse o çıktı. Yani `puanBasinaSaat = 4` sağlam ve **692 saatlik bütçenin ölçeği doğru.** Bozuk olan tek şey haftalık saat varsayımıydı: plan 25/15 diyordu, gerçek 11–12.
+
+**Neden bu iyi haber:** Kalibrasyon hatası ile ölçek hatası çok farklı şeylerdir. Ölçek hatası olsaydı 63 konunun tamamının süresini yeniden tahmin etmek gerekirdi. Kalibrasyon hatasında ise konular olduğu yerde durur, sadece kaç haftaya yayıldıkları değişir.
+
+**Sonuç:** Konu envanterine dokunulmadı. Takvim yeniden yazıldı.
+
+### K23 · Sabit saat modeli — hafta tipine göre 6/11/12/16/21 — 24 Ağu 2026
+
+**Karar:** Haftalık saat tek bir sayı değil, hafta tipinin fonksiyonudur.
+
+| Hafta tipi | Saat | Nerede |
+|---|---|---|
+| **Yaz** | 21 | W5, W6 |
+| **Yoğun** | 16 | İki haftada bir, W7'den itibaren |
+| **Standart** | 11 | Yoğun haftaların arası |
+| **Okul sınavı** | 12 | W15, W16, W25, W35 |
+| **Yarıyıl tatili** | 21 | W27 |
+| **TFO** | 6 | W19 |
+
+Dönemde ortalama ≈ **13,5 saat/hafta.** Planlama 14–21 aralığının **alt bandından** yapıldı; üst bant (18–21) bilerek boş bırakıldı — o, telafi payı.
+
+**Gerekçe:** Planı ortalamaya göre kurup her hafta ortalamayı tutturmayı ummak, bütçeyi tavana göre yapıp hiç sapma payı bırakmamak demek olurdu.
+
+### Kapasite
+
+| | Saat |
+|---|---|
+| Üretken haftalar (W5–W37) | **375** |
+| Tampon haftalar (W10, 14, 18, 22, 26, 30, 34) | 82 |
+| **Toplam (W5–W37)** | **457** |
+| Tekrar + sınav (W39–W42) | 60 |
+
+| Senaryo | Kalan puan | Saat | Üretken kapasiteye oranı | Hüküm |
+|---|---|---|---|---|
+| **A — Tam müfredat** | 106 | 424 | %113 | ✗ Tamponun %60'ını yemeden kapanmıyor |
+| **B — Çekirdek** | 77 | 308 | **%82** | ✓ **Taahhüt kapsamı.** 67 sa pay + 82 sa tampon |
+| **C — Kurtarma** | 55 | 220 | %59 | Sadece W26 kapısı tetiklerse |
+
+*(Kalan puan sütunu M20'nin bitmiş 2 puanını içermez.)*
+
+### K24 · 2+ puanlık her konu 4 saatlik parçalara bölünür — 24 Ağu 2026
+
+**Sorun:** 3 puanlık konu = 12 saat. Standart hafta = 11 saat. Yani M2, M5, C3, C7, C5, C9, C14, C15, A7, A23, A24 **hiçbiri bir haftaya sığmıyor.**
+
+Bu, tracker'ı bozar: haftalarca "hiçbir konu bitmedi" görünür, halbuki iş ilerlemektedir. Puan hareket etmeyince motivasyon da ilerlemeyle birlikte ölçülemez hâle gelir.
+
+**Karar:** 2+ puanlık her konu **4 saatlik alt-parçalara** bölünür ve tracker parça bazında ilerler. Bir parça = 4 saat = 1 puan.
+
+| Konu | Parçalar |
+|---|---|
+| M2 (3p / 12sa) | basit permütasyon · tekrarlı · dairesel |
+| M5 (3p / 12sa) | temel yıldız-çubuk · üst sınırlı · negatif olmayan tamsayı çözümleri |
+| C3 (3p / 12sa) | `a++` vs `++a` · ifade içi yan etkiler · tanımsız davranış tuzakları |
+| C7 (3p / 12sa) | `for`/`while` takibi · `do-while` · `break`/`continue` |
+| C5 (3p / 12sa) | temel bit operatörleri · kaydırma · maskeleme kalıpları |
+
+Kalan 28 konunun bölünmesi konunun kendi kapsam maddelerinden türetildi; hepsi `plan.json`'da.
+
+**Veri tarafı:** `konular[].parcalar[]` — her parça `{no, ad, saat: 4, puan: 1, durum}`. Tracker'da işaretleme hem konu hem parça düzeyinde çalışır; bütün parçalar işaretlenince konu kendiliğinden kapanır.
+
+### K25 · Mimari: paralel değil kademeli — 24 Ağu 2026
+
+**Karar:** 11–16 saatlik bir haftada üç hattı birden beslemek, üçünü de yavaş beslemek demek. v4.6 hatları **kademeli** yürütür.
+
+### Kritik yol
+
+```
+C1 → C2 → C3 → C7 → C4 → C6 → C5 → C8 → A2 → A3
+```
+
+Bu zincir tamamen seri — **64 saat**, hiçbir halkası paralelleştirilemez. Ve **A hattının tamamı bunun ucunda asılı** (A2, C8'i bekliyor).
+
+v4.4'te bu 56 saatlik blok hiçbir haftaya yazılmamıştı; C8 W9'a konmuştu ki matematiksel olarak imkânsızdı. **K16'nın erteleme kararı doğruydu, hattın geri kalanının tarifesi güncellenmemişti.**
+
+K16'nın gerekçesi (bilgisayar erişimi yok) **5 Eylül'de bitiyor** — tam W7'nin başı. O yüzden W7, C hattının kesintisiz başlangıcı.
+
+### Slot yapısı
+
+| Hafta | Birincil slot (C) | İkincil slot | Karma/deneme |
+|---|---|---|---|
+| Yoğun (16 sa) | 9 | 5 | 2 |
+| Standart (11 sa) | 6 | 3 | 2 |
+| Okul sınavı (12 sa) | 6 | 4 | 2 |
+
+**İkincil slot sırası:** önce M/P borcu (32 sa, W7–W13), sonra A hattı (W15'ten itibaren).
+**Birincil slot:** C bitince (W27) A hattına devredilir.
+
+K16'nın Cumartesi 30 dakikalık karma M seti maddesi karma slotta duruyor, W7'de başlıyor.
+
+### K26 · "Geçmek" hedefi daha az kapsam gerektiriyor — Tier B taahhüdü — 24 Ağu 2026
+
+Sezgiye ters gelen ama bu sınavda belirleyici olan nokta: **4 yanlış 1 doğruyu götürüyor.**
+
+Yarım bilinen bir konu, sınavda bilinmeyen bir konudan **daha kötüdür.** Bilmediğin soruyu boş bırakırsın, beklenen değer 0. Yarım bildiğin soruyu işaretlersin, beklenen değer negatif olabilir. 108 puanın tamamını yüzeysel gezmek, 79 puanı sağlam bilmekten düşük net getirir.
+
+> Sınav bir depo değil, bir gümrük kapısı. Kaç kutu getirdiğin değil, kaçının belgesi tam olduğu sayılıyor — belgesiz kutu sadece geçmiyor değil, ceza yazdırıyor.
+
+**Taahhüt: Tier B — 41 çekirdek konu, 79 puan.** Kesilen 29 puan silinmedi, **kuyruğa** alındı (K18) ve W35'ten itibaren geri çağırma penceresi var.
+
+**Kesilenler (22 konu / 29 puan):** M6, M10, M12, M15, M16, C11, C12, C16, C20, A21, A4, A5, A6, A15, A8, A19, A10, A11, A22, P3, P4, L2
+
+### Kuyruk geri çağırma sırası (W35–W37)
+
+Sınav ağırlığı × maliyet oranına göre:
+
+1. **A4, A5, A6** (3p / 12sa) — sıralama algoritmaları, A hattının en çok çıkan kesilebilirleri
+2. **C12** (1p / 4sa) — C13 zaten çekirdekte, yanına ucuz ekleniyor
+3. **M16** (2p / 8sa) — sayı teorisi temelleri
+4. **A8, A10** (2p / 8sa)
+5. **P3, P4** (4p / 16sa) — P hattı ucuz ama sınav ağırlığı %9
+
+Kalanlar (M6, M10, M12, M15, C11, C16, C20, A21, A15, A19, A11, A22, L2 — 17 puan) bu sezon çalışılmıyor.
+
+### Tek kapı: W26 (18–24 Ocak)
+
+Ölçüt: **kümülatif 57 puan.** Altındaysa Tier C devreye girer (A24, A25, A20, A26, A23, A9, P1 düşer). Ek tartışma yok — tampon haftasında ölçülür, karar verilir, devam edilir.
+
 ### Reddedilen seçenekler (tekrar önerilmesin)
 
 | Seçenek | Neden reddedildi |
@@ -414,21 +567,75 @@ Bunlar "zeka sorusu" değil, **teknikleri olan** bir tür: kısıt sembolleştir
 
 ### Açık sorular
 
-| # | Soru | Ne zaman netleşir |
-|---|---|---|
-| S1 | TED Konya TFO temsilcisi olacak mı? | W7 — felsefe öğretmeni görüşmesi |
-| S2 | Gerçek hız beklentiyi tutuyor mu? | W6 — Blok 0 kapanışı |
-| S4 | Hangi AP dersleri, kaç tane? | W15 — Kasım kayıt tarihi |
-| S5 | SAT ilk deneme ne zaman? | 11. sınıf güzü, bu planın dışında |
-| **S6** | L hattı kalıcı mı, 2026'ya özgü mü? | 2027 sınavı — öncesinde karar verilemez, 2 puanlık sigorta olarak kalır |
-| **S7** | P hattı gerçekten öğrenilebilir mi, yoksa ham muhakeme mi? | W22 — Deneme #6'da P netleri ölçülür |
+Karar gerektiren, ama şimdi karara bağlanmayan konular. Her birinin bir **son karar tarihi** var.
 
-*S3 (kesilen konular geri eklenecek mi) K14 ile kapandı: A20 geri eklendi, kalanlar ölçüme göre yeniden düzenlendi.*
+| # | Soru | Son karar |
+|---|---|---|
+| **S4** | AP sınavları W40–W41 ile çakışıyor — hangi seçenek? | 2026-11-01 |
+| **S5** | Tam deneme sayısı 6 mı, 4 mü? | 2026-11-23 |
+| **S6** | Süre krizi ne zaman ölçülebilir hâle gelir? | 2026-11-23 |
+| **S7** | Okul sınav haftaları takvimde doğru yerde mi? | 2026-09-30 |
+| **S8** | Kesilen konular geri eklenecek mi? | 2027-03-15 |
+| **S9** | TFO ile TÜBİTAK çakışması W19'dan ibaret mi? | 2026-10-01 |
+| **S10** | Tier C'nin puan tabanı hangisi — 57 mi 63 mü? | 2027-01-18 |
+| **S11** | Kesme listesi ön koşul grafını kırıyor — 11 bağ kapsam dışında | 2026-09-30 |
+
+### S4 — AP sınavları ile W40–W41 çakışması
+**Son karar: 2026-11-01** (AP kaydı ~7 Kasım)
+AP sınavları Mayıs'ın ilk iki haftasında, Türkiye'de yalnızca İstanbul'da. TÜBİTAK 15 Mayıs. Bu, planın W40–W41 tekrar haftalarının tam ortası — sınav öncesi en kritik iki hafta, üstüne şehir dışı seyahat.
+Seçenekler: (a) 10. sınıfta AP'siz kalıp 11'de üç AP almak, (b) sadece CS Principles alıp Psychology'yi ertelemek, (c) ikisini de alıp W39–W41 tekrar planını sıkıştırmak.
+**Yapılacak:** College Board 2027 takvimi yayınlanınca kesin tarihler doğrulanacak.
+
+### S5 — Tam deneme sayısı 6 mı, 4 mü?
+**Son karar: 2026-11-23** (Tam deneme #1)
+K17'ye göre 10 kullanılabilir sınav kağıdı var, 9 oturum planlı. 4 saatlik oturum, 11 saatlik haftanın %36'sı. Deneme #1'in gerçek maliyeti ölçüldükten sonra karar verilecek.
+
+### S6 — Süre krizi ne zaman ölçülebilir hâle gelir?
+**Son karar: 2026-11-23**
+K17'nin asıl gerekçesi: sınavın tahmini iş yükü ~174 dk, gerçek bütçe 150 dk. Bu, konu bilgisinden **bağımsız** bir sorun — bildiğin soruya yetişememe. W18'de müfredatın ancak %53'ü bitmiş olacak, yani ilk ölçüm hâlâ kısmi. Alternatif: madencilik setlerinde soru başına süreyi baştan kaydedip trend çıkarmak.
+
+### S7 — Okul sınav haftaları takvimde doğru yerde mi?
+**Son karar: 2026-09-30**
+W15, W16, W25, W35 tahmini olarak yerleştirildi. Okulun 2026-27 sınav takvimi açıklanınca gerçek tarihlerle değiştirilecek — kayarsa tampon haftalarının yeri de kayar.
+
+### S8 — Kesilen konular geri eklenecek mi? *(v4.4'ten devreden S3)*
+**Son karar: 2027-03-15** (W34 tamponu)
+K26'daki geri çağırma sırası taslak. W33'te çekirdek gerçekten bitmişse liste yeniden önceliklendirilecek; o tarihte elde 5 denemelik net verisi olacak ve hangi hattın zayıf olduğu tahminle değil ölçümle bilinecek.
+
+### S9 — TFO ile TÜBİTAK çakışması W19'dan ibaret mi?
+**Son karar: 2026-10-01**
+W19 (30 Kasım–6 Aralık) TFO için 6 saate düşürüldü. Ama TFO temsilcilik süreci W7'de başlıyor ve okul temsilciliği darboğazı hâlâ çözülmüş değil. Temsilcilik kesinleşirse Kasım'da ek hazırlık yükü gelir — bu takvimde yok.
+
+### S10 — Tier C'nin puan tabanı hangisi? *(v4.6'yı veriye çevirirken çıktı)*
+**Son karar: 2027-01-18** (W26 kapısı)
+Revizyon belgesi Tier C için üç farklı sayı veriyor: §1 tablosu **55 kalan puan** (220 sa), §6 kapı maddesi **57 puan**, ama §6'nın düşen konu listesi (A24, A25, A20, A26, A23, A9, P1 = 16 puan) 79'dan düşülünce **63** veriyor. Aradaki 6 puanlık fark, listede olmayan ama düşürülmesi düşünülmüş bir konu grubuna işaret ediyor.
+`plan.json` şu an listeyi esas alıyor (`meta.kapi.kalanPuanHesaplanan = 63`) ve farkı `meta.kapi.not_` alanında taşıyor. Kapı zaten W26'da ölçülecek; sayı orada, ölçümle birlikte kesinleşir. **Kapı tetiklenmezse bu soru kendiliğinden kapanır.**
+
+### S11 — Kesme listesi ön koşul grafını kırıyor *(v4.6'yı veriye çevirirken çıktı)*
+**Son karar: 2026-09-30**
+v4.6 §2, 22 kesilebilir konunun **tamamını aynı anda** düşürüyor. Ama v4.3'te programatik doğrulanan şey 22'lik liste değil, 8 konuluk **kesme sırasıydı** (L2 → P4 → P3 → A22 → A6 → A11 → C20 → A4). Hepsi birden düşünce 11 ön koşul bağı kapsam dışında kaldı — beşi doğrudan **çekirdek** konuların ön koşulu:
+
+| Konu | Kapsam | Hafta | Kapsam dışı ön koşul |
+|---|---|---|---|
+| **M7** dahil-hariç | çekirdek | W9 | M6 güvercin yuvası (*kesildi*, 1p) |
+| **C13** C fonksiyonları | çekirdek | W21 | C12 stringler (kuyruk, 1p) |
+| **A9** ikili ağaçlar | çekirdek | W28 | A8 bağlı liste (kuyruk, 1p) |
+| **A25** Huffman | çekirdek | W29 | A19 açgözlü strateji (*kesildi*, 3p) |
+| **A20** DP: tablo | çekirdek | W31 | M12 yineleme bağıntısı (*kesildi*, 1p) · A21 böl ve yönet (*kesildi*, 1p) |
+| C12 · A4 · A5 · A8 · P3 | kuyruk | W35–37 | C11 · A21 · A21 · C16 · M15 (hepsi *kesildi*) |
+
+**Tracker'ın şu anki davranışı:** kapsam dışı ön koşul **kilitlemiyor**, konu panelinde uyarı olarak görünüyor. Aksi hâlde çekirdekteki bu beş konu hiç açılamaz, Tier B de matematiksel olarak kapanamazdı.
+
+**Üç seçenek, her bağ için ayrı ayrı:**
+1. Ön koşulu geri al — en pahalısı A19 (3p / 12sa), en ucuzu M6 (1p / 4sa). Beş çekirdek bağın hepsini kurtarmak 7 puan / 28 saat eder; 67 saatlik payın içinde durur.
+2. Bağımlı konuyu ön koşulsuz çalışılabilir kabul et — kapsamı daraltarak (ör. A25 Huffman'ı açgözlü teorisi olmadan, kurulum tarifi olarak).
+3. Bağımlı konuyu da kes — Tier B'yi 79'un altına indirir, taahhüdü bozar.
+
+**Yapılacak:** her bağ için 1 veya 2'yi seç, kararı buraya yaz. Karar `plan.json`'un `meta.kapsamDisiOnkosul` alanında ve tracker'ın uyarı satırında görünüyor; en geç W7'nin başında (C hattı başlarken) kapanmalı — ilk çakışma M7, W9'da.
 
 ---
 
 ## 3. Sistem nasıl çalışıyor
-
 ### Sınav kompozisyonu — ölçülmüş (K13)
 
 50 çoktan seçmeli soru, 150 dakika, beş kategori:
@@ -477,35 +684,44 @@ Toplam ~174 dakika. **Bütçe 150.** Fark, M-temel ve L'de hızlanarak kapatıl�
 
 ### Tampon haftası kuralı
 
-**Her bloğun 4. ve son haftası tampondur.** Yeni konu yok. Sadece geri kalınanı toparlama, tekrar, deneme. Tampon haftaları **hız hesabına girmez**. Yapacak bir şeyin yoksa doldurmaya çalışma — dinlen.
+**Tampon haftalarında yeni konu yoktur.** Sadece geri kalınanı toparlama, tekrar, deneme. Tampon haftaları **hız hesabına girmez**. Yapacak bir şeyin yoksa doldurmaya çalışma — dinlen.
 
-İki istisna var:
-- **B2'de üç tampon var** (W18, W19, W22). Fazladan olan W19, TFO haftası — o hafta TÜBİTAK tamamen duruyor.
+v4.6'da tampon dört haftada bir gelir: **W10, W14, W18, W22, W26, W30, W34** (ve kapanış tamponu W38). Toplam 82 saat — planın tek gerçek sapma payı budur.
+
+İki istisna:
+- **W19 tampon değil, TFO haftasıdır.** 6 saate düşer ama tamamen boş değildir.
 - **B5'te tampon yok.** Blok zaten tamamen tekrardan oluşuyor (W39–W41) ve W42 sınav haftası.
 
-### Hafta tipleri
+### Hafta tipleri (K23)
 
 | Tip | Hafta | Saat | Hız hesabına girer mi |
 |---|---|---|---|
-| **üretken** — yeni konu öğrenilir | 27 | 455 | ✅ evet |
-| **tampon** — tekrar, deneme, taşma | 11 | 177 | ❌ hayır |
+| **üretken** — yeni konu öğrenilir | 26 | 375 | ✅ evet |
+| **tampon** — tekrar, deneme, taşma | 8 | 93 | ❌ hayır |
+| **devredildi** — W1–W4 | 4 | — | ❌ hayır |
 | **tekrar** — B5 tam tekrar (W39–41) | 3 | 45 | ❌ hayır |
 | **sınav** — W42 | 1 | 15 | ❌ hayır |
-| **Toplam yatırım** | **42** | **692** | |
+| **Toplam (W5–W42)** | **42** | **528** | |
+
+Üretken haftalar tek bir saate sahip değildir; hafta tipine göre 6, 11, 12, 16 veya 21 saattir (Bölüm 5).
 
 ### Bütçe aritmetiği
 
-1 puan ≈ 4 saat (ilk geçiş)
+1 puan ≈ 4 saat (ilk geçiş) — **bu katsayı M20 ölçümüyle doğrulandı** (K22). Bozuk olan haftalık saat varsayımıydı, katsayı değil.
 
 ```
-Yeni konu kapasitesi 455 sa  −  Müfredat 432 sa  =  23 sa pay  (%5)
+Üretken kapasite (W5–W37)        375 sa
+Tier B kalan yükü (77 p × 4 sa)  308 sa
+                                 -------
+Pay                               67 sa  (%18)
+Üstüne tampon                     82 sa
 ```
 
-**Üretken haftalardaki pay dardır (%5). Gerçek pay tampon haftalarındadır (177 sa).**
+**Kıyas — kesme yapılmasaydı:** 106 kalan puan × 4 = 424 saat, yani üretken kapasitenin **%113'ü.** Tamponun %60'ı yenmeden kapanmazdı. Tier B taahhüdünün (K26) aritmetik gerekçesi budur.
 
-💡 Yarıyıl tatili (W27) yaz temposuna dönerek +10 saat kazandırır; hesaba dahil.
+💡 Yarıyıl tatili (W27) yaz temposuna dönerek 21 saat verir; hesaba dahil.
 
-⚠️ **Bazı dönem haftaları nominal olarak 16 sa görünür (4 puan × 4 sa), bütçe 15 sa.** Bu %107'lik aşım kasıtlıdır ve v3.3'ten devralınan toleransın altındadır (orada W11 %133'tü). Bir saatlik taşma tampon haftasında kapanır.
+⚠️ **Bir haftanın yerleştirilen saati kapasitesini ±4 saat aşabilir.** Örneğin W8'de 12 saatlik iş 11 saatlik haftaya, W15'te 8 saatlik iş 12 saatlik haftaya yazılmıştır. Bu kasıtlıdır: parça sınırı 4 saattir ve parçalar bölünmez. Fark bir sonraki tampon haftasında kapanır.
 
 ---
 
@@ -659,370 +875,255 @@ YENİ HAT (K15). Diğer fazlardan bağımsız, araya serpiştirilir. 17/150 soru
 ---
 
 ## 5. Haftalık iskelet
-
 İskelet **sabittir ve değişmez.** Taahhüdün "bu hafta M7'yi bitireceğim" değil, **"salı akşamı C çalışacağım."**
 
-### Yaz iskeleti — 25 sa (W1–W6)
+v4.6'da iskelet gün değil **slot** üzerinden tanımlanır (K25). Sebebi: haftalık saat artık tek bir sayı değil, hafta tipinin fonksiyonudur (K23).
 
-| Gün | Hat | Saat |
+### Saat modeli (K23)
+
+| Hafta tipi | Saat | Nerede |
 |---|---|---|
-| Pazartesi | Matematik | 4 |
-| Salı | C dili | 4 |
-| Çarşamba | Matematik | 4 |
-| Perşembe | C dili | 4 |
-| Cuma | Matematik *(B0'da A hattı yok)* | 4 |
-| Cumartesi | Karma tekrar + problem seti | 5 |
-| Pazar | — | 0 |
+| **Yaz** | 21 | W5, W6 |
+| **Yoğun** | 16 | İki haftada bir, W7'den itibaren |
+| **Standart** | 11 | Yoğun haftaların arası |
+| **Okul sınavı** | 12 | W15, W16, W25, W35 |
+| **Yarıyıl tatili** | 21 | W27 |
+| **TFO** | 6 | W19 |
 
-#### W3–W6 istisnası — C hattı yok (K16)
+Dönemde ortalama ≈ **13,5 saat/hafta.** Planlama 14–21 aralığının **alt bandından** yapıldı; üst bant (18–21) bilerek boş bırakıldı — o, telafi payı. Planı ortalamaya göre kurup her hafta ortalamayı tutturmayı ummak, bütçeyi tavana göre yapıp hiç sapma payı bırakmamak demek olurdu.
 
-| Gün | Hat | Saat |
-|---|---|---|
-| Pazartesi | Matematik | 4 |
-| Salı | Matematik | 4 |
-| Çarşamba | Matematik | 4 |
-| Perşembe | Matematik | 4 |
-| Cuma | Matematik | 4 |
-| Cumartesi | Karma tekrar + P bulmaca + madencilik seti | 5 |
-| Pazar | — | 0 |
+### Slot yapısı
 
-**Monotonluk uyarısı:** Beş gün üst üste kombinatorik yorucudur. Cumartesi bloğunu koruma; hat değiştirmenin yerini o tutuyor. Pazar tam boş kalacak.
+| Hafta | Birincil slot | İkincil slot | Karma/deneme |
+|---|---|---|---|
+| Yaz / yarıyıl (21 sa) | 12 | 7 | 2 |
+| Yoğun (16 sa) | 9 | 5 | 2 |
+| Okul sınavı (12 sa) | 6 | 4 | 2 |
+| Standart (11 sa) | 6 | 3 | 2 |
+| TFO (6 sa) | — | — | 6 |
 
-### Dönem iskeleti — 15 sa (W7–W42)
+- **Birincil slot:** C hattı. C bitince (W27) A hattına devredilir.
+- **İkincil slot:** önce devreden M/P borcu (32 sa, W7–W13), sonra A hattı (W15'ten itibaren). Bu, K16 geri ödemesinin yeni tetikleyicisidir (K21) — sabit tarih değil, borcun kapanması.
+- **Karma slot:** Cumartesi. K16'nın 30 dakikalık karma M bakım seti burada durur, W7'de başlar. Kalan süre P bulmacası, madencilik seti veya tam deneme.
 
-| Gün | Hat | Saat |
-|---|---|---|
-| Pazartesi | **C dili** *(v4.4: M'den alındı — K16 geri ödemesi)* | 2 |
-| Salı | C dili | 2 |
-| Çarşamba | Algoritma | 2 |
-| Perşembe | **C dili** *(v4.0: M'den alındı — C %33)* | 2 |
-| Cuma | Algoritma | 2 |
-| Cumartesi | Tekrar + problem / deneme | 5 |
-| Pazar | — | 0 |
+### Neden kademeli, neden paralel değil
 
-**v4.4 değişikliği:** Pazartesi M'den C'ye çevrildi. M hattının büyük kısmı B0'da bitirildiği için (K16) bu slot boşaldı. Haftalık dağılım artık **M 0 sa (bakım hariç), C 6 sa, A 4 sa.** M hattı için Cumartesi bloğunda **30 dk karışık bakım seti** ayrılmıştır — yeni konu değil, unutma önleyici.
+11–16 saatlik bir haftada üç hattı birden beslemek, üçünü de yavaş beslemek demek. Kritik yol (C1 → C2 → C3 → C7 → C4 → C6 → C5 → C8 → A2 → A3) **64 saat ve tamamen seri**; A hattının tamamı bunun ucunda asılı. Bu zinciri yavaşlatan her şey, A hattını da aynı miktarda geciktirir.
+
+### Parça disiplini (K24)
+
+3 puanlık konu 12 saattir; standart hafta 11. Yani konular haftalara sığmaz — **parçalar sığar.** Bir oturumun hedefi "M2'yi bitirmek" değil, **"M2'nin dairesel permütasyon parçasını bitirmek"**tir. Tracker da bunu sayar.
 
 ### P ve L hatları nereye giriyor
 
-Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlarla, aralıklı çalışılır.
-
 | Hat | Ne zaman | Nasıl |
 |---|---|---|
-| **P** — mantık kurgu | Cumartesi karma bloğunun ilk 45 dakikası | Haftada 1 bulmaca kümesi (3 soru), süreli |
-| **L** — lise cebiri | Ayrılmış saat yok | Okul dersinin üstüne, atandığı haftada 4 saat |
-| **M-temel hızlandırma** | Akşam boşlukları, telefon | Günde 10–15 soru, 90 saniye hedefi |
-| **M bakım** | Cumartesi bloğunun ilk 30 dakikası | Bitirilmiş M konularından karışık 10 soru, kronometreli |
+| **P** — mantık kurgu | İkincil slotta, atandığı haftada (W12, W13, W29, W31) | Parça başına 4 saat, haftada 1 bulmaca kümesi süreli |
+| **L** — lise cebiri | İkincil slot, W17 | L1 tek oturumda 4 saat; L2 kesildi (K26) |
+| **M-temel hızlandırma** | Akşam boşlukları, telefon | Günde 10–15 soru, 90 saniye hedefi — saat bütçesine girmez |
+| **M bakım** | Karma slotun ilk 30 dakikası | Bitirilmiş M konularından karışık 10 soru, kronometreli |
 
 **Neden karışık:** Sınav beş bloğu da aynı gün sorar. Ayrıca kombinatorik ile kod takibi farklı zihinsel modlardır — gün içinde değiştirmek yorgunluğu azaltır.
 
 ---
 
 ## 6. Ana takvim — 42 hafta / 6 blok
-
 > **"Neredeyim?" sorusunun tek cevabı bu tablodur.**
 
-| W | Blok | Blok içi | Tarih | Tip | Sa | Faz | Konular | P |
-|---|---|---|---|---|---|---|---|---|
+`p` = o haftanın hedef puanı · `Σ` = kümülatif · **hedef: W33'te 79 puan (Tier B kapanır)**
+Parça gösterimi: `C3 (1,2/3)` = C3'ün 1. ve 2. parçası, konu toplam 3 parça (K24).
 
-| 1 | B0 | 1/6 | 27 Tem – 2 Ağu | **DEVREDİLDİ** | 25 | — | ⛔ *Tamamlanmadı — M20, M22, M19, C1, C2 devretti* | 0 |
+| W | Blok | Tarih | Tip | Sa | Birincil slot | İkincil slot | p | Σ | Not |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | B0 | 27 Tem – 2 Ağu | **DEVREDİLDİ** | — | ⛔ *M22, M19, C1, C2 devretti* | — | 0 | 0 | |
+| 2 | B0 | 3 Ağu – 9 Ağu | **DEVREDİLDİ** | — | ⛔ *C3, C7, M1 devretti* | — | 0 | 0 | |
+| 3 | B0 | 10 Ağu – 16 Ağu | **DEVREDİLDİ** | — | ⛔ *M19, M22, M1, M18 devretti* | — | 0 | 2 | |
+| 4 | B0 | 17 Ağu – 23 Ağu | **DEVREDİLDİ** | — | ⛔ *M2, M3, M4 devretti* | — | 0 | 2 | |
+| 5 | B0 | 24 Ağu – 30 Ağu | yaz | 21 | M19, M22, M1, M18 | M2 (1/3) | 5 | 7 | Yaz temposu — 21 saat |
+| 6 | B0 | 31 Ağu – 6 Eyl | yaz | 21 | M2 (2,3/3) | M3, M4 | 5 | 12 | Madencilik #1 · **B0 kapanış** |
+| 7 | B1 | 7 Eyl – 13 Eyl | **yoğun** | 16 | C1, C2 | M5 (1/3) | 4 | 16 | Bilgisayar döndü — K16 gerekçesi bitti, C hattı kesintisiz başlıyor · TFO temsilcilik görüşmesi |
+| 8 | B1 | 14 Eyl – 20 Eyl | standart | 11 | C3 (1,2/3) | M5 (2/3) | 1 | 17 |  |
+| 9 | B1 | 21 Eyl – 27 Eyl | **yoğun** | 16 | C3 (3/3), C7 (1/3) | M5 (3/3), M7 | 5 | 22 |  |
+| 10 | B1 | 28 Eyl – 4 Eki | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 22 | Madencilik #2 · Saf telafi haftası |
+| 11 | B1 | 5 Eki – 11 Eki | **yoğun** | 16 | C7 (2,3/3) | M8, M9 | 5 | 27 |  |
+| 12 | B1 | 12 Eki – 18 Eki | standart | 11 | C4, C6 | P2 (1/2) | 2 | 29 |  |
+| 13 | B1 | 19 Eki – 25 Eki | **yoğun** | 16 | C5 (1,2/3) | P2 (2/2) | 3 | 32 | M/P borcu kapandı — K21 uyarınca ikincil slot A hattına devrediliyor |
+| 14 | B1 | 26 Eki – 1 Kas | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 32 | Madencilik #3 · **B1 kapanış** · Saf telafi haftası |
+| 15 | B2 | 2 Kas – 8 Kas | okul sınavı | 12 | C5 (3/3) | A1 (1/2) | 3 | 35 | Okul sınavları · A hattı açılıyor |
+| 16 | B2 | 9 Kas – 15 Kas | okul sınavı | 12 | C8 | A1 (2/2) | 3 | 38 | Okul sınavları |
+| 17 | B2 | 16 Kas – 22 Kas | **yoğun** | 16 | C9 (1,2/3) | A2, L1 | 4 | 42 |  |
+| 18 | B2 | 23 Kas – 29 Kas | **TAMPON** | 16 | *telafi* | *telafi* | 0 | 42 | **Tam deneme #1** · Saf telafi haftası — içinde bir Cumartesi oturumu |
+| 19 | B2 | 30 Kas – 6 Ara | **TFO** | 6 | *telafi* | *telafi* | 0 | 42 | TFO ~6 Aralık — TÜBİTAK durur |
+| 20 | B2 | 7 Ara – 13 Ara | **yoğun** | 16 | C9 (3/3), C10 | A3 | 5 | 47 |  |
+| 21 | B2 | 14 Ara – 20 Ara | standart | 11 | C13 | A13 (1/2) | 2 | 49 |  |
+| 22 | B2 | 21 Ara – 27 Ara | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 49 | **Tam deneme #2** · **B2 kapanış** · Saf telafi haftası |
+| 23 | B3 | 28 Ara – 3 Oca | **yoğun** | 16 | C14 (1,2/3) | A13 (2/2) | 3 | 52 |  |
+| 24 | B3 | 4 Oca – 10 Oca | standart | 11 | C14 (3/3) | A14 | 3 | 55 |  |
+| 25 | B3 | 11 Oca – 17 Oca | okul sınavı | 12 | C21 | A7 (1/3) | 2 | 57 | Okul sınavları |
+| 26 | B3 | 18 Oca – 24 Oca | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 57 | **Tam deneme #3** · **† KAPI — 57 puan** · Saf telafi haftası |
+| 27 | B3 | 25 Oca – 31 Oca | yarıyıl | 21 | C15 | A7 (2,3/3) | 6 | 63 | Yarıyıl tatili — yaz temposu · C hattı bitti |
+| 28 | B3 | 1 Şub – 7 Şub | **yoğun** | 16 | A24 | A9 | 5 | 68 | Birincil slot A hattına geçti |
+| 29 | B3 | 8 Şub – 14 Şub | standart | 11 | A25 | P1 (1/2) | 2 | 70 |  |
+| 30 | B3 | 15 Şub – 21 Şub | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 70 | **Tam deneme #4** · **B3 kapanış** · Saf telafi haftası |
+| 31 | B4 | 22 Şub – 28 Şub | **yoğun** | 16 | A20 | P1 (2/2) | 4 | 74 | TYBS başvurusu |
+| 32 | B4 | 1 Mar – 7 Mar | standart | 11 | A26 | A23 (1/3) | 2 | 76 |  |
+| 33 | B4 | 8 Mar – 14 Mar | **yoğun** | 16 | A23 (2,3/3) | *kuyruk* | 3 | 79 | ÇEKİRDEK TAMAM — Tier B kapandı · Artan kapasite kuyruğa açılır |
+| 34 | B4 | 15 Mar – 21 Mar | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 79 | **Tam deneme #5** · Saf telafi haftası |
+| 35 | B4 | 22 Mar – 28 Mar | okul sınavı | 12 | *kuyruk* | *kuyruk* | ~3 | ~82 | Okul sınavları · Geri çağırma penceresi açıldı — kuyruk sırasına göre |
+| 36 | B4 | 29 Mar – 4 Nis | **yoğun** | 16 | *kuyruk* | *kuyruk* | ~4 | ~86 | Kuyruk |
+| 37 | B4 | 5 Nis – 11 Nis | **yoğun** | 16 | *kuyruk* | *kuyruk* | ~4 | ~90 | Kuyruk · Son yeni konu haftası |
+| 38 | B4 | 12 Nis – 18 Nis | **TAMPON** | 11 | *telafi* | *telafi* | 0 | 90 | **Tam deneme #6** · **B4 kapanış** · Saf telafi haftası |
+| 39 | B5 | 19 Nis – 25 Nis | tekrar | 15 | — | — | 0 | 90 | M hattı tam tekrar — çekirdekteki 9 konu |
+| 40 | B5 | 26 Nis – 2 May | tekrar | 15 | — | — | 0 | 90 | C hattı tam tekrar — çekirdekteki 15 konu |
+| 41 | B5 | 3 May – 9 May | tekrar | 15 | — | — | 0 | 90 | **Tam deneme #7** · **Tam deneme #8** · A hattı tam tekrar — çekirdekteki 13 konu |
+| 42 | B5 | 10 May – 16 May | **SINAV** | 15 | — | — | 0 | 90 | **Tam deneme #9** · Gün aşırı tam deneme · Yeni konu yok · Sınav 15 Mayıs |
 
-| 2 | B0 | 2/6 | 3 – 9 Ağu | **DEVREDİLDİ** | 25 | — | ⛔ *Tamamlanmadı — C3, C7, M1 devretti* | 0 |
+### Nasıl okunur
 
-| 3 | B0 | 3/6 | 10 – 16 Ağu | üretken | 25 | 1,3 | M19, M20, M22, M1, M18 | 6 |
+- **Birincil slot** C hattıdır; W27'de C bitince A hattına devredilir (K25).
+- **İkincil slot** önce devreden M/P borcunu kapatır (W7–W13), sonra A hattına geçer (K21).
+- **Tampon haftalarında iki slot da telafidir.** Yeni konu yok; içlerinde bir Cumartesi oturumu olabilir (K19).
+- **W35–W37 geri çağırma penceresidir** — her iki slot da kuyruktan beslenir, puanlar tahminidir (K26).
+- `Sa` sütunu haftanın **kapasitesi**, `p` sütunu hedef puandır. Bir haftanın yerleştirilen saati kapasitesini ±4 saat aşabilir; fark tampon haftasında kapanır.
 
-| 4 | B0 | 4/6 | 17 – 23 Ağu | üretken | 25 | 3 | M2, M3, M4 · **Madencilik seti #1** | 6 |
+### Kritik yol (K25)
 
-| 5 | B0 | 5/6 | 24 – 30 Ağu | üretken | 25 | 3 | M5, M6, M7, M8 | 6 |
+```
+C1 → C2 → C3 → C7 → C4 → C6 → C5 → C8 → A2 → A3
+```
 
-| 6 | B0 | 6/6 | 31 Ağu – 6 Eyl | üretken | 25 | 5,9,10 | M9, M10, M12, P2 · **Madencilik seti #2** · **B0 KAPANIŞI** | 5 |
+64 saat, tamamen seri, hiçbir halkası paralelleştirilemez. **A hattının tamamı bunun ucunda asılı** — A2, C8'i bekliyor. Bu zincirde bir hafta kayması, A hattının tamamını bir hafta kaydırır. Tampon önceliği buradadır.
 
-**W6 notu:** Konular Pazartesi–Perşembe'ye sığdırılır. **Cuma–Pazar B0 kapanış ritüeli + telafi payıdır.** B0'ın tek tamponu budur; W4 ve W6 artık üretken hafta.
+### Tek kapı: W26 (18–24 Ocak)
 
-**Esneme payı:** Toplam 23 puan / 100 saat = 4,3 sa/puan. Referans yaz hızı 6,0 puan/hafta, plan 5,75. Hedefin altında kalırsan **M12 ve P2 W7'ye devreder** — kesme sırası budur, M5 ve M8'e dokunma.
-
-**İsteğe bağlı uzatma:** Program erken biterse L1 ve L2 (2 puan) eklenebilir. Kaynakları video + 30 soru, kâğıtla yapılabilir.
-
-| 7 | B1 | 1/8 | 7 – 13 Eyl | üretken | 15 | 3 | ⚠️ *TFO temsilcilik görüşmesi* · *(boş — W6 kapanışında yeniden doldurulacak, K16)* | 0 |
-
-| 8 | B1 | 2/8 | 14 – 20 Eyl | üretken | 15 | 3,4 | A1 | 2 |
-
-| 9 | B1 | 3/8 | 21 – 27 Eyl | üretken | 15 | 3,4 | C8 | 2 |
-
-| 10 | B1 | 4/8 | 28 Eyl – 4 Eki | **TAMPON** | 15 | — | Tekrar · **Madencilik seti #3** | 0 |
-
-| 11 | B1 | 5/8 | 5 – 11 Eki | üretken | 15 | 4 | A2, A3 | 3 |
-
-| 12 | B1 | 6/8 | 12 – 18 Eki | üretken | 15 | 4,5 | C9 | 3 |
-
-| 13 | B1 | 7/8 | 19 – 25 Eki | üretken | 15 | 4,10 | C10 | 2 |
-
-| 14 | B1 | 8/8 | 26 Eki – 1 Kas | **TAMPON** | 15 | — | **Madencilik seti #4** · **B1 KAPANIŞI** | 0 |
-
-| 15 | B2 | 1/8 | 2 – 8 Kas | üretken | 15 | 5,10 | A21, L1 · ⚠️ *AP kayıt kararı* | 2 |
-
-| 16 | B2 | 2/8 | 9 – 15 Kas | üretken | 15 | 5 | A4, A5, A6 | 3 |
-
-| 17 | B2 | 3/8 | 16 – 22 Kas | üretken | 15 | 6 | C11, C12, C13 | 4 |
-
-| 18 | B2 | 4/8 | 23 – 29 Kas | **TAMPON** | 15 | — | Tekrar · **İlk tam koşullu deneme (#1)** | 0 |
-
-| 19 | B2 | 5/8 | 30 Kas – 6 Ara | **TFO HAFTASI** | 7 | — | ⚠️ *TFO ~6 Aralık.* TÜBİTAK durur | 0 |
-
-| 20 | B2 | 6/8 | 7 – 13 Ara | üretken | 15 | 6 | C14 | 3 |
-
-| 21 | B2 | 7/8 | 14 – 20 Ara | üretken | 15 | 6,10 | C21, L2 | 3 |
-
-| 22 | B2 | 8/8 | 21 – 27 Ara | **TAMPON** | 15 | — | **Deneme #2** · **B2 KAPANIŞI** · *S7 kararı* | 0 |
-
-| 23 | B3 | 1/8 | 28 Ara – 3 Oca | üretken | 15 | 6 | C15 | 3 |
-
-| 24 | B3 | 2/8 | 4 – 10 Oca | üretken | 15 | 6 | A7 | 3 |
-
-| 25 | B3 | 3/8 | 11 – 17 Oca | üretken | 15 | 7 | A13, A14 | 4 |
-
-| 26 | B3 | 4/8 | 18 – 24 Oca | **TAMPON** | 15 | — | Tekrar · **Deneme #3** | 0 |
-
-| 27 | B3 | 5/8 | 25 – 31 Oca | üretken | 25 | 7,9 | A24, A15 · 💡 *Yarıyıl tatili, yaz temposu* | 5 |
-
-| 28 | B3 | 6/8 | 1 – 7 Şub | üretken | 15 | 9 | C16, A8, A9 | 4 |
-
-| 29 | B3 | 7/8 | 8 – 14 Şub | üretken | 15 | 8 | A19 | 3 |
-
-| 30 | B3 | 8/8 | 15 – 21 Şub | **TAMPON** | 15 | — | **Deneme #4** · **B3 KAPANIŞI** | 0 |
-
-| 31 | B4 | 1/8 | 22 – 28 Şub | üretken | 15 | 8,10 | A25, P1 · ⚠️ **TYBS BAŞVURUSU** | 4 |
-
-| 32 | B4 | 2/8 | 1 – 7 Mar | üretken | 15 | 8 | A20, A26 | 4 |
-
-| 33 | B4 | 3/8 | 8 – 14 Mar | üretken | 15 | 8 | A23 | 3 |
-
-| 34 | B4 | 4/8 | 15 – 21 Mar | **TAMPON** | 15 | — | Tekrar · **Deneme #5** | 0 |
-
-| 35 | B4 | 5/8 | 22 – 28 Mar | üretken | 15 | 9 | A10, A11, C20, A22 | 4 |
-
-| 36 | B4 | 6/8 | 29 Mar – 4 Nis | üretken | 15 | 9 | M16, M15 | 3 |
-
-| 37 | B4 | 7/8 | 5 – 11 Nis | üretken | 15 | 10 | P4, P3 · **SON YENİ KONU** | 4 |
-
-| 38 | B4 | 8/8 | 12 – 18 Nis | **TAMPON** | 15 | — | **Deneme #6** · **B4 KAPANIŞI** | 0 |
-
-| 39 | B5 | 1/4 | 19 – 25 Nis | tekrar | 15 | — | **M + P + L tam tekrar** | 0 |
-
-| 40 | B5 | 2/4 | 26 Nis – 2 May | tekrar | 15 | — | **C hattı tam tekrar** | 0 |
-
-| 41 | B5 | 3/4 | 3 – 9 May | tekrar | 15 | — | **A hattı tam tekrar** · **Deneme #7, #8** | 0 |
-
-| 42 | B5 | 4/4 | 10 – 16 May | **SINAV** | 15 | — | Gün aşırı tam deneme + hata analizi | 0 |
-
+Ölçüt: **kümülatif 57 puan.** Altındaysa Tier C devreye girer (A24, A25, A20, A26, A23, A9, P1 düşer). Ek tartışma yok — tampon haftasında ölçülür, karar verilir, devam edilir. *(Kalan puanın 57 mi 63 mü olduğu S10'da açık; bkz. Bölüm 2.)*
 
 ### Blok özetleri
 
+| Blok | Hafta | Üretken | Tampon | Kapasite | Hedef puan |
+|---|---|---|---|---|---|
+| B0 · Yaz Yoğunlaştırma | W1–6 | 2 | 0 | 42 sa | 10 p |
+| B1 · Dönem Başlangıcı | W7–14 | 6 | 2 | 108 sa | 20 p |
+| B2 · Güz Sonu | W15–22 | 6 | 2 | 100 sa | 17 p |
+| B3 · Kış | W23–30 | 6 | 2 | 109 sa | 21 p |
+| B4 · İlkbahar | W31–38 | 6 | 2 | 109 sa | 20 p |
+| B5 · Final | W39–42 | 0 | 0 | 60 sa | 0 p |
 
-| Blok | Hafta | Üretken | Kapasite | Yük | Doluluk | Faz kapsamı |
-
-|---|---|---|---|---|---|---|
-
-| B0 · Yaz Yoğunlaştırma | W1–6 | 4 | 100 sa | 23 p / 100 sa | %92 | Faz 1, 3, 5 (kısmen), 9–10 (kısmen) |
-
-| B1 · Dönem Başlangıcı | W7–14 | 6 | 90 sa | 22 p / 88 sa | %98 | Faz 3 sonu, 4, 10 (P başlar) |
-
-| B2 · Güz Sonu | W15–22 | 5 | 75 sa | 16 p / 64 sa | %85 | Faz 5, 6 (başı), 10 |
-
-| B3 · Kış | W23–30 | 6 | 100 sa | 23 p / 92 sa | %92 | Faz 6 sonu, 7, 8 (başı), 9 (başı) |
-
-| B4 · İlkbahar | W31–38 | 6 | 90 sa | 22 p / 88 sa | %98 | Faz 8 sonu, 9, 10 kapanış |
-
-| B5 · Final | W39–42 | **0** *(3 tekrar + 1 sınav)* | 45 sa | 0 p — **tam tekrar** | — | — |
-
-
-**Uyarı — W1 nominal olarak şişkin görünür.** 8 puan × 4 saat = 32 saat, bütçenin (25 sa) üstünde. Ama Faz 1'in dört konusu gerçekte 1–2 saatlik işlerdir. **W1 gerçekte ~22 saat sürer.** Aksi çıkarsa W4 tamponu devralır.
-
-**v4.0'ta blok dengesi düzeldi.** v3.3'te B1 %98 doluluktaydı; şimdi hiçbir blok %96'yı geçmiyor. Sebep: M hattının küçülmesiyle açılan bütçenin geç bloklara değil, orta bloklara dağıtılması.
-
-### ⚠️ W7–W15 yeniden planlama borcu (K16)
-
-**14 puanlık C borcu** W6 kapanışında Prompt 2 ile yerleştirilecek. Yerleştirmede bağlayıcı olan üç kural:
-
-1. **C hat içi sırası değiştirilemez:** C1 → C2 → C3 → C7 → C4 → C6 → C5 → C8 → …
-2. **Pazartesi slotu C'ye aittir** (K16 geri ödemesi) → dönem haftalarında C kapasitesi 6 sa/hafta.
-3. **Boşalan slotlar:** W7 (4p), W8 (2p), W9 (1p), W12 (1p), W13 (2p), W15 (1p), W27 (1p) = 12 puan. Kalan 2 puan tampon haftalarından karşılanır — **yeni konu W37'den sonraya taşmaz.**
+**W1–W4 hız hesabına girmez** — devredilen haftalardır. B0'ın gerçek üretken haftaları W5 ve W6'dır.
 
 ---
 
 ## 7. Konu envanteri — 63 konu / 108 puan
-
-
 > Her konunun **kapsamı** Bölüm 10'daki JSON'un `kapsam` alanındadır. Tracker'da konuya tıklayınca açılır.
-
 
 > ★ işaretli kapsam maddeleri v4.0'ta ölçüme dayanarak eklenmiştir.
 
+**Kapsam sütunu (v4.6 · K26):** **çekirdek** = Tier B, taahhüt edilen 41 konu / 79 puan · kuyruk = W35–W37 geri çağırma penceresi (9 konu / 12 puan) · *kesildi* = bu sezon çalışılmıyor (13 konu / 17 puan).
+**Parça sütunu (v4.6 · K24):** konu kaç adet 4 saatlik parçaya bölündü. 1 parça = 4 saat = 1 puan.
 
 ### M — Matematik & Kombinatorik (17 konu, 24 puan · ölçülen 36/150 soru (2024-25-26))
 
-
-| ID | Konu | P | Hafta | 📺 Video | 📖 Kaynak |
-
-|---|---|---|---|---|---|
-
-| **M19** | Önerme mantığı, doğruluk tabloları, De Morgan | 1 | W1 | [Mantık ve önermeler](https://www.youtube.com/results?search_query=Tunç+Kurt+Mantık+ve+önermeler) | PKO soru bankası |
-
-| **M20** | Kümeler, bağıntılar, matematiksel fonksiyon türleri (birebir/örten) | 2 | W1 | [Kümeler ve fonksiyonlar](https://www.youtube.com/results?search_query=Tunç+Kurt+Kümeler+ve+fonksiyonlar) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M22** | Σ ve Π notasyonu, teleskopik toplamlar | 1 | W1 | [Diziler ve toplam sembolü](https://www.youtube.com/results?search_query=Tunç+Kurt+Diziler+ve+toplam+sembolü) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M1** | Sayma temelleri: toplama ve çarpma ilkesi | 1 | W2 | [Sayma yöntemleri / toplama-çarpma ilkesi](https://www.youtube.com/results?search_query=Tunç+Kurt+Sayma+yöntemleri+/+toplama-çarpma+ilkesi) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M18** | Sayı sistemleri: ikilik/onaltılık taban dönüşümü | 1 | W3 | [Sayı sistemleri / taban aritmetiği](https://www.youtube.com/results?search_query=Tunç+Kurt+Sayı+sistemleri+/+taban+aritmetiği) | PKO soru bankası |
-
-| **M2** | Permütasyon: basit, tekrarlı, dairesel | 3 | W3 | [Permütasyon](https://www.youtube.com/results?search_query=Tunç+Kurt+Permütasyon) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M3** | Kombinasyon, binom katsayıları, Pascal üçgeni | 2 | W5 | [Kombinasyon](https://www.youtube.com/results?search_query=Tunç+Kurt+Kombinasyon) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M4** | Binom teoremi ve kombinatoryel kimlikler | 1 | W7 | [Binom açılımı](https://www.youtube.com/results?search_query=Tunç+Kurt+Binom+açılımı) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M5** | Yıldızlar ve çubuklar (tekrarlı seçim) | 3 | W7 | [tekrarlı kombinasyon dağılım problemleri](https://www.youtube.com/results?search_query=Tunç+Kurt+tekrarlı+kombinasyon+dağılım+problemleri) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M6** | Güvercin yuvası ilkesi | 1 | W8 | [güvercin yuvası prensibi](https://www.youtube.com/results?search_query=matematik+olimpiyat+güvercin+yuvası+prensibi) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M7** | Dahil-hariç ilkesi | 1 | W8 | [Kümelerde işlemler / içerme-dışarma](https://www.youtube.com/results?search_query=Tunç+Kurt+Kümelerde+işlemler+/+içerme-dışarma) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M8** | Düzensizlikler (derangement), sabit noktalar | 1 | W9 | [içerme dışarma prensibi düzensizlik](https://www.youtube.com/results?search_query=matematik+olimpiyat+içerme+dışarma+prensibi+düzensizlik) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M9** | Olasılık temelleri: örnek uzay, koşullu olasılık | 1 | W12 | [Olasılık](https://www.youtube.com/results?search_query=Tunç+Kurt+Olasılık) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M10** | Bayes teoremi, bağımsızlık | 1 | W15 | [Koşullu olasılık](https://www.youtube.com/results?search_query=Tunç+Kurt+Koşullu+olasılık) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M12** | Yineleme bağıntısı (recurrence) kurma — matematik | 1 | W27 | [indirgemeli diziler rekürans bağıntısı](https://www.youtube.com/results?search_query=matematik+olimpiyat+indirgemeli+diziler+rekürans+bağıntısı) | Gürlü · Olimpik Sonlu Matematik |
-
-| **M15** | Modüler aritmetik | 1 | W36 | [Bölünebilme ve modüler aritmetik](https://www.youtube.com/results?search_query=Tunç+Kurt+Bölünebilme+ve+modüler+aritmetik) | PKO soru bankası |
-
-| **M16** | Sayı teorisi temelleri: bölünebilme, EBOB/EKOK, Öklid, asallar | 2 | W36 | [EBOB – EKOK](https://www.youtube.com/results?search_query=Tunç+Kurt+EBOB+–+EKOK) | PKO soru bankası |
-
+| ID | Konu | P | Kapsam | Hafta | Parça | 📺 Video | 📖 Kaynak |
+|---|---|---|---|---|---|---|---|
+| **M19** | Önerme mantığı, doğruluk tabloları, De Morgan | 1 | **çekirdek** | W5 | 1 × 4 sa | [Mantık ve önermeler](https://www.youtube.com/results?search_query=Tunç+Kurt+Mantık+ve+önermeler) | PKO soru bankası |
+| **M22** | Σ ve Π notasyonu, teleskopik toplamlar | 1 | **çekirdek** | W5 | 1 × 4 sa | [Diziler ve toplam sembolü](https://www.youtube.com/results?search_query=Tunç+Kurt+Diziler+ve+toplam+sembolü) | Gürlü · Olimpik Sonlu Matematik |
+| **M1** | Sayma temelleri: toplama ve çarpma ilkesi | 1 | **çekirdek** | W5 | 1 × 4 sa | [Sayma yöntemleri / toplama-çarpma ilkesi](https://www.youtube.com/results?search_query=Tunç+Kurt+Sayma+yöntemleri+/+toplama-çarpma+ilkesi) | Gürlü · Olimpik Sonlu Matematik |
+| **M18** | Sayı sistemleri: ikilik/onaltılık taban dönüşümü | 1 | **çekirdek** | W5 | 1 × 4 sa | [Sayı sistemleri / taban aritmetiği](https://www.youtube.com/results?search_query=Tunç+Kurt+Sayı+sistemleri+/+taban+aritmetiği) | PKO soru bankası |
+| **M2** | Permütasyon: basit, tekrarlı, dairesel | 3 | **çekirdek** | W5–W6 | 3 × 4 sa | [Permütasyon](https://www.youtube.com/results?search_query=Tunç+Kurt+Permütasyon) | Gürlü · Olimpik Sonlu Matematik |
+| **M3** | Kombinasyon, binom katsayıları, Pascal üçgeni | 2 | **çekirdek** | W6 | 2 × 4 sa | [Kombinasyon](https://www.youtube.com/results?search_query=Tunç+Kurt+Kombinasyon) | Gürlü · Olimpik Sonlu Matematik |
+| **M4** | Binom teoremi ve kombinatoryel kimlikler | 1 | **çekirdek** | W6 | 1 × 4 sa | [Binom açılımı](https://www.youtube.com/results?search_query=Tunç+Kurt+Binom+açılımı) | Gürlü · Olimpik Sonlu Matematik |
+| **M5** | Yıldızlar ve çubuklar (tekrarlı seçim) | 3 | **çekirdek** | W7–W9 | 3 × 4 sa | [tekrarlı kombinasyon dağılım problemleri](https://www.youtube.com/results?search_query=Tunç+Kurt+tekrarlı+kombinasyon+dağılım+problemleri) | Gürlü · Olimpik Sonlu Matematik |
+| **M7** | Dahil-hariç ilkesi | 1 | **çekirdek** | W9 | 1 × 4 sa | [Kümelerde işlemler / içerme-dışarma](https://www.youtube.com/results?search_query=Tunç+Kurt+Kümelerde+işlemler+/+içerme-dışarma) | Gürlü · Olimpik Sonlu Matematik |
+| **M8** | Düzensizlikler (derangement), sabit noktalar | 1 | **çekirdek** | W11 | 1 × 4 sa | [içerme dışarma prensibi düzensizlik](https://www.youtube.com/results?search_query=matematik+olimpiyat+içerme+dışarma+prensibi+düzensizlik) | Gürlü · Olimpik Sonlu Matematik |
+| **M9** | Olasılık temelleri: örnek uzay, koşullu olasılık | 1 | **çekirdek** | W11 | 1 × 4 sa | [Olasılık](https://www.youtube.com/results?search_query=Tunç+Kurt+Olasılık) | Gürlü · Olimpik Sonlu Matematik |
+| **M20** | Kümeler, bağıntılar, matematiksel fonksiyon türleri (birebir/örten) | 2 | **çekirdek** | ✓ bitti | 2 × 4 sa | [Kümeler ve fonksiyonlar](https://www.youtube.com/results?search_query=Tunç+Kurt+Kümeler+ve+fonksiyonlar) | Gürlü · Olimpik Sonlu Matematik |
+| **M16** | Sayı teorisi temelleri: bölünebilme, EBOB/EKOK, Öklid, asallar | 2 | kuyruk | W35–37 | 2 × 4 sa | [EBOB – EKOK](https://www.youtube.com/results?search_query=Tunç+Kurt+EBOB+–+EKOK) | PKO soru bankası |
+| **M6** | Güvercin yuvası ilkesi | 1 | *kesildi* | — | 1 × 4 sa | [güvercin yuvası prensibi](https://www.youtube.com/results?search_query=matematik+olimpiyat+güvercin+yuvası+prensibi) | Gürlü · Olimpik Sonlu Matematik |
+| **M10** | Bayes teoremi, bağımsızlık | 1 | *kesildi* | — | 1 × 4 sa | [Koşullu olasılık](https://www.youtube.com/results?search_query=Tunç+Kurt+Koşullu+olasılık) | Gürlü · Olimpik Sonlu Matematik |
+| **M12** | Yineleme bağıntısı (recurrence) kurma — matematik | 1 | *kesildi* | — | 1 × 4 sa | [indirgemeli diziler rekürans bağıntısı](https://www.youtube.com/results?search_query=matematik+olimpiyat+indirgemeli+diziler+rekürans+bağıntısı) | Gürlü · Olimpik Sonlu Matematik |
+| **M15** | Modüler aritmetik | 1 | *kesildi* | — | 1 × 4 sa | [Bölünebilme ve modüler aritmetik](https://www.youtube.com/results?search_query=Tunç+Kurt+Bölünebilme+ve+modüler+aritmetik) | PKO soru bankası |
 
 ### C — C Dili Semantiği (18 konu, 35 puan · ölçülen 49/150 soru (15+15+19))
 
-
-| ID | Konu | P | Hafta | 📺 Video | 📖 Kaynak |
-
-|---|---|---|---|---|---|
-
-| **C1** | Veri tipleri, boyutlar, taşma davranışı | 1 | W1 | [C veri tipleri ve bellek](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+veri+tipleri+ve+bellek) | gateoverflow.in |
-
-| **C2** | Operatör önceliği ve birleşme yönü | 2 | W1 | [C operatörler ve öncelik](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+operatörler+ve+öncelik) | gateoverflow.in |
-
-| **C3** | a++ vs ++a, yan etkiler | 3 | W2 | [C artırma azaltma operatörleri](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+artırma+azaltma+operatörleri) | gateoverflow.in |
-
-| **C7** | Döngü takibi: for/while/do-while, break/continue | 3 | W2 | [C döngüler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+döngüler) | gateoverflow.in |
-
-| **C4** | Tip dönüşümleri, integer promotion | 1 | W3 | [C tip dönüşümü](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tip+dönüşümü) | gateoverflow.in |
-
-| **C6** | Koşullar ve kısa devre değerlendirme | 1 | W3 | [C koşul ifadeleri](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+koşul+ifadeleri) | gateoverflow.in |
-
-| **C5** | Bit operatörleri | 3 | W5 | [bit düzeyi operatörler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+bit+düzeyi+operatörler) | gateoverflow.in |
-
-| **C8** | Diziler ve bellek yerleşimi | 2 | W9 | [C diziler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+diziler) | gateoverflow.in |
-
-| **C9** | Pointer temelleri: &, *, pointer aritmetiği | 3 | W12 | [C pointer gösterici](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+pointer+gösterici) | gateoverflow.in |
-
-| **C10** | Dizi–pointer eşdeğerliği | 2 | W13 | [C dizi ve pointer ilişkisi](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+dizi+ve+pointer+ilişkisi) | gateoverflow.in |
-
-| **C11** | Çok boyutlu diziler ve pointer'lar | 2 | W17 | [C iki boyutlu diziler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+iki+boyutlu+diziler) | gateoverflow.in |
-
-| **C12** | Stringler: null sonlandırma, string.h | 1 | W17 | [C karakter dizileri string](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+karakter+dizileri+string) | gateoverflow.in |
-
-| **C13** | C fonksiyonları: parametre geçirme (değer/referans) | 1 | W17 | [C fonksiyonlar](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+fonksiyonlar) | gateoverflow.in |
-
-| **C14** | Özyineleme (recursion): çağrı yığını takibi | 3 | W20 | [özyineleme recursion](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+recursion) | pythontutor.com |
-
-| **C21** | **Özyineleme**: çoklu dallanma, çağrı sayısı, ağaç yapısı — *kod* | 2 | W21 | [özyineleme çağrı ağacı](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çağrı+ağacı) | pythontutor.com |
-
-| **C15** | Özyineleme: çıktı sırası (ön/son işlem) | 3 | W23 | [özyineleme çalışma sırası](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çalışma+sırası) | pythontutor.com |
-
-| **C16** | struct, union, typedef | 1 | W28 | [C yapılar struct](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+yapılar+struct) | gateoverflow.in |
-
-| **C20** | Tanımsız davranış, off-by-one, yaygın tuzaklar | 1 | W35 | [C tanımsız davranış undefined behavior](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tanımsız+davranış+undefined+behavior) | van der Linden |
-
+| ID | Konu | P | Kapsam | Hafta | Parça | 📺 Video | 📖 Kaynak |
+|---|---|---|---|---|---|---|---|
+| **C1** | Veri tipleri, boyutlar, taşma davranışı | 1 | **çekirdek** | W7 | 1 × 4 sa | [C veri tipleri ve bellek](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+veri+tipleri+ve+bellek) | gateoverflow.in |
+| **C2** | Operatör önceliği ve birleşme yönü | 2 | **çekirdek** | W7 | 2 × 4 sa | [C operatörler ve öncelik](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+operatörler+ve+öncelik) | gateoverflow.in |
+| **C3** | a++ vs ++a, yan etkiler | 3 | **çekirdek** | W8–W9 | 3 × 4 sa | [C artırma azaltma operatörleri](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+artırma+azaltma+operatörleri) | gateoverflow.in |
+| **C7** | Döngü takibi: for/while/do-while, break/continue | 3 | **çekirdek** | W9–W11 | 3 × 4 sa | [C döngüler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+döngüler) | gateoverflow.in |
+| **C4** | Tip dönüşümleri, integer promotion | 1 | **çekirdek** | W12 | 1 × 4 sa | [C tip dönüşümü](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tip+dönüşümü) | gateoverflow.in |
+| **C6** | Koşullar ve kısa devre değerlendirme | 1 | **çekirdek** | W12 | 1 × 4 sa | [C koşul ifadeleri](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+koşul+ifadeleri) | gateoverflow.in |
+| **C5** | Bit operatörleri | 3 | **çekirdek** | W13–W15 | 3 × 4 sa | [bit düzeyi operatörler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+bit+düzeyi+operatörler) | gateoverflow.in |
+| **C8** | Diziler ve bellek yerleşimi | 2 | **çekirdek** | W16 | 2 × 4 sa | [C diziler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+diziler) | gateoverflow.in |
+| **C9** | Pointer temelleri: &, *, pointer aritmetiği | 3 | **çekirdek** | W17–W20 | 3 × 4 sa | [C pointer gösterici](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+pointer+gösterici) | gateoverflow.in |
+| **C10** | Dizi–pointer eşdeğerliği | 2 | **çekirdek** | W20 | 2 × 4 sa | [C dizi ve pointer ilişkisi](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+dizi+ve+pointer+ilişkisi) | gateoverflow.in |
+| **C13** | C fonksiyonları: parametre geçirme (değer/referans) | 1 | **çekirdek** | W21 | 1 × 4 sa | [C fonksiyonlar](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+fonksiyonlar) | gateoverflow.in |
+| **C14** | Özyineleme (recursion): çağrı yığını takibi | 3 | **çekirdek** | W23–W24 | 3 × 4 sa | [özyineleme recursion](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+recursion) | pythontutor.com |
+| **C21** | Özyineleme: çoklu dallanma, çağrı sayısı, ağaç yapısı — kod | 2 | **çekirdek** | W25 | 2 × 4 sa | [özyineleme çağrı ağacı](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çağrı+ağacı) | pythontutor.com |
+| **C15** | Özyineleme: çıktı sırası (ön/son işlem) | 3 | **çekirdek** | W27 | 3 × 4 sa | [özyineleme çalışma sırası](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çalışma+sırası) | pythontutor.com |
+| **C12** | Stringler: null sonlandırma, string.h | 1 | kuyruk | W35–37 | 1 × 4 sa | [C karakter dizileri string](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+karakter+dizileri+string) | gateoverflow.in |
+| **C11** | Çok boyutlu diziler ve pointer'lar | 2 | *kesildi* | — | 2 × 4 sa | [C iki boyutlu diziler](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+iki+boyutlu+diziler) | gateoverflow.in |
+| **C16** | struct, union, typedef | 1 | *kesildi* | — | 1 × 4 sa | [C yapılar struct](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+yapılar+struct) | gateoverflow.in |
+| **C20** | Tanımsız davranış, off-by-one, yaygın tuzaklar | 1 | *kesildi* | — | 1 × 4 sa | [C tanımsız davranış undefined behavior](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tanımsız+davranış+undefined+behavior) | van der Linden |
 
 ### A — Algoritma Okuryazarlığı (22 konu, 39 puan · ölçülen 48/150 soru)
 
-
-| ID | Konu | P | Hafta | 📺 Video | 📖 Kaynak |
-
-|---|---|---|---|---|---|
-
-| **A1** | Karmaşıklık: büyük O, en iyi/ortalama/en kötü | 2 | W8 | [algoritma karmaşıklık analizi big O](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+algoritma+karmaşıklık+analizi+big+O) | visualgo.net |
-
-| **A2** | Doğrusal arama, ikili arama (binary search) — algoritma | 1 | W11 | [ikili arama binary search](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+ikili+arama+binary+search) | visualgo.net |
-
-| **A3** | Basit sıralamalar: kabarcık, seçme, ekleme | 2 | W11 | [sıralama algoritmaları](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sıralama+algoritmaları) | visualgo.net |
-
-| **A21** | Böl ve yönet paradigması | 1 | W15 | [böl ve yönet divide and conquer](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+böl+ve+yönet+divide+and+conquer) | visualgo.net |
-
-| **A4** | Birleştirme sıralaması (merge sort) | 1 | W16 | [birleştirme sıralaması merge sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+birleştirme+sıralaması+merge+sort) | visualgo.net |
-
-| **A5** | Hızlı sıralama (quicksort) | 1 | W16 | [hızlı sıralama quick sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+hızlı+sıralama+quick+sort) | visualgo.net |
-
-| **A6** | Sayma / kova / radix sıralama | 1 | W16 | [sayma sıralaması counting sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sayma+sıralaması+counting+sort) | visualgo.net |
-
-| **A7** | Yığın (stack) ve kuyruk (queue) | 3 | W24 | [yığın stack ve kuyruk queue](https://www.youtube.com/results?search_query=veri+yapıları+yığın+stack+ve+kuyruk+queue) | visualgo.net |
-
-| **A13** | Graf gösterimi: komşuluk matrisi ve listesi | 2 | W25 | [graf gösterimi komşuluk matrisi listesi](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+graf+gösterimi+komşuluk+matrisi+listesi) | Gürlü · Olimpik Sonlu Matematik |
-
-| **A14** | BFS ve DFS | 2 | W25 | [genişlik öncelikli arama BFS](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+genişlik+öncelikli+arama+BFS) | Gürlü · Olimpik Sonlu Matematik |
-
-| **A15** | Topolojik sıralama | 2 | W27 | [topolojik sıralama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+topolojik+sıralama) | visualgo.net |
-
-| **A24** | **DFS**: yığın, keşif/bitiş zamanları, kenar sınıflandırma | 3 | W27 | [derinlik öncelikli arama DFS](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+derinlik+öncelikli+arama+DFS) | visualgo.net |
-
-| **A8** | Bağlı liste | 1 | W28 | [bağlı liste linked list](https://www.youtube.com/results?search_query=veri+yapıları+bağlı+liste+linked+list) | visualgo.net |
-
-| **A9** | İkili ağaçlar ve dolaşımlar | 2 | W28 | [ikili ağaç dolaşımı tree traversal](https://www.youtube.com/results?search_query=veri+yapıları+ikili+ağaç+dolaşımı+tree+traversal) | visualgo.net |
-
-| **A19** | Açgözlü strateji ve karşı örnek | 3 | W29 | [açgözlü algoritma greedy](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+açgözlü+algoritma+greedy) | Çıkmış sorular |
-
-| **A25** | Huffman kodlama ve önek kodları | 2 | W31 | [huffman kodlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+huffman+kodlama) | visualgo.net |
-
-| **A20** | **Dinamik programlama**: yineleme bağıntısından tabloya | 2 | W32 | [dinamik programlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+dinamik+programlama) | Claude — Prompt 4 |
-
-| **A26** | **Dinamik programlama**: memoization ve çağrı sayısı | 2 | W32 | [memoization dinamik programlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+memoization+dinamik+programlama) | pythontutor.com |
-
-| **A23** | Algoritma tasarım muhakemesi: hangi adım gereksiz/yanlış | 3 | W33 | — | Çıkmış sorular |
-
-| **A10** | İkili arama ağacı (BST) — veri yapısı | 1 | W35 | [ikili arama ağacı BST](https://www.youtube.com/results?search_query=veri+yapıları+ikili+arama+ağacı+BST) | visualgo.net |
-
-| **A11** | Heap, heapsort, öncelik kuyruğu | 1 | W35 | [heap öncelik kuyruğu](https://www.youtube.com/results?search_query=veri+yapıları+heap+öncelik+kuyruğu) | visualgo.net |
-
-| **A22** | Geri izleme (backtracking) | 1 | W35 | [geri izleme backtracking](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+geri+izleme+backtracking) | visualgo.net |
-
+| ID | Konu | P | Kapsam | Hafta | Parça | 📺 Video | 📖 Kaynak |
+|---|---|---|---|---|---|---|---|
+| **A1** | Karmaşıklık: büyük O, en iyi/ortalama/en kötü | 2 | **çekirdek** | W15–W16 | 2 × 4 sa | [algoritma karmaşıklık analizi big O](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+algoritma+karmaşıklık+analizi+big+O) | visualgo.net |
+| **A2** | Doğrusal arama, ikili arama (binary search) — algoritma | 1 | **çekirdek** | W17 | 1 × 4 sa | [ikili arama binary search](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+ikili+arama+binary+search) | visualgo.net |
+| **A3** | Basit sıralamalar: kabarcık, seçme, ekleme | 2 | **çekirdek** | W20 | 2 × 4 sa | [sıralama algoritmaları](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sıralama+algoritmaları) | visualgo.net |
+| **A13** | Graf gösterimi: komşuluk matrisi ve listesi | 2 | **çekirdek** | W21–W23 | 2 × 4 sa | [graf gösterimi komşuluk matrisi listesi](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+graf+gösterimi+komşuluk+matrisi+listesi) | Gürlü · Olimpik Sonlu Matematik |
+| **A14** | BFS ve DFS | 2 | **çekirdek** | W24 | 2 × 4 sa | [genişlik öncelikli arama BFS](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+genişlik+öncelikli+arama+BFS) | Gürlü · Olimpik Sonlu Matematik |
+| **A7** | Yığın (stack) ve kuyruk (queue) | 3 | **çekirdek** | W25–W27 | 3 × 4 sa | [yığın stack ve kuyruk queue](https://www.youtube.com/results?search_query=veri+yapıları+yığın+stack+ve+kuyruk+queue) | visualgo.net |
+| **A24** | DFS: yığın, keşif/bitiş zamanları, kenar sınıflandırma | 3 | **çekirdek** | W28 | 3 × 4 sa | [derinlik öncelikli arama DFS](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+derinlik+öncelikli+arama+DFS) | visualgo.net |
+| **A9** | İkili ağaçlar ve dolaşımlar | 2 | **çekirdek** | W28 | 2 × 4 sa | [ikili ağaç dolaşımı tree traversal](https://www.youtube.com/results?search_query=veri+yapıları+ikili+ağaç+dolaşımı+tree+traversal) | visualgo.net |
+| **A25** | Huffman kodlama ve önek kodları | 2 | **çekirdek** | W29 | 2 × 4 sa | [huffman kodlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+huffman+kodlama) | visualgo.net |
+| **A20** | Dinamik programlama: yineleme bağıntısından tabloya | 2 | **çekirdek** | W31 | 2 × 4 sa | [dinamik programlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+dinamik+programlama) | Claude — Prompt 4 |
+| **A26** | Dinamik programlama: memoization ve çağrı sayısı | 2 | **çekirdek** | W32 | 2 × 4 sa | [memoization dinamik programlama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+memoization+dinamik+programlama) | pythontutor.com |
+| **A23** | Algoritma tasarım muhakemesi: hangi adım gereksiz/yanlış | 3 | **çekirdek** | W32–W33 | 3 × 4 sa | — | Çıkmış sorular |
+| **A4** | Birleştirme sıralaması (merge sort) | 1 | kuyruk | W35–37 | 1 × 4 sa | [birleştirme sıralaması merge sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+birleştirme+sıralaması+merge+sort) | visualgo.net |
+| **A5** | Hızlı sıralama (quicksort) | 1 | kuyruk | W35–37 | 1 × 4 sa | [hızlı sıralama quick sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+hızlı+sıralama+quick+sort) | visualgo.net |
+| **A6** | Sayma / kova / radix sıralama | 1 | kuyruk | W35–37 | 1 × 4 sa | [sayma sıralaması counting sort](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sayma+sıralaması+counting+sort) | visualgo.net |
+| **A8** | Bağlı liste | 1 | kuyruk | W35–37 | 1 × 4 sa | [bağlı liste linked list](https://www.youtube.com/results?search_query=veri+yapıları+bağlı+liste+linked+list) | visualgo.net |
+| **A10** | İkili arama ağacı (BST) — veri yapısı | 1 | kuyruk | W35–37 | 1 × 4 sa | [ikili arama ağacı BST](https://www.youtube.com/results?search_query=veri+yapıları+ikili+arama+ağacı+BST) | visualgo.net |
+| **A21** | Böl ve yönet paradigması | 1 | *kesildi* | — | 1 × 4 sa | [böl ve yönet divide and conquer](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+böl+ve+yönet+divide+and+conquer) | visualgo.net |
+| **A15** | Topolojik sıralama | 2 | *kesildi* | — | 2 × 4 sa | [topolojik sıralama](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+topolojik+sıralama) | visualgo.net |
+| **A19** | Açgözlü strateji ve karşı örnek | 3 | *kesildi* | — | 3 × 4 sa | [açgözlü algoritma greedy](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+açgözlü+algoritma+greedy) | Çıkmış sorular |
+| **A11** | Heap, heapsort, öncelik kuyruğu | 1 | *kesildi* | — | 1 × 4 sa | [heap öncelik kuyruğu](https://www.youtube.com/results?search_query=veri+yapıları+heap+öncelik+kuyruğu) | visualgo.net |
+| **A22** | Geri izleme (backtracking) | 1 | *kesildi* | — | 1 × 4 sa | [geri izleme backtracking](https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+geri+izleme+backtracking) | visualgo.net |
 
 ### P — Mantık Kurgu Bulmacaları (4 konu, 8 puan · ölçülen 13/150 soru)
 
-
-| ID | Konu | P | Hafta | 📺 Video | 📖 Kaynak |
-
-|---|---|---|---|---|---|
-
-| **P2** | Doğrucu/yalancı ve önerme çıkarımı bulmacaları | 2 | W13 | [önermeler mantık çıkarım](https://www.youtube.com/results?search_query=Tunç+Kurt+önermeler+mantık+çıkarım) | Çıkmış sorular + LSAT |
-
-| **P1** | Kısıt bulmacaları: gruplama ve yerleştirme | 2 | W31 | — | LSAT Logic Games |
-
-| **P3** | Oyun, tartma ve en kötü durum bulmacaları | 2 | W37 | — | Gürlü · Olimpik Sonlu Matematik |
-
-| **P4** | Kısıt bulmacaları: çizelgeleme ve sıralama | 2 | W37 | — | LSAT Logic Games |
-
+| ID | Konu | P | Kapsam | Hafta | Parça | 📺 Video | 📖 Kaynak |
+|---|---|---|---|---|---|---|---|
+| **P2** | Doğrucu/yalancı ve önerme çıkarımı bulmacaları | 2 | **çekirdek** | W12–W13 | 2 × 4 sa | [önermeler mantık çıkarım](https://www.youtube.com/results?search_query=Tunç+Kurt+önermeler+mantık+çıkarım) | Çıkmış sorular + LSAT |
+| **P1** | Kısıt bulmacaları: gruplama ve yerleştirme | 2 | **çekirdek** | W29–W31 | 2 × 4 sa | — | LSAT Logic Games |
+| **P3** | Oyun, tartma ve en kötü durum bulmacaları | 2 | kuyruk | W35–37 | 2 × 4 sa | — | Gürlü · Olimpik Sonlu Matematik |
+| **P4** | Kısıt bulmacaları: çizelgeleme ve sıralama | 2 | kuyruk | W35–37 | 2 × 4 sa | — | LSAT Logic Games |
 
 ### L — Lise Cebiri Tazeleme (2 konu, 2 puan · ölçülen 4/150 soru — hepsi 2026'da)
 
+| ID | Konu | P | Kapsam | Hafta | Parça | 📺 Video | 📖 Kaynak |
+|---|---|---|---|---|---|---|---|
+| **L1** | Logaritma, üslü ifadeler ve devirli kalanlar — tazeleme | 1 | **çekirdek** | W17 | 1 × 4 sa | [Logaritma](https://www.youtube.com/results?search_query=Tunç+Kurt+Logaritma) | Claude — Prompt 4 |
+| **L2** | Polinom ve temel geometri — tazeleme | 1 | *kesildi* | — | 1 × 4 sa | [Polinomlar](https://www.youtube.com/results?search_query=Tunç+Kurt+Polinomlar) | Claude — Prompt 4 |
 
-| ID | Konu | P | Hafta | 📺 Video | 📖 Kaynak |
+### Kuyruk — geri çağırma sırası (W35–W37, 44 saat)
 
-|---|---|---|---|---|---|
+Sınav ağırlığı × maliyet oranına göre (K26):
 
-| **L1** | Logaritma, üslü ifadeler ve devirli kalanlar — tazeleme | 1 | W15 | [Logaritma](https://www.youtube.com/results?search_query=Tunç+Kurt+Logaritma) | Claude — Prompt 4 |
+| Sıra | Konular | Puan | Gerekçe |
+|---|---|---|---|
+| 1 | A4, A5, A6 | 3 | Sıralama algoritmaları — A hattının en çok çıkan kesilebilirleri |
+| 2 | C12 | 1 | C13 zaten çekirdekte, yanına ucuz ekleniyor |
+| 3 | M16 | 2 | Sayı teorisi temelleri |
+| 4 | A8, A10 | 2 | Bağlı liste ve BST |
+| 5 | P3, P4 | 4 | P hattı ucuz ama sınav ağırlığı %9 |
 
-| **L2** | Polinom ve temel geometri — tazeleme | 1 | W21 | [Polinomlar](https://www.youtube.com/results?search_query=Tunç+Kurt+Polinomlar) | Claude — Prompt 4 |
+**Bu sezon çalışılmayanlar (17 puan):** M6, M10, M12, M15, C11, C16, C20, A21, A15, A19, A11, A22, L2
 
+Bunlar müfredattan silinmedi — Tier B taahhüdünün (K26) dışında bırakıldı. Kuyruk bittikten sonra yer kalırsa yine buradan alınır; öncelikleri W34 tamponunda deneme verisiyle yeniden sıralanır (S8).
 
 ### Müfredat dışı bırakılanlar
 
@@ -1054,9 +1155,9 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 | C18 | Fonksiyon pointer'ları | 0/150 | 11 |
 
 
-**Daha da geri kalınırsa kesilecek sıradakiler:** L2 → P4 → P3 → A22 → A6 → A11 → C20 → A4
+**W26 kapısı tetiklerse düşecekler (Tier C):** A24, A25, A20, A26, A23, A9, P1 — sıra tartışmaya açık değil, kapı tampon haftasında ölçülür ve karar orada verilir (K26).
 
-**Kesme kuralı (v4.0'ta üçüncü koşul eklendi):** Bir konu ancak ÜÇ koşulu birden sağlarsa kesilebilir: (1) çekirdek olmayacak, (2) hiçbir konunun ön koşulu olmayacak, (3) 150 soruluk ampirik tabanda frekansı 2'den az olacak. v4.3: kesme sırası programatik doğrulanıyor — bağımlısı olan konu listeye giremez.
+**Kesme kuralı (v4.6'da yeniden yazıldı):** Kesme artık geri kalınca yapılan bir tepki değil, baştan verilmiş bir taahhüt. Bir konu ancak ÜÇ koşulu birden sağlarsa kesilebilir: (1) çekirdek olmayacak, (2) hiçbir konunun ön koşulu olmayacak, (3) 150 soruluk ampirik tabanda frekansı 2'den az olacak. v4.3: kesme sırası programatik doğrulanıyor — bağımlısı olan konu listeye giremez.
 
 **Kesme dışı tutulanlar:**
 
@@ -1068,7 +1169,7 @@ Bu iki hat **kendi günü olmayan hatlardır.** Sebebi: ikisi de kısa oturumlar
 | C20 | Doğrudan 0 ama tuzak bilgisi tüm C bloğuna yayılıyor |
 
 
-**Çekirdek işaretli 41 konu asla kesilmez.**
+**Çekirdek işaretli 41 konu asla kesilmez** — Tier B tam olarak bu 41 konudur (79 puan).
 
 ---
 
@@ -1161,43 +1262,55 @@ Bunlar için kitap ya da video yok. A23 bir konu değil, bir **okuma alışkanl�
 
 
 ## 8. Deneme protokolü
-
 4 haftada bir, tampon haftalarında, baştan itibaren.
+
+### ⚠️ Deneme bir oturumdur, bir hafta değil (K19)
+
+| Tür | Sınav | Analiz | Toplam |
+|---|---|---|---|
+| Madencilik seti (K17) | 45 dk | 45 dk | **1,5 sa** |
+| Tam koşullu deneme | 150 dk | 90 dk | **4 sa** |
+
+W18, W22, W26, W30, W34 ve W38 artık "deneme haftası" değil — **saf telafi haftalarıdır**, içinde bir Cumartesi oturumu vardır.
+
+**Yeni saat modelinde bir ayar:** 4 saatlik deneme, 11 saatlik haftanın %36'sı — çok pahalı. Bu yüzden tam denemeler **yoğun (16 sa) veya tampon haftalarına** yerleştirildi; madencilik setleri standart haftalarda kalabilir.
 
 ### ⚠️ Deneme rezervi — v4.0'ta eklenen kural
 
-Elinde çözümüyle birlikte **~23 lise Bilgisayar sınavı** var (2000–2026, TÜBİTAK arşivi). Protokol 13 oturum istiyor. **İsraf edilemez.**
+Elinde çözümüyle birlikte **~23 lise Bilgisayar sınavı** var (2000–2026, TÜBİTAK arşivi). Protokol v4.6'da **9 tam oturum + 3 madencilik seti** istiyor. **İsraf edilemez.**
 
 | Kullanım | Yıllar | Adet | Kural |
 |---|---|---|---|
 | **Rezerv — tam koşullu deneme** | 2019–2023 | 5 | Dokunma. Sırayla aç. |
 | **Yarı rezerv** | 2014–2018 | 5 | W30 sonrası denemeler |
 | **Madencilik — konu bazlı** | 2000–2013 | ~14 | Serbest. **Madencilik setlerinin kaynağı budur** (K17). Bir konu bitince o konunun sorularını tara. |
-| **Kalibrasyon (W1)** | 2013 | 1 | Cevap anahtarı açık, çözmeden, 45 dk (K5) |
+| **Kalibrasyon (W1)** | 2013 | 1 | Cevap anahtarı açık, çözmeden, 45 dk (K5) — W1 devretti, kullanılmadı |
 | **⛔ YAKILDI** | 2024, 2025, 2026 | 3 | K13 etiketlemesinde kullanıldı — deneme olarak kullanılamaz |
 
 **2024–2026 artık deneme değil, referanstır.** Bunları müfredat ölçümü için harcadık; karşılığında 150 soruluk bir dağılım haritası aldık. Doğru takas, ama geri alınamaz.
 
 ### Takvim
 
-| # | Hafta | Tarih | Tip |
-|---|---|---|---|
-| — | W4 | 17–23 Ağu 2026 | **Madencilik seti #1** — 15 soru / 45 dk |
-| — | W6 | 31 Ağu – 6 Eyl | **Madencilik seti #2** — 15 soru / 45 dk |
-| — | W10 | 28 Eyl – 4 Eki | **Madencilik seti #3** — 20 soru / 60 dk |
-| — | W14 | 26 Eki – 1 Kas | **Madencilik seti #4** — 20 soru / 60 dk |
-| 1 | W18 | 23–29 Kas | **İlk tam koşullu deneme** |
-| 2 | W22 | 21–27 Ara | tam |
-| 3 | W26 | 18–24 Oca 2027 | tam |
-| 4 | W30 | 15–21 Şub | tam |
-| 5 | W34 | 15–21 Mar | tam |
-| 6 | W38 | 12–18 Nis | tam |
-| 7–8 | W41 | 3–9 May | tam |
-| 9+ | W42 | 10–16 May | Gün aşırı tam |
+| # | Hafta | Tarih | Tip | Maliyet |
+|---|---|---|---|---|
+| — | W6 | 31 Ağu – 6 Eyl | **Madencilik seti #1** — 15 soru / 45 dk | 1,5 sa |
+| — | W10 | 28 Eyl – 4 Eki | **Madencilik seti #2** — 15 soru / 45 dk | 1,5 sa |
+| — | W14 | 26 Eki – 1 Kas | **Madencilik seti #3** — 15 soru / 45 dk | 1,5 sa |
+| 1 | W18 | 23 Kas – 29 Kas | **İlk tam koşullu deneme** | 4 sa |
+| 2 | W22 | 21 Ara – 27 Ara | tam koşullu | 4 sa |
+| 3 | W26 | 18 Oca – 24 Oca | tam koşullu | 4 sa |
+| 4 | W30 | 15 Şub – 21 Şub | tam koşullu | 4 sa |
+| 5 | W34 | 15 Mar – 21 Mar | tam koşullu | 4 sa |
+| 6 | W38 | 12 Nis – 18 Nis | tam koşullu | 4 sa |
+| 7 | W41 | 3 May – 9 May | tam koşullu | 4 sa |
+| 8 | W41 | 3 May – 9 May | tam koşullu | 4 sa |
+| 9 | W42 | 10 May – 16 May | tam koşullu | 4 sa |
 
 W19'da hiçbir şey yok — TFO haftası.
 
-**Rezerv aritmetiği artık tutuyor:** 9–10 oturum / 10 kâğıt (2019–23 rezerv + 2014–18 yarı rezerv).
+**Rezerv aritmetiği tutuyor:** 9 tam oturum / 10 kâğıt (2019–23 rezerv + 2014–18 yarı rezerv). Madencilik setleri 2000–2013 arşivinden beslenir, rezerv tüketmez.
+
+**Madencilik setleri v4.6'da dörtten üçe indi** (W6, W10, W14). Sebebi W4'ün devretmesi; kalan üç set aynı işlevi görüyor ve ilk tam deneme yine W18.
 
 ### Kurallar
 
@@ -1212,18 +1325,25 @@ W19'da hiçbir şey yok — TFO haftası.
 
 | # | W | Tarih | M/12 | C/16 | A/16 | P/4 | L/1 | Net | Süre yetti mi | Boş | En zayıf hat |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | W4 | | | | | | | | | | |
-| 2 | W6 | | | | | | | | | | |
-| 3 | W10 | | | | | | | | | | |
-| 4 | W14 | | | | | | | | | | |
-| 5 | W18 | | | | | | | | | | |
-| 6 | W22 | | | | | | | | | | |
-| 7 | W26 | | | | | | | | | | |
-| 8 | W30 | | | | | | | | | | |
-| 9 | W34 | | | | | | | | | | |
-| 10 | W38 | | | | | | | | | | |
-| 11 | W41 | | | | | | | | | | |
-| 12 | W41 | | | | | | | | | | |
+| 1 | W18 | 23 Kas | | | | | | | | | |
+| 2 | W22 | 21 Ara | | | | | | | | | |
+| 3 | W26 | 18 Oca | | | | | | | | | |
+| 4 | W30 | 15 Şub | | | | | | | | | |
+| 5 | W34 | 15 Mar | | | | | | | | | |
+| 6 | W38 | 12 Nis | | | | | | | | | |
+| 7 | W41 | 3 May | | | | | | | | | |
+| 8 | W41 | 3 May | | | | | | | | | |
+| 9 | W42 | 10 May | | | | | | | | | |
+
+Madencilik setleri ayrı tutulur — onlarda yalnızca **net ve soru başına süre** kaydedilir, hat kırılımı istenmez.
+
+| Set | W | Tarih | Net | Soru başına sn |
+|---|---|---|---|---|
+| #1 | W6 | 31 Ağu | | |
+| #2 | W10 | 28 Eyl | | |
+| #3 | W14 | 26 Eki | | |
+
+**Soru başına süre sütunu S6 içindir.** Sınavın tahmini iş yükü ~174 dk, bütçe 150 dk — bu, konu bilgisinden bağımsız bir sorundur. Trend madencilik setlerinden çıkar; ilk tam deneme (W18) beklenmez.
 
 ---
 
@@ -1256,4228 +1376,25 @@ Sonra Bölüm 2'ye yeni karar kaydı ekle (K11, K12, …).
 
 ## 10. Makine-okunur veri
 
+> Planın yapısal verisi bu belgede kopyalanmaz — **tek doğruluk kaynağı `plan.json`'dur.**
 
-> HTML dönüşümünde bu bloğu doğrudan kullan. `kapsam` alanı **varsayılan olarak gizlidir**, konuya tıklanınca açılır.
+`plan.json` şunları taşır: `meta` (sürüm, saat modeli, kapasite, kapı, geri çağırma penceresi),
+`durum` (güncel hafta, tamamlanan puan/konu, ölçülen hız), `hatlar`, `fazlar`, `bloklar`,
+`haftalar[]` (42 hafta — `haftaTipi`, `saat`, `birincil[]`, `ikincil[]`, `puan`, `kumulatif`),
+`konular[]` (63 konu — `tier`, `parcalar[]`, `onkosul`, `kapsam`, `calisma`, `mebKarsiligi`),
+`denemeler[]`, `kaynakKatalogu`, `videoKanallari`.
 
+Düzyazı taraf (`kararlar` ve bu bölümlerin tamamı) `metin.json`'dadır ve `source/theplan.md` ile
+birebir aynıdır. Tracker ikisini de `fetch` ile yükler.
 
-```json
+**v4.6'da eklenen alanlar:** `meta.hedefKapsam`, `meta.cekirdekPuan`, `meta.kapi`,
+`meta.geriCagirmaPenceresi`, `meta.senaryolar`, `haftalar[].haftaTipi`, `haftalar[].birincil`,
+`haftalar[].ikincil`, `haftalar[].kumulatif`, `haftalar[].planlananSaat`, `konular[].tier`,
+`konular[].parcalar[]`, `denemeler[]`, `tierler`.
+**Kaldırılan:** `haftalar[].deneme` (yerine `denemeler[]`), `konular[].beklemede`.
 
-{
-  "meta": {
-    "surum": "4.4",
-    "guncelleme": "2026-08-07",
-    "mebProgrami": "Türkiye Yüzyılı Maarif Modeli (2026-27'de 10. sınıf bu programla okutuluyor)",
-    "hedef": "TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama — Bilgisayar",
-    "sinavTarihi": "2027-05-15",
-    "basvuruSonTarih": "2027-04-15",
-    "planBaslangic": "2026-07-27",
-    "planBitis": "2027-05-16",
-    "toplamHafta": 42,
-    "uretkenHafta": 27,
-    "tamponHafta": 11,
-    "tekrarHafta": 3,
-    "sinavHafta": 1,
-    "toplamPuan": 108,
-    "toplamKonu": 63,
-    "toplamFaz": 10,
-    "puanBasinaSaat": 4,
-    "yeniKonuKapasiteSaat": 455,
-    "mufredatYukSaat": 432,
-    "tamponSaat": 177,
-    "tekrarSaat": 45,
-    "sinavSaat": 15,
-    "toplamYatirimSaat": 692,
-    "yazHaftalikSaat": 25,
-    "donemHaftalikSaat": 15,
-    "referansHizYaz": 6.0,
-    "referansHizDonem": 3.6,
-    "sonYeniKonuHaftasi": 37,
-    "ampirikTemel": "2024, 2025 ve 2026 birinci aşama sınavlarının 150 sorusu konu ID'leriyle etiketlendi (K13)",
-    "olculenDagilim": {
-      "M": "24%",
-      "C": "33%",
-      "A": "32%",
-      "P": "9%",
-      "L": "3%"
-    },
-    "sinavSuresi": 150,
-    "soruSayisi": 50,
-    "soruBasinaDakika": 3.0,
-    "yanlisCezasi": "4 yanlış 1 doğruyu götürür",
-    "bosAtisBeklenenDeger": 0.0,
-    "birSikElenirseBeklenenDeger": 0.0625,
-    "hesapMakinesi": false,
-    "karalamaKagidi": false,
-    "rekabet2024": {
-      "basvuru": 14188,
-      "gecen": 515
-    },
-    "rekabet2026": {
-      "basvuru": 20828,
-      "gecen": 517
-    },
-    "devredilenHaftalar": [1, 2],
-    "devredilenPuan": 14,
-    "gercekPuan": 0,
-    "ilkTamDeneme": 18,
-    "cHattiErteleme": {
-      "karar": "K16",
-      "ertelenenKonular": ["C1", "C2", "C3", "C7", "C4", "C6", "C5"],
-      "ertelenenPuan": 14,
-      "bosalanPuan": 12,
-      "yerlestirmeHaftasi": 6,
-      "pazartesiSlotuC": true
-    }
-  },
-  "durum": {
-    "guncelHafta": 1,
-    "guncelBlok": "B0",
-    "guncelFaz": 1,
-    "tamamlananPuan": 0,
-    "tamamlananKonu": [],
-    "devredilenKonu": [],
-    "gecenUretkenHafta": 0,
-    "olculenHiz": null
-  },
-  "karisabilecekIsimler": [
-    {
-      "terim": "fonksiyon",
-      "konular": [
-        {
-          "id": "M20",
-          "anlam": "Matematiksel fonksiyon: birebir, örten, birebir örten",
-          "hat": "küme teorisi"
-        },
-        {
-          "id": "C13",
-          "anlam": "C alt programı: parametre geçirme, kapsam",
-          "hat": "kod"
-        }
-      ],
-      "not": "İlgisiz. M20 kombinatoriktedir çünkü örten fonksiyon sayma bir sayma problemidir."
-    },
-    {
-      "terim": "ikili",
-      "konular": [
-        {
-          "id": "M18",
-          "anlam": "İkilik sayı sistemi (taban 2)",
-          "hat": "sayı gösterimi"
-        },
-        {
-          "id": "A2",
-          "anlam": "İkili arama (binary search) — ALGORİTMA",
-          "hat": "arama"
-        },
-        {
-          "id": "A10",
-          "anlam": "İkili arama ağacı (BST) — VERİ YAPISI",
-          "hat": "yapı"
-        }
-      ],
-      "not": "A2 ile A10 arası 22 hafta var, adları neredeyse aynı."
-    },
-    {
-      "terim": "yineleme / özyineleme",
-      "konular": [
-        {
-          "id": "M12,M13",
-          "anlam": "Yineleme bağıntısı (recurrence) — matematiksel denklem",
-          "hat": "matematik"
-        },
-        {
-          "id": "C14,C15",
-          "anlam": "Özyineleme (recursion) — fonksiyonun kendini çağırması",
-          "hat": "kod"
-        }
-      ],
-      "not": "GERÇEKTEN AKRABA: özyinelemeli algoritmanın karmaşıklığı yineleme bağıntısıyla yazılır. Bilerek bağla."
-    }
-  ],
-  "hatlar": [
-    {
-      "id": "M",
-      "ad": "Matematik & Kombinatorik",
-      "sinavAgirligi": 0.24,
-      "soruSayisi": 12,
-      "puan": 24,
-      "konuSayisi": 17,
-      "olculen": "36/150 soru (2024-25-26)"
-    },
-    {
-      "id": "C",
-      "ad": "C Dili Semantiği",
-      "sinavAgirligi": 0.33,
-      "soruSayisi": 16,
-      "puan": 35,
-      "konuSayisi": 18,
-      "olculen": "49/150 soru (15+15+19)"
-    },
-    {
-      "id": "A",
-      "ad": "Algoritma Okuryazarlığı",
-      "sinavAgirligi": 0.32,
-      "soruSayisi": 16,
-      "puan": 39,
-      "konuSayisi": 22,
-      "olculen": "48/150 soru"
-    },
-    {
-      "id": "P",
-      "ad": "Mantık Kurgu Bulmacaları",
-      "sinavAgirligi": 0.09,
-      "soruSayisi": 4,
-      "puan": 8,
-      "konuSayisi": 4,
-      "olculen": "13/150 soru"
-    },
-    {
-      "id": "L",
-      "ad": "Lise Cebiri Tazeleme",
-      "sinavAgirligi": 0.03,
-      "soruSayisi": 1,
-      "puan": 2,
-      "konuSayisi": 2,
-      "olculen": "4/150 soru — hepsi 2026'da"
-    }
-  ],
-  "fazlar": [
-    {
-      "no": 1,
-      "ad": "Notasyon ve dil",
-      "zincir": [
-        "M20",
-        "M22",
-        "M18",
-        "M19"
-      ],
-      "puan": 5,
-      "konuSayisi": 4,
-      "gerekce": "Hepsi başka konuların dili; M18→C5, M19→C6 ve P hattı, M20→M7, M22→M4"
-    },
-    {
-      "no": 2,
-      "ad": "C mikro-semantiği",
-      "zincir": [
-        "C1",
-        "C2",
-        "C3",
-        "C7",
-        "C4",
-        "C6",
-        "C5"
-      ],
-      "puan": 14,
-      "konuSayisi": 7,
-      "gerekce": "Sınavın C bloğunun tamamı bunların bileşimi. C3 ve C7 ağırlığı 2 puan artırıldı (K13: 11/150)"
-    },
-    {
-      "no": 3,
-      "ad": "Kombinatorik çekirdeği",
-      "zincir": [
-        "M1",
-        "M2",
-        "M3",
-        "M4",
-        "M5",
-        "M6",
-        "M7",
-        "M8"
-      ],
-      "puan": 13,
-      "konuSayisi": 8,
-      "gerekce": "M2 ve M5 genişletildi (döngü ayrışımı, küme parçalanışı). Düşük frekanslılar küçültüldü."
-    },
-    {
-      "no": 4,
-      "ad": "Algoritma temeli ve bellek",
-      "zincir": [
-        "A1",
-        "C8",
-        "A2",
-        "A3",
-        "C9",
-        "C10"
-      ],
-      "puan": 12,
-      "konuSayisi": 6,
-      "gerekce": "A hattı başlar; C9 tüm bağlantılı yapıların ön koşulu"
-    },
-    {
-      "no": 5,
-      "ad": "Olasılık ve sıralama",
-      "zincir": [
-        "M9",
-        "M10",
-        "A21",
-        "A4",
-        "A5",
-        "A6"
-      ],
-      "puan": 6,
-      "konuSayisi": 6,
-      "gerekce": "Küçültüldü: sıralama algoritmalarının mekaniği 150 soruda doğrudan sorulmadı, kavram yeter"
-    },
-    {
-      "no": 6,
-      "ad": "İleri C ve özyineleme",
-      "zincir": [
-        "C11",
-        "C12",
-        "C13",
-        "C14",
-        "C21",
-        "C15",
-        "A7"
-      ],
-      "puan": 15,
-      "konuSayisi": 7,
-      "gerekce": "C bloğunun ağırlık merkezi. Özyineleme 5→8 puan (K13: 16/49 C sorusu)"
-    },
-    {
-      "no": 7,
-      "ad": "Graf",
-      "zincir": [
-        "A13",
-        "A14",
-        "A24",
-        "A15"
-      ],
-      "puan": 9,
-      "konuSayisi": 4,
-      "gerekce": "ÖNE ÇEKİLDİ (K14). B4'ten B3'e. 18/150 soru — üç yılın en istikrarlı kümesi."
-    },
-    {
-      "no": 8,
-      "ad": "Optimizasyon ve tasarım muhakemesi",
-      "zincir": [
-        "A19",
-        "A25",
-        "A20",
-        "A26",
-        "A23"
-      ],
-      "puan": 12,
-      "konuSayisi": 5,
-      "gerekce": "YENİ FAZ. Açgözlü + Huffman + DP + tasarım muhakemesi = 30/150 soru."
-    },
-    {
-      "no": 9,
-      "ad": "Bağlantılı yapılar, sayı teorisi ve kapanış",
-      "zincir": [
-        "C16",
-        "A8",
-        "A9",
-        "A10",
-        "A11",
-        "M12",
-        "M16",
-        "M15",
-        "A22",
-        "C20"
-      ],
-      "puan": 12,
-      "konuSayisi": 10,
-      "gerekce": "Düşük frekanslılar sona toplandı. Buradan kesme yapılırsa zincir kırılmaz."
-    },
-    {
-      "no": 10,
-      "ad": "Mantık kurgu ve lise cebiri",
-      "zincir": [
-        "P2",
-        "P1",
-        "P4",
-        "P3",
-        "L1",
-        "L2"
-      ],
-      "puan": 10,
-      "konuSayisi": 6,
-      "gerekce": "YENİ HAT (K15). Diğer fazlardan bağımsız, araya serpiştirilir. 17/150 soru."
-    }
-  ],
-  "bloklar": [
-    {
-      "id": "B0",
-      "ad": "Yaz Yoğunlaştırma",
-      "haftaAralik": [
-        1,
-        6
-      ],
-      "baslangic": "2026-07-27",
-      "bitis": "2026-09-06",
-      "hafta": 6,
-      "uretkenHafta": 4,
-      "haftalikSaat": 25,
-      "puan": 25,
-      "kapasiteSaat": 100,
-      "kesin": true
-    },
-    {
-      "id": "B1",
-      "ad": "Dönem Başlangıcı",
-      "haftaAralik": [
-        7,
-        14
-      ],
-      "baslangic": "2026-09-07",
-      "bitis": "2026-11-01",
-      "hafta": 8,
-      "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 22,
-      "kapasiteSaat": 90,
-      "kesin": false,
-      "not": "En dolu blok (%98), C9 burada"
-    },
-    {
-      "id": "B2",
-      "ad": "Güz Sonu",
-      "haftaAralik": [
-        15,
-        22
-      ],
-      "baslangic": "2026-11-02",
-      "bitis": "2026-12-27",
-      "hafta": 8,
-      "uretkenHafta": 5,
-      "haftalikSaat": 15,
-      "puan": 16,
-      "kapasiteSaat": 75,
-      "kesin": false,
-      "not": "Üç tampon: W18, W19 (TFO), W22"
-    },
-    {
-      "id": "B3",
-      "ad": "Kış",
-      "haftaAralik": [
-        23,
-        30
-      ],
-      "baslangic": "2026-12-28",
-      "bitis": "2027-02-21",
-      "hafta": 8,
-      "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 23,
-      "kapasiteSaat": 100,
-      "kesin": false,
-      "not": "W27 yarıyıl tatili, yaz temposu"
-    },
-    {
-      "id": "B4",
-      "ad": "İlkbahar",
-      "haftaAralik": [
-        31,
-        38
-      ],
-      "baslangic": "2027-02-22",
-      "bitis": "2027-04-18",
-      "hafta": 8,
-      "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 22,
-      "kapasiteSaat": 90,
-      "kesin": false,
-      "not": "W31 TYBS başvurusu; W37 son yeni konu"
-    },
-    {
-      "id": "B5",
-      "ad": "Final",
-      "haftaAralik": [
-        39,
-        42
-      ],
-      "baslangic": "2027-04-19",
-      "bitis": "2027-05-16",
-      "hafta": 4,
-      "uretkenHafta": 0,
-      "tekrarHafta": 3,
-      "haftalikSaat": 15,
-      "puan": 0,
-      "kapasiteSaat": 45,
-      "kesin": false,
-      "not": "Yeni konu yok. 3 tekrar haftası + 1 sınav haftası. Hız hesabına girmez."
-    }
-  ],
-  "haftalar": [
-    {
-      "w": 1,
-      "blok": "B0",
-      "blokIci": 1,
-      "bas": "2026-07-27",
-      "bit": "2026-08-02",
-      "tip": "devredildi",
-      "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "devredilenKonular": ["M20", "M22", "M19", "C1", "C2"],
-      "notlar": ["Tamamlanmadı (K16)"]
-    },
-    {
-      "w": 2,
-      "blok": "B0",
-      "blokIci": 2,
-      "bas": "2026-08-03",
-      "bit": "2026-08-09",
-      "tip": "devredildi",
-      "saat": 25,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "devredilenKonular": ["C3", "C7", "M1"],
-      "notlar": ["Tamamlanmadı (K16)"]
-    },
-    {
-      "w": 3,
-      "blok": "B0",
-      "blokIci": 3,
-      "bas": "2026-08-10",
-      "bit": "2026-08-16",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        1,
-        3
-      ],
-      "konular": [
-        "M19",
-        "M20",
-        "M22",
-        "M1",
-        "M18"
-      ],
-      "puan": 6,
-      "notlar": []
-    },
-    {
-      "w": 4,
-      "blok": "B0",
-      "blokIci": 4,
-      "bas": "2026-08-17",
-      "bit": "2026-08-23",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        3
-      ],
-      "konular": [
-        "M2",
-        "M3",
-        "M4"
-      ],
-      "puan": 6,
-      "madencilikSeti": 1,
-      "notlar": []
-    },
-    {
-      "w": 5,
-      "blok": "B0",
-      "blokIci": 5,
-      "bas": "2026-08-24",
-      "bit": "2026-08-30",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        3
-      ],
-      "konular": [
-        "M5",
-        "M6",
-        "M7",
-        "M8"
-      ],
-      "puan": 6,
-      "notlar": []
-    },
-    {
-      "w": 6,
-      "blok": "B0",
-      "blokIci": 6,
-      "bas": "2026-08-31",
-      "bit": "2026-09-06",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        5,
-        9,
-        10
-      ],
-      "konular": [
-        "M9",
-        "M10",
-        "M12",
-        "P2"
-      ],
-      "puan": 5,
-      "madencilikSeti": 2,
-      "kapanis": "B0",
-      "notlar": [
-        "Cuma–Pazar kapanış + telafi payı — B0'ın tek tamponu",
-        "Geride kalınırsa önce M12 ve P2 devreder"
-      ]
-    },
-    {
-      "w": 7,
-      "blok": "B1",
-      "blokIci": 1,
-      "bas": "2026-09-07",
-      "bit": "2026-09-13",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        3
-      ],
-      "konular": [],
-      "puan": 0,
-      "notlar": [
-        "TFO temsilcilik görüşmesi",
-        "Boş — W6 kapanışında yeniden doldurulacak (K16)"
-      ]
-    },
-    {
-      "w": 8,
-      "blok": "B1",
-      "blokIci": 2,
-      "bas": "2026-09-14",
-      "bit": "2026-09-20",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        3,
-        4
-      ],
-      "konular": [
-        "A1"
-      ],
-      "puan": 2,
-      "notlar": [
-        "A hattı başlar"
-      ]
-    },
-    {
-      "w": 9,
-      "blok": "B1",
-      "blokIci": 3,
-      "bas": "2026-09-21",
-      "bit": "2026-09-27",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        3,
-        4
-      ],
-      "konular": [
-        "C8"
-      ],
-      "puan": 2,
-      "notlar": []
-    },
-    {
-      "w": 10,
-      "blok": "B1",
-      "blokIci": 4,
-      "bas": "2026-09-28",
-      "bit": "2026-10-04",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "madencilikSeti": 3,
-      "notlar": []
-    },
-    {
-      "w": 11,
-      "blok": "B1",
-      "blokIci": 5,
-      "bas": "2026-10-05",
-      "bit": "2026-10-11",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        4
-      ],
-      "konular": [
-        "A2",
-        "A3"
-      ],
-      "puan": 3,
-      "notlar": [
-        "C9 3 puanlık, ağır hafta"
-      ]
-    },
-    {
-      "w": 12,
-      "blok": "B1",
-      "blokIci": 6,
-      "bas": "2026-10-12",
-      "bit": "2026-10-18",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        4,
-        5
-      ],
-      "konular": [
-        "C9"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 13,
-      "blok": "B1",
-      "blokIci": 7,
-      "bas": "2026-10-19",
-      "bit": "2026-10-25",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        4,
-        10
-      ],
-      "konular": [
-        "C10"
-      ],
-      "puan": 2,
-      "notlar": []
-    },
-    {
-      "w": 14,
-      "blok": "B1",
-      "blokIci": 8,
-      "bas": "2026-10-26",
-      "bit": "2026-11-01",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "madencilikSeti": 4,
-      "kapanis": "B1",
-      "notlar": []
-    },
-    {
-      "w": 15,
-      "blok": "B2",
-      "blokIci": 1,
-      "bas": "2026-11-02",
-      "bit": "2026-11-08",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        5,
-        10
-      ],
-      "konular": [
-        "A21",
-        "L1"
-      ],
-      "puan": 2,
-      "notlar": [
-        "AP kayıt kararı"
-      ]
-    },
-    {
-      "w": 16,
-      "blok": "B2",
-      "blokIci": 2,
-      "bas": "2026-11-09",
-      "bit": "2026-11-15",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        5
-      ],
-      "konular": [
-        "A4",
-        "A5",
-        "A6"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 17,
-      "blok": "B2",
-      "blokIci": 3,
-      "bas": "2026-11-16",
-      "bit": "2026-11-22",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        6
-      ],
-      "konular": [
-        "C11",
-        "C12",
-        "C13"
-      ],
-      "puan": 4,
-      "notlar": []
-    },
-    {
-      "w": 18,
-      "blok": "B2",
-      "blokIci": 4,
-      "bas": "2026-11-23",
-      "bit": "2026-11-29",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 1,
-      "notlar": []
-    },
-    {
-      "w": 19,
-      "blok": "B2",
-      "blokIci": 5,
-      "bas": "2026-11-30",
-      "bit": "2026-12-06",
-      "tip": "tampon",
-      "saat": 7,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "notlar": [
-        "TFO ~6 Aralık — TÜBİTAK durur"
-      ]
-    },
-    {
-      "w": 20,
-      "blok": "B2",
-      "blokIci": 6,
-      "bas": "2026-12-07",
-      "bit": "2026-12-13",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        6
-      ],
-      "konular": [
-        "C14"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 21,
-      "blok": "B2",
-      "blokIci": 7,
-      "bas": "2026-12-14",
-      "bit": "2026-12-20",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        6,
-        10
-      ],
-      "konular": [
-        "C21",
-        "L2"
-      ],
-      "puan": 3,
-      "notlar": [
-        "C14 3 puanlık, ağır hafta"
-      ]
-    },
-    {
-      "w": 22,
-      "blok": "B2",
-      "blokIci": 8,
-      "bas": "2026-12-21",
-      "bit": "2026-12-27",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 2,
-      "kapanis": "B2",
-      "notlar": [
-        "S3: kesilen konular geri eklenecek mi"
-      ]
-    },
-    {
-      "w": 23,
-      "blok": "B3",
-      "blokIci": 1,
-      "bas": "2026-12-28",
-      "bit": "2027-01-03",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        6
-      ],
-      "konular": [
-        "C15"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 24,
-      "blok": "B3",
-      "blokIci": 2,
-      "bas": "2027-01-04",
-      "bit": "2027-01-10",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        6
-      ],
-      "konular": [
-        "A7"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 25,
-      "blok": "B3",
-      "blokIci": 3,
-      "bas": "2027-01-11",
-      "bit": "2027-01-17",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        7
-      ],
-      "konular": [
-        "A13",
-        "A14"
-      ],
-      "puan": 4,
-      "notlar": []
-    },
-    {
-      "w": 26,
-      "blok": "B3",
-      "blokIci": 4,
-      "bas": "2027-01-18",
-      "bit": "2027-01-24",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 3,
-      "notlar": []
-    },
-    {
-      "w": 27,
-      "blok": "B3",
-      "blokIci": 5,
-      "bas": "2027-01-25",
-      "bit": "2027-01-31",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        7,
-        9
-      ],
-      "konular": [
-        "A24",
-        "A15"
-      ],
-      "puan": 5,
-      "notlar": [
-        "Yarıyıl tatili — yaz temposu",
-        "M13 3 puanlık"
-      ]
-    },
-    {
-      "w": 28,
-      "blok": "B3",
-      "blokIci": 6,
-      "bas": "2027-02-01",
-      "bit": "2027-02-07",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        9
-      ],
-      "konular": [
-        "C16",
-        "A8",
-        "A9"
-      ],
-      "puan": 4,
-      "notlar": []
-    },
-    {
-      "w": 29,
-      "blok": "B3",
-      "blokIci": 7,
-      "bas": "2027-02-08",
-      "bit": "2027-02-14",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        8
-      ],
-      "konular": [
-        "A19"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 30,
-      "blok": "B3",
-      "blokIci": 8,
-      "bas": "2027-02-15",
-      "bit": "2027-02-21",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 4,
-      "kapanis": "B3",
-      "notlar": []
-    },
-    {
-      "w": 31,
-      "blok": "B4",
-      "blokIci": 1,
-      "bas": "2027-02-22",
-      "bit": "2027-02-28",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        8,
-        10
-      ],
-      "konular": [
-        "A25",
-        "P1"
-      ],
-      "puan": 4,
-      "notlar": [
-        "TYBS BAŞVURUSU",
-        "A11 3 puanlık"
-      ]
-    },
-    {
-      "w": 32,
-      "blok": "B4",
-      "blokIci": 2,
-      "bas": "2027-03-01",
-      "bit": "2027-03-07",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        8
-      ],
-      "konular": [
-        "A20",
-        "A26"
-      ],
-      "puan": 4,
-      "notlar": []
-    },
-    {
-      "w": 33,
-      "blok": "B4",
-      "blokIci": 3,
-      "bas": "2027-03-08",
-      "bit": "2027-03-14",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        8
-      ],
-      "konular": [
-        "A23"
-      ],
-      "puan": 3,
-      "notlar": [
-        "A14 3 puanlık, ağır hafta"
-      ]
-    },
-    {
-      "w": 34,
-      "blok": "B4",
-      "blokIci": 4,
-      "bas": "2027-03-15",
-      "bit": "2027-03-21",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 5,
-      "notlar": []
-    },
-    {
-      "w": 35,
-      "blok": "B4",
-      "blokIci": 5,
-      "bas": "2027-03-22",
-      "bit": "2027-03-28",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        9
-      ],
-      "konular": [
-        "A10",
-        "A11",
-        "C20",
-        "A22"
-      ],
-      "puan": 4,
-      "notlar": [
-        "A19 3 puanlık"
-      ]
-    },
-    {
-      "w": 36,
-      "blok": "B4",
-      "blokIci": 6,
-      "bas": "2027-03-29",
-      "bit": "2027-04-04",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        9
-      ],
-      "konular": [
-        "M16",
-        "M15"
-      ],
-      "puan": 3,
-      "notlar": []
-    },
-    {
-      "w": 37,
-      "blok": "B4",
-      "blokIci": 7,
-      "bas": "2027-04-05",
-      "bit": "2027-04-11",
-      "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        10
-      ],
-      "konular": [
-        "P4",
-        "P3"
-      ],
-      "puan": 4,
-      "notlar": [
-        "SON YENİ KONU"
-      ]
-    },
-    {
-      "w": 38,
-      "blok": "B4",
-      "blokIci": 8,
-      "bas": "2027-04-12",
-      "bit": "2027-04-18",
-      "tip": "tampon",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 6,
-      "kapanis": "B4",
-      "notlar": []
-    },
-    {
-      "w": 39,
-      "blok": "B5",
-      "blokIci": 1,
-      "bas": "2027-04-19",
-      "bit": "2027-04-25",
-      "tip": "tekrar",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "notlar": [
-        "M hattı tam tekrar — 20 konu, 35 puan"
-      ]
-    },
-    {
-      "w": 40,
-      "blok": "B5",
-      "blokIci": 2,
-      "bas": "2027-04-26",
-      "bit": "2027-05-02",
-      "tip": "tekrar",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "notlar": [
-        "C hattı tam tekrar — 19 konu, 36 puan"
-      ]
-    },
-    {
-      "w": 41,
-      "blok": "B5",
-      "blokIci": 3,
-      "bas": "2027-05-03",
-      "bit": "2027-05-09",
-      "tip": "tekrar",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 7,
-      "notlar": [
-        "A hattı tam tekrar — 18 konu, 37 puan",
-        "Deneme 7 ve 8"
-      ]
-    },
-    {
-      "w": 42,
-      "blok": "B5",
-      "blokIci": 4,
-      "bas": "2027-05-10",
-      "bit": "2027-05-16",
-      "tip": "sinav",
-      "saat": 15,
-      "faz": [],
-      "konular": [],
-      "puan": 0,
-      "deneme": 9,
-      "notlar": [
-        "Gün aşırı tam deneme",
-        "Yeni konu yok"
-      ]
-    }
-  ],
-  "konular": [
-    {
-      "id": "M19",
-      "hat": "M",
-      "ad": "Önerme mantığı, doğruluk tabloları, De Morgan",
-      "puan": 1,
-      "faz": 1,
-      "blok": "B0",
-      "hafta": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M20"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Bağlaçlar: ∧, ∨, ¬, →, ↔ ve anlamları",
-          "Doğruluk tablosu kurma (2^n satır)",
-          "De Morgan yasaları",
-          "Koşullu önerme: karşıt, ters, karşıt ters (contrapositive)",
-          "Totoloji, çelişki, mantıksal denklik"
-        ],
-        "dikkat": [
-          "DUR: yüklem mantığı (∀, ∃) yüzeysel yeterli"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Mantık ve önermeler",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Mantık+ve+önermeler"
-        },
-        "kaynak": {
-          "ad": "PKO soru bankası",
-          "yer": "Mantık ve önermeler bölümü (TYT) — video yeterli"
-        },
-        "soru": "2025 Q14, Q18 · 2026 Q2",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 9,
-        "tema": "1. Tema: Sayılar",
-        "dersSaati": 38,
-        "kazanim": "MAT.9.1.4",
-        "ortusen": [
-          "Önerme kavramı",
-          "Önermenin değili",
-          "Mantık bağlaçları: ve, veya, ya da, ise, ancak ve ancak",
-          "Niceleyiciler: her, bazı",
-          "Sözel ↔ sembolik dil çevirisi"
-        ],
-        "ortusmeyen": [
-          "Doğruluk tablosu kurma",
-          "De Morgan yasaları",
-          "Karşıt, ters, karşıt ters önerme",
-          "Totoloji ve çelişki"
-        ],
-        "not": "10. sınıf MAT.10.3.2'de mantık bağlaçları algoritma bağlamında tekrar geçiyor."
-      }
-    },
-    {
-      "id": "M20",
-      "hat": "M",
-      "ad": "Kümeler, bağıntılar, matematiksel fonksiyon türleri (birebir/örten)",
-      "puan": 2,
-      "faz": 1,
-      "blok": "B0",
-      "hafta": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Küme işlemleri: birleşim, kesişim, fark, tümleyen, simetrik fark",
-          "Kartezyen çarpım; kuvvet kümesi eleman sayısı 2^n",
-          "Bağıntı özellikleri: yansıma, simetri, geçişme (denklik bağıntısı)",
-          "Fonksiyon türleri: birebir (injective), örten (surjective), birebir örten (bijective)",
-          "n elemanlıdan m elemanlıya toplam fonksiyon sayısı: m^n",
-          "Birebir fonksiyon sayısı: m!/(m-n)!"
-        ],
-        "dikkat": [
-          "DUR: örten fonksiyon SAYISI formülü M7'de (dahil-hariç) gelecek; burada sadece kavramı bil",
-          "★ v4.0 EKİ (K13): Fonksiyon BİLEŞKESİ (f∘g) ve ters fonksiyon — çok katmanlı bileşkeyi geriye çözme",
-          "★ v4.0 EKİ: Bağıntı bileşkesi S∘R = {(a,c) | ∃b: (a,b)∈R ve (b,c)∈S} — eleman sayısı sayma"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Kümeler ve fonksiyonlar",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Kümeler+ve+fonksiyonlar"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Sayma Yöntemleri (giriş)"
-        },
-        "soru": "2026 Q3, Q4 (bileşke)",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 9,
-        "tema": "1. Tema: Sayılar",
-        "dersSaati": 38,
-        "kazanim": "MAT.9.1.2",
-        "ortusen": [
-          "Küme sembol ve işlemleri",
-          "Eleman olma-olmama, eleman sayısı",
-          "Listeleme ve ortak özellik yöntemleri",
-          "Alt küme, boş küme",
-          "Birleşim, kesişim, fark, tümleme"
-        ],
-        "ortusmeyen": [
-          "Bağıntı özellikleri (yansıma, simetri, geçişme)",
-          "Matematiksel fonksiyon türleri: birebir, örten, birebir örten",
-          "Kartezyen çarpım",
-          "Kuvvet kümesi eleman sayısı 2^n",
-          "Fonksiyon sayma formülleri: m^n ve m!/(m−n)!"
-        ],
-        "not": "MEB kümeyi formel tanıma girmeden, gerçek sayı aralıkları bağlamında ele alıyor."
-      }
-    },
-    {
-      "id": "M22",
-      "hat": "M",
-      "ad": "Σ ve Π notasyonu, teleskopik toplamlar",
-      "puan": 1,
-      "faz": 1,
-      "blok": "B0",
-      "hafta": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M20"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Σ ve Π okuma/yazma, indis kaydırma",
-          "Doğrusallık: Σ(a+b)=Σa+Σb, Σca=cΣa",
-          "Standart toplamlar: Σk, Σk², Σk³ kapalı formları",
-          "Geometrik toplam formülü",
-          "Teleskopik toplam tekniği",
-          "Çift toplam (ΣΣ) ve toplama sırasını değiştirme"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Diziler ve toplam sembolü",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Diziler+ve+toplam+sembolü"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Sayma Yöntemleri (giriş)"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok",
-        "not": "Σ ve Π notasyonu 9–12 programında anahtar kavram olarak geçmiyor. 12. sınıf dizi toplamlarında dolaylı kullanılabilir ama konu olarak öğretilmiyor."
-      }
-    },
-    {
-      "id": "M1",
-      "hat": "M",
-      "ad": "Sayma temelleri: toplama ve çarpma ilkesi",
-      "puan": 1,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M20"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Toplama ilkesi (ayrık durumlar) vs çarpma ilkesi (ardışık seçimler)",
-          "Hangisinin ne zaman kullanılacağını ayırt etme",
-          "Ağaç diyagramı ile doğrulama",
-          "Tümleyen sayma: 'en az bir' = tamamı − hiçbiri",
-          "Klasik örnekler: plaka, şifre, yol sayma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Sayma yöntemleri / toplama-çarpma ilkesi",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Sayma+yöntemleri+/+toplama-çarpma+ilkesi"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Sayma Yöntemleri"
-        },
-        "soru": "2024 Q20 (8×8 kaç kare)",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "not": "Toplama ve çarpma yoluyla sayma. El sıkışma problemi ve çokgende köşegen sayısı programda adı geçen örnekler."
-      }
-    },
-    {
-      "id": "M18",
-      "hat": "M",
-      "ad": "Sayı sistemleri: ikilik/onaltılık taban dönüşümü",
-      "puan": 1,
-      "faz": 1,
-      "blok": "B0",
-      "hafta": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Taban dönüşümü: 10 ↔ 2, 8, 16",
-          "İkilik toplama ve çıkarma",
-          "İkinin tümleyeni (two's complement) ve negatif sayı gösterimi",
-          "Bit sayısı ↔ değer aralığı (n bit → 0..2^n−1)",
-          "Onaltılık ↔ ikilik hızlı dönüşüm (4 bit = 1 hex basamağı)"
-        ],
-        "dikkat": [
-          "DUR: kayan nokta (float) iç gösterimi gerekmiyor"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Sayı sistemleri / taban aritmetiği",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Sayı+sistemleri+/+taban+aritmetiği"
-        },
-        "kaynak": {
-          "ad": "PKO soru bankası",
-          "yer": "İlgili bölüm — süreli çöz"
-        },
-        "soru": "2026 Q7 · ortaokul soruları",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "ortusen": [
-          "İkili (ikilik) sayı sistemi",
-          "Bit/byte hesapları"
-        ],
-        "ortusmeyen": [
-          "Onaltılık taban ve dönüşümleri",
-          "İkinin tümleyeni (negatif sayı gösterimi)",
-          "n bit ↔ değer aralığı ilişkisi (0..2^n−1)"
-        ],
-        "not": "MEB ikili sistemi bağımsız bir konu olarak değil, sadece sıralama gerektiren sayma problemleri bağlamında ele alıyor."
-      }
-    },
-    {
-      "id": "M2",
-      "hat": "M",
-      "ad": "Permütasyon: basit, tekrarlı, dairesel",
-      "puan": 3,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 4,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M1"
-      ],
-      "kapsam": {
-        "ogren": [
-          "P(n,r) = n!/(n−r)!",
-          "Tekrarlı permütasyon: n!/(n1!·n2!···)",
-          "Dairesel permütasyon: (n−1)!",
-          "Kolye/yansıma varsa: (n−1)!/2",
-          "Belirli elemanların yan yana veya ayrı olması koşulları",
-          "0! = 1 ve faktöriyel büyüme hızı"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): Permütasyonun DÖNGÜ AYRIŞIMI. Minimum takas sayısı = n − döngü sayısı.",
-          "★ v4.0 EKİ: Maksimum takas sayısı = n − 1 (tek döngü hâli)",
-          "★ v4.0 EKİ: Sözlük sırası — verilen permütasyonun kaçıncı olduğunu / k. permütasyonu bulma"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Permütasyon",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Permütasyon"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Permütasyon"
-        },
-        "soru": "2024 Q23–25 (ÜÇLÜ KÜME, döngü) · 2024 Q18 · 2025 Q4",
-        "sure": "~12 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "ortusen": [
-          "Sıralama sayısı (permütasyon)",
-          "Faktöriyel gösterimi",
-          "İçinde özdeş nesneler olan topluluğun sıralanması (tekrarlı permütasyon)"
-        ],
-        "ortusmeyen": [
-          "Dairesel permütasyon (n−1)!",
-          "Kolye/yansıma durumu (n−1)!/2",
-          "Belirli elemanların yan yana veya ayrı olması koşulları"
-        ],
-        "not": "Program P(n,r)'yi 'formel tanımlamaya girilmeden' ele alıyor."
-      }
-    },
-    {
-      "id": "M3",
-      "hat": "M",
-      "ad": "Kombinasyon, binom katsayıları, Pascal üçgeni",
-      "puan": 2,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 4,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M2"
-      ],
-      "kapsam": {
-        "ogren": [
-          "C(n,r) = n!/(r!(n−r)!)",
-          "Simetri: C(n,r) = C(n,n−r)",
-          "Pascal özdeşliği: C(n,r) = C(n−1,r−1) + C(n−1,r)",
-          "Pascal üçgeni ve satır toplamı = 2^n",
-          "Permütasyon ile fark: sıra önemli mi değil mi",
-          "AYIRT ETME BECERİSİ: soruda sıra var mı yok mu"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Kombinasyon",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Kombinasyon"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Kombinasyon"
-        },
-        "soru": "2026 Q22, Q23 · 2025 Q19",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "not": "Seçme sayısı ve Pascal üçgeni programda açıkça geçiyor (Ömer Hayyam bağlantısıyla). MEB formül ezberi yerine strateji anlamlandırmayı önceliyor."
-      }
-    },
-    {
-      "id": "M4",
-      "hat": "M",
-      "ad": "Binom teoremi ve kombinatoryel kimlikler",
-      "puan": 1,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 4,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M3",
-        "M22"
-      ],
-      "kapsam": {
-        "ogren": [
-          "(x+y)^n açılımı ve genel terim formülü",
-          "Belirli bir terimin katsayısını bulma",
-          "Σ C(n,k) = 2^n ve Σ(−1)^k C(n,k) = 0",
-          "Vandermonde özdeşliği (temel düzey)",
-          "Hokey sopası özdeşliği",
-          "Çok terimli (multinomial) katsayı kavramı"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Binom açılımı",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Binom+açılımı"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Binom Açılımı"
-        },
-        "soru": "2026 Q5, Q6 (binom kimliği)",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "ortusen": [
-          "Pascal üçgeni ve satır yapısı",
-          "Seçme sayılarının listelenmesiyle üçgenin kurulması"
-        ],
-        "ortusmeyen": [
-          "Binom teoremi açılımı (x+y)^n",
-          "Genel terim formülü ve belirli terimin katsayısı",
-          "Σ C(n,k) = 2^n kimliği",
-          "Vandermonde ve hokey sopası özdeşlikleri",
-          "Çok terimli (multinomial) katsayı"
-        ],
-        "not": "Pascal üçgeni var ama binom açılımı programda yok."
-      }
-    },
-    {
-      "id": "M5",
-      "hat": "M",
-      "ad": "Yıldızlar ve çubuklar (tekrarlı seçim)",
-      "puan": 3,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 5,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M4"
-      ],
-      "kapsam": {
-        "ogren": [
-          "n özdeş nesnenin k kutuya dağıtılması: C(n+k−1, k−1)",
-          "Boş kutu yasaksa: C(n−1, k−1)",
-          "x1+x2+···+xk = n denkleminin negatif olmayan çözüm sayısı",
-          "Alt sınır kısıtlı varyantlar (değişken kaydırma)",
-          "Özdeş vs ayırt edilebilir nesne ayrımı"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): KÜME PARÇALANIŞI — n nesneyi k boş olmayan gruba ayırma (Stirling S(n,k))",
-          "★ v4.0 EKİ: S(n,k) = k·S(n−1,k) + S(n−1,k−1) yineleme bağıntısıyla tablo kurma",
-          "★ v4.0 EKİ: \"gruplar adsız\" ile \"gruplar adlı\" farkı — k! çarpanı",
-          "★ v4.0 EKİ: Zar toplamları — n zarla m toplamı kaç şekilde (yıldız-çubuk + üst sınır düzeltmesi)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "tekrarlı kombinasyon dağılım problemleri",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+tekrarlı+kombinasyon+dağılım+problemleri"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Sayma Yöntemleri (dağılım)"
-        },
-        "soru": "2025 Q1–3 (yıldız-çubuk) · 2025 Q9–11 (Stirling, ÜÇLÜ KÜME)",
-        "sure": "~12 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "ortusen": [
-          "Özdeş nesneli sıralama tekniği",
-          "Kafes yolu örneği (3 sağa, 2 yukarı → 10 yol)",
-          "'Bir doğal sayı kaç farklı biçimde toplam olarak yazılır' proje ödevi"
-        ],
-        "ortusmeyen": [
-          "C(n+k−1, k−1) genel formülü",
-          "Boş kutu yasağı varyantı: C(n−1, k−1)",
-          "Alt sınır kısıtlı problemler",
-          "x1+...+xk = n çözüm sayısı formülasyonu"
-        ],
-        "not": "Teknik programda var ama formül olarak verilmiyor."
-      }
-    },
-    {
-      "id": "M6",
-      "hat": "M",
-      "ad": "Güvercin yuvası ilkesi",
-      "puan": 1,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 5,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M5"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Temel ilke: n+1 nesne n kutuya → en az bir kutuda 2",
-          "Genelleştirilmiş biçim: ⌈n/k⌉",
-          "Klasik uygulamalar: aynı kalan, aynı renk, aynı doğum günü",
-          "Sayı teorisi uygulaması (bir alt kümenin toplamı n'e bölünür)",
-          "En kötü durum senaryosu kurma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Olimpiyat konuları — YouTube araması",
-          "ara": "güvercin yuvası prensibi",
-          "url": "https://www.youtube.com/results?search_query=matematik+olimpiyat+güvercin+yuvası+prensibi"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Güvercin Yuvası Prensibi"
-        },
-        "soru": "Matematik dalı arşivi — güvercin yuvası bol",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "tema": "3. Tema: Sayma, Algoritma ve Bilişim",
-        "kazanim": "MAT.10.3.1",
-        "dersSaati": 28,
-        "not": "Programda adıyla geçiyor: 'güvercin yuvası ilkesinin kullanılabileceği sayma problemlerine yer verilir'."
-      }
-    },
-    {
-      "id": "M7",
-      "hat": "M",
-      "ad": "Dahil-hariç ilkesi",
-      "puan": 1,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 5,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M6",
-        "M20"
-      ],
-      "kapsam": {
-        "ogren": [
-          "İki ve üç küme formülü",
-          "Genel formül (işaret değişimli toplam)",
-          "ÖRTEN FONKSİYON SAYISI (M20'de kavramı verilmişti, formülü burada)",
-          "'En az bir özelliği sağlayan' tipi sorular",
-          "Euler phi ile ilişkisi (M17'de tekrar gelecek)",
-          "Venn şemasıyla doğrulama"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Kümelerde işlemler / içerme-dışarma",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Kümelerde+işlemler+/+içerme-dışarma"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "İçerme-Dışarma Prensibi"
-        },
-        "soru": "2026 Q25 · 2024 Q21",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok",
-        "not": "Küme işlemleri 9.1'de var ama dahil-hariç SAYMA ilkesi (formül) 9–12 programında geçmiyor."
-      }
-    },
-    {
-      "id": "M8",
-      "hat": "M",
-      "ad": "Düzensizlikler (derangement), sabit noktalar",
-      "puan": 1,
-      "faz": 3,
-      "blok": "B0",
-      "hafta": 5,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M7"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Derangement D(n): hiçbir eleman kendi yerinde değil",
-          "D(n) = n!·Σ(−1)^k/k! formülü (dahil-hariçten türetilir)",
-          "Yineleme: D(n) = (n−1)(D(n−1)+D(n−2))",
-          "EZBER: D(1)=0, D(2)=1, D(3)=2, D(4)=9, D(5)=44",
-          "Tam olarak k eleman yerinde: C(n,k)·D(n−k)"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Olimpiyat konuları — YouTube araması",
-          "ara": "içerme dışarma prensibi düzensizlik",
-          "url": "https://www.youtube.com/results?search_query=matematik+olimpiyat+içerme+dışarma+prensibi+düzensizlik"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "İçerme-Dışarma Prensibi (düzensizlik)"
-        },
-        "soru": "2024 Q31 · 2025 Q7",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok",
-        "not": "Düzensizlik (derangement) 9–12 programında yok."
-      }
-    },
-    {
-      "id": "M9",
-      "hat": "M",
-      "ad": "Olasılık temelleri: örnek uzay, koşullu olasılık",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B0",
-      "hafta": 6,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M8"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Örnek uzay, olay, eşit olasılıklı durum modeli",
-          "P(A∪B) = P(A) + P(B) − P(A∩B)",
-          "Koşullu olasılık P(A|B) tanımı",
-          "Bağımsızlık tanımı",
-          "Tümleyen olasılığı",
-          "Kombinatorikle bağlantı: sayarak olasılık bulma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Olasılık",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Olasılık"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Olasılık"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "tema": "7. Tema: Veriden Olasılığa",
-        "kazanim": "MAT.10.7.1",
-        "dersSaati": 18,
-        "not": "Temel olasılık (örnek uzay, deneysel/teorik) 9. sınıf 7. Tema'da veriliyor ve 10.7'nin ön koşulu sayılıyor. Koşullu olasılık ve bağımlı/bağımsız olaylar 10.7.1'de."
-      }
-    },
-    {
-      "id": "M10",
-      "hat": "M",
-      "ad": "Bayes teoremi, bağımsızlık",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B0",
-      "hafta": 6,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Bayes formülü",
-          "Toplam olasılık teoremi",
-          "Ağaç diyagramıyla çözüm tekniği",
-          "Klasik problemler: hastalık testi, iki torba, Monty Hall"
-        ],
-        "dikkat": [
-          "TUZAK: bağımsız olmak ile ayrık olmak farklı şeyler"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Koşullu olasılık",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Koşullu+olasılık"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Olasılık"
-        },
-        "soru": "2026 Q1 (Naive Bayes)",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "tema": "7. Tema: Veriden Olasılığa",
-        "kazanim": "MAT.10.7.2",
-        "dersSaati": 18,
-        "not": "Bayes teoremi temanın açık amacı. Zenginleştirmede Naive Bayes ve makine öğrenmesi bağlantısı da var."
-      }
-    },
-    {
-      "id": "M12",
-      "hat": "M",
-      "ad": "Yineleme bağıntısı (recurrence) kurma — matematik",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B0",
-      "hafta": 6,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M22",
-        "M2"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Problemi a(n) cinsinden a(n−1), a(n−2)'ye indirgeme",
-          "Başlangıç koşullarını doğru belirleme",
-          "Klasik örnekler: Fibonacci, Hanoi kuleleri, ikili dizide desen sayma",
-          "Sayma problemini yinelemeye çevirme becerisi",
-          "NOT: bu MATEMATİKSEL DENKLEM; C14'teki özyineleme KOD. Ama bağlantılı: özyinelemeli fonksiyonun adım sayısı bir yineleme bağıntısıdır."
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Olimpiyat konuları — YouTube araması",
-          "ara": "indirgemeli diziler rekürans bağıntısı",
-          "url": "https://www.youtube.com/results?search_query=matematik+olimpiyat+indirgemeli+diziler+rekürans+bağıntısı"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "İndirgemeli Diziler"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "kismi",
-        "sinif": 12,
-        "tema": "1. Tema: Nicelikler ve Değişimler (1)",
-        "kazanim": "MAT.12.1.1",
-        "ortusen": [
-          "Sayı örüntülerinin ardışık terimleri",
-          "Ardışık terimler arası ortak fark/oran ilişkisi",
-          "Genel terim",
-          "Aritmetik ve geometrik diziler"
-        ],
-        "ortusmeyen": [
-          "Yineleme bağıntısı kavramının kendisi: a(n) = f(a(n−1), a(n−2))",
-          "Fibonacci ve Hanoi kuleleri tipi kurma problemleri",
-          "Sayma problemini yinelemeye çevirme becerisi",
-          "Başlangıç koşullarını belirleme"
-        ],
-        "not": "Aritmetik/geometrik dizi aslında en basit yineleme bağıntısıdır ama MEB bunu 'recurrence' çerçevesiyle sunmuyor. Ayrıca 12. sınıf, sınavından bir buçuk yıl SONRA."
-      }
-    },
-    {
-      "id": "M15",
-      "hat": "M",
-      "ad": "Modüler aritmetik",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 36,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M16"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Kongrüans tanımı ve temel özellikleri",
-          "Toplama ve çarpmada mod alma",
-          "Hızlı üs alma (modüler exponentiation) — böl-yönet uygulaması",
-          "Fermat'ın küçük teoremi (temel düzey)",
-          "Modüler ters (modular inverse) kavramı",
-          "UYGULAMA: son basamak bulma, döngüsel desenler"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Bölünebilme ve modüler aritmetik",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Bölünebilme+ve+modüler+aritmetik"
-        },
-        "kaynak": {
-          "ad": "PKO soru bankası",
-          "yer": "İlgili bölüm — süreli çöz"
-        },
-        "soru": "2026 Q7",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok",
-        "not": "Modüler aritmetik 9–12 programında yok."
-      }
-    },
-    {
-      "id": "M16",
-      "hat": "M",
-      "ad": "Sayı teorisi temelleri: bölünebilme, EBOB/EKOK, Öklid, asallar",
-      "puan": 2,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 36,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Bölünebilme kuralları ve bölen sayısı formülü d(n)",
-          "EBOB/EKOK; EBOB(a,b)·EKOK(a,b) = a·b",
-          "Öklid algoritması — hem el hesabı hem özyineli kod hâli",
-          "Asal çarpanlara ayırma; asallık testi √n'e kadar deneme"
-        ],
-        "dikkat": [
-          "DUR: Fermat/Euler/Wilson teoremleri ve Çin kalan teoremi GEREKMİYOR (0/150)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "EBOB – EKOK",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+EBOB+–+EKOK"
-        },
-        "kaynak": {
-          "ad": "PKO soru bankası",
-          "yer": "İlgili bölüm — süreli çöz"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok",
-        "not": "Bölünebilme, EBOB/EKOK ve Öklid algoritması lise programında yok — ortaokul (6–8. sınıf) konusu."
-      }
-    },
-    {
-      "id": "C1",
-      "hat": "C",
-      "ad": "Veri tipleri, boyutlar, taşma davranışı",
-      "puan": 1,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "char, short, int, long, long long tipik boyutları",
-          "signed vs unsigned değer aralıkları",
-          "Taşma: unsigned sarmalanır, signed TANIMSIZ davranış",
-          "sizeof operatörü ve dönüş tipi",
-          "float/double kabaca",
-          "Sınav varsayımı: genelde int = 4 byte"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C veri tipleri ve bellek",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+veri+tipleri+ve+bellek"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Data Types & overflow"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C2",
-      "hat": "C",
-      "ad": "Operatör önceliği ve birleşme yönü",
-      "puan": 2,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C1"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Öncelik sırası: () [] → ++ -- ! ~ → * / % → + - → << >> → < > → == != → & → ^ → | → && → || → ?: → =",
-          "Birleşme yönü: çoğu soldan sağa, atama ve tekli operatörler sağdan sola",
-          "Zincir atama: a = b = c sağdan çözülür",
-          "?: üçlü operatörü",
-          "Virgül operatörü ve değeri"
-        ],
-        "dikkat": [
-          "TUZAK: << ile + karışması, & ile == karışması (parantez gerekir)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C operatörler ve öncelik",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+operatörler+ve+öncelik"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Operator precedence"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "C3",
-      "hat": "C",
-      "ad": "a++ vs ++a, yan etkiler",
-      "puan": 3,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C2"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Ön ek (++a) vs son ek (a++): ifadenin değeri ne zaman alınır",
-          "b = a++ ile b = ++a farkı",
-          "Dizi indisinde kullanım: arr[i++]",
-          "Sıra noktası (sequence point) kavramı",
-          "TANIMSIZ: i = i++ + ++i gibi ifadeler",
-          "Sınav genelde tek yan etkili net örnekler sorar"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): Tek koşulda birden çok yan etki — if (--x > y++ && x-- == ++y) tipi",
-          "★ v4.0 EKİ: Kısa devre ile yan etkinin birleşimi — sağdaki işlenen hiç çalışmayabilir"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C artırma azaltma operatörleri",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+artırma+azaltma+operatörleri"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Side effects, sequence points"
-        },
-        "soru": "2025 Q39 (çoklu yan etki)",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C7",
-      "hat": "C",
-      "ad": "Döngü takibi: for/while/do-while, break/continue",
-      "puan": 3,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C3"
-      ],
-      "kapsam": {
-        "ogren": [
-          "for / while / do-while birbirine çevirme",
-          "Döngü değişkeninin döngü BİTTİKTEN sonraki değeri",
-          "break vs continue davranışı",
-          "İç içe döngüde break hangi döngüden çıkar",
-          "YÖNTEM: kağıda iterasyon tablosu çıkar (i, koşul, gövde, çıktı)"
-        ],
-        "dikkat": [
-          "TUZAK: for(...); noktalı virgül (boş gövde)",
-          "★ v4.0 EKİ (K13): İç içe döngülerde toplam yineleme sayısını sayma (i<j koşullu üçgen döngüler)",
-          "★ v4.0 EKİ: Çarpımsal ilerleyen döngüler (i=i<<1, j*=2) ve logaritmik yineleme sayısı",
-          "★ v4.0 EKİ: Döngü değişkeninin gövde içinde değiştirilmesi (j = i++ tipi)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C döngüler",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+döngüler"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Loop counting"
-        },
-        "soru": "2026 Q36 · 2025 Q40 · 2024 Q44",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C4",
-      "hat": "C",
-      "ad": "Tip dönüşümleri, integer promotion",
-      "puan": 1,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C7"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Örtük dönüşüm kuralları (usual arithmetic conversions)",
-          "Integer promotion: char/short → int",
-          "signed ve unsigned karışık işlemde unsigned kazanır",
-          "Tam sayı bölmesi: 5/2 = 2, 5.0/2 = 2.5",
-          "Açık dönüşüm (cast) ve veri kaybı"
-        ],
-        "dikkat": [
-          "TUZAK: int/int sonucunu float'a atamak"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C tip dönüşümü",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tip+dönüşümü"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Type conversion"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C6",
-      "hat": "C",
-      "ad": "Koşullar ve kısa devre değerlendirme",
-      "puan": 1,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C4",
-        "M19"
-      ],
-      "kapsam": {
-        "ogren": [
-          "&& ve || kısa devre davranışı",
-          "Yan etkili ifadenin ÇALIŞMAMASI: a++ && b++",
-          "C'de doğruluk: 0 yanlış, sıfırdan farklı doğru",
-          "M19'daki De Morgan'ın koşula uygulanması"
-        ],
-        "dikkat": [
-          "TUZAK: a < b < c zincirleme karşılaştırma",
-          "TUZAK: = ile == karışması"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C koşul ifadeleri",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+koşul+ifadeleri"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Short-circuit evaluation"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C5",
-      "hat": "C",
-      "ad": "Bit operatörleri",
-      "puan": 3,
-      "faz": 2,
-      "blok": null,
-      "hafta": null,
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek",
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C6",
-        "M18"
-      ],
-      "kapsam": {
-        "ogren": [
-          "&, |, ^, ~ doğruluk tabloları",
-          "<< ve >> kaydırma; 2^k ile çarpma/bölme karşılığı",
-          "Maskeleme: bit okuma x&(1<<k), set etme, temizleme, çevirme",
-          "XOR özellikleri: x^x=0, x^0=x, XOR ile takas",
-          "İşaretli sayıda >> davranışı (aritmetik kaydırma)",
-          "M18'deki ikilik gösterim burada doğrudan kullanılır"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): x & (x−1) — en sağdaki 1 bitini sıfırlar (2'nin kuvveti testi)",
-          "★ v4.0 EKİ: popcount döngüsü — while(n){c += n&1; n >>= 1;}",
-          "★ v4.0 EKİ: XOR ile takas ve XOR'un kendini götürme özelliği (a^b^b = a)",
-          "★ v4.0 EKİ: n ^ (1 << m) — m. biti ters çevirme"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "bit düzeyi operatörler",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+bit+düzeyi+operatörler"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Bit manipulation"
-        },
-        "soru": "2026 Q35, Q44, Q50 · 2024 Q46",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C8",
-      "hat": "C",
-      "ad": "Diziler ve bellek yerleşimi",
-      "puan": 2,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 9,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C5"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Dizi bildirimi, 0 tabanlı indisleme",
-          "Bellekte ardışık (contiguous) yerleşim",
-          "sizeof(dizi) ve eleman sayısı hesaplama",
-          "Sınır dışı erişimin tanımsız davranış olması",
-          "İlk değer atama: int a[5] = {0} ne yapar",
-          "Dizinin fonksiyona geçirilmesi (C10'un ön izlemesi)"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C diziler",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+diziler"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Arrays"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "C9",
-      "hat": "C",
-      "ad": "Pointer temelleri: &, *, pointer aritmetiği",
-      "puan": 3,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 12,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C8"
-      ],
-      "kapsam": {
-        "ogren": [
-          "& (adres alma) ve * (içeriğe erişme)",
-          "Pointer bildirimi; tipin neden önemli olduğu",
-          "Pointer aritmetiği: p+1, tipin boyutu kadar ilerler",
-          "NULL pointer ve kontrolü",
-          "Pointer'a pointer (**p)",
-          "void* kavramı",
-          "YÖNTEM: her problemde bellek diyagramı çiz"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C pointer gösterici",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+pointer+gösterici"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Pointers"
-        },
-        "soru": "2026 Q45 · 2025 Q43",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C10",
-      "hat": "C",
-      "ad": "Dizi–pointer eşdeğerliği",
-      "puan": 2,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 13,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "arr[i] ≡ *(arr+i) ≡ *(i+arr) ≡ i[arr]",
-          "Dizi adının pointer'a bozunması (array decay)",
-          "Dizi vs pointer farkı: sizeof davranışı",
-          "Fonksiyona dizi geçirince boyut bilgisi neden kaybolur",
-          "Pointer farkı (p2−p1) eleman sayısı verir"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C dizi ve pointer ilişkisi",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+dizi+ve+pointer+ilişkisi"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Array–pointer equivalence"
-        },
-        "soru": "2026 Q37",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "C11",
-      "hat": "C",
-      "ad": "Çok boyutlu diziler ve pointer'lar",
-      "puan": 2,
-      "faz": 6,
-      "blok": "B2",
-      "hafta": 17,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "C10"
-      ],
-      "kapsam": {
-        "ogren": [
-          "int a[3][4] bellekte satır sıralı (row-major) yerleşim",
-          "a[i][j] ≡ *(*(a+i)+j)",
-          "Fonksiyona geçirirken ikinci boyut neden zorunlu",
-          "Pointer dizisi (int* a[]) vs 2B dizi (int a[][]) farkı",
-          "sizeof davranışları"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C iki boyutlu diziler",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+iki+boyutlu+diziler"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → 2D arrays"
-        },
-        "soru": "2026 Q43",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "C12",
-      "hat": "C",
-      "ad": "Stringler: null sonlandırma, string.h",
-      "puan": 1,
-      "faz": 6,
-      "blok": "B2",
-      "hafta": 17,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "C11"
-      ],
-      "kapsam": {
-        "ogren": [
-          "char dizisi + '\\0' sonlandırıcı; \"abc\" gerçekte 4 byte",
-          "strlen, strcpy, strcmp, strcat davranışları ve dönüş değerleri",
-          "strlen vs sizeof farkı",
-          "String literal değiştirilemez (read-only)"
-        ],
-        "dikkat": [
-          "TUZAK: sonlandırıcıyı unutmak, buffer taşması"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C karakter dizileri string",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+karakter+dizileri+string"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Strings"
-        },
-        "soru": "2026 Q41",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C13",
-      "hat": "C",
-      "ad": "C fonksiyonları: parametre geçirme (değer/referans)",
-      "puan": 1,
-      "faz": 6,
-      "blok": "B2",
-      "hafta": 17,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C12"
-      ],
-      "kapsam": {
-        "ogren": [
-          "C'de HER ŞEY değer ile geçer (pass by value)",
-          "Referans etkisi pointer ile nasıl elde edilir",
-          "Dizi geçirmenin neden 'referans gibi' davrandığı",
-          "Yerel değişken, kapsam (scope), yaşam süresi",
-          "static yerel değişken davranışı (çağrılar arası kalıcılık)",
-          "NOT: bu C alt programı; M20'deki matematiksel fonksiyonla ilgisi yok"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C fonksiyonlar",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+fonksiyonlar"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Functions, parameter passing"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C14",
-      "hat": "C",
-      "ad": "Özyineleme (recursion): çağrı yığını takibi",
-      "puan": 3,
-      "faz": 6,
-      "blok": "B2",
-      "hafta": 20,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C13"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Taban durum ve özyinelemeli adım",
-          "Çağrı yığınının (call stack) büyümesi ve küçülmesi",
-          "Yığın çerçevesi (stack frame): her çağrının kendi yerel değişkenleri",
-          "Yığın taşması (stack overflow) ne zaman olur",
-          "YÖNTEM: çağrı ağacı çizerek adım adım izleme",
-          "Kuyruk özyinelemesi (tail recursion) kavramı",
-          "BAĞLANTI: adım sayısı M12'deki yineleme bağıntısıyla yazılır"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "özyineleme recursion",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+recursion"
-        },
-        "kaynak": {
-          "ad": "pythontutor.com",
-          "yer": "Özyineleme: çağrı yığınını görsel izle"
-        },
-        "soru": "2026 Q38, Q39, Q47 · 2024 Q40",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C21",
-      "hat": "C",
-      "ad": "**Özyineleme**: çoklu dallanma, çağrı sayısı, ağaç yapısı — *kod*",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C14"
-      ],
-      "kapsam": {
-        "ogren": [
-          "İki veya daha fazla özyineli çağrı içeren fonksiyonlar: f(n-1) + f(n-2), foo(n-1) iki kez",
-          "Çağrı ağacını çizme; toplam çağrı sayısını yaprak/düğüm sayısından okuma",
-          "Aynı fonksiyonun kaç kez çalıştığını sayma (yazdırma sayısı ≠ çağrı sayısı)",
-          "Memoization varken çağrı sayısının nasıl düştüğü (A26 ile bağla)"
-        ],
-        "dikkat": [
-          "KLASİK SORU: \"foo(3) çağrılırsa ekrana kaç yıldız basar\" — 2^n−1 kalıbı",
-          "TUZAK: çağrıdan ÖNCE ve SONRA yazdırma birlikte olduğunda sıra",
-          "DUR: kuyruk özyinelemesi optimizasyonu (tail call) gerekmiyor"
-        ]
-      },
-      "faz": 6,
-      "blok": "B2",
-      "hafta": 21,
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "özyineleme çağrı ağacı",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çağrı+ağacı"
-        },
-        "kaynak": {
-          "ad": "pythontutor.com",
-          "yer": "Özyineleme: çağrı AĞACI, yaprak/düğüm sayma"
-        },
-        "soru": "2026 Q40, Q42, Q48 · 2024 Q41",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "C15",
-      "hat": "C",
-      "ad": "Özyineleme: çıktı sırası (ön/son işlem)",
-      "puan": 3,
-      "faz": 6,
-      "blok": "B3",
-      "hafta": 23,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C14"
-      ],
-      "kapsam": {
-        "ogren": [
-          "printf özyinelemeli çağrıdan ÖNCE vs SONRA olması",
-          "Ön işlem (pre-order) vs son işlem (post-order) çıktısı",
-          "Çoklu özyinelemede (f(n-1) ve f(n-2)) çağrı sırası",
-          "Fibonacci çağrı ağacı ve tekrar eden hesaplamalar"
-        ],
-        "dikkat": [
-          "KLASİK SORU: f(n){print(n);f(n-1);} ile f(n){f(n-1);print(n);} farkı"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "özyineleme çalışma sırası",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+özyineleme+çalışma+sırası"
-        },
-        "kaynak": {
-          "ad": "pythontutor.com",
-          "yer": "Özyineleme: çağrı öncesi/sonrası yazdırma sırası"
-        },
-        "soru": "2026 Q42 · 2025 Q45",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "C16",
-      "hat": "C",
-      "ad": "struct, union, typedef",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B3",
-      "hafta": 28,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "C15"
-      ],
-      "kapsam": {
-        "ogren": [
-          "struct tanımı; üye erişimi . ve ->",
-          "Bellek hizalama (padding) ve sizeof sürprizleri",
-          "İç içe struct",
-          "union: aynı belleği paylaşan üyeler",
-          "typedef ile isim kısaltma",
-          "Kendine referans veren struct (bağlı liste düğümü — A8'in ön koşulu)"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C yapılar struct",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+yapılar+struct"
-        },
-        "kaynak": {
-          "ad": "gateoverflow.in",
-          "yer": "C → Structures & padding"
-        },
-        "soru": "2026 Q34",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "C20",
-      "hat": "C",
-      "ad": "Tanımsız davranış, off-by-one, yaygın tuzaklar",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 35,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "C7",
-        "C9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Tanımsız davranış kataloğu: sınır dışı erişim, ilklenmemiş değişken, signed taşma, i=i++",
-          "Off-by-one: <= vs <, dizinin son indisi n−1",
-          "Tam sayı bölmesinde kayıp",
-          "= ile == karışması",
-          "Kısa devre yüzünden çalışmayan yan etki",
-          "Makro tuzakları: #define kare(x) x*x → kare(a+b)",
-          "sizeof(dizi) fonksiyon içinde neden bozulur"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "C tanımsız davranış undefined behavior",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+C+tanımsız+davranış+undefined+behavior"
-        },
-        "kaynak": {
-          "ad": "van der Linden",
-          "yer": "İlgili bölümler — sadece W37"
-        },
-        "soru": "C bloğuna yayılmış tuzaklar",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A1",
-      "hat": "A",
-      "ad": "Karmaşıklık: büyük O, en iyi/ortalama/en kötü",
-      "puan": 2,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 8,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Büyük O tanımı ve sezgisel anlamı",
-          "Sınıflar: O(1), O(log n), O(n), O(n log n), O(n²), O(2^n), O(n!)",
-          "Baskın terim; sabitlerin ve alt terimlerin atılması",
-          "En iyi / ortalama / en kötü durum ayrımı",
-          "İç içe döngüden karmaşıklık okuma",
-          "Ω ve Θ kabaca"
-        ],
-        "dikkat": [
-          "DUR: master teoremi gerekmiyor, böl-yönet sezgisi yeterli"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "algoritma karmaşıklık analizi big O",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+algoritma+karmaşıklık+analizi+big+O"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Big-O / karmaşıklık modülü"
-        },
-        "soru": "2026 Q9 · 2024 Q38",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A2",
-      "hat": "A",
-      "ad": "Doğrusal arama, ikili arama (binary search) — algoritma",
-      "puan": 1,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 11,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A1",
-        "C8"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Doğrusal arama O(n)",
-          "İkili arama O(log n); ÖN KOŞUL: dizi sıralı olmalı",
-          "Adım adım izleme: kaç karşılaştırma yapıldı, hangi aralık kaldı",
-          "lower_bound / upper_bound mantığı",
-          "BONUS: cevap üzerinde ikili arama (parametrik arama)",
-          "NOT: bu bir ALGORİTMA; A10'daki BST bir VERİ YAPISI"
-        ],
-        "dikkat": [
-          "TUZAK: while(l<r) vs while(l<=r), orta = l+(r−l)/2"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "ikili arama binary search",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+ikili+arama+binary+search"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Binary Search + quiz"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A3",
-      "hat": "A",
-      "ad": "Basit sıralamalar: kabarcık, seçme, ekleme",
-      "puan": 2,
-      "faz": 4,
-      "blok": "B1",
-      "hafta": 11,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A2"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Üç algoritmanın adım adım çalışması",
-          "Karmaşıklıkları; karşılaştırma ve takas sayıları",
-          "Kararlılık (stability) kavramı: hangisi kararlı",
-          "Kısmen sıralı dizide ekleme sıralamasının avantajı"
-        ],
-        "dikkat": [
-          "KLASİK SORU: k. geçişten sonra dizinin durumu ne olur"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "sıralama algoritmaları",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sıralama+algoritmaları"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Sorting (bubble, selection, insertion)"
-        },
-        "soru": "2026 Q20 (pancake sort)",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A21",
-      "hat": "A",
-      "ad": "Böl ve yönet paradigması",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B2",
-      "hafta": 15,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A3"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Üç adım: böl, çöz, birleştir",
-          "Karmaşıklığı yineleme bağıntısıyla yazma: T(n)=2T(n/2)+n",
-          "Örnekler: ikili arama, merge sort, hızlı üs alma",
-          "Ne zaman uygulanabilir, ne zaman uygulanamaz"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "böl ve yönet divide and conquer",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+böl+ve+yönet+divide+and+conquer"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Merge Sort — böl-yönet mantığı"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A4",
-      "hat": "A",
-      "ad": "Birleştirme sıralaması (merge sort)",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B2",
-      "hafta": 16,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A21"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Birleştirme (merge) adımı nasıl çalışır, kaç karşılaştırma",
-          "O(n log n) — her durumda aynı",
-          "Kararlı sıralama",
-          "O(n) ek bellek gereksinimi",
-          "UYGULAMA: ters çift (inversion) sayma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "birleştirme sıralaması merge sort",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+birleştirme+sıralaması+merge+sort"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Merge Sort"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A5",
-      "hat": "A",
-      "ad": "Hızlı sıralama (quicksort)",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B2",
-      "hafta": 16,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M9",
-        "A21"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Pivot seçimi ve bölümleme (partition) adım adım",
-          "Ortalama O(n log n), en kötü O(n²)",
-          "En kötü durum NE ZAMAN oluşur (sıralı dizi + kötü pivot)",
-          "Kararsız sıralama",
-          "Yerinde (in-place) çalışması",
-          "Quickselect: k. en küçük elemanı bulma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "hızlı sıralama quick sort",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+hızlı+sıralama+quick+sort"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Quick Sort"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A6",
-      "hat": "A",
-      "ad": "Sayma / kova / radix sıralama",
-      "puan": 1,
-      "faz": 5,
-      "blok": "B2",
-      "hafta": 16,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A5"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Counting sort: değer aralığı küçükken O(n+k)",
-          "Karşılaştırma tabanlı sıralamanın O(n log n) ALT SINIRI ve bunların neden aşabildiği",
-          "Radix sort: basamak basamak, LSD/MSD",
-          "Bucket sort mantığı",
-          "Ne zaman kullanılır, ne zaman kullanılmaz"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "sayma sıralaması counting sort",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+sayma+sıralaması+counting+sort"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Radix / Counting Sort"
-        },
-        "soru": "2025 Q29",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A7",
-      "hat": "A",
-      "ad": "Yığın (stack) ve kuyruk (queue)",
-      "puan": 3,
-      "faz": 6,
-      "blok": "B3",
-      "hafta": 24,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "C15"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Stack: LIFO — push, pop, top",
-          "Queue: FIFO — enqueue, dequeue, front",
-          "Dizi ve bağlı liste ile gerçekleme",
-          "Dairesel kuyruk (circular queue) ve dolu/boş ayrımı",
-          "UYGULAMALAR: parantez eşleme, postfix hesaplama, çağrı yığını, BFS",
-          "Deque kavramı"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): Yığın üzerinde koşullu kural izleme — \"üstteki eleman x'e eşitse sil, değilse |üst−x| ile değiştir\"",
-          "★ v4.0 EKİ: Bir dizinin yığınla işlendiğinde son durumunu elle simüle etme"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-          "ara": "yığın stack ve kuyruk queue",
-          "url": "https://www.youtube.com/results?search_query=veri+yapıları+yığın+stack+ve+kuyruk+queue"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Stack & Queue"
-        },
-        "soru": "2026 Q16–17 (İKİLİ KÜME, yığın izleme)",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "A13",
-      "hat": "A",
-      "ad": "Graf gösterimi: komşuluk matrisi ve listesi",
-      "puan": 2,
-      "faz": 7,
-      "blok": "B3",
-      "hafta": 25,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Terminoloji: yönlü/yönsüz, ağırlıklı, derece, yol, döngü, bağlantılı bileşen",
-          "Komşuluk matrisi: O(V²) yer, O(1) kenar sorgusu",
-          "Komşuluk listesi: O(V+E) yer, komşuları gezmek hızlı",
-          "Hangisi ne zaman tercih edilir",
-          "Kenar listesi gösterimi",
-          "Derece toplamı = 2E (el sıkışma lemması)"
-        ],
-        "dikkat": [
-          "★ v4.0 EKİ (K13): Komşuluk matrisindeki 1 sayısı yönsüz basit çizgede 2e'dir",
-          "★ v4.0 EKİ: Matris simetrisi, satırdaki 1 sayısı = derece; bellek O(V²) vs O(V+E)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "graf gösterimi komşuluk matrisi listesi",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+graf+gösterimi+komşuluk+matrisi+listesi"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Graf Teori"
-        },
-        "soru": "2024 Q15 · 2025 Q35 · 2026 Q29",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A14",
-      "hat": "A",
-      "ad": "BFS ve DFS",
-      "puan": 2,
-      "faz": 7,
-      "blok": "B3",
-      "hafta": 25,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A13",
-        "A7"
-      ],
-      "kapsam": {
-        "ogren": [
-          "BFS: kuyruk kullanır, katman katman, ağırlıksız grafta en kısa yol",
-          "DFS: yığın/özyineleme kullanır, derinlemesine",
-          "Karmaşıklık O(V+E)",
-          "UYGULAMALAR: bağlantılı bileşen sayma, döngü tespiti, iki parçalılık (bipartite)",
-          "DFS ağacı; keşif ve bitiş zamanları"
-        ],
-        "dikkat": [
-          "KLASİK SORU: verilen graftan ziyaret sırasını çıkarma"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "genişlik öncelikli arama BFS",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+genişlik+öncelikli+arama+BFS"
-        },
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Graf Teori"
-        },
-        "soru": "2026 Q27",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A15",
-      "hat": "A",
-      "ad": "Topolojik sıralama",
-      "puan": 2,
-      "faz": 7,
-      "blok": "B3",
-      "hafta": 27,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A24"
-      ],
-      "kapsam": {
-        "ogren": [
-          "ÖN KOŞUL: yönlü çevrimsiz graf (DAG) olmalı",
-          "Kahn algoritması (giren derece / in-degree yöntemi)",
-          "DFS tabanlı yöntem (bitiş zamanına göre ters sıralama)",
-          "Birden fazla geçerli sıralama olabilir",
-          "Döngü varsa topolojik sıralama YOKTUR",
-          "UYGULAMA: iş sıralama, bağımlılık çözme"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "topolojik sıralama",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+topolojik+sıralama"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Topological Sort"
-        },
-        "soru": "2026 Q26",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A24",
-      "hat": "A",
-      "ad": "**DFS**: yığın, keşif/bitiş zamanları, kenar sınıflandırma",
-      "puan": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A14",
-        "C14"
-      ],
-      "kapsam": {
-        "ogren": [
-          "DFS'in özyineli ve yığınlı iki yazımı; komşuluk listesi sırasının çıktıyı belirlemesi",
-          "Keşif zamanı d[u] ve bitiş zamanı f[u] atama; sayaç her keşif VE her bitişte artar",
-          "Parantez teoremi: aralıklar ya iç içedir ya ayrıktır, kesişmez",
-          "Kenar sınıflandırma: ağaç, geri (back), ileri (forward), çapraz (cross)",
-          "Geri kenar ⇔ yönlü çizgede döngü var",
-          "Güçlü bağlı bileşen (SCC) kavramı ve yoğuşum çizgesinin döngüsüz olması"
-        ],
-        "dikkat": [
-          "KLASİK SORU: verilen komşuluk listesi için d[] ve f[] tablosunu doldur",
-          "DUR: Tarjan/Kosaraju algoritmalarının kendisi gerekmiyor, SCC kavramı yeter"
-        ]
-      },
-      "faz": 7,
-      "blok": "B3",
-      "hafta": 27,
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "derinlik öncelikli arama DFS",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+derinlik+öncelikli+arama+DFS"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Graph Traversal → DFS, adım adım"
-        },
-        "soru": "2026 Q30 (d[]/f[]) · 2026 Q28 (SCC) · 2025 Q33",
-        "sure": "~12 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "A8",
-      "hat": "A",
-      "ad": "Bağlı liste",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B3",
-      "hafta": 28,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "C16",
-        "C9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Tekli, çiftli, dairesel bağlı liste",
-          "Ekleme, silme, arama karmaşıklıkları",
-          "Diziyle karşılaştırma: erişim O(n) vs ekleme O(1)",
-          "Baş ve kuyruk işaretçileri",
-          "YÖNTEM: pointer'ları kutu-ok diyagramıyla takip et"
-        ],
-        "dikkat": [
-          "KLASİK: ters çevirme, ortayı bulma, döngü tespiti (Floyd tavşan-kaplumbağa)"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-          "ara": "bağlı liste linked list",
-          "url": "https://www.youtube.com/results?search_query=veri+yapıları+bağlı+liste+linked+list"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Linked List"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A9",
-      "hat": "A",
-      "ad": "İkili ağaçlar ve dolaşımlar",
-      "puan": 2,
-      "faz": 9,
-      "blok": "B3",
-      "hafta": 28,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A8"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Terminoloji: kök, yaprak, derinlik, yükseklik, derece, alt ağaç",
-          "İkili ağaç türleri: tam (full), eksiksiz (complete), dengeli",
-          "Dolaşımlar: preorder, inorder, postorder, level-order",
-          "Düğüm sayısı ↔ yükseklik ilişkisi (2^h−1)",
-          "Özyinelemeli dolaşım kodunu adım adım izleme"
-        ],
-        "dikkat": [
-          "KLASİK SORU: iki dolaşım verilince ağacı kurma"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-          "ara": "ikili ağaç dolaşımı tree traversal",
-          "url": "https://www.youtube.com/results?search_query=veri+yapıları+ikili+ağaç+dolaşımı+tree+traversal"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Binary Tree + traversal"
-        },
-        "soru": "2025 Q36 · 2024 Q36",
-        "sure": "~8 saat"
-      }
-    },
-    {
-      "id": "A19",
-      "hat": "A",
-      "ad": "Açgözlü strateji ve karşı örnek",
-      "puan": 3,
-      "faz": 8,
-      "blok": "B3",
-      "hafta": 29,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A1"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Açgözlü seçim özelliği: yerel en iyi seçim global en iyiye götürür mü",
-          "Doğru olduğu klasik durumlar: aktivite seçimi, en küçük ağırlıklı eşleme",
-          "Sıralama kuralı çıkarma: Σw_jC_j'yi en küçükleyen sıra p_j/w_j artan sıradır (değiş-tokuş argümanı)",
-          "KARŞI ÖRNEK BULMA: bir açgözlü stratejinin optimal OLMADIĞINI gösteren girdiyi seçme",
-          "Eşleştirme kalıbı: en büyükle en küçüğü eşle (pil ömrü, kapasite problemleri)"
-        ],
-        "dikkat": [
-          "TUZAK: sezgisel (heuristic) arama hızlıdır ama optimalliği garanti etmez — bu ayrım sık soruluyor",
-          "DUR: ispat yazmak gerekmiyor, hangi stratejinin çalıştığını tanımak yeterli"
-        ]
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "açgözlü algoritma greedy",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+açgözlü+algoritma+greedy"
-        },
-        "kaynak": {
-          "ad": "Çıkmış sorular",
-          "yer": "★ 2024 Q27–29 (ÜÇLÜ KÜME, sıralama kuralı) · 2024 Q11, Q33, Q34 · 2025 Q8, Q30 · 2026 Q31"
-        },
-        "soru": "2024 Q27–29 (ÜÇLÜ KÜME, sıralama kuralı) · 2024 Q11, Q33, Q34 · 2025 Q8, Q30 · 2026 Q31",
-        "sure": "~12 saat"
-      }
-    },
-    {
-      "id": "A25",
-      "hat": "A",
-      "ad": "Huffman kodlama ve önek kodları",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A19",
-        "A9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Frekans tablosundan Huffman ağacı kurma; her adımda en küçük iki frekansı birleştir",
-          "Sol dal 0, sağ dal 1; yaprak = sembol",
-          "Önek kodu (prefix-free) neden gerekli, çözümlemede belirsizliği nasıl engelliyor",
-          "Ortalama kod uzunluğu hesabı: Σ (frekans × kod uzunluğu)",
-          "Sıkıştırma oranı ve sabit uzunluklu kodlamayla karşılaştırma"
-        ],
-        "dikkat": [
-          "KLASİK SORU: \"hangisi Huffman'ın adımlarından biri DEĞİLDİR\"",
-          "TUZAK: eşit frekanslarda ağaç tek değildir ama ortalama uzunluk tektir",
-          "DUR: aritmetik kodlama, LZW gerekmiyor"
-        ]
-      },
-      "faz": 8,
-      "blok": "B4",
-      "hafta": 31,
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "huffman kodlama",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+huffman+kodlama"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Huffman Coding animasyonu"
-        },
-        "soru": "2025 Q23–25",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "A20",
-      "hat": "A",
-      "ad": "**Dinamik programlama**: yineleme bağıntısından tabloya",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M12",
-        "A21"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Optimal alt yapı ve örtüşen alt problemler — DP'yi böl-yönetten ayıran iki koşul",
-          "Verilen bir yineleme bağıntısını tablo doldurarak elle çözme (aşağıdan yukarı)",
-          "Klasik kalıp 1: yan yana seçilemez (maksimum bağımsız toplam) — F(i)=max(F(i-1), F(i-2)+T[i])",
-          "Klasik kalıp 2: iki durum arası geçiş maliyeti (konum değiştirme, uçuş maliyeti)",
-          "Klasik kalıp 3: merdiven/basamak maliyeti — F(i)=min(F(i-1),F(i-2))+c[i]"
-        ],
-        "dikkat": [
-          "KLASİK SORU: bağıntı SANA VERİLİR, sen tabloyu doldurup sonucu bulursun. Bağıntıyı kurman istenmiyor.",
-          "DUR: sırt çantası ve LCS gerekmiyor; 1. aşamada bağıntı hep veriliyor"
-        ]
-      },
-      "faz": 8,
-      "blok": "B4",
-      "hafta": 32,
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "dinamik programlama",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+dinamik+programlama"
-        },
-        "kaynak": {
-          "ad": "Claude — Prompt 4",
-          "yer": "Bağıntıdan tablo doldurma — sınav bağıntıyı VERİYOR"
-        },
-        "soru": "2024 Q9–10 · 2025 Q12–13 · 2026 Q18–19",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "A26",
-      "hat": "A",
-      "ad": "**Dinamik programlama**: memoization ve çağrı sayısı",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A20",
-        "C21"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Yukarıdan aşağıya memoization: özyineli fonksiyon + önbellek dizisi",
-          "Memoization'lı fonksiyonun toplam çağrı sayısı — dolu önbellekten hemen dönenler dahil",
-          "Neden O(n): her alt problem bir kez hesaplanır, gerisi sabit sürede döner",
-          "Memoization'sız halin üstel olması (Fibonacci ağacı) ile karşılaştırma"
-        ],
-        "dikkat": [
-          "KLASİK SORU: \"F(n) fonksiyonu toplam kaç kez çağrılır\" → An+B biçiminde cevap",
-          "TUZAK: \"kaç kez HESAPLANIR\" ile \"kaç kez ÇAĞRILIR\" farklı sayılardır"
-        ]
-      },
-      "faz": 8,
-      "blok": "B4",
-      "hafta": 32,
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "memoization dinamik programlama",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+memoization+dinamik+programlama"
-        },
-        "kaynak": {
-          "ad": "pythontutor.com",
-          "yer": "Memoization'lı özyinelemede çağrı sayısını gözle say"
-        },
-        "soru": "2026 Q33 (F(n) kaç kez çağrılır → An+B)",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "A23",
-      "hat": "A",
-      "ad": "Algoritma tasarım muhakemesi: hangi adım gereksiz/yanlış",
-      "puan": 3,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "A1",
-        "A14"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Sınavın en özgün soru tipi: bir problem + çözüm adımları verilir, \"hangisi gerekli DEĞİLDİR\" sorulur",
-          "Doğru veri yapısı seçimi muhakemesi: küme (tekrar engelleme), kuyruk, sözlük, histogram",
-          "Tek geçişte (single pass) hesaplanabilenler ile hesaplanamayanları ayırt etme — medyan tek geçişte bulunamaz",
-          "Bir adımın maliyetinin toplam maliyet içindeki payını kestirme (bir kez yapılan iş ihmal edilir)",
-          "Ön işleme + hızlı sorgu kalıbı: kümülatif dizi kurup ikili arama ile sorgulamak",
-          "Sınır durumları: dizi başı/sonu taşması, ziyaret edilen düğüm işaretlemesi, sonsuz döngü",
-          "Yöntem: her şıkkı ayrı ayrı doğrula; dördü doğruysa beşinci cevaptır"
-        ],
-        "dikkat": [
-          "KLASİK SORU: \"aşağıdaki ifadelerden hangisi YANLIŞTIR / hangi adım GEREKLİ DEĞİLDİR\""
-        ]
-      },
-      "faz": 8,
-      "blok": "B4",
-      "hafta": 33,
-      "calisma": {
-        "video": null,
-        "kaynak": {
-          "ad": "Çıkmış sorular",
-          "yer": "★★ TEK KAYNAK. 2024 Q13, Q16, Q17, Q19 · 2025 Q27, Q28, Q29 · 2026 Q29"
-        },
-        "soru": "TEK KAYNAK. 2024 Q13, Q16, Q17, Q19 · 2025 Q27, Q28, Q29 · 2026 Q29",
-        "sure": "~12 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "A10",
-      "hat": "A",
-      "ad": "İkili arama ağacı (BST) — veri yapısı",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 35,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "BST özelliği: sol alt ağaç < kök < sağ alt ağaç",
-          "Arama, ekleme, silme (silmenin ÜÇ durumu: yaprak, tek çocuk, iki çocuk)",
-          "inorder dolaşımın sıralı çıktı vermesi",
-          "Ortalama O(log n), en kötü O(n) — dejenere (zincir) ağaç",
-          "Dengeleme kavramı (AVL yüzeysel)",
-          "NOT: A2'deki 'ikili arama' bir ALGORİTMA, bu bir VERİ YAPISI"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-          "ara": "ikili arama ağacı BST",
-          "url": "https://www.youtube.com/results?search_query=veri+yapıları+ikili+arama+ağacı+BST"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "BST + quiz"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A11",
-      "hat": "A",
-      "ad": "Heap, heapsort, öncelik kuyruğu",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 35,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A9"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Min-heap / max-heap özelliği",
-          "DİZİ GÖSTERİMİ: çocuklar 2i+1 ve 2i+2, ebeveyn (i−1)/2",
-          "sift-up (yukarı süzme) ve sift-down (aşağı süzme)",
-          "Ekleme O(log n), kök çıkarma O(log n)",
-          "Heap kurma neden O(n), O(n log n) değil",
-          "Heapsort adım adım",
-          "Öncelik kuyruğu olarak kullanımı",
-          "SINAVDA ÇOK SIK: verilen diziden heap kurma"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-          "ara": "heap öncelik kuyruğu",
-          "url": "https://www.youtube.com/results?search_query=veri+yapıları+heap+öncelik+kuyruğu"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Binary Heap"
-        },
-        "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "A22",
-      "hat": "A",
-      "ad": "Geri izleme (backtracking)",
-      "puan": 1,
-      "faz": 9,
-      "blok": "B4",
-      "hafta": 35,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "A14"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Sistematik deneme + geri dönme mantığı",
-          "Karar ağacı ve budama (pruning)",
-          "Klasik: n-vezir, sudoku, permütasyon üretme, alt küme üretme",
-          "DFS ile ilişkisi (backtracking = budamalı DFS)",
-          "Karmaşıklık genelde üstel",
-          "Durum uzayı büyüklüğü hesaplama"
-        ],
-        "dikkat": []
-      },
-      "calisma": {
-        "video": {
-          "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
-          "ara": "geri izleme backtracking",
-          "url": "https://www.youtube.com/results?search_query=Şadi+Evren+Şeker+geri+izleme+backtracking"
-        },
-        "kaynak": {
-          "ad": "visualgo.net",
-          "yer": "Recursion / backtracking"
-        },
-        "soru": "2024 Q17",
-        "sure": "~4 saat"
-      }
-    },
-    {
-      "id": "P2",
-      "hat": "P",
-      "ad": "Doğrucu/yalancı ve önerme çıkarımı bulmacaları",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M19"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Doğrucu/yalancı: her kişi için varsayım yap, çelişki ara",
-          "Kendine gönderme yapan ifadeler (\"ben yalancıyım\" tipi) ve tutarlılık",
-          "Kısmi doğru ifadeler: \"iki isimden biri doğru\" tipi sayım kısıtları",
-          "Verilen önerme kümesinden ÇIKARILAMAYAN sonucu bulma — dört şıkkı türet, kalan cevaptır",
-          "Modus ponens, modus tollens, hipotetik tasım zinciri"
-        ],
-        "dikkat": [
-          "TUZAK: \"veya\" kapsayıcıdır (ikisi birden olabilir) — Türkçe kullanım yanıltır"
-        ]
-      },
-      "faz": 10,
-      "blok": "B0",
-      "hafta": 6,
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "önermeler mantık çıkarım",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+önermeler+mantık+çıkarım"
-        },
-        "kaynak": {
-          "ad": "Çıkmış sorular + LSAT",
-          "yer": "2024 Q30 · 2025 Q14, Q18 · LSAT basit çıkarım oyunları"
-        },
-        "soru": "2024 Q30 · 2025 Q14, Q18",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "P1",
-      "hat": "P",
-      "ad": "Kısıt bulmacaları: gruplama ve yerleştirme",
-      "puan": 2,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [
-        "M19",
-        "P2"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Koşul listesini sembolleştirme: \"A grup 1'deyse B de grup 1'de\" → A₁ → B₁",
-          "Karşıt ters (contrapositive) kullanımı: ¬B₁ → ¬A₁ — çıkarımın yarısı buradan gelir",
-          "Kısıt tablosu kurma; kesin olanları önce yerleştirme, sonra vaka açma",
-          "Vaka ağacı: en çok kısıtlanmış nesneden dallanmaya başla, en azdan değil",
-          "Çelişkiyle eleme: bir dal çelişkiye giderse tüm alt dalları düşer",
-          "Soru tipleri: \"hangisi DOĞRU OLMALIDIR\", \"hangisi DOĞRU OLAMAZ\", \"hangisi MÜMKÜNDÜR\"",
-          "İki nitelikli ızgara bulmacaları (kişi × renk × spor) — matris işaretleme yöntemi",
-          "Zaman sınırı: bir küme 3 soruysa toplam 8 dakikayı geçmesin; kurgu bir kez kurulur, üç soruda kullanılır"
-        ],
-        "dikkat": []
-      },
-      "faz": 10,
-      "blok": "B4",
-      "hafta": 31,
-      "calisma": {
-        "video": null,
-        "kaynak": {
-          "ad": "LSAT Logic Games",
-          "yer": "Grouping games — kronometre 8 dk/küme"
-        },
-        "soru": "2024 Q1–2 · 2025 Q15–17",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "P3",
-      "hat": "P",
-      "ad": "Oyun, tartma ve en kötü durum bulmacaları",
-      "puan": 2,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "M15"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Kazanan/kaybeden konum analizi: sondan geriye doğru etiketleme",
-          "Nim benzeri oyunlarda periyot bulma (1,2,3 adım → mod 4)",
-          "Tartma problemleri: bilgi teorisi alt sınırı — k tartımla en fazla 3^k durum ayrılır",
-          "En kötü durum ile ortalama durumu ayırt etme; soru hangisini soruyor",
-          "Adversaryal düşünme: rakip/şans sana en kötüsünü verirse ne olur"
-        ],
-        "dikkat": []
-      },
-      "faz": 10,
-      "blok": "B4",
-      "hafta": 37,
-      "calisma": {
-        "video": null,
-        "kaynak": {
-          "ad": "Gürlü · Olimpik Sonlu Matematik",
-          "yer": "Oyun Stratejileri"
-        },
-        "soru": "TEK KAYNAK. 2025 Q20 (9 bilye) · 2025 Q21 (adım oyunu)",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "P4",
-      "hat": "P",
-      "ad": "Kısıt bulmacaları: çizelgeleme ve sıralama",
-      "puan": 2,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [
-        "P1"
-      ],
-      "kapsam": {
-        "ogren": [
-          "Zaman dilimlerine yerleştirme: gün × öğle öncesi/sonrası ızgarası",
-          "Öncelik kısıtları: \"X, Y tamamlandıktan sonraki bir dilimde\" → kısmi sıralama",
-          "Kapasite kısıtları: her dilimde en fazla k öğe",
-          "En erken/en geç mümkün konum bulma (ileri ve geri yayılım)",
-          "Bunun A15 topolojik sıralamayla akraba olduğunu gör — aynı kısmi sıra mantığı"
-        ],
-        "dikkat": []
-      },
-      "faz": 10,
-      "blok": "B4",
-      "hafta": 37,
-      "calisma": {
-        "video": null,
-        "kaynak": {
-          "ad": "LSAT Logic Games",
-          "yer": "Sequencing & scheduling games"
-        },
-        "soru": "2024 Q3–5",
-        "sure": "~8 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "yok"
-      }
-    },
-    {
-      "id": "L1",
-      "hat": "L",
-      "ad": "Logaritma, üslü ifadeler ve devirli kalanlar — tazeleme",
-      "puan": 1,
-      "cekirdek": true,
-      "kesilebilir": false,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "log kuralları: çarpım, bölüm, üs; taban değiştirme formülü",
-          "log_a(x) + log_a(y) = log_a(xy) tipi denklem çözme + tanım kümesi kontrolü",
-          "Algoritma karmaşıklığı kılıfındaki log sadeleştirmeleri: log₈(n³) = log₂(n)",
-          "Üslü sayılarda son basamak / mod devri: 2^100 mod 7 tipi",
-          "Bu konu olimpiyat değil AYT içeriğidir; hedef derinlik değil hızdır"
-        ],
-        "dikkat": [
-          "TUZAK: logaritmik denklemde bulunan kökün tanım kümesinde olup olmadığını kontrol et"
-        ]
-      },
-      "faz": 10,
-      "blok": "B2",
-      "hafta": 15,
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Logaritma",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Logaritma"
-        },
-        "kaynak": {
-          "ad": "Claude — Prompt 4",
-          "yer": "★ Kitap YOK, okul dersi YOK (log 11–12. sınıf). Video + tek oturum. Hedef HIZ, derinlik değil."
-        },
-        "soru": "2026 Q8 (log denklemi) · 2026 Q9 (taban dönüşümü) · 2026 Q7 (üs devri)",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 12,
-        "not": "AYT müfredatında var; okul desteği mevcut."
-      }
-    },
-    {
-      "id": "L2",
-      "hat": "L",
-      "ad": "Polinom ve temel geometri — tazeleme",
-      "puan": 1,
-      "cekirdek": false,
-      "kesilebilir": true,
-      "onkosul": [],
-      "kapsam": {
-        "ogren": [
-          "Polinom bölme, kalan teoremi, çarpanlara ayırma (kök verilmişse sentetik bölme)",
-          "Kök–katsayı ilişkileri (yeterli, ezber gerekmez)",
-          "Temel alan/çevre; bir şeklin parçalanmasında çevrenin nasıl arttığı",
-          "Örüntü/limit tipi geometri sorularında \"sonsuz\" şıkkını ciddiye alma refleksi",
-          "Bu konu olimpiyat değil AYT içeriğidir; hedef derinlik değil hızdır"
-        ],
-        "dikkat": []
-      },
-      "faz": 10,
-      "blok": "B2",
-      "hafta": 21,
-      "calisma": {
-        "video": {
-          "kanal": "Tunç Kurt Matematik",
-          "ara": "Polinomlar",
-          "url": "https://www.youtube.com/results?search_query=Tunç+Kurt+Polinomlar"
-        },
-        "kaynak": {
-          "ad": "Claude — Prompt 4",
-          "yer": "★ Kitap YOK, okul dersi YOK. Video + tek oturum. Kesme listesinde 1. sırada."
-        },
-        "soru": "2026 Q10 (çarpanlara ayırma) · 2026 Q14 (kare parçalama çevre)",
-        "sure": "~4 saat"
-      },
-      "mebKarsiligi": {
-        "durum": "tam",
-        "sinif": 10,
-        "not": "AYT müfredatında var; okul desteği mevcut."
-      }
-    }
-  ],
-  "cikarilanKonular": [
-    {
-      "id": "M11",
-      "gerekce": "0/150 — beklenen değer üç sınavın hiçbirinde sorulmadı; MEB'de de yok",
-      "geriEklemeSirasi": 1
-    },
-    {
-      "id": "M13",
-      "gerekce": "0/150 — karakteristik denklem üç sınavın hiçbirinde sorulmadı",
-      "geriEklemeSirasi": 2
-    },
-    {
-      "id": "M17",
-      "gerekce": "M16 ile birleştirildi (tek konu: sayı teorisi temelleri)",
-      "geriEklemeSirasi": 3
-    },
-    {
-      "id": "C17",
-      "gerekce": "0/150 — malloc/free doğrudan sorulmadı",
-      "geriEklemeSirasi": 4
-    },
-    {
-      "id": "C19",
-      "gerekce": "0/150 — printf/scanf format belirteci doğrudan sorulmadı",
-      "geriEklemeSirasi": 5
-    },
-    {
-      "id": "A12",
-      "gerekce": "1/150 ve o da modüler aritmetik sorusuydu; K12'de sahte ön koşul olduğu zaten tespit edilmişti",
-      "geriEklemeSirasi": 6
-    },
-    {
-      "id": "A17",
-      "ad": "Minimum örten ağaç (Kruskal)",
-      "puan": 2,
-      "gerekce": "2/150 — sadece 2024 Q6-Q7",
-      "geriEklemeSirasi": 7
-    },
-    {
-      "id": "A18",
-      "ad": "Birleştir-bul (union-find)",
-      "puan": 2,
-      "gerekce": "Sadece Kruskal kılıfında; A17 ile birlikte gelir",
-      "geriEklemeSirasi": 8
-    },
-    {
-      "id": "A16",
-      "ad": "Dijkstra",
-      "puan": 2,
-      "gerekce": "0/150",
-      "geriEklemeSirasi": 9
-    },
-    {
-      "id": "M21",
-      "ad": "Graf sayma: derece toplamı",
-      "puan": 2,
-      "gerekce": "A13 kapsamına taşındı",
-      "geriEklemeSirasi": null
-    },
-    {
-      "id": "M14",
-      "ad": "Catalan sayıları",
-      "puan": 2,
-      "gerekce": "0/150",
-      "geriEklemeSirasi": 10
-    },
-    {
-      "id": "C18",
-      "ad": "Fonksiyon pointer'ları",
-      "puan": 1,
-      "gerekce": "0/150",
-      "geriEklemeSirasi": 11
-    }
-  ],
-  "kesmeKurali": "Bir konu ancak ÜÇ koşulu birden sağlarsa kesilebilir: (1) çekirdek olmayacak, (2) hiçbir konunun ön koşulu olmayacak, (3) 150 soruluk ampirik tabanda frekansı 2'den az olacak. v4.3: kesme sırası programatik doğrulanıyor — bağımlısı olan konu listeye giremez.",
-  "sonrakiKesmeSirasi": [
-    "L2",
-    "P4",
-    "P3",
-    "A22",
-    "A6",
-    "A11",
-    "C20",
-    "A4"
-  ],
-  "kesmeDisiTutulan": [
-    {
-      "id": "M6",
-      "gerekce": "150 soruda 0 ama 1 puanlık ve klasik bir olimpiyat aracı; kesmek riski karşılamaz"
-    },
-    {
-      "id": "C20",
-      "gerekce": "Doğrudan 0 ama tuzak bilgisi tüm C bloğuna yayılıyor"
-    }
-  ],
-  "haftalikIskelet": {
-    "yaz": [
-      {
-        "gun": "Pazartesi",
-        "hat": "M",
-        "saat": 4
-      },
-      {
-        "gun": "Salı",
-        "hat": "C",
-        "saat": 4
-      },
-      {
-        "gun": "Çarşamba",
-        "hat": "M",
-        "saat": 4
-      },
-      {
-        "gun": "Perşembe",
-        "hat": "C",
-        "saat": 4
-      },
-      {
-        "gun": "Cuma",
-        "hat": "M",
-        "saat": 4,
-        "not": "B0'da A hattı yok"
-      },
-      {
-        "gun": "Cumartesi",
-        "hat": "karma",
-        "saat": 5
-      },
-      {
-        "gun": "Pazar",
-        "hat": "izin",
-        "saat": 0
-      }
-    ],
-    "donem": [
-      {
-        "gun": "Pazartesi",
-        "hat": "M",
-        "saat": 2
-      },
-      {
-        "gun": "Salı",
-        "hat": "C",
-        "saat": 2
-      },
-      {
-        "gun": "Çarşamba",
-        "hat": "A",
-        "saat": 2
-      },
-      {
-        "gun": "Perşembe",
-        "hat": "M",
-        "saat": 2
-      },
-      {
-        "gun": "Cuma",
-        "hat": "C",
-        "saat": 2
-      },
-      {
-        "gun": "Cumartesi",
-        "hat": "karma",
-        "saat": 5
-      },
-      {
-        "gun": "Pazar",
-        "hat": "izin",
-        "saat": 0
-      }
-    ]
-  },
-  "denemeler": [],
-  "kaynakKatalogu": [
-    {
-      "id": "OZDEMIR2",
-      "ad": "Mustafa Özdemir · Matematik Olimpiyatlarına Hazırlık 2 — Temel Bilgiler II",
-      "tur": "olimpiyat-kitabi",
-      "erisim": "satin-al",
-      "maliyet": "₺320",
-      "url": "https://www.altinnokta.com.tr/matematik-olimpiyatlarina-hazirlik--2-temel-bilgiler--2-174567-9789756146637",
-      "not_": "★ M-ÜSTÜNÜN TEK KİTABI. 416 sayfa, 17. baskı, STOKTA. Kapsam: Toplamlar, Çarpımlar, Permütasyon, Kombinasyon, Dağılım, Olasılık, Binom, İspat Yöntemleri. Format: konu anlatımı → çözümlü örnek → çözümlü test → olimpiyat problemleri. İçinde TÜBİTAK ve AÜMO çıkmış soruları çözümlü. ÜCRETSİZ EK: 6 bölümün sunum PDF'i dahimatik.com/lise-olimpiyat sayfasında — kitabı almadan önce indir, bak."
-    },
-    {
-      "id": "PKO-SB",
-      "ad": "Permütasyon–Kombinasyon–Olasılık branşal soru bankası (TYT+AYT birlikte)",
-      "tur": "soru-bankasi",
-      "erisim": "satin-al",
-      "maliyet": "₺150–250",
-      "url": null,
-      "not_": "★ M-TEMELİN TEK KİTABI. ⚠️ SAF AYT DEĞİL — \"TYT-AYT\" ya da \"TYT+AYT\" ibaresi olan BRANŞAL (konu bazlı) PKO fasikülü al. Gerekçe: sınavda çıkan M-temel sorularının çoğu TYT bandında (2024 Q20, 2026 Q21, 2026 Q24, 2025 Q4); saf AYT bankası gereğinden zor ve 90 sn hedefini bozar. Binom (M4) AYT bandındadır, o yüzden ikisi bir arada olan kitap gerekiyor. Ölçüt: TAM ÇÖZÜMLÜ + konu anlatımlı + zorluk kademeli. KULLANIM: TYT bandını süreli çöz (10 soru/15 dk, hedef 90 sn). AYT bandının en zor %20'sini ATLA — o seviye sınavda yok, M-üstü konularının yeri Özdemir 2."
-    },
-    {
-      "id": "YT-SENOL",
-      "ad": "YouTube · Şenol Hoca — Permütasyon, Kombinasyon, Olasılık, Binom",
-      "tur": "youtube",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://www.youtube.com/results?search_query=%C5%9Fenol+hoca+perm%C3%BCtasyon+kombinasyon+olas%C4%B1l%C4%B1k",
-      "not_": "★ M-TEMEL + L İÇİN KONU ANLATIMI. AYT seviyesi, Türkçe, ücretsiz. Konuya başlarken önce videoyu izle, sonra soru bankasını süreli çöz. Alternatif: Rehber Matematik \"Bebek Adımları\" oynatma listesi."
-    },
-    {
-      "id": "YT-OZDEMIR",
-      "ad": "YouTube · Prof. Dr. Mustafa Özdemir (@mozdemir07)",
-      "tur": "youtube",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://www.youtube.com/@mozdemir07",
-      "not_": "★ M-ÜSTÜ İÇİN VİDEO. Olimpiyat soru çözümleri (Antalya Matematik Olimpiyatı 1. aşama). OZDEMIR2 kitabının yazarı — aynı dil, aynı yöntem. Kitapla birlikte kullan."
-    },
-    {
-      "id": "TUBITAK-ARSIV",
-      "ad": "TÜBİTAK çıkmış sorular arşivi (Bilgisayar + Matematik + Ortaokul)",
-      "tur": "soru-bankasi",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://bilimolimpiyatlari.tubitak.gov.tr/tr/gecmis-sinav-sorulari",
-      "not_": "★ EN DEĞERLİ KAYNAK. Bilgisayar 2000–2026 (~23 sınav, 2007+ gerekçeli çözümlü). Matematik dalı 1998–2019 (M-üstü havuzu). Ortaokul (düşük seviye rampası). 2024–2026 K13'te etiketlendi → artık deneme değil, konu bazlı REFERANS."
-    },
-    {
-      "id": "GATE",
-      "ad": "GATE CSE çıkmış sorular — gateoverflow.in",
-      "tur": "soru-bankasi",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://gateoverflow.in/",
-      "not_": "★ C VE A HATTININ TEK SORU BANKASI. Format birebir: kod verilir, çıktı sorulur, çözümlü. ~%30'u 1. aşama seviyesinin üstünde — 3 dk'dan fazla takılma. Kolay başlangıç isterse: indiabix.com/technical/c/ (\"Find Output of Program\")."
-    },
-    {
-      "id": "PYTUTOR",
-      "ad": "pythontutor.com (C modu)",
-      "tur": "arac",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://pythontutor.com/c.html",
-      "not_": "★ ÖZYİNELEMENİN TEK ARACI (C hattının %33'ü). Çağrı yığınını görsel gösterir. YÖNTEM: önce KÂĞIDA çiz, sonra burada adım adım ilerlet, sapmayı bul. Derleyici doğrulaması için: godbolt.org"
-    },
-    {
-      "id": "VISUALGO",
-      "ad": "VisuAlgo.net",
-      "tur": "gorsellestirme",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": "https://visualgo.net/",
-      "not_": "★ A HATTININ TEK OMURGASI. Adım adım animasyon + yerleşik QUIZ MODU (sınav formatında soru üretir). W25'te graf başlarken aç, sınava kadar kapatma."
-    },
-    {
-      "id": "LSAT-LG",
-      "ad": "LSAT Logic Games / Analytical Reasoning (2024 ÖNCESİ basım)",
-      "tur": "soru-bankasi",
-      "erisim": "satin-al",
-      "maliyet": "₺200–500 (2.el)",
-      "url": null,
-      "not_": "★ P HATTININ TEK KİTABI. LSAC bölümü Ağu 2024'te kaldırdı → ~2.000 resmî soru ucuzladı ve DONDU. Format TÜBİTAK P sorularıyla birebir. ⚠️ 2024 SONRASI baskı alma. Sadece Logic Games çalış. Ücretsiz çözüm videoları: 7sage.com. KULLANIM: haftada 1 küme, kronometre 8 dk."
-    },
-    {
-      "id": "OKUL",
-      "ad": "Okul dersi (10. sınıf matematik)",
-      "tur": "okul",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": null,
-      "not_": "⚠️ SADECE M-TEMEL İÇİN. 10. sınıfta permütasyon, kombinasyon, olasılık işleniyor (MEB 10.3 teması) — plan bunları W7–W15 arasında bitiriyor, yani okul dersi SENİN İÇİN TEKRAR olacak. L hattı (logaritma 11–12, polinom 10 sonu/11) bu yıl okulda GÖRÜLMÜYOR — L için okul kaynağı yoktur."
-    },
-    {
-      "id": "PROMPT4",
-      "ad": "Claude · Prompt 4 (tek konu çalışma oturumu)",
-      "tur": "uretilen",
-      "erisim": "ucretsiz",
-      "maliyet": 0,
-      "url": null,
-      "not_": "Hazır kaynağı olmayan konular için. JSON'daki \"kapsam\" listesini oturum iskeleti olarak kullanır."
-    },
-    {
-      "id": "ROSEN",
-      "ad": "Kenneth H. Rosen · Ayrık Matematik ve Uygulamaları (Palme)",
-      "tur": "ders-kitabi",
-      "erisim": "kosullu",
-      "maliyet": "₺650 (2.el) – ₺1.600",
-      "url": null,
-      "not_": "⚪ ARTIK ZORUNLU DEĞİL (v2.2). Özdemir 2 M-üstünü, VisuAlgo+GATE A hattını kapatıyor. Sadece W22 ölçümünde A hattı geride kalırsa ve İngilizce/kalın kitap seni yormuyorsa al. Alırsan değeri: böl. 10–11 (graf, ağaç) ve böl. 3 (karmaşıklık)."
-    },
-    {
-      "id": "ROUGH",
-      "ad": "Tim Roughgarden · Algorithms Illuminated Part 3 (Greedy & DP)",
-      "tur": "ders-kitabi",
-      "erisim": "kosullu",
-      "maliyet": "₺400–700",
-      "url": "https://www.algorithmsilluminated.org/",
-      "not_": "⚪ KOŞULLU. Yazarın ders videoları YouTube'da ÜCRETSİZ — önce onları izle, kitap gerekmeyebilir. Tetikleyici: W30 denemesinde A19/A20/A25 netleri düşükse."
-    },
-    {
-      "id": "VDL",
-      "ad": "Peter van der Linden · Expert C Programming",
-      "tur": "ders-kitabi",
-      "erisim": "kutuphane",
-      "maliyet": 0,
-      "url": null,
-      "not_": "⚪ Sadece C20 (tuzaklar), sadece W37. Kütüphane yeterli, satın alma."
-    }
-  ],
-  "videoKanallari": [
-    {
-      "id": "TUNC",
-      "ad": "Tunç Kurt Matematik",
-      "hat": "M, L",
-      "tercih": 1,
-      "not_": "★ 1. TERCİH. Matematik ve lise cebiri konularının tamamı. Bir konuyu anlatmıyorsa aşağıdakilere bak."
-    },
-    {
-      "id": "REHBER",
-      "ad": "Rehber Matematik",
-      "hat": "M, L",
-      "tercih": 2,
-      "not_": "Yedek. \"Bebek Adımları\" oynatma listesi daha yavaş tempolu."
-    },
-    {
-      "id": "SADI",
-      "ad": "Şadi Evren Şeker · Bilgisayar Kavramları",
-      "hat": "C, A",
-      "tercih": 1,
-      "not_": "★ C ve algoritma için 1. tercih. Türkçe, üniversite düzeyi ama sade. Sıralama, graf, ağaç, karmaşıklık."
-    },
-    {
-      "id": "OLIMP",
-      "ad": "Olimpiyat konuları — YouTube araması",
-      "hat": "M",
-      "tercih": 1,
-      "not_": "Bu konularda tek bir kanal yok. Verilen arama terimiyle ara, en anlaşılır anlatımı seç. Video bulamazsan Gürlü kitabı zaten omurga, video bonus."
-    },
-    {
-      "id": "VY",
-      "ad": "Türkçe \"Veri Yapıları ve Algoritmalar\" ders serileri",
-      "hat": "A",
-      "tercih": 2,
-      "not_": "Üniversite ders kayıtları. Konu adıyla ara: \"veri yapıları [konu] konu anlatımı\"."
-    }
-  ]
-}
-
-```
+_(Veri buradan doğrudan uygulamaya yüklenir — konular, haftalar, bloklar, fazlar ve kaynak
+kataloğu diğer sekmelerde canlı olarak görünür.)_
 
 ---
 
@@ -5732,7 +1649,6 @@ Son bir şey. v4.0'ın varlık sebebi senin bir gözlemin: *"bu soruların çoğ
 ---
 
 ## Ek · Sürüm geçmişi
-
 | Sürüm | Tarih | Değişiklik |
 |---|---|---|
 | 1.0 | 26 Tem 2026 | İlk plan. 122 puan, 64 konu, blok + hız sistemi. |
@@ -5741,8 +1657,11 @@ Son bir şey. v4.0'ın varlık sebebi senin bir gözlemin: *"bu soruların çoğ
 | 3.1 | 26 Tem 2026 | Karışabilecek isimler ayrıştırıldı, 57 konuya kapsam tanımı eklendi (K10). |
 | 3.2 | 27 Tem 2026 | M hattına MEB müfredat eşleştirmesi eklendi (K11). |
 | 3.3 | 27 Tem 2026 | Tam tutarlılık denetimi (K12). Üretken hafta 30 → 27. Kesme listesi düzeltildi. |
+| **4.6** | **24 Ağu 2026** | **Takvim yeniden yazıldı, müfredata dokunulmadı.** M20 ≈ 8 saat sürdü → `puanBasinaSaat = 4` **doğrulandı**, K22 hız kapısı kapandı; bozuk olan haftalık saat varsayımıydı (25/15 → gerçek 11–12). Yerine hafta tipine bağlı **sabit saat modeli** (K23: yaz 21 · yoğun 16 · standart 11 · okul sınavı 12 · yarıyıl 21 · TFO 6; dönem ort. 13,5). Kapasite W5–W37: **375 üretken + 82 tampon**. Hatlar **kademeli** yürüyor (K25): 64 saatlik seri kritik yol (C1→…→A3) W7'de kesintisiz başlar, birincil slot C, ikincil slot önce M/P borcu sonra A. K16 geri ödemesinin tetikleyicisi tarih değil **borcun kapanması** oldu (K21, W13). 2+ puanlık **33 konu 4 saatlik parçalara bölündü** (K24) — tracker parça sayar, `tamamlananPuan` kesirli olabilir. Deneme bir oturumdur, bir hafta değil (K19): `haftalar[].deneme` kaldırıldı, `denemeler[]` dizisi geldi; tam denemeler yoğun/tampon haftalarına taşındı. **Kapsam taahhüdü Tier B — 41 çekirdek konu / 79 puan** (K26): 4 yanlış 1 doğruyu götürdüğü için yarım bilinen konu bilinmeyenden kötüdür. Kesilen 29 puan silinmedi, kuyruğa alındı; W35–W37 geri çağırma penceresi (12 puan), kalan 17 puan bu sezon çalışılmıyor. Tek kapı **W26 · kümülatif 57 puan**. W1–W4 devredildi (yalnızca M20 bitti). Konu (63), puan (108) ve faz (10) sayıları değişmedi. |
+| **4.5** | — | Kullanılmadı. Saat modeli yanlış temelliydi; yerini v4.6'ya bıraktı. K19–K21 oradan taşındı, K20'nin metni kayıp (bkz. K20). |
 | **4.4** | **7 Ağu 2026** | W1–W2 devredildi (0 puan). C hattı B0'dan çıkarıldı, 13 M/P konusu öne çekildi (K16). Deneme #1–#4 iptal, ilk tam deneme W18'e alındı, madencilik seti tanımlandı (K17). Tracker puan-öncelikli görünüme geçti (K18). Puan (108), konu (63) ve faz (10) sayıları değişmedi. |
 | **4.3** | **1 Ağu 2026** | **Tam denetim + denge düzeltmesi.** ❶ **Kitap değişimi hatası:** M19 ve P2'nin kaynağı "Gürlü Böl. 6 — İspat Yöntemleri" yazıyordu; Gürlü'de öyle bir bölüm yok (Özdemir'den taşınmış). M19 → PKO bankası TYT mantık bölümü, P2 → çıkmış sorular + LSAT. ❷ **Kesme listesi kuralını çiğniyordu:** A8, A5, C12'nin bağımlıları vardı. Liste artık programatik doğrulanıyor. ❸ **Bayrak tutarsızlığı:** M10, M16, C11, C16, A21, A10 ne çekirdek ne kesilebilirdi → kesilebilir. Artık 41+22=63. ❹ **W1 %128 → %112:** M18 W3'e taşındı. ❺ **Ağırlık dengesi:** A hattı %39 (sınav %32), P hattı %5 (sınav %9) idi. **A2 2→1, A6 2→1, A10 2→1**; açılan 3 puan **P1 2→3, P2 1→2, P4 1→2**. Yeni sapmalar: A +4, P −2. P1 ve P2 çekirdek yapıldı. |
 | **4.2** | **1 Ağu 2026** | **Sunuş sadeleştirildi, içerik korundu.** Değişken uzunluktaki `kaynaklar` listesi, her konuda aynı olan **4 slotluk `calisma` kartına** çevrildi (video/kaynak/soru/süre). `kapsam` ikiye ayrıldı: `ogren` ve `dikkat` (TUZAK, KLASİK SORU, DUR). **59/63 konuya Türkçe YouTube anlatımı** atandı, her biri doğrudan arama bağlantısıyla: Tunç Kurt (matematik, lise cebiri), Şadi Evren Şeker (C, algoritma), yedek kanallar. **Özdemir 2 → Gürlü · Olimpik Sonlu Matematik** değişimi: Gürlü M6, M7, M8, M12 ve P3'ü de kapsıyor. Zorunlu kitap 3 → **2**, bütçe ₺670–1.070 → **~₺500**. Tracker promptu "ana ekranda 7'den fazla tıklanabilir öğe olmasın" kuralıyla yeniden yazıldı. |
 | **4.1** | **1 Ağu 2026** | **Kaynak listesi plana dahil edildi (Bölüm 7B).** Model: hat başına bir omurga; katalog 28 → **14**, zorunlu satın alma 5 → **3 kalem** (₺670–1.070). **Özdemir 2 M-üstünün tek kitabı** oldu (stok hatası düzeltildi), **Rosen koşullu listeye indi**, Türkçe YouTube omurgaları eklendi. **TYT/AYT düzeltmesi:** M-temel için "TYT+AYT branşal PKO fasikülü" (saf AYT değil — sorular çoğunlukla TYT bandında). **L hattının okul kaynağı kaldırıldı** — logaritma ve polinom 10. sınıfta işlenmiyor; YouTube + Prompt 4 ile kapatıldı. Okul dersi desteği M-temele taşındı. |
 | **4.0** | **31 Tem 2026** | **Ampirik yeniden boyutlandırma (K13, K14, K15).** 2024+2025+2026 sınavlarının 150 sorusu etiketlendi. M %40 → **%24**; M'nin yarısının TYT/AYT seviyesi olduğu tespit edildi ve hat M-temel/M-üstü diye ayrıldı. **İki yeni hat: P** (mantık kurgu, 5p) **ve L** (lise cebiri, 2p). **A20 (DP) geri eklendi** ve ikiye bölündü; açgözlü 3→5, özyineleme 5→8, graf B4→B3. **Yeni konu A23** (tasarım muhakemesi). 6 konu kesildi (M11, M13, M17, C17, C19, A12). Ön koşul grafındaki 6 kırık ve 6 ters bağ onarıldı. Süre aritmetiği ve negatif puan stratejisi eklendi. Deneme rezervi kuralı yazıldı. Konu 57 → **63**, faz 9 → **10**, puan **108 (sabit)**. |
+

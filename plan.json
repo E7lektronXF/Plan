@@ -1,7 +1,7 @@
 {
   "meta": {
-    "surum": "4.4",
-    "guncelleme": "2026-08-07",
+    "surum": "4.6",
+    "guncelleme": "2026-08-24",
     "mebProgrami": "Türkiye Yüzyılı Maarif Modeli (2026-27'de 10. sınıf bu programla okutuluyor)",
     "hedef": "TÜBİTAK 35. Bilim Olimpiyatları 1. Aşama — Bilgisayar",
     "sinavTarihi": "2027-05-15",
@@ -9,24 +9,30 @@
     "planBaslangic": "2026-07-27",
     "planBitis": "2027-05-16",
     "toplamHafta": 42,
-    "uretkenHafta": 27,
-    "tamponHafta": 11,
+    "uretkenHafta": 26,
+    "tamponHafta": 8,
     "tekrarHafta": 3,
     "sinavHafta": 1,
     "toplamPuan": 108,
     "toplamKonu": 63,
     "toplamFaz": 10,
     "puanBasinaSaat": 4,
-    "yeniKonuKapasiteSaat": 455,
+    "yeniKonuKapasiteSaat": 375,
     "mufredatYukSaat": 432,
-    "tamponSaat": 177,
+    "tamponSaat": 82,
     "tekrarSaat": 45,
     "sinavSaat": 15,
-    "toplamYatirimSaat": 692,
-    "yazHaftalikSaat": 25,
-    "donemHaftalikSaat": 15,
-    "referansHizYaz": 6,
-    "referansHizDonem": 3.6,
+    "toplamYatirimSaat": 528,
+    "yazHaftalikSaat": 21,
+    "donemHaftalikSaat": {
+      "yogun": 16,
+      "standart": 11,
+      "okulSinavi": 12,
+      "yariyilTatili": 21,
+      "tfo": 6
+    },
+    "referansHizYaz": 5.0,
+    "referansHizDonem": 3.4,
     "sonYeniKonuHaftasi": 37,
     "ampirikTemel": "2024, 2025 ve 2026 birinci aşama sınavlarının 150 sorusu konu ID'leriyle etiketlendi (K13)",
     "olculenDagilim": {
@@ -54,10 +60,12 @@
     },
     "devredilenHaftalar": [
       1,
-      2
+      2,
+      3,
+      4
     ],
-    "devredilenPuan": 14,
-    "gercekPuan": 0,
+    "devredilenPuan": 21,
+    "gercekPuan": 2,
     "ilkTamDeneme": 18,
     "cHattiErteleme": {
       "karar": "K16",
@@ -72,19 +80,266 @@
       ],
       "ertelenenPuan": 14,
       "bosalanPuan": 12,
-      "yerlestirmeHaftasi": 6,
-      "pazartesiSlotuC": true
+      "yerlestirmeHaftasi": 7,
+      "pazartesiSlotuC": "borcKapaninca",
+      "borcKapanisHaftasi": 13,
+      "not_": "K21: K16 geri ödemesinin tetikleyicisi sabit tarih değil, borcun kapanması. M slotu devreden M/P borcu kapanana kadar M'de kalır (W13)."
+    },
+    "oncekiSurum": "4.4",
+    "surumNotu": "v4.5 kullanılmadan yerini v4.6'ya bıraktı (saat modeli yanlış temelliydi). K16, K17, K18 yürürlükte; K19–K21 v4.6'ya taşındı; K22 kapandı, yerine K23–K26 geldi.",
+    "hedefKapsam": "B",
+    "cekirdekPuan": 79,
+    "kuyrukPuan": 12,
+    "kesilenPuan": 17,
+    "puanBasinaSaatNotu": "M20 ölçümüyle doğrulandı (K22 kapanışı) — bozuk olan katsayı değil haftalık saat varsayımıydı.",
+    "haftaTipiDongusu": "yogun/standart dönüşümlü, W7'den itibaren",
+    "donemOrtalamaSaat": 13.5,
+    "planlamaBandi": "14–21 aralığının alt bandı; üst bant (18–21) telafi payı olarak boş bırakıldı",
+    "uretkenSaat": 375,
+    "uretkenTamponToplam": 457,
+    "tekrarSinavSaat": 60,
+    "devredilenHafta": 4,
+    "senaryolar": [
+      {
+        "tier": "A",
+        "ad": "Tam müfredat",
+        "kalanPuan": 106,
+        "saat": 424,
+        "uretkeneOran": "%113",
+        "hukum": "Tamponun %60'ını yemeden kapanmıyor",
+        "secildi": false
+      },
+      {
+        "tier": "B",
+        "ad": "Çekirdek",
+        "kalanPuan": 77,
+        "saat": 308,
+        "uretkeneOran": "%82",
+        "hukum": "TAAHHÜT KAPSAMI — 67 sa pay + 82 sa tampon",
+        "secildi": true
+      },
+      {
+        "tier": "C",
+        "ad": "Kurtarma",
+        "kalanPuan": 55,
+        "saat": 220,
+        "uretkeneOran": "%59",
+        "hukum": "Sadece W26 kapısı tetiklerse",
+        "secildi": false
+      }
+    ],
+    "kapi": {
+      "hafta": 26,
+      "tarih": "2027-01-18",
+      "olcut": 57,
+      "olcutAciklama": "W26 tamponunda kümülatif puan ölçülür; 57 puanın altındaysa Tier C devreye girer.",
+      "tetiklenirseDusen": [
+        "A24",
+        "A25",
+        "A20",
+        "A26",
+        "A23",
+        "A9",
+        "P1"
+      ],
+      "dusenPuan": 16,
+      "kalanPuanHesaplanan": 63,
+      "not_": "Belge §6 Tier C kalanını 57, §1 tablosu 55 puan diyor; düşen konu listesinden hesaplanan 63. Fark S10 olarak açık soru listesinde, kapı tetiklendiğinde kapanacak."
+    },
+    "geriCagirmaPenceresi": {
+      "haftalar": [
+        35,
+        36,
+        37
+      ],
+      "saat": 44,
+      "puan": 12,
+      "olcut": "Sınav ağırlığı × maliyet oranı",
+      "sira": [
+        {
+          "sira": 1,
+          "konular": [
+            "A4",
+            "A5",
+            "A6"
+          ],
+          "puan": 3,
+          "gerekce": "Sıralama algoritmaları — A hattının en çok çıkan kesilebilirleri"
+        },
+        {
+          "sira": 2,
+          "konular": [
+            "C12"
+          ],
+          "puan": 1,
+          "gerekce": "C13 zaten çekirdekte, yanına ucuz ekleniyor"
+        },
+        {
+          "sira": 3,
+          "konular": [
+            "M16"
+          ],
+          "puan": 2,
+          "gerekce": "Sayı teorisi temelleri"
+        },
+        {
+          "sira": 4,
+          "konular": [
+            "A8",
+            "A10"
+          ],
+          "puan": 2,
+          "gerekce": "Bağlı liste ve BST"
+        },
+        {
+          "sira": 5,
+          "konular": [
+            "P3",
+            "P4"
+          ],
+          "puan": 4,
+          "gerekce": "P hattı ucuz ama sınav ağırlığı %9"
+        }
+      ],
+      "calisilmayan": [
+        "M6",
+        "M10",
+        "M12",
+        "M15",
+        "C11",
+        "C16",
+        "C20",
+        "A21",
+        "A15",
+        "A19",
+        "A11",
+        "A22",
+        "L2"
+      ]
+    },
+    "kapsamDisiOnkosul": {
+      "aciklama": "v4.6 §2'nin kesme listesi 22 kesilebilir konunun tamamını aynı anda düşürüyor; oysa v4.3'te programatik doğrulanan liste 8 konuluk kesme SIRASIYDI. Sonuç: aşağıdaki ön koşullar kapsam dışında kaldı. Tracker bunları kilit değil UYARI olarak gösterir — yoksa çekirdekteki 5 konu hiç açılamazdı.",
+      "sayi": 11,
+      "liste": [
+        {
+          "konu": "M7",
+          "konuTier": "B",
+          "onkosul": "M6",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 9
+        },
+        {
+          "konu": "C12",
+          "konuTier": "kuyruk",
+          "onkosul": "C11",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 2,
+          "hafta": 35
+        },
+        {
+          "konu": "C13",
+          "konuTier": "B",
+          "onkosul": "C12",
+          "onkosulTier": "kuyruk",
+          "onkosulPuan": 1,
+          "hafta": 21
+        },
+        {
+          "konu": "A4",
+          "konuTier": "kuyruk",
+          "onkosul": "A21",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 35
+        },
+        {
+          "konu": "A5",
+          "konuTier": "kuyruk",
+          "onkosul": "A21",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 35
+        },
+        {
+          "konu": "A8",
+          "konuTier": "kuyruk",
+          "onkosul": "C16",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 35
+        },
+        {
+          "konu": "A9",
+          "konuTier": "B",
+          "onkosul": "A8",
+          "onkosulTier": "kuyruk",
+          "onkosulPuan": 1,
+          "hafta": 28
+        },
+        {
+          "konu": "A25",
+          "konuTier": "B",
+          "onkosul": "A19",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 3,
+          "hafta": 29
+        },
+        {
+          "konu": "A20",
+          "konuTier": "B",
+          "onkosul": "M12",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 31
+        },
+        {
+          "konu": "A20",
+          "konuTier": "B",
+          "onkosul": "A21",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 31
+        },
+        {
+          "konu": "P3",
+          "konuTier": "kuyruk",
+          "onkosul": "M15",
+          "onkosulTier": "kesildi",
+          "onkosulPuan": 1,
+          "hafta": 35
+        }
+      ],
+      "secenekler": [
+        "Ön koşulu kuyruğa/çekirdeğe geri al",
+        "Bağımlı konuyu ön koşulsuz çalışılabilir kabul et (kapsamı daralt)",
+        "Bağımlı konuyu da kes"
+      ],
+      "kararTarihi": "2026-09-30",
+      "sSorusu": "S11"
     }
   },
   "durum": {
-    "guncelHafta": 1,
+    "guncelHafta": 5,
     "guncelBlok": "B0",
-    "guncelFaz": 1,
-    "tamamlananPuan": 0,
-    "tamamlananKonu": [],
-    "devredilenKonu": [],
-    "gecenUretkenHafta": 0,
-    "olculenHiz": null
+    "guncelFaz": 3,
+    "tamamlananPuan": 2,
+    "tamamlananKonu": [
+      "M20"
+    ],
+    "devredilenKonu": [
+      "M5",
+      "M7",
+      "M8",
+      "M9",
+      "P2"
+    ],
+    "gecenUretkenHafta": 2,
+    "olculenHiz": 2.0,
+    "olculenHizBirim": "puan/üretken hafta",
+    "olculenHizNotu": "8 sa/puan gerçekleşmiş değil; katsayı 4 sa/puan doğrulandı (M20 ≈ 8 saat = 2 puan), değişen haftalık saat modeliydi.",
+    "hedefKapsam": "B",
+    "cekirdekKalanPuan": 77
   },
   "karisabilecekIsimler": [
     {
@@ -354,11 +609,16 @@
       "baslangic": "2026-07-27",
       "bitis": "2026-09-06",
       "hafta": 6,
-      "uretkenHafta": 4,
-      "haftalikSaat": 25,
-      "puan": 23,
-      "kapasiteSaat": 100,
-      "kesin": true
+      "uretkenHafta": 2,
+      "puan": 10,
+      "kapasiteSaat": 42,
+      "kesin": true,
+      "tamponHafta": 0,
+      "saatDagilimi": {
+        "devredildi": 4,
+        "yaz": 2
+      },
+      "not_": "W1–W4 devredildi; blok W5–W6'da yeniden kuruldu (K16)"
     },
     {
       "id": "B1",
@@ -371,11 +631,16 @@
       "bitis": "2026-11-01",
       "hafta": 8,
       "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 22,
-      "kapasiteSaat": 90,
+      "puan": 20,
+      "kapasiteSaat": 108,
       "kesin": false,
-      "not": "En dolu blok (%98), C9 burada"
+      "not": "C hattı kesintisiz başlıyor (W7); M/P borcu ikincil slotta W13'te kapanır",
+      "tamponHafta": 2,
+      "saatDagilimi": {
+        "standart": 2,
+        "tampon": 2,
+        "yogun": 4
+      }
     },
     {
       "id": "B2",
@@ -387,12 +652,19 @@
       "baslangic": "2026-11-02",
       "bitis": "2026-12-27",
       "hafta": 8,
-      "uretkenHafta": 5,
-      "haftalikSaat": 15,
-      "puan": 16,
-      "kapasiteSaat": 75,
+      "uretkenHafta": 6,
+      "puan": 17,
+      "kapasiteSaat": 100,
       "kesin": false,
-      "not": "Üç tampon: W18, W19 (TFO), W22"
+      "not": "A hattı W15'te açılır; iki okul sınavı haftası (W15, W16), W19 TFO",
+      "tamponHafta": 2,
+      "saatDagilimi": {
+        "okulSinavi": 2,
+        "standart": 1,
+        "tampon": 2,
+        "tfo": 1,
+        "yogun": 2
+      }
     },
     {
       "id": "B3",
@@ -405,11 +677,18 @@
       "bitis": "2027-02-21",
       "hafta": 8,
       "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 23,
-      "kapasiteSaat": 100,
+      "puan": 21,
+      "kapasiteSaat": 109,
       "kesin": false,
-      "not": "W27 yarıyıl tatili, yaz temposu"
+      "not": "W26 tek kapı, W27 yarıyıl tatili — C hattı biter",
+      "tamponHafta": 2,
+      "saatDagilimi": {
+        "okulSinavi": 1,
+        "standart": 2,
+        "tampon": 2,
+        "yariyil": 1,
+        "yogun": 2
+      }
     },
     {
       "id": "B4",
@@ -422,11 +701,17 @@
       "bitis": "2027-04-18",
       "hafta": 8,
       "uretkenHafta": 6,
-      "haftalikSaat": 15,
-      "puan": 22,
-      "kapasiteSaat": 90,
+      "puan": 20,
+      "kapasiteSaat": 109,
       "kesin": false,
-      "not": "W31 TYBS başvurusu; W37 son yeni konu"
+      "not": "Birincil slot A'da; W33 çekirdek kapanışı, W35–W37 geri çağırma penceresi",
+      "tamponHafta": 2,
+      "saatDagilimi": {
+        "okulSinavi": 1,
+        "standart": 1,
+        "tampon": 2,
+        "yogun": 4
+      }
     },
     {
       "id": "B5",
@@ -440,11 +725,15 @@
       "hafta": 4,
       "uretkenHafta": 0,
       "tekrarHafta": 3,
-      "haftalikSaat": 15,
       "puan": 0,
-      "kapasiteSaat": 45,
+      "kapasiteSaat": 60,
       "kesin": false,
-      "not": "Yeni konu yok. 3 tekrar haftası + 1 sınav haftası. Hız hesabına girmez."
+      "not": "Yeni konu yok. 3 tekrar haftası + 1 sınav haftası. Hız hesabına girmez.",
+      "tamponHafta": 0,
+      "saatDagilimi": {
+        "sinav": 1,
+        "tekrar": 3
+      }
     }
   ],
   "haftalar": [
@@ -455,19 +744,23 @@
       "bas": "2026-07-27",
       "bit": "2026-08-02",
       "tip": "devredildi",
-      "saat": 25,
+      "haftaTipi": "devredildi",
+      "saat": 0,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "notlar": [
-        "Tamamlanmadı (K16)"
-      ],
+      "kumulatif": 0,
       "devredilenKonular": [
-        "M20",
         "M22",
         "M19",
         "C1",
         "C2"
+      ],
+      "notlar": [
+        "Tamamlanmadı — konular W5'ten itibaren yeniden yerleştirildi (v4.6 §6)"
       ]
     },
     {
@@ -477,17 +770,22 @@
       "bas": "2026-08-03",
       "bit": "2026-08-09",
       "tip": "devredildi",
-      "saat": 25,
+      "haftaTipi": "devredildi",
+      "saat": 0,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "notlar": [
-        "Tamamlanmadı (K16)"
-      ],
+      "kumulatif": 0,
       "devredilenKonular": [
         "C3",
         "C7",
         "M1"
+      ],
+      "notlar": [
+        "Tamamlanmadı — konular W5'ten itibaren yeniden yerleştirildi (v4.6 §6)"
       ]
     },
     {
@@ -496,21 +794,25 @@
       "blokIci": 3,
       "bas": "2026-08-10",
       "bit": "2026-08-16",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        1,
-        3
-      ],
-      "konular": [
+      "tip": "devredildi",
+      "haftaTipi": "devredildi",
+      "saat": 0,
+      "planlananSaat": 0,
+      "faz": [],
+      "birincil": [],
+      "ikincil": [],
+      "konular": [],
+      "puan": 0,
+      "kumulatif": 2,
+      "devredilenKonular": [
         "M19",
-        "M20",
         "M22",
         "M1",
         "M18"
       ],
-      "puan": 6,
-      "notlar": []
+      "notlar": [
+        "Tamamlanmadı — konular W5'ten itibaren yeniden yerleştirildi (v4.6 §6)"
+      ]
     },
     {
       "w": 4,
@@ -518,19 +820,24 @@
       "blokIci": 4,
       "bas": "2026-08-17",
       "bit": "2026-08-23",
-      "tip": "uretken",
-      "saat": 25,
-      "faz": [
-        3
-      ],
-      "konular": [
+      "tip": "devredildi",
+      "haftaTipi": "devredildi",
+      "saat": 0,
+      "planlananSaat": 0,
+      "faz": [],
+      "birincil": [],
+      "ikincil": [],
+      "konular": [],
+      "puan": 0,
+      "kumulatif": 2,
+      "devredilenKonular": [
         "M2",
         "M3",
         "M4"
       ],
-      "puan": 6,
-      "notlar": [],
-      "madencilikSeti": 1
+      "notlar": [
+        "Tamamlanmadı — konular W5'ten itibaren yeniden yerleştirildi (v4.6 §6)"
+      ]
     },
     {
       "w": 5,
@@ -539,18 +846,47 @@
       "bas": "2026-08-24",
       "bit": "2026-08-30",
       "tip": "uretken",
-      "saat": 25,
+      "haftaTipi": "yaz",
+      "saat": 21,
+      "planlananSaat": 20,
       "faz": [
+        1,
         3
       ],
-      "konular": [
-        "M5",
-        "M6",
-        "M7",
-        "M8"
+      "birincil": [
+        {
+          "id": "M19"
+        },
+        {
+          "id": "M22"
+        },
+        {
+          "id": "M1"
+        },
+        {
+          "id": "M18"
+        }
       ],
-      "puan": 6,
-      "notlar": []
+      "ikincil": [
+        {
+          "id": "M2",
+          "parcalar": [
+            1
+          ]
+        }
+      ],
+      "konular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2"
+      ],
+      "puan": 5,
+      "kumulatif": 7,
+      "notlar": [
+        "Yaz temposu — 21 saat"
+      ]
     },
     {
       "w": 6,
@@ -559,25 +895,39 @@
       "bas": "2026-08-31",
       "bit": "2026-09-06",
       "tip": "uretken",
-      "saat": 25,
+      "haftaTipi": "yaz",
+      "saat": 21,
+      "planlananSaat": 20,
       "faz": [
-        5,
-        9,
-        10
+        3
+      ],
+      "birincil": [
+        {
+          "id": "M2",
+          "parcalar": [
+            2,
+            3
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "M3"
+        },
+        {
+          "id": "M4"
+        }
       ],
       "konular": [
-        "M9",
-        "M10",
-        "M12",
-        "P2"
+        "M2",
+        "M3",
+        "M4"
       ],
       "puan": 5,
+      "kumulatif": 12,
+      "madencilikSeti": 1,
       "kapanis": "B0",
-      "notlar": [
-        "Cuma–Pazar kapanış + telafi payı — B0'ın tek tamponu",
-        "Geride kalınırsa önce M12 ve P2 devreder"
-      ],
-      "madencilikSeti": 2
+      "notlar": []
     },
     {
       "w": 7,
@@ -586,13 +936,38 @@
       "bas": "2026-09-07",
       "bit": "2026-09-13",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 16,
       "faz": [
+        2,
         3
       ],
-      "konular": [],
-      "puan": 0,
+      "birincil": [
+        {
+          "id": "C1"
+        },
+        {
+          "id": "C2"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "M5",
+          "parcalar": [
+            1
+          ]
+        }
+      ],
+      "konular": [
+        "C1",
+        "C2",
+        "M5"
+      ],
+      "puan": 4,
+      "kumulatif": 16,
       "notlar": [
+        "Bilgisayar döndü — K16 gerekçesi bitti, C hattı kesintisiz başlıyor",
         "TFO temsilcilik görüşmesi"
       ]
     },
@@ -603,18 +978,37 @@
       "bas": "2026-09-14",
       "bit": "2026-09-20",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 12,
       "faz": [
-        3,
-        4
+        2,
+        3
+      ],
+      "birincil": [
+        {
+          "id": "C3",
+          "parcalar": [
+            1,
+            2
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "M5",
+          "parcalar": [
+            2
+          ]
+        }
       ],
       "konular": [
-        "A1"
+        "C3",
+        "M5"
       ],
-      "puan": 2,
-      "notlar": [
-        "A hattı başlar"
-      ]
+      "puan": 1,
+      "kumulatif": 17,
+      "notlar": []
     },
     {
       "w": 9,
@@ -623,15 +1017,46 @@
       "bas": "2026-09-21",
       "bit": "2026-09-27",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 16,
       "faz": [
-        3,
-        4
+        2,
+        3
+      ],
+      "birincil": [
+        {
+          "id": "C3",
+          "parcalar": [
+            3
+          ]
+        },
+        {
+          "id": "C7",
+          "parcalar": [
+            1
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "M5",
+          "parcalar": [
+            3
+          ]
+        },
+        {
+          "id": "M7"
+        }
       ],
       "konular": [
-        "C8"
+        "C3",
+        "C7",
+        "M5",
+        "M7"
       ],
-      "puan": 2,
+      "puan": 5,
+      "kumulatif": 22,
       "notlar": []
     },
     {
@@ -641,12 +1066,20 @@
       "bas": "2026-09-28",
       "bit": "2026-10-04",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "notlar": [],
-      "madencilikSeti": 3
+      "kumulatif": 22,
+      "slotNotu": "telafi",
+      "madencilikSeti": 2,
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 11,
@@ -655,18 +1088,39 @@
       "bas": "2026-10-05",
       "bit": "2026-10-11",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 16,
       "faz": [
-        4
+        2,
+        3,
+        5
+      ],
+      "birincil": [
+        {
+          "id": "C7",
+          "parcalar": [
+            2,
+            3
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "M8"
+        },
+        {
+          "id": "M9"
+        }
       ],
       "konular": [
-        "A2",
-        "A3"
+        "C7",
+        "M8",
+        "M9"
       ],
-      "puan": 3,
-      "notlar": [
-        "C9 3 puanlık, ağır hafta"
-      ]
+      "puan": 5,
+      "kumulatif": 27,
+      "notlar": []
     },
     {
       "w": 12,
@@ -675,15 +1129,36 @@
       "bas": "2026-10-12",
       "bit": "2026-10-18",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 12,
       "faz": [
-        4,
-        5
+        2,
+        10
+      ],
+      "birincil": [
+        {
+          "id": "C4"
+        },
+        {
+          "id": "C6"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "P2",
+          "parcalar": [
+            1
+          ]
+        }
       ],
       "konular": [
-        "C9"
+        "C4",
+        "C6",
+        "P2"
       ],
-      "puan": 3,
+      "puan": 2,
+      "kumulatif": 29,
       "notlar": []
     },
     {
@@ -693,16 +1168,39 @@
       "bas": "2026-10-19",
       "bit": "2026-10-25",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 12,
       "faz": [
-        4,
+        2,
         10
       ],
-      "konular": [
-        "C10"
+      "birincil": [
+        {
+          "id": "C5",
+          "parcalar": [
+            1,
+            2
+          ]
+        }
       ],
-      "puan": 2,
-      "notlar": []
+      "ikincil": [
+        {
+          "id": "P2",
+          "parcalar": [
+            2
+          ]
+        }
+      ],
+      "konular": [
+        "C5",
+        "P2"
+      ],
+      "puan": 3,
+      "kumulatif": 32,
+      "notlar": [
+        "M/P borcu kapandı — K21 uyarınca ikincil slot A hattına devrediliyor"
+      ]
     },
     {
       "w": 14,
@@ -711,13 +1209,21 @@
       "bas": "2026-10-26",
       "bit": "2026-11-01",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
+      "kumulatif": 32,
+      "slotNotu": "telafi",
+      "madencilikSeti": 3,
       "kapanis": "B1",
-      "notlar": [],
-      "madencilikSeti": 4
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 15,
@@ -726,18 +1232,38 @@
       "bas": "2026-11-02",
       "bit": "2026-11-08",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "okulSinavi",
+      "saat": 12,
+      "planlananSaat": 8,
       "faz": [
-        5,
-        10
+        2,
+        4
+      ],
+      "birincil": [
+        {
+          "id": "C5",
+          "parcalar": [
+            3
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A1",
+          "parcalar": [
+            1
+          ]
+        }
       ],
       "konular": [
-        "A21",
-        "L1"
+        "C5",
+        "A1"
       ],
-      "puan": 2,
+      "puan": 3,
+      "kumulatif": 35,
       "notlar": [
-        "AP kayıt kararı"
+        "Okul sınavları",
+        "A hattı açılıyor"
       ]
     },
     {
@@ -747,17 +1273,34 @@
       "bas": "2026-11-09",
       "bit": "2026-11-15",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "okulSinavi",
+      "saat": 12,
+      "planlananSaat": 12,
       "faz": [
-        5
+        4
+      ],
+      "birincil": [
+        {
+          "id": "C8"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A1",
+          "parcalar": [
+            2
+          ]
+        }
       ],
       "konular": [
-        "A4",
-        "A5",
-        "A6"
+        "C8",
+        "A1"
       ],
       "puan": 3,
-      "notlar": []
+      "kumulatif": 38,
+      "notlar": [
+        "Okul sınavları"
+      ]
     },
     {
       "w": 17,
@@ -766,16 +1309,37 @@
       "bas": "2026-11-16",
       "bit": "2026-11-22",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 16,
       "faz": [
-        6
+        4,
+        10
+      ],
+      "birincil": [
+        {
+          "id": "C9",
+          "parcalar": [
+            1,
+            2
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A2"
+        },
+        {
+          "id": "L1"
+        }
       ],
       "konular": [
-        "C11",
-        "C12",
-        "C13"
+        "C9",
+        "A2",
+        "L1"
       ],
       "puan": 4,
+      "kumulatif": 42,
       "notlar": []
     },
     {
@@ -785,12 +1349,22 @@
       "bas": "2026-11-23",
       "bit": "2026-11-29",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 16,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 1,
-      "notlar": []
+      "kumulatif": 42,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        1
+      ],
+      "notlar": [
+        "Saf telafi haftası — içinde bir Cumartesi oturumu"
+      ]
     },
     {
       "w": 19,
@@ -798,11 +1372,16 @@
       "blokIci": 5,
       "bas": "2026-11-30",
       "bit": "2026-12-06",
-      "tip": "tampon",
-      "saat": 7,
+      "tip": "uretken",
+      "haftaTipi": "tfo",
+      "saat": 6,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
+      "kumulatif": 42,
       "notlar": [
         "TFO ~6 Aralık — TÜBİTAK durur"
       ]
@@ -814,14 +1393,35 @@
       "bas": "2026-12-07",
       "bit": "2026-12-13",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 20,
       "faz": [
-        6
+        4
+      ],
+      "birincil": [
+        {
+          "id": "C9",
+          "parcalar": [
+            3
+          ]
+        },
+        {
+          "id": "C10"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A3"
+        }
       ],
       "konular": [
-        "C14"
+        "C9",
+        "C10",
+        "A3"
       ],
-      "puan": 3,
+      "puan": 5,
+      "kumulatif": 47,
       "notlar": []
     },
     {
@@ -831,19 +1431,33 @@
       "bas": "2026-12-14",
       "bit": "2026-12-20",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 8,
       "faz": [
         6,
-        10
+        7
+      ],
+      "birincil": [
+        {
+          "id": "C13"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A13",
+          "parcalar": [
+            1
+          ]
+        }
       ],
       "konular": [
-        "C21",
-        "L2"
+        "C13",
+        "A13"
       ],
-      "puan": 3,
-      "notlar": [
-        "C14 3 puanlık, ağır hafta"
-      ]
+      "puan": 2,
+      "kumulatif": 49,
+      "notlar": []
     },
     {
       "w": 22,
@@ -852,14 +1466,22 @@
       "bas": "2026-12-21",
       "bit": "2026-12-27",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 2,
+      "kumulatif": 49,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        2
+      ],
       "kapanis": "B2",
       "notlar": [
-        "S3: kesilen konular geri eklenecek mi"
+        "Saf telafi haftası"
       ]
     },
     {
@@ -869,14 +1491,36 @@
       "bas": "2026-12-28",
       "bit": "2027-01-03",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 12,
       "faz": [
-        6
+        6,
+        7
+      ],
+      "birincil": [
+        {
+          "id": "C14",
+          "parcalar": [
+            1,
+            2
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A13",
+          "parcalar": [
+            2
+          ]
+        }
       ],
       "konular": [
-        "C15"
+        "C14",
+        "A13"
       ],
       "puan": 3,
+      "kumulatif": 52,
       "notlar": []
     },
     {
@@ -886,14 +1530,32 @@
       "bas": "2027-01-04",
       "bit": "2027-01-10",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 12,
       "faz": [
-        6
+        6,
+        7
+      ],
+      "birincil": [
+        {
+          "id": "C14",
+          "parcalar": [
+            3
+          ]
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A14"
+        }
       ],
       "konular": [
-        "A7"
+        "C14",
+        "A14"
       ],
       "puan": 3,
+      "kumulatif": 55,
       "notlar": []
     },
     {
@@ -903,16 +1565,34 @@
       "bas": "2027-01-11",
       "bit": "2027-01-17",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "okulSinavi",
+      "saat": 12,
+      "planlananSaat": 12,
       "faz": [
-        7
+        6
+      ],
+      "birincil": [
+        {
+          "id": "C21"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A7",
+          "parcalar": [
+            1
+          ]
+        }
       ],
       "konular": [
-        "A13",
-        "A14"
+        "C21",
+        "A7"
       ],
-      "puan": 4,
-      "notlar": []
+      "puan": 2,
+      "kumulatif": 57,
+      "notlar": [
+        "Okul sınavları"
+      ]
     },
     {
       "w": 26,
@@ -921,12 +1601,23 @@
       "bas": "2027-01-18",
       "bit": "2027-01-24",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 3,
-      "notlar": []
+      "kumulatif": 57,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        3
+      ],
+      "kapi": true,
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 27,
@@ -935,19 +1626,35 @@
       "bas": "2027-01-25",
       "bit": "2027-01-31",
       "tip": "uretken",
-      "saat": 25,
+      "haftaTipi": "yariyil",
+      "saat": 21,
+      "planlananSaat": 20,
       "faz": [
-        7,
-        9
+        6
+      ],
+      "birincil": [
+        {
+          "id": "C15"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A7",
+          "parcalar": [
+            2,
+            3
+          ]
+        }
       ],
       "konular": [
-        "A24",
-        "A15"
+        "C15",
+        "A7"
       ],
-      "puan": 5,
+      "puan": 6,
+      "kumulatif": 63,
       "notlar": [
         "Yarıyıl tatili — yaz temposu",
-        "M13 3 puanlık"
+        "C hattı bitti"
       ]
     },
     {
@@ -957,17 +1664,32 @@
       "bas": "2027-02-01",
       "bit": "2027-02-07",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 20,
       "faz": [
+        7,
         9
       ],
+      "birincil": [
+        {
+          "id": "A24"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "A9"
+        }
+      ],
       "konular": [
-        "C16",
-        "A8",
+        "A24",
         "A9"
       ],
-      "puan": 4,
-      "notlar": []
+      "puan": 5,
+      "kumulatif": 68,
+      "notlar": [
+        "Birincil slot A hattına geçti"
+      ]
     },
     {
       "w": 29,
@@ -976,14 +1698,32 @@
       "bas": "2027-02-08",
       "bit": "2027-02-14",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 12,
       "faz": [
-        8
+        8,
+        10
+      ],
+      "birincil": [
+        {
+          "id": "A25"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "P1",
+          "parcalar": [
+            1
+          ]
+        }
       ],
       "konular": [
-        "A19"
+        "A25",
+        "P1"
       ],
-      "puan": 3,
+      "puan": 2,
+      "kumulatif": 70,
       "notlar": []
     },
     {
@@ -993,13 +1733,23 @@
       "bas": "2027-02-15",
       "bit": "2027-02-21",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 4,
+      "kumulatif": 70,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        4
+      ],
       "kapanis": "B3",
-      "notlar": []
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 31,
@@ -1008,19 +1758,34 @@
       "bas": "2027-02-22",
       "bit": "2027-02-28",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 12,
       "faz": [
         8,
         10
       ],
+      "birincil": [
+        {
+          "id": "A20"
+        }
+      ],
+      "ikincil": [
+        {
+          "id": "P1",
+          "parcalar": [
+            2
+          ]
+        }
+      ],
       "konular": [
-        "A25",
+        "A20",
         "P1"
       ],
       "puan": 4,
+      "kumulatif": 74,
       "notlar": [
-        "TYBS BAŞVURUSU",
-        "A11 3 puanlık"
+        "TYBS başvurusu"
       ]
     },
     {
@@ -1030,15 +1795,31 @@
       "bas": "2027-03-01",
       "bit": "2027-03-07",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "standart",
+      "saat": 11,
+      "planlananSaat": 12,
       "faz": [
         8
       ],
-      "konular": [
-        "A20",
-        "A26"
+      "birincil": [
+        {
+          "id": "A26"
+        }
       ],
-      "puan": 4,
+      "ikincil": [
+        {
+          "id": "A23",
+          "parcalar": [
+            1
+          ]
+        }
+      ],
+      "konular": [
+        "A26",
+        "A23"
+      ],
+      "puan": 2,
+      "kumulatif": 76,
       "notlar": []
     },
     {
@@ -1048,17 +1829,32 @@
       "bas": "2027-03-08",
       "bit": "2027-03-14",
       "tip": "uretken",
-      "saat": 15,
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 8,
       "faz": [
         8
       ],
+      "birincil": [
+        {
+          "id": "A23",
+          "parcalar": [
+            2,
+            3
+          ]
+        }
+      ],
+      "ikincil": [],
       "konular": [
         "A23"
       ],
       "puan": 3,
+      "kumulatif": 79,
       "notlar": [
-        "A14 3 puanlık, ağır hafta"
-      ]
+        "ÇEKİRDEK TAMAM — Tier B kapandı",
+        "Artan kapasite kuyruğa açılır"
+      ],
+      "slotNotu": "kuyruk"
     },
     {
       "w": 34,
@@ -1067,12 +1863,22 @@
       "bas": "2027-03-15",
       "bit": "2027-03-21",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 5,
-      "notlar": []
+      "kumulatif": 79,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        5
+      ],
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 35,
@@ -1081,19 +1887,20 @@
       "bas": "2027-03-22",
       "bit": "2027-03-28",
       "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        9
-      ],
-      "konular": [
-        "A10",
-        "A11",
-        "C20",
-        "A22"
-      ],
-      "puan": 4,
+      "haftaTipi": "okulSinavi",
+      "saat": 12,
+      "planlananSaat": 0,
+      "faz": [],
+      "birincil": [],
+      "ikincil": [],
+      "konular": [],
+      "puan": 3,
+      "kumulatif": 82,
+      "slotNotu": "kuyruk",
+      "puanTahmini": true,
       "notlar": [
-        "A19 3 puanlık"
+        "Okul sınavları",
+        "Geri çağırma penceresi açıldı — kuyruk sırasına göre"
       ]
     },
     {
@@ -1103,16 +1910,20 @@
       "bas": "2027-03-29",
       "bit": "2027-04-04",
       "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        9
-      ],
-      "konular": [
-        "M16",
-        "M15"
-      ],
-      "puan": 3,
-      "notlar": []
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 0,
+      "faz": [],
+      "birincil": [],
+      "ikincil": [],
+      "konular": [],
+      "puan": 4,
+      "kumulatif": 86,
+      "slotNotu": "kuyruk",
+      "puanTahmini": true,
+      "notlar": [
+        "Kuyruk"
+      ]
     },
     {
       "w": 37,
@@ -1121,17 +1932,20 @@
       "bas": "2027-04-05",
       "bit": "2027-04-11",
       "tip": "uretken",
-      "saat": 15,
-      "faz": [
-        10
-      ],
-      "konular": [
-        "P4",
-        "P3"
-      ],
+      "haftaTipi": "yogun",
+      "saat": 16,
+      "planlananSaat": 0,
+      "faz": [],
+      "birincil": [],
+      "ikincil": [],
+      "konular": [],
       "puan": 4,
+      "kumulatif": 90,
+      "slotNotu": "kuyruk",
+      "puanTahmini": true,
       "notlar": [
-        "SON YENİ KONU"
+        "Kuyruk",
+        "Son yeni konu haftası"
       ]
     },
     {
@@ -1141,13 +1955,23 @@
       "bas": "2027-04-12",
       "bit": "2027-04-18",
       "tip": "tampon",
-      "saat": 15,
+      "haftaTipi": "tampon",
+      "saat": 11,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 6,
+      "kumulatif": 90,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        6
+      ],
       "kapanis": "B4",
-      "notlar": []
+      "notlar": [
+        "Saf telafi haftası"
+      ]
     },
     {
       "w": 39,
@@ -1156,12 +1980,18 @@
       "bas": "2027-04-19",
       "bit": "2027-04-25",
       "tip": "tekrar",
+      "haftaTipi": "tekrar",
       "saat": 15,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
+      "kumulatif": 90,
+      "slotNotu": "telafi",
       "notlar": [
-        "M hattı tam tekrar — 20 konu, 35 puan"
+        "M hattı tam tekrar — çekirdekteki 9 konu"
       ]
     },
     {
@@ -1171,12 +2001,18 @@
       "bas": "2027-04-26",
       "bit": "2027-05-02",
       "tip": "tekrar",
+      "haftaTipi": "tekrar",
       "saat": 15,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
+      "kumulatif": 90,
+      "slotNotu": "telafi",
       "notlar": [
-        "C hattı tam tekrar — 19 konu, 36 puan"
+        "C hattı tam tekrar — çekirdekteki 15 konu"
       ]
     },
     {
@@ -1186,14 +2022,22 @@
       "bas": "2027-05-03",
       "bit": "2027-05-09",
       "tip": "tekrar",
+      "haftaTipi": "tekrar",
       "saat": 15,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
-      "deneme": 7,
+      "kumulatif": 90,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        7,
+        8
+      ],
       "notlar": [
-        "A hattı tam tekrar — 18 konu, 37 puan",
-        "Deneme 7 ve 8"
+        "A hattı tam tekrar — çekirdekteki 13 konu"
       ]
     },
     {
@@ -1203,15 +2047,24 @@
       "bas": "2027-05-10",
       "bit": "2027-05-16",
       "tip": "sinav",
+      "haftaTipi": "sinav",
       "saat": 15,
+      "planlananSaat": 0,
       "faz": [],
+      "birincil": [],
+      "ikincil": [],
       "konular": [],
       "puan": 0,
+      "kumulatif": 90,
+      "slotNotu": "telafi",
+      "tamDeneme": [
+        9
+      ],
       "notlar": [
         "Gün aşırı tam deneme",
-        "Yeni konu yok"
-      ],
-      "deneme": 9
+        "Yeni konu yok",
+        "Sınav 15 Mayıs"
+      ]
     }
   ],
   "konular": [
@@ -1222,7 +2075,7 @@
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1273,7 +2126,9 @@
           "Totoloji ve çelişki"
         ],
         "not": "10. sınıf MAT.10.3.2'de mantık bağlaçları algoritma bağlamında tekrar geçiyor."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 5
     },
     {
       "id": "M20",
@@ -1282,7 +2137,7 @@
       "puan": 2,
       "faz": 1,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": null,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -1335,7 +2190,24 @@
           "Fonksiyon sayma formülleri: m^n ve m!/(m−n)!"
         ],
         "not": "MEB kümeyi formel tanıma girmeden, gerçek sayı aralıkları bağlamında ele alıyor."
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Küme işlemleri ve kartezyen çarpım",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bitti"
+        },
+        {
+          "no": 2,
+          "ad": "Bağıntılar ve fonksiyon türleri",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bitti"
+        }
+      ]
     },
     {
       "id": "M22",
@@ -1344,7 +2216,7 @@
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1377,7 +2249,9 @@
       "mebKarsiligi": {
         "durum": "yok",
         "not": "Σ ve Π notasyonu 9–12 programında anahtar kavram olarak geçmiyor. 12. sınıf dizi toplamlarında dolaylı kullanılabilir ama konu olarak öğretilmiyor."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 5
     },
     {
       "id": "M1",
@@ -1386,7 +2260,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1422,7 +2296,9 @@
         "kazanim": "MAT.10.3.1",
         "dersSaati": 28,
         "not": "Toplama ve çarpma yoluyla sayma. El sıkışma problemi ve çokgende köşegen sayısı programda adı geçen örnekler."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 5
     },
     {
       "id": "M18",
@@ -1431,7 +2307,7 @@
       "puan": 1,
       "faz": 1,
       "blok": "B0",
-      "hafta": 3,
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -1476,7 +2352,9 @@
           "n bit ↔ değer aralığı ilişkisi (0..2^n−1)"
         ],
         "not": "MEB ikili sistemi bağımsız bir konu olarak değil, sadece sıralama gerektiren sayma problemleri bağlamında ele alıyor."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 5
     },
     {
       "id": "M2",
@@ -1485,7 +2363,7 @@
       "puan": 3,
       "faz": 3,
       "blok": "B0",
-      "hafta": 4,
+      "hafta": 5,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1536,7 +2414,36 @@
           "Belirli elemanların yan yana veya ayrı olması koşulları"
         ],
         "not": "Program P(n,r)'yi 'formel tanımlamaya girilmeden' ele alıyor."
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Basit permütasyon",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Tekrarlı permütasyon",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Dairesel permütasyon",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        5,
+        6
+      ],
+      "bitisHafta": 6
     },
     {
       "id": "M3",
@@ -1545,7 +2452,7 @@
       "puan": 2,
       "faz": 3,
       "blok": "B0",
-      "hafta": 4,
+      "hafta": 6,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1582,7 +2489,25 @@
         "kazanim": "MAT.10.3.1",
         "dersSaati": 28,
         "not": "Seçme sayısı ve Pascal üçgeni programda açıkça geçiyor (Ömer Hayyam bağlantısıyla). MEB formül ezberi yerine strateji anlamlandırmayı önceliyor."
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Kombinasyon ve binom katsayıları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Pascal üçgeni ve sıra ayrımı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 6
     },
     {
       "id": "M4",
@@ -1591,7 +2516,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 4,
+      "hafta": 6,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1640,7 +2565,9 @@
           "Çok terimli (multinomial) katsayı"
         ],
         "not": "Pascal üçgeni var ama binom açılımı programda yok."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 6
     },
     {
       "id": "M5",
@@ -1649,7 +2576,7 @@
       "puan": 3,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": 7,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1701,7 +2628,37 @@
           "x1+...+xk = n çözüm sayısı formülasyonu"
         ],
         "not": "Teknik programda var ama formül olarak verilmiyor."
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Temel yıldız-çubuk",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Üst sınırlı varyantlar",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Negatif olmayan tamsayı çözümleri",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        7,
+        8,
+        9
+      ],
+      "bitisHafta": 9
     },
     {
       "id": "M6",
@@ -1710,7 +2667,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -1746,7 +2703,8 @@
         "kazanim": "MAT.10.3.1",
         "dersSaati": 28,
         "not": "Programda adıyla geçiyor: 'güvercin yuvası ilkesinin kullanılabileceği sayma problemlerine yer verilir'."
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "M7",
@@ -1755,7 +2713,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": 9,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1789,7 +2747,9 @@
       "mebKarsiligi": {
         "durum": "yok",
         "not": "Küme işlemleri 9.1'de var ama dahil-hariç SAYMA ilkesi (formül) 9–12 programında geçmiyor."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 9
     },
     {
       "id": "M8",
@@ -1798,7 +2758,7 @@
       "puan": 1,
       "faz": 3,
       "blok": "B0",
-      "hafta": 5,
+      "hafta": 11,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1830,7 +2790,9 @@
       "mebKarsiligi": {
         "durum": "yok",
         "not": "Düzensizlik (derangement) 9–12 programında yok."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 11
     },
     {
       "id": "M9",
@@ -1839,7 +2801,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B0",
-      "hafta": 6,
+      "hafta": 11,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -1876,7 +2838,9 @@
         "kazanim": "MAT.10.7.1",
         "dersSaati": 18,
         "not": "Temel olasılık (örnek uzay, deneysel/teorik) 9. sınıf 7. Tema'da veriliyor ve 10.7'nin ön koşulu sayılıyor. Koşullu olasılık ve bağımlı/bağımsız olaylar 10.7.1'de."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 11
     },
     {
       "id": "M10",
@@ -1885,7 +2849,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B0",
-      "hafta": 6,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -1922,7 +2886,8 @@
         "kazanim": "MAT.10.7.2",
         "dersSaati": 18,
         "not": "Bayes teoremi temanın açık amacı. Zenginleştirmede Naive Bayes ve makine öğrenmesi bağlantısı da var."
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "M12",
@@ -1931,7 +2896,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B0",
-      "hafta": 6,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -1979,7 +2944,8 @@
           "Başlangıç koşullarını belirleme"
         ],
         "not": "Aritmetik/geometrik dizi aslında en basit yineleme bağıntısıdır ama MEB bunu 'recurrence' çerçevesiyle sunmuyor. Ayrıca 12. sınıf, sınavından bir buçuk yıl SONRA."
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "M15",
@@ -1988,7 +2954,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B4",
-      "hafta": 36,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2021,7 +2987,8 @@
       "mebKarsiligi": {
         "durum": "yok",
         "not": "Modüler aritmetik 9–12 programında yok."
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "M16",
@@ -2030,7 +2997,7 @@
       "puan": 2,
       "faz": 9,
       "blok": "B4",
-      "hafta": 36,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [],
@@ -2061,7 +3028,29 @@
       "mebKarsiligi": {
         "durum": "yok",
         "not": "Bölünebilme, EBOB/EKOK ve Öklid algoritması lise programında yok — ortaokul (6–8. sınıf) konusu."
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 3,
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Bölünebilme, EBOB/EKOK, Öklid",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Asal çarpanlara ayırma ve bölen sayısı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "C1",
@@ -2070,7 +3059,7 @@
       "puan": 1,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 7,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -2098,8 +3087,8 @@
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "bitisHafta": 7
     },
     {
       "id": "C2",
@@ -2108,7 +3097,7 @@
       "puan": 2,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 7,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2139,8 +3128,24 @@
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~8 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Öncelik sırası tablosu",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Birleşme yönü, ?: ve virgül operatörü",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 7
     },
     {
       "id": "C3",
@@ -2149,7 +3154,7 @@
       "puan": 3,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 8,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2182,8 +3187,35 @@
         "soru": "2025 Q39 (çoklu yan etki)",
         "sure": "~12 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "a++ vs ++a",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "İfade içi yan etkiler",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Tanımsız davranış tuzakları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        8,
+        9
+      ],
+      "bitisHafta": 9
     },
     {
       "id": "C7",
@@ -2192,7 +3224,7 @@
       "puan": 3,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 9,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2226,8 +3258,35 @@
         "soru": "2026 Q36 · 2025 Q40 · 2024 Q44",
         "sure": "~12 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "for/while takibi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "do-while",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "break/continue",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        9,
+        11
+      ],
+      "bitisHafta": 11
     },
     {
       "id": "C4",
@@ -2236,7 +3295,7 @@
       "puan": 1,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 12,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2267,8 +3326,8 @@
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "bitisHafta": 12
     },
     {
       "id": "C6",
@@ -2277,7 +3336,7 @@
       "puan": 1,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 12,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2309,8 +3368,8 @@
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "bitisHafta": 12
     },
     {
       "id": "C5",
@@ -2319,7 +3378,7 @@
       "puan": 3,
       "faz": 2,
       "blok": null,
-      "hafta": null,
+      "hafta": 13,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2355,8 +3414,35 @@
         "soru": "2026 Q35, Q44, Q50 · 2024 Q46",
         "sure": "~12 saat"
       },
-      "beklemede": true,
-      "beklemeNedeni": "K16 — bilgisayar erişimi yok, W6 kapanışında yerleştirilecek"
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Temel bit operatörleri",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Kaydırma",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Maskeleme kalıpları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        13,
+        15
+      ],
+      "bitisHafta": 15
     },
     {
       "id": "C8",
@@ -2365,7 +3451,7 @@
       "puan": 2,
       "faz": 4,
       "blok": "B1",
-      "hafta": 9,
+      "hafta": 16,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2394,7 +3480,25 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Dizi bildirimi ve bellekte ardışık yerleşim",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "sizeof, sınır dışı erişim, fonksiyona geçirme",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 16
     },
     {
       "id": "C9",
@@ -2403,7 +3507,7 @@
       "puan": 3,
       "faz": 4,
       "blok": "B1",
-      "hafta": 12,
+      "hafta": 17,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2433,7 +3537,36 @@
         },
         "soru": "2026 Q45 · 2025 Q43",
         "sure": "~12 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "& ve * — adres ve içerik",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Pointer aritmetiği ve tip boyutu",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "NULL, pointer'a pointer, void*",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        17,
+        20
+      ],
+      "bitisHafta": 20
     },
     {
       "id": "C10",
@@ -2442,7 +3575,7 @@
       "puan": 2,
       "faz": 4,
       "blok": "B1",
-      "hafta": 13,
+      "hafta": 20,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2470,7 +3603,25 @@
         },
         "soru": "2026 Q37",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "arr[i] ≡ *(arr+i) eşdeğerliği",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Array decay ve sizeof farkı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 20
     },
     {
       "id": "C11",
@@ -2479,7 +3630,7 @@
       "puan": 2,
       "faz": 6,
       "blok": "B2",
-      "hafta": 17,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2507,7 +3658,24 @@
         },
         "soru": "2026 Q43",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "kesildi",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Satır sıralı yerleşim ve a[i][j] ≡ *(*(a+i)+j)",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Pointer dizisi vs 2B dizi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ]
     },
     {
       "id": "C12",
@@ -2516,7 +3684,7 @@
       "puan": 1,
       "faz": 6,
       "blok": "B2",
-      "hafta": 17,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2545,7 +3713,13 @@
         },
         "soru": "2026 Q41",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 2,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "C13",
@@ -2554,7 +3728,7 @@
       "puan": 1,
       "faz": 6,
       "blok": "B2",
-      "hafta": 17,
+      "hafta": 21,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2583,7 +3757,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 21
     },
     {
       "id": "C14",
@@ -2592,7 +3768,7 @@
       "puan": 3,
       "faz": 6,
       "blok": "B2",
-      "hafta": 20,
+      "hafta": 23,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2622,7 +3798,36 @@
         },
         "soru": "2026 Q38, Q39, Q47 · 2024 Q40",
         "sure": "~12 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Taban durum ve özyinelemeli adım",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Çağrı yığını ve yığın çerçevesi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Çağrı ağacıyla adım adım izleme",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        23,
+        24
+      ],
+      "bitisHafta": 24
     },
     {
       "id": "C21",
@@ -2649,7 +3854,7 @@
       },
       "faz": 6,
       "blok": "B2",
-      "hafta": 21,
+      "hafta": 25,
       "calisma": {
         "video": {
           "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
@@ -2665,7 +3870,25 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Çoklu dallanma ve çağrı ağacı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Çağrı sayısı sayma, memoization etkisi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 25
     },
     {
       "id": "C15",
@@ -2674,7 +3897,7 @@
       "puan": 3,
       "faz": 6,
       "blok": "B3",
-      "hafta": 23,
+      "hafta": 27,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2703,7 +3926,32 @@
         },
         "soru": "2026 Q42 · 2025 Q45",
         "sure": "~12 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Ön işlem vs son işlem çıktısı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Çoklu özyinelemede çağrı sırası",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Fibonacci çağrı ağacı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 27
     },
     {
       "id": "C16",
@@ -2712,7 +3960,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B3",
-      "hafta": 28,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2741,7 +3989,8 @@
         },
         "soru": "2026 Q34",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "C20",
@@ -2750,7 +3999,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B4",
-      "hafta": 35,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2781,7 +4030,8 @@
         },
         "soru": "C bloğuna yayılmış tuzaklar",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "A1",
@@ -2790,7 +4040,7 @@
       "puan": 2,
       "faz": 4,
       "blok": "B1",
-      "hafta": 8,
+      "hafta": 15,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -2819,7 +4069,29 @@
         },
         "soru": "2026 Q9 · 2024 Q38",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Büyük O tanımı ve karmaşıklık sınıfları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "En iyi/ortalama/en kötü, döngüden karmaşıklık okuma",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        15,
+        16
+      ],
+      "bitisHafta": 16
     },
     {
       "id": "A2",
@@ -2828,7 +4100,7 @@
       "puan": 1,
       "faz": 4,
       "blok": "B1",
-      "hafta": 11,
+      "hafta": 17,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2860,7 +4132,9 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 17
     },
     {
       "id": "A3",
@@ -2869,7 +4143,7 @@
       "puan": 2,
       "faz": 4,
       "blok": "B1",
-      "hafta": 11,
+      "hafta": 20,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -2898,7 +4172,25 @@
         },
         "soru": "2026 Q20 (pancake sort)",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Kabarcık ve seçme sıralaması",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Ekleme sıralaması, kararlılık, karşılaştırma sayıları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 20
     },
     {
       "id": "A21",
@@ -2907,7 +4199,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B2",
-      "hafta": 15,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2934,7 +4226,8 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "A4",
@@ -2943,7 +4236,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B2",
-      "hafta": 16,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -2971,7 +4264,13 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 1,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "A5",
@@ -2980,7 +4279,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B2",
-      "hafta": 16,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3010,7 +4309,13 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 1,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "A6",
@@ -3019,7 +4324,7 @@
       "puan": 1,
       "faz": 5,
       "blok": "B2",
-      "hafta": 16,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3047,7 +4352,13 @@
         },
         "soru": "2025 Q29",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 1,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "A7",
@@ -3056,7 +4367,7 @@
       "puan": 3,
       "faz": 6,
       "blok": "B3",
-      "hafta": 24,
+      "hafta": 25,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3088,7 +4399,36 @@
         },
         "soru": "2026 Q16–17 (İKİLİ KÜME, yığın izleme)",
         "sure": "~12 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Stack — LIFO ve uygulamaları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Queue — FIFO ve dairesel kuyruk",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Dizi/bağlı liste ile gerçekleme, deque",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        25,
+        27
+      ],
+      "bitisHafta": 27
     },
     {
       "id": "A13",
@@ -3097,7 +4437,7 @@
       "puan": 2,
       "faz": 7,
       "blok": "B3",
-      "hafta": 25,
+      "hafta": 21,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [],
@@ -3127,7 +4467,29 @@
         },
         "soru": "2024 Q15 · 2025 Q35 · 2026 Q29",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Graf terminolojisi ve el sıkışma lemması",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Komşuluk matrisi, listesi, kenar listesi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        21,
+        23
+      ],
+      "bitisHafta": 23
     },
     {
       "id": "A14",
@@ -3136,7 +4498,7 @@
       "puan": 2,
       "faz": 7,
       "blok": "B3",
-      "hafta": 25,
+      "hafta": 24,
       "cekirdek": true,
       "kesilebilir": false,
       "onkosul": [
@@ -3167,7 +4529,25 @@
         },
         "soru": "2026 Q27",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "BFS — kuyruk, katman, en kısa yol",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "DFS — bileşen, döngü, iki parçalılık",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 24
     },
     {
       "id": "A15",
@@ -3176,7 +4556,7 @@
       "puan": 2,
       "faz": 7,
       "blok": "B3",
-      "hafta": 27,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3205,7 +4585,24 @@
         },
         "soru": "2026 Q26",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "kesildi",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Kahn algoritması (giren derece)",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "DFS tabanlı yöntem ve döngü kontrolü",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ]
     },
     {
       "id": "A24",
@@ -3234,7 +4631,7 @@
       },
       "faz": 7,
       "blok": "B3",
-      "hafta": 27,
+      "hafta": 28,
       "calisma": {
         "video": {
           "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
@@ -3250,7 +4647,32 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "DFS'in özyineli ve yığınlı yazımı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Keşif/bitiş zamanları ve parantez teoremi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Kenar sınıflandırma ve SCC",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 28
     },
     {
       "id": "A8",
@@ -3259,7 +4681,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B3",
-      "hafta": 28,
+      "hafta": 35,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3290,7 +4712,13 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 4,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "A9",
@@ -3329,7 +4757,25 @@
         },
         "soru": "2025 Q36 · 2024 Q36",
         "sure": "~8 saat"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Ağaç terminolojisi ve türleri",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Dolaşımlar: pre/in/post/level-order",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 28
     },
     {
       "id": "A19",
@@ -3338,7 +4784,7 @@
       "puan": 3,
       "faz": 8,
       "blok": "B3",
-      "hafta": 29,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3369,7 +4815,31 @@
         },
         "soru": "2024 Q27–29 (ÜÇLÜ KÜME, sıralama kuralı) · 2024 Q11, Q33, Q34 · 2025 Q8, Q30 · 2026 Q31",
         "sure": "~12 saat"
-      }
+      },
+      "tier": "kesildi",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Açgözlü seçim özelliği ve klasik doğru durumlar",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Değiş-tokuş argümanı ve sıralama kuralı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Karşı örnek bulma",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ]
     },
     {
       "id": "A25",
@@ -3398,7 +4868,7 @@
       },
       "faz": 8,
       "blok": "B4",
-      "hafta": 31,
+      "hafta": 29,
       "calisma": {
         "video": {
           "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
@@ -3414,7 +4884,25 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Frekans tablosundan Huffman ağacı",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Önek kodu ve ortalama kod uzunluğu",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 29
     },
     {
       "id": "A20",
@@ -3442,7 +4930,7 @@
       },
       "faz": 8,
       "blok": "B4",
-      "hafta": 32,
+      "hafta": 31,
       "calisma": {
         "video": {
           "kanal": "Şadi Evren Şeker · Bilgisayar Kavramları",
@@ -3458,7 +4946,25 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Optimal alt yapı ve tablo doldurma",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Klasik kalıplar: bağımsız toplam, geçiş, merdiven",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 31
     },
     {
       "id": "A26",
@@ -3501,7 +5007,25 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Memoization: özyineli fonksiyon + önbellek",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Çağrı sayısı ve O(n) gerekçesi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "bitisHafta": 32
     },
     {
       "id": "A23",
@@ -3530,7 +5054,7 @@
       },
       "faz": 8,
       "blok": "B4",
-      "hafta": 33,
+      "hafta": 32,
       "calisma": {
         "video": null,
         "kaynak": {
@@ -3542,7 +5066,36 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "«Hangisi gerekli DEĞİLDİR» soru tipi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Veri yapısı seçimi ve tek geçiş muhakemesi",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 3,
+          "ad": "Ön işleme + hızlı sorgu, sınır durumları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        32,
+        33
+      ],
+      "bitisHafta": 33
     },
     {
       "id": "A10",
@@ -3580,7 +5133,13 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 4,
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "A11",
@@ -3589,7 +5148,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B4",
-      "hafta": 35,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3620,7 +5179,8 @@
         },
         "soru": "Konu bitince 2000–2013 arşivinde bu konuyu tara",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "A22",
@@ -3629,7 +5189,7 @@
       "puan": 1,
       "faz": 9,
       "blok": "B4",
-      "hafta": 35,
+      "hafta": null,
       "cekirdek": false,
       "kesilebilir": true,
       "onkosul": [
@@ -3658,7 +5218,8 @@
         },
         "soru": "2024 Q17",
         "sure": "~4 saat"
-      }
+      },
+      "tier": "kesildi"
     },
     {
       "id": "P2",
@@ -3684,7 +5245,7 @@
       },
       "faz": 10,
       "blok": "B0",
-      "hafta": 6,
+      "hafta": 12,
       "calisma": {
         "video": {
           "kanal": "Tunç Kurt Matematik",
@@ -3700,7 +5261,29 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Doğrucu/yalancı ve tutarlılık",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Çıkarım kuralları ve «çıkarılamayan» sorusu",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        12,
+        13
+      ],
+      "bitisHafta": 13
     },
     {
       "id": "P1",
@@ -3728,7 +5311,7 @@
       },
       "faz": 10,
       "blok": "B4",
-      "hafta": 31,
+      "hafta": 29,
       "calisma": {
         "video": null,
         "kaynak": {
@@ -3740,7 +5323,29 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "B",
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Koşulları sembolleştirme ve karşıt ters",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Kısıt tablosu, vaka ağacı, soru tipleri",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "haftalar": [
+        29,
+        31
+      ],
+      "bitisHafta": 31
     },
     {
       "id": "P3",
@@ -3764,7 +5369,7 @@
       },
       "faz": 10,
       "blok": "B4",
-      "hafta": 37,
+      "hafta": 35,
       "calisma": {
         "video": null,
         "kaynak": {
@@ -3776,7 +5381,29 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 5,
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Kazanan/kaybeden konum ve Nim",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "Tartma, en kötü durum, adversaryal düşünme",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "P4",
@@ -3800,7 +5427,7 @@
       },
       "faz": 10,
       "blok": "B4",
-      "hafta": 37,
+      "hafta": 35,
       "calisma": {
         "video": null,
         "kaynak": {
@@ -3812,7 +5439,29 @@
       },
       "mebKarsiligi": {
         "durum": "yok"
-      }
+      },
+      "tier": "kuyruk",
+      "geriCagirmaSirasi": 5,
+      "parcalar": [
+        {
+          "no": 1,
+          "ad": "Zaman ızgarası ve öncelik kısıtları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        },
+        {
+          "no": 2,
+          "ad": "En erken/en geç konum, kapasite kısıtları",
+          "saat": 4,
+          "puan": 1,
+          "durum": "bekliyor"
+        }
+      ],
+      "pencere": [
+        35,
+        37
+      ]
     },
     {
       "id": "L1",
@@ -3836,7 +5485,7 @@
       },
       "faz": 10,
       "blok": "B2",
-      "hafta": 15,
+      "hafta": 17,
       "calisma": {
         "video": {
           "kanal": "Tunç Kurt Matematik",
@@ -3854,7 +5503,9 @@
         "durum": "tam",
         "sinif": 12,
         "not": "AYT müfredatında var; okul desteği mevcut."
-      }
+      },
+      "tier": "B",
+      "bitisHafta": 17
     },
     {
       "id": "L2",
@@ -3876,7 +5527,7 @@
       },
       "faz": 10,
       "blok": "B2",
-      "hafta": 21,
+      "hafta": null,
       "calisma": {
         "video": {
           "kanal": "Tunç Kurt Matematik",
@@ -3894,7 +5545,8 @@
         "durum": "tam",
         "sinif": 10,
         "not": "AYT müfredatında var; okul desteği mevcut."
-      }
+      },
+      "tier": "kesildi"
     }
   ],
   "cikarilanKonular": [
@@ -4007,16 +5659,15 @@
       "geriEklemeSirasi": 11
     }
   ],
-  "kesmeKurali": "Bir konu ancak ÜÇ koşulu birden sağlarsa kesilebilir: (1) çekirdek olmayacak, (2) hiçbir konunun ön koşulu olmayacak, (3) 150 soruluk ampirik tabanda frekansı 2'den az olacak. v4.3: kesme sırası programatik doğrulanıyor — bağımlısı olan konu listeye giremez.",
+  "kesmeKurali": "v4.6 (K26): kesme artık geri kalınca yapılan bir tepki değil, baştan verilmiş bir taahhüt. 4 yanlış 1 doğruyu götürdüğü için yarım bilinen konu bilinmeyenden kötüdür; 108 puanı yüzeysel gezmek 79 puanı sağlam bilmekten düşük net getirir. Tier B = 41 çekirdek konu / 79 puan. Kesilen 29 puan silinmedi, kuyruğa alındı (K18) ve W35–W37'de geri çağırma penceresi var.",
   "sonrakiKesmeSirasi": [
-    "L2",
-    "P4",
-    "P3",
-    "A22",
-    "A6",
-    "A11",
-    "C20",
-    "A4"
+    "A24",
+    "A25",
+    "A20",
+    "A26",
+    "A23",
+    "A9",
+    "P1"
   ],
   "kesmeDisiTutulan": [
     {
@@ -4031,83 +5682,597 @@
     }
   ],
   "haftalikIskelet": {
-    "yaz": [
+    "model": "K25 — hatlar paralel değil kademeli yürütülür",
+    "slotlar": [
       {
-        "gun": "Pazartesi",
-        "hat": "M",
-        "saat": 4
+        "haftaTipi": "yogun",
+        "saat": 16,
+        "birincil": 9,
+        "ikincil": 5,
+        "karma": 2
       },
       {
-        "gun": "Salı",
-        "hat": "C",
-        "saat": 4
+        "haftaTipi": "standart",
+        "saat": 11,
+        "birincil": 6,
+        "ikincil": 3,
+        "karma": 2
       },
       {
-        "gun": "Çarşamba",
-        "hat": "M",
-        "saat": 4
+        "haftaTipi": "okulSinavi",
+        "saat": 12,
+        "birincil": 6,
+        "ikincil": 4,
+        "karma": 2
       },
       {
-        "gun": "Perşembe",
-        "hat": "C",
-        "saat": 4
+        "haftaTipi": "yaz",
+        "saat": 21,
+        "birincil": 12,
+        "ikincil": 7,
+        "karma": 2
       },
       {
-        "gun": "Cuma",
-        "hat": "M",
-        "saat": 4,
-        "not": "B0'da A hattı yok"
+        "haftaTipi": "yariyil",
+        "saat": 21,
+        "birincil": 12,
+        "ikincil": 7,
+        "karma": 2
       },
       {
-        "gun": "Cumartesi",
-        "hat": "karma",
-        "saat": 5
-      },
-      {
-        "gun": "Pazar",
-        "hat": "izin",
-        "saat": 0
+        "haftaTipi": "tfo",
+        "saat": 6,
+        "birincil": 0,
+        "ikincil": 0,
+        "karma": 6
       }
     ],
-    "donem": [
-      {
-        "gun": "Pazartesi",
-        "hat": "M",
-        "saat": 2
-      },
-      {
-        "gun": "Salı",
-        "hat": "C",
-        "saat": 2
-      },
-      {
-        "gun": "Çarşamba",
-        "hat": "A",
-        "saat": 2
-      },
-      {
-        "gun": "Perşembe",
-        "hat": "M",
-        "saat": 2
-      },
-      {
-        "gun": "Cuma",
-        "hat": "C",
-        "saat": 2
-      },
-      {
-        "gun": "Cumartesi",
-        "hat": "karma",
-        "saat": 5
-      },
-      {
-        "gun": "Pazar",
-        "hat": "izin",
-        "saat": 0
-      }
-    ]
+    "birincilSlot": "C hattı; C bitince (~W27) A hattına devredilir",
+    "ikincilSlot": "Önce M/P borcu (32 sa, W7–W13), sonra A hattı (W15'ten itibaren)",
+    "karmaSlot": "K16'nın Cumartesi 30 dakikalık karma M seti — W7'de başlar",
+    "kritikYol": [
+      "C1",
+      "C2",
+      "C3",
+      "C7",
+      "C4",
+      "C6",
+      "C5",
+      "C8",
+      "A2",
+      "A3"
+    ],
+    "kritikYolSaat": 64,
+    "kritikYolNotu": "Tamamen seri — hiçbir halkası paralelleştirilemez; A hattının tamamı bunun ucunda asılı."
   },
-  "denemeler": [],
+  "denemeler": [
+    {
+      "no": 1,
+      "tip": "madencilik",
+      "hafta": 6,
+      "tarih": "2026-08-31",
+      "bitis": "2026-09-06",
+      "sinavDk": 45,
+      "analizDk": 45,
+      "toplamSaat": 1.5,
+      "soru": 15,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2"
+      ],
+      "not_": "Madencilik seti — deneme değil, rezerv tüketmez (K17). Bitirilmiş konulardan."
+    },
+    {
+      "no": 2,
+      "tip": "madencilik",
+      "hafta": 10,
+      "tarih": "2026-09-28",
+      "bitis": "2026-10-04",
+      "sinavDk": 45,
+      "analizDk": 45,
+      "toplamSaat": 1.5,
+      "soru": 15,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7"
+      ],
+      "not_": "Madencilik seti — deneme değil, rezerv tüketmez (K17). Bitirilmiş konulardan."
+    },
+    {
+      "no": 3,
+      "tip": "madencilik",
+      "hafta": 14,
+      "tarih": "2026-10-26",
+      "bitis": "2026-11-01",
+      "sinavDk": 45,
+      "analizDk": 45,
+      "toplamSaat": 1.5,
+      "soru": 15,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5"
+      ],
+      "not_": "Madencilik seti — deneme değil, rezerv tüketmez (K17). Bitirilmiş konulardan."
+    },
+    {
+      "no": 1,
+      "tip": "tam",
+      "hafta": 18,
+      "tarih": "2026-11-23",
+      "bitis": "2026-11-29",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 2,
+      "tip": "tam",
+      "hafta": 22,
+      "tarih": "2026-12-21",
+      "bitis": "2026-12-27",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 3,
+      "tip": "tam",
+      "hafta": 26,
+      "tarih": "2027-01-18",
+      "bitis": "2027-01-24",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 4,
+      "tip": "tam",
+      "hafta": 30,
+      "tarih": "2027-02-15",
+      "bitis": "2027-02-21",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 5,
+      "tip": "tam",
+      "hafta": 34,
+      "tarih": "2027-03-15",
+      "bitis": "2027-03-21",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1",
+        "A20",
+        "A26",
+        "A23"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 6,
+      "tip": "tam",
+      "hafta": 38,
+      "tarih": "2027-04-12",
+      "bitis": "2027-04-18",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1",
+        "A20",
+        "A26",
+        "A23"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 7,
+      "tip": "tam",
+      "hafta": 41,
+      "tarih": "2027-05-03",
+      "bitis": "2027-05-09",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1",
+        "A20",
+        "A26",
+        "A23"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 8,
+      "tip": "tam",
+      "hafta": 41,
+      "tarih": "2027-05-03",
+      "bitis": "2027-05-09",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1",
+        "A20",
+        "A26",
+        "A23"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    },
+    {
+      "no": 9,
+      "tip": "tam",
+      "hafta": 42,
+      "tarih": "2027-05-10",
+      "bitis": "2027-05-16",
+      "sinavDk": 150,
+      "analizDk": 90,
+      "toplamSaat": 4,
+      "soru": 50,
+      "hedefKonular": [
+        "M19",
+        "M22",
+        "M1",
+        "M18",
+        "M2",
+        "M3",
+        "M4",
+        "C1",
+        "C2",
+        "M5",
+        "C3",
+        "C7",
+        "M7",
+        "M8",
+        "M9",
+        "C4",
+        "C6",
+        "P2",
+        "C5",
+        "A1",
+        "C8",
+        "C9",
+        "A2",
+        "L1",
+        "C10",
+        "A3",
+        "C13",
+        "A13",
+        "C14",
+        "A14",
+        "C21",
+        "A7",
+        "C15",
+        "A24",
+        "A9",
+        "A25",
+        "P1",
+        "A20",
+        "A26",
+        "A23"
+      ],
+      "not_": "Tam koşullu deneme — tek oturum, hesap makinesi ve karalama kâğıdı yok."
+    }
+  ],
   "kaynakKatalogu": [
     {
       "id": "OZDEMIR2",
@@ -4272,5 +6437,22 @@
       "tercih": 2,
       "not_": "Üniversite ders kayıtları. Konu adıyla ara: \"veri yapıları [konu] konu anlatımı\"."
     }
-  ]
+  ],
+  "tierler": {
+    "B": {
+      "ad": "Çekirdek — taahhüt kapsamı",
+      "konu": 41,
+      "puan": 79
+    },
+    "kuyruk": {
+      "ad": "Kuyruk — W35–W37 geri çağırma penceresi",
+      "konu": 9,
+      "puan": 12
+    },
+    "kesildi": {
+      "ad": "Bu sezon çalışılmıyor",
+      "konu": 13,
+      "puan": 17
+    }
+  }
 }
