@@ -48,6 +48,31 @@
           <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6E6A63">Borç</div>
           <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#0F2540;margin-top:4px">{{ borc.metin }}</div>
         </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6E6A63">Bu hafta</div>
+          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#0F2540;margin-top:4px">{{ kapsam.haftaTipi }}</div>
+        </div>
+      </div>
+
+      <div style="padding:26px 0;border-bottom:1px solid #DCD7CE">
+        <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
+          <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20">Kapsam taahhüdü</div>
+          <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:#0F2540">{{ kapsam.baslik }}</div>
+        </div>
+        <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px">
+          <sc-for list="{{ kapsam.satirlar }}" as="t" hint-placeholder-count="3">
+            <div style="border-left:3px solid {{ t.renk }};padding-left:12px">
+              <div style="font-size:13px;color:{{ t.renk }};letter-spacing:0.09em;text-transform:uppercase">{{ t.ad }}</div>
+              <div style="font-size:18px;color:#2B2F36;margin-top:3px">{{ t.deger }}</div>
+              <div style="font-size:14px;color:#6E6A63;margin-top:3px">{{ t.not }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ kapi.var }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:18px;font-size:16px;color:{{ kapi.renk }}">
+            <span style="letter-spacing:0.09em;text-transform:uppercase;font-size:13px">{{ kapi.metin }}</span> — {{ kapi.durum }}
+          </div>
+        </sc-if>
       </div>
 
       <div style="padding:36px 0 44px;border-bottom:1px solid #DCD7CE">
@@ -67,8 +92,10 @@
           <sc-for list="{{ kuyrukListe }}" as="k" hint-placeholder-count="8">
             <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;padding:8px 0;{{ k.stil }}" title="{{ k.kilitNot }}">
               <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
-              <span style="flex:1;font-size:19px">{{ k.ad }}</span>
-              <span style="font-size:14px;color:#7A2E20">{{ k.kilitNot }}</span>
+              <span style="flex:1;min-width:0;font-size:19px">{{ k.ad }}</span>
+              <span style="font-size:14px;color:#7A2E20;white-space:nowrap">{{ k.kilitNot }}</span>
+              <span style="font-size:12px;color:{{ k.tierRenk }};letter-spacing:0.09em;text-transform:uppercase">{{ k.tierAd }}</span>
+              <span style="font-size:14px;color:#6E6A63">{{ k.parcaEtiket }}</span>
               <span style="font-size:14px;color:#a39d90">{{ k.haftaEtiket }}</span>
               <span style="font-size:15px;color:#6E6A63;width:32px;text-align:right">{{ k.puan }}p</span>
             </button>
@@ -80,7 +107,7 @@
       </div>
 
       <div style="padding:44px 0 0">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Beş hattın ilerlemesi</div>
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#7A2E20;margin-bottom:18px">Beş hattın ilerlemesi <span style="text-transform:none;letter-spacing:0;font-style:italic;color:#a39d90">— payda hattın çekirdeği</span></div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px">
           <sc-for list="{{ durum.hatlar }}" as="h" hint-placeholder-count="5">
             <div>
@@ -92,6 +119,7 @@
                 <div style="position:absolute;left:0;top:0;bottom:0;width:{{ h.yuzde }};background:{{ h.renk }}"></div>
               </div>
               <div style="margin-top:7px;font-size:14px;color:#6E6A63">{{ h.ad }}</div>
+              <div style="font-size:13px;color:#a39d90">{{ h.disi }}</div>
             </div>
           </sc-for>
         </div>
@@ -107,6 +135,11 @@
         </sc-for>
         <div style="flex:1;min-width:180px"><input value="{{ ara }}" onInput="{{ araSet }}" placeholder="ara" /></div>
       </div>
+      <div style="margin-top:12px;display:flex;gap:18px;flex-wrap:wrap;align-items:baseline">
+        <sc-for list="{{ tierFiltre }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.tikla }}" style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:{{ f.renk }};border-bottom:1px solid {{ f.alt }};padding-bottom:2px">{{ f.ad }}</button>
+        </sc-for>
+      </div>
       <div style="margin-top:10px;font-size:15px;color:#6E6A63">{{ konuOzet }}</div>
 
       <div style="margin-top:26px">
@@ -116,8 +149,10 @@
               <button onClick="{{ k.isaretle }}" style="font-family:'Libre Baskerville',Georgia,serif;font-size:17px;color:{{ k.tikRenk }};width:22px">{{ k.tik }}</button>
               <button onClick="{{ k.tikla }}" style="flex:1;display:flex;gap:16px;align-items:baseline;opacity:{{ k.op }}">
                 <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
-                <span style="flex:1;text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
-                <span style="font-size:14px;color:#7A2E20">{{ k.kilitNotu }}</span>
+                <span style="flex:1;min-width:0;text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
+                <span style="font-size:14px;color:#7A2E20;white-space:nowrap">{{ k.kilitNotu }}</span>
+                <span style="font-size:12px;color:{{ k.tierRenk }};letter-spacing:0.09em;text-transform:uppercase;width:64px;text-align:right">{{ k.tierAd }}</span>
+                <span style="font-size:14px;color:#6E6A63;width:34px;text-align:right">{{ k.parcaEtiket }}</span>
                 <span style="font-size:15px;color:#6E6A63;width:38px;text-align:right">{{ k.puan }}p</span>
                 <span style="font-size:14px;color:#a39d90;width:76px;text-align:right">{{ k.hafta }}</span>
               </button>
@@ -139,6 +174,22 @@
                   <div style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#6E6A63">Süre</div>
                   <div>{{ k.sure }}</div>
                 </div>
+
+                <sc-if value="{{ k.parcaliMi }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:24px;border-top:1px solid #EFECE6;padding-top:14px">
+                    <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7A2E20">Parçalar <span style="text-transform:none;letter-spacing:0;font-style:italic;color:#a39d90">— {{ k.parcaBaslik }}</span></div>
+                    <div style="margin-top:10px;display:flex;flex-direction:column;gap:1px">
+                      <sc-for list="{{ k.parcalar }}" as="pr" hint-placeholder-count="3">
+                        <button onClick="{{ pr.isaretle }}" style="display:flex;gap:14px;align-items:baseline;padding:7px 0;opacity:{{ pr.op }}">
+                          <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:16px;color:{{ pr.tikRenk }};width:22px">{{ pr.tik }}</span>
+                          <span style="font-size:14px;color:#a39d90;width:26px">{{ pr.no }}</span>
+                          <span style="flex:1;font-size:18px;text-decoration:{{ pr.cizgi }}">{{ pr.ad }}</span>
+                          <span style="font-size:15px;color:#6E6A63">{{ pr.saat }} sa</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
 
                 <div style="margin-top:22px;display:flex;flex-direction:column;gap:2px">
                   <sc-for list="{{ k.katlar }}" as="c" hint-placeholder-count="3">
@@ -166,11 +217,12 @@
 
   <sc-if value="{{ ekranTakvim }}" hint-placeholder-val="{{ false }}">
     <div style="padding-top:40px">
-      <div style="font-size:15px;color:#6E6A63">42 hafta · 6 blok · 27 üretken hafta. Taralı haftalar tampon, • işaretli haftalarda deneme var.</div>
+      <div style="font-size:15px;color:#6E6A63;max-width:46em">{{ takvimOzet }}</div>
       <div style="margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:6px">
         <sc-for list="{{ takvim }}" as="w" hint-placeholder-count="42">
-          <button onClick="{{ w.tikla }}" style="height:62px;padding:7px 8px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid {{ w.kenar }};background:{{ w.arka }};color:{{ w.yazi }}">
+          <button onClick="{{ w.tikla }}" style="height:66px;padding:7px 8px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid {{ w.kenar }};background:{{ w.arka }};color:{{ w.yazi }}">
             <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px">{{ w.no }}</span>
+            <span style="font-size:12px;opacity:0.62">{{ w.saat }}</span>
             <span style="font-size:13px;letter-spacing:0.04em">{{ w.isaret }}</span>
           </button>
         </sc-for>
@@ -178,15 +230,39 @@
       <div style="margin-top:34px;border-top:1px solid #DCD7CE;padding-top:24px">
         <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:#0F2540">{{ haftaDetay.baslik }}</div>
         <div style="font-size:18px;color:#6E6A63;margin-top:4px">{{ haftaDetay.meta }}</div>
-        <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
-          <sc-for list="{{ haftaDetay.konular }}" as="k" hint-placeholder-count="2">
-            <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;opacity:{{ k.op }}">
-              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
-              <span style="text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
-              <span style="font-size:15px;color:#6E6A63">{{ k.puan }}p</span>
-            </button>
-          </sc-for>
-        </div>
+        <sc-if value="{{ haftaDetay.birincilVar }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:22px">
+            <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7A2E20;margin-bottom:8px">Birincil slot</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ haftaDetay.birincil }}" as="k" hint-placeholder-count="2">
+                <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;opacity:{{ k.op }}">
+                  <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
+                  <span style="text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
+                  <span style="font-size:15px;color:#a39d90">{{ k.parca }}</span>
+                  <span style="font-size:15px;color:#6E6A63">{{ k.saat }}</span>
+                </button>
+                <div style="font-size:15px;color:#6E6A63;margin:-4px 0 0 60px;font-style:italic">{{ k.parcaAd }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ haftaDetay.ikincilVar }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:20px">
+            <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#6E6A63;margin-bottom:8px">İkincil slot</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ haftaDetay.ikincil }}" as="k" hint-placeholder-count="2">
+                <button onClick="{{ k.tikla }}" style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;opacity:{{ k.op }}">
+                  <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;width:46px;color:{{ k.renk }}">{{ k.id }}</span>
+                  <span style="text-decoration:{{ k.cizgi }}">{{ k.ad }}</span>
+                  <span style="font-size:15px;color:#a39d90">{{ k.parca }}</span>
+                  <span style="font-size:15px;color:#6E6A63">{{ k.saat }}</span>
+                </button>
+                <div style="font-size:15px;color:#6E6A63;margin:-4px 0 0 60px;font-style:italic">{{ k.parcaAd }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <div style="margin-top:16px;font-size:17px;color:#6E6A63;font-style:italic">{{ haftaDetay.slotNotu }}</div>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px">
           <sc-for list="{{ haftaDetay.notlar }}" as="n" hint-placeholder-count="0">
             <div style="font-size:17px;color:#7A2E20;font-style:italic">{{ n }}</div>
@@ -201,14 +277,14 @@
 
   <sc-if value="{{ ekranDenemeler }}" hint-placeholder-val="{{ false }}">
     <div style="padding-top:40px">
-      <div style="font-size:15px;color:#6E6A63;max-width:40em">4 haftada bir, tampon haftasında, baştan itibaren. 50 soru · 150 dakika tek oturum · hesap makinesi ve karalama kâğıdı yok. İlk denemelerde puan önemsiz; süre ölçümü puandan önemlidir.</div>
+      <div style="font-size:15px;color:#6E6A63;max-width:44em">{{ denemeOzet }} İlk denemelerde puan önemsiz; süre ölçümü puandan önemlidir.</div>
 
       <div style="margin-top:34px;padding-top:18px;border-top:1px solid #EFECE6">
         <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#a39d90;margin-bottom:12px">Madencilik setleri <span style="font-style:italic">(deneme değil — rezerv tüketmez)</span></div>
         <sc-for list="{{ madencilikListe }}" as="m" hint-placeholder-count="4">
           <div style="display:flex;gap:16px;align-items:baseline;padding:8px 0;flex-wrap:wrap">
             <span style="font-size:15px;color:#a39d90;width:110px">Set #{{ m.no }} · W{{ m.w }}</span>
-            <span style="font-size:15px;color:#6E6A63;flex:1;min-width:160px">{{ m.tarih }} · {{ m.soru }} soru / {{ m.dk }} dk</span>
+            <span style="font-size:15px;color:#6E6A63;flex:1;min-width:160px">{{ m.tarih }} · {{ m.soru }} soru · {{ m.dk }} dk</span>
             <input value="{{ m.net }}" onInput="{{ m.netSet }}" placeholder="net" style="width:70px" />
           </div>
           <div style="font-size:13px;color:#a39d90;margin:-4px 0 6px">Kapsam: {{ m.kapsam }}</div>
@@ -223,6 +299,8 @@
               <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:16px;width:38px;color:#7A2E20">#{{ d.no }}</span>
               <span style="width:56px;font-size:16px;color:#6E6A63">W{{ d.w }}</span>
               <span style="flex:1;font-size:17px;color:#6E6A63">{{ d.tarih }}</span>
+              <span style="font-size:15px;color:#a39d90">{{ d.kapsam }}</span>
+              <span style="font-size:15px;color:#a39d90">{{ d.maliyet }}</span>
               <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:#0F2540">{{ d.net }}</span>
             </button>
             <sc-if value="{{ d.acik }}" hint-placeholder-val="{{ false }}">
@@ -340,10 +418,24 @@ const HAT_RENK = { M: '#1F4B8E', C: '#7A2E20', A: '#14563F', P: '#56276B', L: '#
 const AY = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
 const DEPO = 'tubitak.tracker.v1';
 const TIP_AD = { uretken: 'üretken hafta', tampon: 'tampon hafta', tekrar: 'tekrar haftası', sinav: 'sınav haftası', devredildi: 'devredildi — tamamlanmadı' };
+// v4.6 · K23 — sabit saat modeli
+const HTIP_AD = {
+  yaz: 'yaz — 21 sa', yogun: 'yoğun — 16 sa', standart: 'standart — 11 sa',
+  okulSinavi: 'okul sınavı — 12 sa', yariyil: 'yarıyıl tatili — 21 sa', tfo: 'TFO — 6 sa',
+  tampon: 'tampon — telafi', tekrar: 'tekrar', sinav: 'sınav', devredildi: 'devredildi'
+};
+// v4.6 · K26 — kapsam taahhüdü
+const TIER_AD = { B: 'Çekirdek', kuyruk: 'Kuyruk', kesildi: 'Kesildi' };
+const TIER_RENK = { B: '#14563F', kuyruk: '#7C5310', kesildi: '#a39d90' };
+const TIER_ACIK = {
+  B: 'Tier B — taahhüt kapsamı, asla kesilmez',
+  kuyruk: 'Kuyruk — W35–W37 geri çağırma penceresinde sıraya göre alınır',
+  kesildi: 'Bu sezon çalışılmıyor (K26)'
+};
 
 class Component extends DCLogic {
   state = {
-    plan: null, metin: null, ekran: 'ana', hat: '*', ara: '',
+    plan: null, metin: null, ekran: 'ana', hat: '*', tier: '*', ara: '',
     acikKonu: null, acikKat: {}, secilenHafta: null, acikDeneme: null,
     acikKarar: {}, acikBolum: {}, tamam: [], skor: {}, madSkor: {}, aktarNot: '',
     kuyrukSinir: 8
@@ -352,15 +444,33 @@ class Component extends DCLogic {
   componentDidMount() {
     const ilk = this.props.varsayilanEkran;
     if (ilk && ilk !== 'ana') this.setState({ ekran: ilk });
+    let kayitVar = false;
     try {
       const kayit = JSON.parse(localStorage.getItem(DEPO) || '{}');
-      if (kayit.tamam || kayit.skor || kayit.madSkor) this.setState({ tamam: kayit.tamam || [], skor: kayit.skor || {}, madSkor: kayit.madSkor || {} });
+      if (kayit.tamam || kayit.skor || kayit.madSkor) {
+        kayitVar = true;
+        this.setState({ tamam: kayit.tamam || [], skor: kayit.skor || {}, madSkor: kayit.madSkor || {} });
+      }
     } catch (e) {}
     Promise.all([
       fetch('plan.json').then(r => r.json()),
       fetch('metin.json').then(r => r.json())
-    ]).then(([plan, metin]) => this.setState({ plan, metin }))
-      .catch(e => console.error('veri yüklenemedi', e));
+    ]).then(([plan, metin]) => {
+      this.setState({ plan, metin });
+      // Bu tarayıcıda hiç kayıt yoksa planın durum panelindeki tamamlananları başlangıç kabul et
+      if (!kayitVar) {
+        const bitmis = ((plan.durum || {}).tamamlananKonu) || [];
+        if (bitmis.length) {
+          const t = [];
+          bitmis.forEach(id => {
+            t.push(id);
+            const k = plan.konular.find(x => x.id === id);
+            if (k && k.parcalar) k.parcalar.forEach(pr => t.push(id + '#' + pr.no));
+          });
+          this.kaydet({ tamam: t });
+        }
+      }
+    }).catch(e => console.error('veri yüklenemedi', e));
   }
 
   kaydet(y) {
@@ -387,16 +497,77 @@ class Component extends DCLogic {
     this.setState({ ekran: 'konular', hat: '*', ara: '', acikKonu: this.state.acikKonu === id ? null : id });
   }
 
+  /* --------------------------------------------------------- K24: parça bazlı ilerleme
+     `tamam` hem konu ID'si ("M2") hem parça anahtarı ("M2#1") tutar. Bir konu ya doğrudan
+     işaretlenmiştir ya da bütün parçaları işaretlenmiştir. Dışa/içe aktarım formatı değişmedi. */
+  parcaAnahtar(id, no) { return id + '#' + no; }
+
+  parcali(k) { return !!(k.parcalar && k.parcalar.length); }
+
+  bitenParca(k) {
+    if (!this.parcali(k)) return 0;
+    if (this.state.tamam.indexOf(k.id) >= 0) return k.parcalar.length;
+    return k.parcalar.filter(p => this.state.tamam.indexOf(this.parcaAnahtar(k.id, p.no)) >= 0).length;
+  }
+
+  konuBitti(k) {
+    if (this.state.tamam.indexOf(k.id) >= 0) return true;
+    return this.parcali(k) && this.bitenParca(k) === k.parcalar.length;
+  }
+
+  bittiId(id) {
+    const k = this.state.plan ? this.state.plan.konular.find(x => x.id === id) : null;
+    return k ? this.konuBitti(k) : this.state.tamam.indexOf(id) >= 0;
+  }
+
+  // Kazanılan puan — parçalı konularda kesirli olabilir (v4.6 §4)
+  konuPuani(k) {
+    if (this.konuBitti(k)) return k.puan;
+    if (!this.parcali(k)) return 0;
+    return k.puan * this.bitenParca(k) / k.parcalar.length;
+  }
+
   isaretle(id) {
-    const t = this.state.tamam.slice(), i = t.indexOf(id);
-    if (i < 0) t.push(id); else t.splice(i, 1);
+    const k = this.state.plan.konular.find(x => x.id === id);
+    const bitti = k ? this.konuBitti(k) : this.state.tamam.indexOf(id) >= 0;
+    let t = this.state.tamam.filter(x => x !== id && x.indexOf(id + '#') !== 0);
+    if (!bitti) {
+      t.push(id);
+      if (k && this.parcali(k)) k.parcalar.forEach(p => t.push(this.parcaAnahtar(id, p.no)));
+    }
+    this.kaydet({ tamam: t });
+  }
+
+  parcaIsaretle(k, no) {
+    const anahtar = this.parcaAnahtar(k.id, no);
+    const acik = this.state.tamam.indexOf(k.id) >= 0;
+    // Konu toptan işaretliyse önce parçalara aç, sonra tek parçayı geri al
+    let t = this.state.tamam.slice();
+    if (acik) {
+      t = t.filter(x => x !== k.id);
+      k.parcalar.forEach(p => { if (t.indexOf(this.parcaAnahtar(k.id, p.no)) < 0) t.push(this.parcaAnahtar(k.id, p.no)); });
+    }
+    const i = t.indexOf(anahtar);
+    if (i < 0) t.push(anahtar); else t.splice(i, 1);
+    // Bütün parçalar bittiyse konuyu da işaretle
+    const hepsi = k.parcalar.every(p => t.indexOf(this.parcaAnahtar(k.id, p.no)) >= 0);
+    const j = t.indexOf(k.id);
+    if (hepsi && j < 0) t.push(k.id);
+    if (!hepsi && j >= 0) t.splice(t.indexOf(k.id), 1);
     this.kaydet({ tamam: t });
   }
 
   uyarilar(k) {
-    const t = this.state.tamam, out = [];
-    const eksik = (k.onkosul || []).filter(o => t.indexOf(o) < 0);
+    const out = [];
+    const eksik = this.eksikOnkosulId(k);
     if (eksik.length) out.push('Ön koşul tamamlanmadı: ' + eksik.join(', '));
+    const disi = this.kapsamDisiOnkosul(k);
+    if (disi.length) {
+      const km = {}; this.state.plan.konular.forEach(x => { km[x.id] = x; });
+      out.push('⚠ Kapsam dışı ön koşul: ' + disi.map(o => o + ' (' + TIER_AD[km[o].tier] + ', ' +
+        km[o].puan + 'p)').join(', ') + '. Kilitlemiyor ama bir karar bekliyor: ön koşulu geri al, ' +
+        'bu konuyu ön koşulsuz çalış, ya da bu konuyu da kes. (S11 · meta.kapsamDisiOnkosul)');
+    }
     const gruplar = [
       { t: 'fonksiyon', ids: ['M20', 'C13'], n: 'M20 matematiksel fonksiyon, C13 C alt programı — ilgisiz.' },
       { t: 'ikili', ids: ['M18', 'A2', 'A10'], n: 'M18 taban 2, A2 ikili arama (algoritma), A10 ikili arama ağacı (veri yapısı).' },
@@ -483,52 +654,73 @@ class Component extends DCLogic {
 
   /* --------------------------------------------------------- K18: puan-öncelikli */
   durumu(k) {
-    if (this.state.tamam.indexOf(k.id) >= 0) return 'bitti';
-    if (k.hafta == null) return 'bekliyor';
-    const w = this.state.plan.haftalar.find(w => w.w === k.hafta);
+    if (this.konuBitti(k)) return 'bitti';
+    if (k.tier === 'kesildi') return 'kesildi';
+    // Bitiş haftası geçtiyse konu devredilmiştir — parçalı konularda son parçanın haftası sayılır
+    const son = k.bitisHafta == null ? k.hafta : k.bitisHafta;
+    if (son == null) return 'bekliyor';
+    const w = this.state.plan.haftalar.find(w => w.w === son);
     if (w && this.bugun() > w.bit) return 'devredilen';
     return 'bekliyor';
   }
 
+  // Ön koşul kendi kapsamının dışındaysa (ör. çekirdek konunun kesilmiş ön koşulu) kilit değil uyarı
+  // olur — yoksa çekirdekteki beş konu hiç açılamazdı. Bkz. meta.kapsamDisiOnkosul / S11.
+  tierSira(t) { return t === 'B' ? 0 : (t === 'kuyruk' ? 1 : 2); }
+
+  kapsamIci(k, o) {
+    const ok = this.state.plan.konular.find(x => x.id === o);
+    return !ok || this.tierSira(ok.tier) <= this.tierSira(k.tier);
+  }
+
+  kapsamDisiOnkosul(k) {
+    return (k.onkosul || []).filter(o => !this.kapsamIci(k, o) && !this.bittiId(o));
+  }
+
   hazirMi(k) {
-    return (k.onkosul || []).every(o => this.state.tamam.indexOf(o) >= 0);
+    return (k.onkosul || []).every(o => this.bittiId(o) || !this.kapsamIci(k, o));
   }
 
   eksikOnkosul(k) {
     const p = this.state.plan, konuMap = {}; p.konular.forEach(x => { konuMap[x.id] = x; });
-    return (k.onkosul || []).filter(o => this.state.tamam.indexOf(o) < 0)
+    return (k.onkosul || []).filter(o => !this.bittiId(o) && this.kapsamIci(k, o))
       .map(o => (konuMap[o] ? konuMap[o].ad : o));
   }
 
+  // Listelerde kısa gösterim — tam adlar konu panelindeki "Ön koşullar" bölümünde
+  eksikOnkosulId(k) {
+    return (k.onkosul || []).filter(o => !this.bittiId(o) && this.kapsamIci(k, o));
+  }
+
   kuyruk() {
-    const p = this.state.plan, tamam = this.state.tamam;
+    const p = this.state.plan;
     const idx = {}; p.konular.forEach((k, i) => { idx[k.id] = i; });
-    const kalan = p.konular.filter(k => tamam.indexOf(k.id) < 0);
+    // v4.6 · K26 — kesilen konular kuyrukta görünmez; kuyruk tier'ı çekirdeğin arkasına düşer
+    const kalan = p.konular.filter(k => !this.konuBitti(k) && k.tier !== 'kesildi');
+    const tierSira = { B: 0, kuyruk: 1 };
     kalan.sort((a, b) => {
+      const ta = tierSira[a.tier] === undefined ? 2 : tierSira[a.tier];
+      const tb = tierSira[b.tier] === undefined ? 2 : tierSira[b.tier];
+      if (ta !== tb) return ta - tb;
+      if (a.tier === 'kuyruk' && b.tier === 'kuyruk' && a.geriCagirmaSirasi !== b.geriCagirmaSirasi)
+        return (a.geriCagirmaSirasi || 9) - (b.geriCagirmaSirasi || 9);
       const da = this.durumu(a) === 'devredilen' ? 0 : 1;
       const db = this.durumu(b) === 'devredilen' ? 0 : 1;
       if (da !== db) return da - db;
-      if (a.faz !== b.faz) return a.faz - b.faz;
+      // v4.6 · K25 — sıra artık takvim haftasıdır; faz yalnızca eşitlik bozar
       const ha = a.hafta == null ? Infinity : a.hafta;
       const hb = b.hafta == null ? Infinity : b.hafta;
       if (ha !== hb) return ha - hb;
+      if (a.faz !== b.faz) return a.faz - b.faz;
       return idx[a.id] - idx[b.id];
     });
     return kalan;
   }
 
+  // v4.6 §6 — Σ sütunu takvimin kendi alanı; devredilen haftalar iki kez sayılmaz
   takvimPuani(aktifW) {
-    const p = this.state.plan, konuMap = {}; p.konular.forEach(k => { konuMap[k.id] = k; });
-    let puan = 0;
-    p.haftalar.forEach(w => {
-      if (w.w > aktifW) return;
-      if (w.tip === 'devredildi') {
-        (w.devredilenKonular || []).forEach(id => { if (konuMap[id]) puan += konuMap[id].puan; });
-      } else {
-        puan += w.puan || 0;
-      }
-    });
-    return puan;
+    const w = this.state.plan.haftalar.find(x => x.w === aktifW);
+    return w && w.kumulatif != null ? w.kumulatif : 0;
   }
 
   renderVals() {
@@ -552,32 +744,64 @@ class Component extends DCLogic {
     };
     if (!p) return temel;
 
-    const tamam = this.state.tamam;
     const konuMap = {}; p.konular.forEach(k => { konuMap[k.id] = k; });
     const zorla = Number(this.props.haftaGecersizKilma || 0);
     const aktif = (zorla > 0 && p.haftalar[zorla - 1]) ? p.haftalar[zorla - 1] : this.aktifHafta();
     const blok = p.bloklar.find(b => b.id === aktif.blok) || {};
 
     // K18 — üç ayrı gösterge (takvim konumu salt okunur, gerçek konum işaretlerden, borç farktan)
+    // v4.6 · K26 — payda artık 108 değil, taahhüt edilen çekirdek (79)
     const hatAd = {}; p.hatlar.forEach(h => { hatAd[h.id] = h.ad; });
-    const gercekPuan = p.konular.filter(k => tamam.indexOf(k.id) >= 0).reduce((a, k) => a + k.puan, 0);
+    const say = n => (Math.round(n * 4) / 4).toString().replace('.', ',');
+    const cekirdek = p.meta.cekirdekPuan || p.meta.toplamPuan;
+    const gercekPuan = p.konular.reduce((a, k) => a + this.konuPuani(k), 0);
+    const cekirdekPuanKazanilan = p.konular.filter(k => k.tier === 'B').reduce((a, k) => a + this.konuPuani(k), 0);
+    const bitenKonu = p.konular.filter(k => this.konuBitti(k)).length;
+    const cekirdekKonu = p.konular.filter(k => k.tier === 'B').length;
     const bugun = this.bugun();
     const gecenUretken = p.haftalar.filter(w => w.tip === 'uretken' && w.bit < bugun).length;
     const hiz = gecenUretken > 0 ? (gercekPuan / gecenUretken) : null;
     const kalanGun = Math.max(0, Math.round((new Date(p.meta.sinavTarihi) - new Date(bugun)) / 86400000));
     const takvimP = this.takvimPuani(aktif.w);
-    const borcPuan = Math.max(0, takvimP - gercekPuan);
+    // Takvimin Σ sütunu çekirdek kapsamındadır — borç da orayla karşılaştırılır
+    const borcPuan = Math.max(0, takvimP - cekirdekPuanKazanilan);
     const borcHafta = (borcPuan > 0 && hiz) ? (borcPuan / hiz) : null;
 
-    const takvimKonum = { w: 'W' + aktif.w, puan: takvimP + ' / ' + p.meta.toplamPuan };
+    const takvimKonum = { w: 'W' + aktif.w, puan: takvimP + ' / ' + cekirdek };
     const gercekKonum = {
-      puan: gercekPuan + ' / ' + p.meta.toplamPuan,
-      ozet: tamam.length + '/' + p.meta.toplamKonu + ' konu · sınava ' + kalanGun + ' gün' +
+      puan: say(cekirdekPuanKazanilan) + ' / ' + cekirdek,
+      ozet: bitenKonu + '/' + cekirdekKonu + ' çekirdek konu · sınava ' + kalanGun + ' gün' +
         (hiz === null ? ' · ölçülen hız henüz yok' : ' · ölçülen hız ' + hiz.toFixed(1).replace('.', ',') + ' puan/üretken hafta')
     };
     const borc = {
       metin: borcPuan === 0 ? 'Borç yok' :
-        (borcHafta === null ? borcPuan + ' puan ≈ —' : borcPuan + ' puan ≈ ' + borcHafta.toFixed(1).replace('.', ',') + ' hafta')
+        (say(borcPuan) + ' puan' + (borcHafta === null ? ' ≈ —' : ' ≈ ' + borcHafta.toFixed(1).replace('.', ',') + ' hafta'))
+    };
+
+    // v4.6 · K23 + K26 — kapsam kartı: hafta tipi, saat modeli, tier bütçesi
+    const t = p.tierler || {};
+    const kapsam = {
+      baslik: 'Tier ' + (p.meta.hedefKapsam || 'B') + ' · ' + cekirdek + ' puan',
+      haftaTipi: HTIP_AD[aktif.haftaTipi] || (TIP_AD[aktif.tip] || aktif.tip),
+      satirlar: ['B', 'kuyruk', 'kesildi'].filter(id => t[id]).map(id => ({
+        ad: TIER_AD[id], renk: TIER_RENK[id],
+        deger: t[id].konu + ' konu · ' + t[id].puan + ' puan',
+        not: TIER_ACIK[id]
+      }))
+    };
+
+    // v4.6 §6 — tek kapı: W26'da kümülatif 57 puan
+    const kapiH = p.meta.kapi || {};
+    const kapiHafta = p.haftalar.find(w => w.w === kapiH.hafta);
+    const kapiGecti = kapiHafta ? bugun > kapiHafta.bit : false;
+    const kapi = {
+      var: !!kapiH.hafta,
+      metin: 'W' + kapiH.hafta + ' kapısı · ölçüt ' + kapiH.olcut + ' puan',
+      durum: !kapiHafta ? '' : (kapiGecti
+        ? (cekirdekPuanKazanilan >= kapiH.olcut ? 'Geçildi — Tier B devam ediyor.'
+                                                : 'Ölçüt tutmadı — Tier C değerlendirilmeli (' + (kapiH.tetiklenirseDusen || []).join(', ') + ' düşer).')
+        : 'Ölçüm ' + this.tarih(kapiHafta.bas) + ' tamponunda. Şu an ' + say(cekirdekPuanKazanilan) + ' çekirdek puandasın.'),
+      renk: !kapiGecti ? '#6E6A63' : (cekirdekPuanKazanilan >= kapiH.olcut ? '#14563F' : '#7A2E20')
     };
 
     // K18 — "sıradaki konular" kuyruğu (puan-öncelikli, tarih navigasyon değil)
@@ -585,12 +809,18 @@ class Component extends DCLogic {
     const sinir = this.state.kuyrukSinir;
     const kuyrukListe = tumKuyruk.slice(0, sinir).map(k => {
       const d = this.durumu(k), hazir = this.hazirMi(k);
+      const biten = this.bitenParca(k);
       return {
         id: k.id, ad: k.ad, puan: k.puan, renk: HAT_RENK[k.hat] || '#0F2540',
-        haftaEtiket: k.hafta == null ? 'yerleştirilmedi' : ('W' + k.hafta),
+        haftaEtiket: k.hafta == null ? 'yerleştirilmedi'
+          : ('W' + k.hafta + (k.bitisHafta && k.bitisHafta !== k.hafta ? '–' + k.bitisHafta : '')),
+        parcaEtiket: this.parcali(k) ? (biten + '/' + k.parcalar.length + ' parça') : '',
+        tierAd: k.tier === 'B' ? '' : (TIER_AD[k.tier] || ''),
+        tierRenk: TIER_RENK[k.tier] || '#6E6A63',
         devredilenMi: d === 'devredilen',
         hazir: hazir,
-        kilitNot: hazir ? '' : ('Önce ' + this.eksikOnkosul(k).join(', ') + ' gerekiyor.'),
+        kilitNot: (hazir ? '' : ('önce ' + this.eksikOnkosulId(k).join(', '))) +
+          (this.kapsamDisiOnkosul(k).length ? (hazir ? '' : ' · ') + '⚠ ' + this.kapsamDisiOnkosul(k).join(', ') + ' kapsam dışı' : ''),
         stil: {
           opacity: hazir ? '1' : '0.5',
           borderLeft: d === 'devredilen' ? '3px solid #7A2E20' : '3px solid transparent',
@@ -603,24 +833,33 @@ class Component extends DCLogic {
     const kuyrukDahaGoster = () => this.setState({ kuyrukSinir: this.state.kuyrukSinir + 8 });
     const kuyrukBos = tumKuyruk.length === 0;
 
-    // DURUM (beş hat ilerlemesi)
+    // DURUM (beş hat ilerlemesi) — v4.6: payda hattın ÇEKİRDEĞİ
     const durum = {
-      yuzde: Math.round(gercekPuan / p.meta.toplamPuan * 100) + '%',
+      yuzde: Math.round(cekirdekPuanKazanilan / cekirdek * 100) + '%',
       hatlar: p.hatlar.map(h => {
-        const tot = p.konular.filter(k => k.hat === h.id).reduce((a, k) => a + k.puan, 0);
-        const don = p.konular.filter(k => k.hat === h.id && tamam.indexOf(k.id) >= 0).reduce((a, k) => a + k.puan, 0);
-        return { id: h.id, ad: h.ad, renk: HAT_RENK[h.id], oran: don + '/' + tot, yuzde: Math.round(don / tot * 100) + '%' };
+        const cek = p.konular.filter(k => k.hat === h.id && k.tier === 'B');
+        const tot = cek.reduce((a, k) => a + k.puan, 0);
+        const don = cek.reduce((a, k) => a + this.konuPuani(k), 0);
+        const disi = p.konular.filter(k => k.hat === h.id && k.tier !== 'B').reduce((a, k) => a + k.puan, 0);
+        return {
+          id: h.id, ad: h.ad, renk: HAT_RENK[h.id],
+          oran: say(don) + '/' + tot,
+          yuzde: (tot ? Math.round(don / tot * 100) : 0) + '%',
+          disi: disi ? ('+' + disi + ' p kapsam dışı') : ''
+        };
       })
     };
 
     // KONULAR
     const q = this.state.ara.trim().toLowerCase();
     const liste = p.konular.filter(k => (this.state.hat === '*' || k.hat === this.state.hat) &&
+      (this.state.tier === '*' || k.tier === this.state.tier) &&
       (!q || (k.id + ' ' + k.ad).toLowerCase().indexOf(q) >= 0));
     const acikVar = this.props.kapsamVarsayilanAcik === true;
     const konular = liste.map(k => {
-      const bitti = tamam.indexOf(k.id) >= 0;
+      const bitti = this.konuBitti(k);
       const hazir = this.hazirMi(k);
+      const biten = this.bitenParca(k);
       const durumK = this.durumu(k);
       const acik = this.state.acikKonu === k.id;
       const c = k.calisma || {}, video = c.video || {}, kaynak = c.kaynak || {};
@@ -636,7 +875,7 @@ class Component extends DCLogic {
       };
       kat('Kapsam — ne öğreneceğim', (k.kapsam && k.kapsam.ogren) || []);
       kat('Dikkat — tuzaklar ve DUR', (k.kapsam && k.kapsam.dikkat) || []);
-      kat('Ön koşullar', (k.onkosul || []).map(o => o + ' · ' + (konuMap[o] ? konuMap[o].ad : '') + (tamam.indexOf(o) >= 0 ? '  ✓' : '')));
+      kat('Ön koşullar', (k.onkosul || []).map(o => o + ' · ' + (konuMap[o] ? konuMap[o].ad : '') + (this.bittiId(o) ? '  ✓' : '')));
       const meb = k.mebKarsiligi;
       if (meb) {
         const sat = [];
@@ -647,27 +886,50 @@ class Component extends DCLogic {
         kat('MEB müfredatı', sat);
       }
       kat('Etiketler', [
+        TIER_ACIK[k.tier] || 'Tier tanımsız',
+        (k.tier === 'kuyruk' ? 'Geri çağırma sırası: ' + k.geriCagirmaSirasi : null),
         (k.cekirdek ? 'Çekirdek konu — asla kesilmez' : 'Çekirdek değil'),
-        (k.kesilebilir ? 'Kesilebilir (geri kalınırsa düşürülebilir)' : 'Kesilemez'),
-        'Faz ' + k.faz + ' · Blok ' + k.blok + ' · W' + k.hafta + ' · ' + hatAd[k.hat]
-      ]);
+        'Faz ' + k.faz + ' · ' + (k.blok ? 'Blok ' + k.blok + ' · ' : '') +
+          (k.hafta == null ? 'yerleştirilmedi' : 'W' + (k.haftalar ? k.haftalar.join(', W') : k.hafta)) +
+          ' · ' + hatAd[k.hat],
+        (this.parcali(k) ? k.parcalar.length + ' parça × 4 saat = ' + (k.puan * 4) + ' saat (K24)' : k.puan * 4 + ' saat')
+      ].filter(Boolean));
       const eksik = hazir ? [] : this.eksikOnkosul(k);
+      const kapsamDisi = this.kapsamDisiOnkosul(k);
+      // K24 — parça satırları
+      const parcalar = (k.parcalar || []).map(pr => {
+        const pb = bitti || this.state.tamam.indexOf(this.parcaAnahtar(k.id, pr.no)) >= 0;
+        return {
+          no: pr.no, ad: pr.ad, saat: pr.saat,
+          tik: pb ? '✓' : '○', tikRenk: pb ? HAT_RENK[k.hat] : '#DCD7CE',
+          cizgi: pb ? 'line-through' : 'none', op: pb ? '0.45' : '1',
+          isaretle: () => this.parcaIsaretle(k, pr.no)
+        };
+      });
       return {
         id: k.id, ad: k.ad, puan: k.puan,
-        hafta: k.hafta == null ? 'yerleştirilmedi' : ('W' + k.hafta),
+        hafta: k.hafta == null ? 'yerleştirilmedi'
+          : ('W' + k.hafta + (k.bitisHafta && k.bitisHafta !== k.hafta ? '–' + k.bitisHafta : '')),
         renk: HAT_RENK[k.hat],
-        op: bitti ? '0.45' : (hazir ? '1' : '0.5'),
+        tierAd: k.tier === 'B' ? '' : (TIER_AD[k.tier] || ''), tierRenk: TIER_RENK[k.tier] || '#6E6A63',
+        op: bitti ? '0.45' : (k.tier === 'kesildi' ? '0.4' : (hazir ? '1' : '0.5')),
         cizgi: bitti ? 'line-through' : 'none',
-        tik: bitti ? '✓' : (hazir ? '○' : '🔒'), tikRenk: bitti ? HAT_RENK[k.hat] : '#DCD7CE',
+        tik: bitti ? '✓' : (this.parcali(k) && biten ? '◐' : (hazir ? '○' : '🔒')),
+        tikRenk: (bitti || biten) ? HAT_RENK[k.hat] : '#DCD7CE',
         devredilenMi: durumK === 'devredilen',
         satirStil: { borderLeft: durumK === 'devredilen' ? '3px solid #7A2E20' : '3px solid transparent', paddingLeft: '10px' },
+        parcalar: parcalar, parcaliMi: parcalar.length > 0,
+        parcaBaslik: parcalar.length ? (biten + '/' + parcalar.length + ' parça · her parça 4 saat, 1 puan') : '',
+        parcaEtiket: parcalar.length ? (biten + '/' + parcalar.length) : '',
         acik: acik, uyarilar: acik ? this.uyarilar(k) : [],
-        hazirDegil: !hazir, kilitNotu: hazir ? '' : ('Önce ' + eksik.join(', ') + ' gerekiyor.'),
+        hazirDegil: !hazir,
+        kilitNotu: (hazir ? '' : ('önce ' + this.eksikOnkosulId(k).join(', '))) +
+          (kapsamDisi.length ? (hazir ? '' : ' · ') + '⚠ kapsam dışı ön koşul: ' + kapsamDisi.join(', ') : ''),
         videoUrl: video.url || '#', videoAra: video.ara || 'kaynak yok', videoKanal: video.kanal || '—',
         kaynakAd: kaynak.ad || '—', kaynakYer: kaynak.yer || '',
         soru: c.soru || '—', sure: c.sure || '—',
         katlar: katlar,
-        btnAd: bitti ? 'Tamamlandı ✓ — geri al' : (hazir ? 'Tamamlandı olarak işaretle' : 'Hazır değil — önce ön koşulu bitir'),
+        btnAd: bitti ? 'Tamamlandı ✓ — geri al' : (hazir ? (this.parcali(k) ? 'Bütün parçaları tamamlandı işaretle' : 'Tamamlandı olarak işaretle') : 'Hazır değil — önce ön koşulu bitir'),
         btnRenk: bitti ? '#6E6A63' : (hazir ? '#14563F' : '#a39d90'),
         tikla: () => this.setState({ acikKonu: acik ? null : k.id }),
         isaretle: () => { if (bitti || hazir) this.isaretle(k.id); }
@@ -678,8 +940,16 @@ class Component extends DCLogic {
       alt: this.state.hat === f.id ? (HAT_RENK[f.id] || '#0F2540') : 'transparent',
       tikla: () => this.setState({ hat: f.id })
     }));
+    // v4.6 · K26 — kapsam filtresi
+    const tierFiltre = [{ id: '*', ad: 'Tüm kapsam' }, { id: 'B', ad: 'Çekirdek' },
+      { id: 'kuyruk', ad: 'Kuyruk' }, { id: 'kesildi', ad: 'Kesildi' }].map(f => ({
+      ad: f.ad, renk: this.state.tier === f.id ? (TIER_RENK[f.id] || '#0F2540') : '#6E6A63',
+      alt: this.state.tier === f.id ? (TIER_RENK[f.id] || '#0F2540') : 'transparent',
+      tikla: () => this.setState({ tier: f.id })
+    }));
+    const kazanilan = liste.reduce((a, k) => a + this.konuPuani(k), 0);
     const konuOzet = liste.length + ' konu · ' + liste.reduce((a, k) => a + k.puan, 0) + ' puan · ' +
-      liste.filter(k => tamam.indexOf(k.id) >= 0).length + ' tamamlandı';
+      say(kazanilan) + ' puan kazanıldı · ' + liste.filter(k => this.konuBitti(k)).length + ' konu tamamlandı';
 
     // TAKVİM
     const sec = this.state.secilenHafta || aktif.w;
@@ -688,7 +958,10 @@ class Component extends DCLogic {
       const tampon = w.tip === 'tampon';
       const devredildi = w.tip === 'devredildi';
       return {
-        no: 'W' + w.w, isaret: (w.deneme ? '•' : '') + (w.madencilikSeti ? '·' : '') + (w.tip === 'sinav' ? '★' : '') + (w.tip === 'tekrar' ? '↺' : '') + (devredildi ? '⛔' : ''),
+        no: 'W' + w.w,
+        isaret: ((w.tamDeneme && w.tamDeneme.length) ? '•' : '') + (w.madencilikSeti ? '·' : '') +
+          (w.kapi ? '†' : '') + (w.tip === 'sinav' ? '★' : '') + (w.tip === 'tekrar' ? '↺' : '') + (devredildi ? '⛔' : ''),
+        saat: w.saat ? w.saat + ' sa' : '',
         arka: bu ? '#0F2540' : devredildi ? 'repeating-linear-gradient(45deg,#F7ECEA,#F7ECEA 4px,#ffffff 4px,#ffffff 8px)' : (tampon ? 'repeating-linear-gradient(45deg,#F7F5F0,#F7F5F0 4px,#ffffff 4px,#ffffff 8px)' : '#ffffff'),
         yazi: bu ? '#ffffff' : devredildi ? '#7A2E20' : (simdi ? '#7A2E20' : '#101418'),
         kenar: bu ? '#0F2540' : devredildi ? '#7A2E20' : (simdi ? '#7A2E20' : '#DCD7CE'),
@@ -697,22 +970,51 @@ class Component extends DCLogic {
     });
     const hw = p.haftalar[sec - 1];
     const hblok = p.bloklar.find(b => b.id === hw.blok) || {};
+    // v4.6 · K25 — birincil ve ikincil slot ayrı gösterilir, parça referansları çözülür
+    const slot = liste2 => (liste2 || []).map(o => {
+      const k = konuMap[o.id]; if (!k) return null;
+      const hepsi = !o.parcalar;
+      const secili = o.parcalar || (k.parcalar || []).map(x => x.no);
+      const bittiP = secili.filter(no => this.konuBitti(k) || this.state.tamam.indexOf(this.parcaAnahtar(k.id, no)) >= 0);
+      const tamamMi = this.parcali(k) ? (secili.length > 0 && bittiP.length === secili.length) : this.konuBitti(k);
+      const satir = this.konuSatiri(k, tamamMi);
+      satir.parca = (this.parcali(k) && !hepsi)
+        ? ('parça ' + o.parcalar.join(', ') + '/' + k.parcalar.length)
+        : (this.parcali(k) ? 'tüm parçalar' : '');
+      satir.parcaAd = (this.parcali(k) && !hepsi)
+        ? o.parcalar.map(no => (k.parcalar.find(x => x.no === no) || {}).ad).filter(Boolean).join(' · ')
+        : '';
+      satir.saat = (this.parcali(k) ? 4 * secili.length : 4 * k.puan) + ' sa';
+      return satir;
+    }).filter(Boolean);
+    const denemeH = (p.denemeler || []).filter(d => d.hafta === hw.w);
     const haftaDetay = {
       baslik: 'W' + hw.w + ' · ' + this.tarih(hw.bas) + ' – ' + this.tarih(hw.bit),
-      meta: hw.blok + ' · ' + (hblok.ad || '') + ' · ' + (TIP_AD[hw.tip] || hw.tip) + ' · ' + hw.saat + ' saat · ' + hw.puan + ' puan' + (hw.faz && hw.faz.length ? ' · Faz ' + hw.faz.join(', ') : ''),
-      konular: (hw.konular || []).map(id => konuMap[id]).filter(Boolean).map(k => this.konuSatiri(k, tamam.indexOf(k.id) >= 0)),
+      meta: hw.blok + ' · ' + (hblok.ad || '') + ' · ' + (HTIP_AD[hw.haftaTipi] || TIP_AD[hw.tip] || hw.tip) +
+        ' · hedef ' + hw.puan + ' puan · Σ ' + (hw.kumulatif == null ? '—' : hw.kumulatif) +
+        (hw.planlananSaat ? ' · yerleştirilen ' + hw.planlananSaat + '/' + hw.saat + ' sa' : '') +
+        (hw.faz && hw.faz.length ? ' · Faz ' + hw.faz.join(', ') : ''),
+      birincil: slot(hw.birincil),
+      ikincil: slot(hw.ikincil),
+      birincilVar: (hw.birincil || []).length > 0,
+      ikincilVar: (hw.ikincil || []).length > 0,
+      slotNotu: hw.slotNotu === 'telafi' ? 'Her iki slot da telafi — yeni konu yok.'
+        : (hw.slotNotu === 'kuyruk'
+            ? ((hw.birincil || []).length
+                ? 'Artan kapasite kuyruğa açılır — boş slot geri çağırma listesinden beslenir.'
+                : 'Her iki slot da kuyruktan beslenir (geri çağırma penceresi).')
+            : ''),
       devredilenKonular: (hw.devredilenKonular || []).map(id => konuMap[id]).filter(Boolean).map(k => k.id + ' — ' + k.ad),
-      notlar: (hw.deneme ? ['Deneme #' + hw.deneme + ' — tam süre, tam koşul.'] : [])
-        .concat(hw.madencilikSeti ? ['Madencilik seti #' + hw.madencilikSeti + ' — bitirilmiş konulardan, rezerv tüketmez.'] : [])
+      notlar: denemeH.map(d => (d.tip === 'tam' ? 'Tam deneme #' + d.no + ' — ' + d.sinavDk + ' dk sınav + ' + d.analizDk + ' dk analiz (' + say(d.toplamSaat) + ' saat, tek oturum).'
+                                                : 'Madencilik seti #' + d.no + ' — ' + d.sinavDk + '+' + d.analizDk + ' dk, rezerv tüketmez.'))
+        .concat(hw.kapi ? ['† TEK KAPI — kümülatif ' + (p.meta.kapi || {}).olcut + ' puan ölçütü burada ölçülür.'] : [])
         .concat(hw.kapanis ? [hw.kapanis + ' kapanış ritüeli: say, hızı hesapla, karşılaştır, sonraki bloğu boyutlandır, devret.'] : [])
         .concat(hw.notlar || [])
     };
 
-    // DENEMELER
-    const denemeHafta = p.haftalar.filter(w => w.deneme);
-    const sablon = [];
-    denemeHafta.forEach(w => { sablon.push({ no: w.deneme, w: w.w, bas: w.bas, bit: w.bit }); });
-    sablon.push({ no: 8, w: 41, bas: p.haftalar[40].bas, bit: p.haftalar[40].bit });
+    // DENEMELER — v4.6 · K19: deneme bir oturumdur, bir hafta değil. Kaynak: plan.denemeler[]
+    const sablon = (p.denemeler || []).filter(d => d.tip === 'tam')
+      .map(d => ({ no: d.no, w: d.hafta, bas: d.tarih, bit: d.bitis, saat: d.toplamSaat, kapsam: d.hedefKonular || [] }));
     const alanTanim = [
       { k: 'm', ad: 'M / 12', ip: '0–12' }, { k: 'c', ad: 'C / 16', ip: '0–16' }, { k: 'a', ad: 'A / 16', ip: '0–16' },
       { k: 'p', ad: 'P / 4', ip: '0–4' }, { k: 'l', ad: 'L / 1', ip: '0–1' },
@@ -731,8 +1033,11 @@ class Component extends DCLogic {
       if (girildi && Number(s.sureM) > 25) uyari = 'M bloğu 25 dakikayı aştı — bu bir hız alarmı, bilgi sorunu değil.';
       else if (girildi && sureTop > 150) uyari = 'Toplam süre 150 dakikayı aştı: ' + sureTop + ' dk. Fark M-temel ve L\'de hızlanarak kapatılır.';
       else if (girildi && bosN > 0) uyari = bosN + ' boş: kaçında bir şık elenebilirdi? Elenebiliyorsa işaretlemeliydin (+0,06).';
+      const hw2 = p.haftalar.find(x => x.w === d.w) || {};
       return {
         no: d.no, w: d.w, tarih: this.tarih(d.bas) + ' – ' + this.tarih(d.bit),
+        maliyet: say(d.saat) + ' sa · haftanın %' + Math.round(d.saat / (hw2.saat || 11) * 100),
+        kapsam: d.kapsam.length + ' konu işlendi',
         net: net === null ? '—' : net.toFixed(2).replace('.', ',') + ' net',
         acik: this.state.acikDeneme === d.no, uyari: uyari,
         tikla: () => this.setState({ acikDeneme: this.state.acikDeneme === d.no ? null : d.no }),
@@ -747,23 +1052,27 @@ class Component extends DCLogic {
       };
     });
     // K17 — madencilik setleri: deneme değil, ayrı ve daha hafif
-    const MAD_TANIM = { 1: { soru: 15, dk: 45 }, 2: { soru: 15, dk: 45 }, 3: { soru: 20, dk: 60 }, 4: { soru: 20, dk: 60 } };
-    const madencilikListe = p.haftalar.filter(w => w.madencilikSeti).map(w => {
-      const kapsam = [];
-      p.haftalar.forEach(x => { if (x.w < w.w) (x.konular || []).forEach(id => { if (kapsam.indexOf(id) < 0) kapsam.push(id); }); });
-      const tanim = MAD_TANIM[w.madencilikSeti] || { soru: '—', dk: '—' };
-      const s = this.state.madSkor[w.madencilikSeti] || {};
+    const madencilikListe = (p.denemeler || []).filter(d => d.tip === 'madencilik').map(d => {
+      const sk = this.state.madSkor[d.no] || {};
       return {
-        no: w.madencilikSeti, w: w.w, tarih: this.tarih(w.bas) + ' – ' + this.tarih(w.bit),
-        soru: tanim.soru, dk: tanim.dk, kapsam: kapsam.join(', ') || '—',
-        net: s.net === undefined ? '' : s.net,
+        no: d.no, w: d.hafta, tarih: this.tarih(d.tarih) + ' – ' + this.tarih(d.bitis),
+        soru: d.soru, dk: d.sinavDk + '+' + d.analizDk,
+        kapsam: (d.hedefKonular || []).join(', ') || '—',
+        net: sk.net === undefined ? '' : sk.net,
         netSet: e => {
           const v = e.target.value;
-          const yeni = Object.assign({}, this.state.madSkor, { [w.madencilikSeti]: Object.assign({}, this.state.madSkor[w.madencilikSeti], { net: v }) });
-          this.kaydet({ madSkor: yeni });
+          const y = Object.assign({}, this.state.madSkor, { [d.no]: Object.assign({}, this.state.madSkor[d.no], { net: v }) });
+          this.kaydet({ madSkor: y });
         }
       };
     });
+    const denemeOzet = (p.denemeler || []).filter(d => d.tip === 'tam').length + ' tam koşullu oturum · ' +
+      madencilikListe.length + ' madencilik seti. Tam deneme 150 dk sınav + 90 dk analiz = 4 saat; ' +
+      'bu yüzden yoğun (16 sa) veya tampon haftalarına yerleştirildi (K19).';
+
+    const takvimOzet = '42 hafta · 6 blok · ' + p.meta.uretkenHafta + ' üretken hafta · ' +
+      p.meta.uretkenSaat + ' üretken + ' + p.meta.tamponSaat + ' tampon saat (W5–W37). ' +
+      'Taralı haftalar tampon, • tam deneme, · madencilik seti, † kapı, ↺ tekrar, ★ sınav, ⛔ devredildi.';
 
     const noktalar = denemeler.map((d, i) => ({ i: i, v: d.net === '—' ? null : parseFloat(d.net.replace(',', '.')) })).filter(x => x.v !== null);
     const grafik = noktalar.length >= 2 ? React.createElement('svg', {
@@ -810,8 +1119,9 @@ class Component extends DCLogic {
     }));
 
     return Object.assign(temel, {
-      takvimKonum, gercekKonum, borc, kuyrukListe, kuyrukDahaVar, kuyrukDahaGoster, kuyrukBos,
-      durum, konular, hatFiltre, konuOzet, takvim, haftaDetay, denemeler, madencilikListe, grafik,
+      takvimKonum, gercekKonum, borc, kapsam, kapi, kuyrukListe, kuyrukDahaVar, kuyrukDahaGoster, kuyrukBos,
+      durum, konular, hatFiltre, tierFiltre, konuOzet, takvim, haftaDetay,
+      denemeler, denemeOzet, madencilikListe, grafik, takvimOzet,
       kararlar, bolumler, kaynaklar, kanallar,
       disaAktar: () => {
         const veri = JSON.stringify({ tamam: this.state.tamam, skor: this.state.skor }, null, 2);
