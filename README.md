@@ -30,18 +30,21 @@ M12→C10, C4→C7, C6→A2, M10→P1, M1→sayma konuları.
 
 ## Ne yapar
 
-Beş ekran, sade ve minimal (EB Garamond / Libre Baskerville, hat başına tek vurgu rengi) — **aydınlık ve karanlık mod**.
+Beş ekran, karanlık zeminli editoryal düzen: Archivo + EB Garamond + JetBrains Mono, İsviçre ızgarası,
+hat başına tek vurgu rengi (M altın · C yeşil · A mavi · G mor · P pembe) — **karanlık ve aydınlık mod**.
 
 | Ekran | İçerik |
 |---|---|
-| **Ana** | Takvim konumu (biten haftalara kadar planlanan saat), gerçek konum (işaretlenen konuların saati), gecikme; bu haftanın konuları + **IOI hattının bu haftaki işi** ve çözülen problem sayacı (hedef 120); sıradaki konular kuyruğu; beş hattın ilerleme çubuğu. |
-| **Konular** | 34 konu, hat filtreli (M/C/A/G/P) ve aramalı. Her konu kapalı gelir; açınca çalışma kartı: 📺 video · 📖 kaynak · ✏️ soru · ⏱ süre · **DUR (derinlik tavanı)**. Altında katlanır bölümler: Kapsam, Dikkat, Ön koşullar, Yerleşim. Karışabilecek isimler (fonksiyon, ikili, yineleme) konu açılınca uyarı olarak çıkar. |
-| **Takvim** | 35 haftalık ızgara — taralı haftalar tampon, • deneme, ↺ geçmiş sınav haftası, ★ sınav haftası. Bir haftaya tıkla: o haftanın sınav hattı konuları (devam oturumları işaretli), IOI hattı işi ve notlar. |
-| **Denemeler** | Yedi deneme (#1 kısmi, #2–#7 tam). Doğru/yanlış/boş → otomatik net (4 yanlış 1 doğruyu götürür), süre ve en zayıf hat girişi. Beklenen net aralığı grafikte gri bant olarak çizilir, 40 net hedef çizgisi işaretlidir. Deneme #4'te 1 Mart karar noktası uyarısı otomatik çıkar. Altında Blok 4'ün geçmiş sınav takvimi. |
-| **Arşiv** | Sınav taktiği (negatif puan, süre, sıra, küme soruları), karar noktaları (KN1 · 1 Mart 2027, KN2 · Kasım 2026), IOI 2028 takvimi, planın tamamı (Bölüm 0–9, markdown olarak render edilir), kaynak kataloğu + alınmayacaklar, v5.0'ta çıkarılan/eklenenler, dışa/içe aktar. |
+| **Bugün** | Günde tek iş. Ekranın tamamı o oturuma ayrılır: konu kimliği + adı, kapsam özeti, süre, ön koşul ve **DUR (derinlik tavanı)** kutusu, oturumu başlat / video / soru düğmeleri. Altta haftanın geri kalanı üç noktaya iner. Sağ rayda dört sayı: konu 15/34, gecikme (yapılan saat − planlanan saat), IOI tohum hattı (çözülen problem, hedef 120) ve sınava kalan gün. |
+| **Konular** | **Tuğla duvarı:** her konu bir tuğla, genişliği o konunun saati. Dolu tuğla bitti, kesikli çerçeve bu hafta, boş tuğla duruyor — duvarın yarısı geçilince müfredatın yarısı geçilmiş olur. Hat filtresi (Hepsi / M / C / A / G / P) ve arama. Tuğlaya tıkla: konu detayı açılır (📺 video · 📖 kaynak · ✏️ soru · ⏱ süre, DUR kartı, kapsam/dikkat, ön koşul rozetleri, *bitti olarak işaretle* ve konu başına **hata defteri notu**). Altta 35 haftalık ısı şeridi. |
+| **Takvim** | **Beş hat, metro şeması:** M/C/A/G/P hatlarının 35 hafta boyunca paralel ilerleyişi; arkada blok bantları, istasyonlar konu haftalarında. İki iğne — takvim konumu ve saat birikiminden hesaplanan gerçek konum; aradaki şerit gecikmedir. Altında sıradaki istasyon, henüz açılmamış hatlar ve IOI kartı; hafta şeridinden bir haftaya tıkla: o haftanın konuları, IOI işi ve notları. |
+| **Denemeler** | Yedi deneme (#1 kısmi, #2–#7 tam). Beklenen net bandı, 40 net hedef çizgisi, gerçekleşen eğri ve **bu gidişle** tahmini tek grafikte; bugün çizgisi bulunduğun haftada. Tabloda bir denemeye tıkla: doğru/yanlış/boş → otomatik net (4 yanlış 1 doğruyu götürür), süre ve en zayıf hat girişi. Deneme #4'te 1 Mart karar noktası uyarısı otomatik çıkar. Altında geçmiş sınav takvimi ve sınav taktiği. |
+| **Arşiv** | Karar noktaları (KN1 · 1 Mart 2027, KN2 · Kasım 2026), planın tam metni (Bölüm 0–9, markdown olarak render edilir), kaynak kataloğu, video kanalları, alınmayacaklar / çıkarılanlar / eklenenler, IOI hattının gerekçesi, ilerlemeyi dışa–içe aktar ve sıfırla. |
 
 İlerleme göstergesi takvim değil **tamamlanan konu ve saattir.** Tamamlanan konular, deneme skorları,
-IOI problem sayacı ve tema tercihi `localStorage`'da durur.
+konu notları, IOI problem sayacı ve tema tercihi `localStorage`'da durur.
+
+700 pikselin altında düzen tek sütuna iner ve gezinme alt sekme çubuğuna geçer.
 
 ---
 
@@ -67,12 +70,13 @@ blok, `onkosul` zinciri, `dur` derinlik tavanı, konu başına `calisma` kartı,
 
 ---
 
-## Karanlık mod
+## Tema
 
-Sağ üstteki **☾ Karanlık / ☀ Aydınlık** düğmesi temayı değiştirir. Tercih `localStorage`'da tutulur;
-hiç seçim yapılmamışsa işletim sisteminin `prefers-color-scheme` ayarı kullanılır. Renkler
-`:root` üzerinde CSS değişkeni olarak tanımlıdır (`--kagit`, `--murekkep`, `--vurgu`, hat renkleri…),
-karanlık palet `:root[data-tema="koyu"]` altında.
+Sağ üstteki **☾ / ☀** düğmesi temayı değiştirir. Tercih `localStorage`'da tutulur; hiç seçim
+yapılmamışsa işletim sisteminin `prefers-color-scheme` ayarı kullanılır — varsayılan karanlıktır.
+Renkler `:root` üzerinde CSS değişkeni olarak tanımlıdır (`--zemin`, `--murekkep`, `--vurgu`,
+`--hatM`…`--hatP`); aydınlık palet `:root[data-tema="acik"]` altında. Gölge yoktur, ayrım kenarlıkla
+yapılır.
 
 ---
 
@@ -84,8 +88,8 @@ tarayıcı JSON'u okumaya izin vermez. İki yol:
 1. **GitHub Pages** — https://e7lektronxf.github.io/Plan/ (`main` dalına her push'ta güncellenir)
 2. **Yerel sunucu** — klasörün içinde `python -m http.server 8000`, sonra `http://localhost:8000`
 
-Her iki durumda da internet bağlantısı gerekir: sayfa React/ReactDOM'u ve iki yazı
-tipini (Libre Baskerville, EB Garamond) CDN'den yükler.
+Her iki durumda da internet bağlantısı gerekir: sayfa React/ReactDOM'u ve üç yazı
+tipini (Archivo, EB Garamond, JetBrains Mono) CDN'den yükler.
 
 ---
 
